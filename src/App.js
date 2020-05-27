@@ -12,8 +12,8 @@ class App extends Component {
   render = () => {
     return (
       <>
-        <Nav />
-        <Header />
+        <Nav logoTitle="{Webster}"/>
+        <Header title="Your online study partner" button="Register for free"/>
         <Programs />
         <Goals />
         <Footer />
