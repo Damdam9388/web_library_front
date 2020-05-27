@@ -4,7 +4,9 @@ import logo from './logo.svg';
 import './App.scss';
 import Nav from "./Layout/Nav/Nav.js";
 import Header from "./Layout/Header/Header.js";
-
+import Programs from "./Layout/Programs/Programs.js";
+import Footer from "./Layout/Footer/ConditionGeneral.js";
+import Goals from "./Layout/Goals/Goals.js";
 
 class App extends Component {
   render = () => {
@@ -12,6 +14,9 @@ class App extends Component {
       <>
         <Nav />
         <Header />
+        <Programs />
+        <Goals />
+        <Footer />
         
       </>
     );
