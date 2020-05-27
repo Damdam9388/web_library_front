@@ -1,0 +1,36 @@
+header{
+    margin: 0;
+    text-align: center;
+    padding-top:100px;
+}
+header h1{
+    margin:20px;
+    text-align: center;
+    font-size: 4rem;
+    color: tomato;
+}
+
+header p {
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: gray;
+    font-size: 1.75rem;
+}
+
+header a{
+    font-family: 'Raleway',sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: white;
+    background-image: linear-gradient(to right,rgb(248, 161, 130) 0%,coral 100%);
+    padding: 14px 34px;
+    letter-spacing: 1px;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: all 0.5s linear;
+    border: 0;
+    display: inline-block;
+}

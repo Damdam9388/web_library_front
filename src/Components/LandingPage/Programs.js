@@ -6,7 +6,7 @@ class Programs extends Component{
         return(
 
             <div className="programs">
-                <h1>Programs</h1>
+                <h1>PROGRAMS</h1>
                 <div className="row">
 
                     <div><span><img src="https://img.icons8.com/officel/60/000000/php-logo.png"/></span><h4 className='title'>PHP</h4></div>

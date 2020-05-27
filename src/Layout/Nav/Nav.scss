@@ -1,10 +1,11 @@
-nav{
-    display: flex;
-    justify-content: space-between;
-    background-color: tomato;
-    align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    height: 60px;
+#menu a.navbar-brand {
+    font-family: 'Raleway',sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+}
 
+#items li.nav-item {
+    float:left;
 }

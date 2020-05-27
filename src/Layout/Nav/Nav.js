@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 
 class Nav extends Component {
     render = () => (
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Webster</a>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">WEBSTER</a>
+        <div id="items" class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Programs
+                PROGRAMS
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="#">Java</a>
@@ -21,7 +21,7 @@ class Nav extends Component {
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Frameworks
+                FRAMEWORKS
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="#">Spring</a>
@@ -30,10 +30,10 @@ class Nav extends Component {
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="#">CONTACT</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
+              <a class="nav-link" href="#">LOGIN</a>
             </li>
           </ul>
         </div>
