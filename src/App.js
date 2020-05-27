@@ -12,7 +12,7 @@ class App extends Component {
   render = () => {
     return (
       <>
-        <Nav logoTitle="{Webster}"/>
+        <Nav logoTitle="Webster"/>
         <Header title="Your online study partner" button="Register for free"/>
         <Programs />
         <Goals />

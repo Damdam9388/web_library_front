@@ -4,7 +4,7 @@ import Background from '../../Images/img1.jpg';
 
 const myStyles = {
     backgroundImage: `url(${Background})`,
-    height : '70vh',
+    height : '55vh',
     backgroundSize: 'cover',
 }
 class Header extends Component {
@@ -14,7 +14,7 @@ class Header extends Component {
         return(
             <header style={myStyles}>
                 <h1>{this.props.title}</h1>
-                <p>Upgrade your skills and progress in your life.</p>
+                <p>Learn to code in Java, HTML, Symfony...</p>
                 <a href="#button">{this.props.button}</a>
             </header>
        
