@@ -1,11 +1,67 @@
-#menu a.navbar-brand {
-    font-family: 'Raleway',sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: #333;
-    text-transform: uppercase;
+.banner{
+    height: 100vh;
+    width: 100%;
+    background: url('../../Images/img4.jpg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.banner .navbar{
+    margin-top: 2%;
 }
 
-#items li.nav-item {
-    float:left;
+.banner .navbar-brand{
+    color: tomato;
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-left: 10%;
+}
+
+.banner .nav{
+    margin-right:10%;
+}
+
+.banner .nav li a{
+    color: black;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.banner .info{
+    margin-top: 15%;
+    transform: translateY(-15%);
+}
+
+.banner .info h1{
+    font-size: 2.5em;
+    font-weight: 700;
+    color: tomato;
+}
+
+.banner .info p{
+    font-size: 2em;
+    font-weight: 500;
+    color: white;
+}
+
+.banner .info a{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-family: 'Raleway',sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: white;
+    background-image: linear-gradient(to right, #f8a182 0%, coral 100%);
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: all 0.5s linear;
+    border: 0;
+    display: inline-block;
+}
+
+.banner .info a:hoover{
+  background: rgb(231, 155, 141);
 }

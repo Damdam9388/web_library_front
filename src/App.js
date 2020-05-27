@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import logo from './logo.svg';
 import './App.scss';
 import Nav from "./Layout/Nav/Nav.js";
 import Footer from "./Layout/Footer/ConditionGeneral.js";
