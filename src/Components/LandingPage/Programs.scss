@@ -1,0 +1,34 @@
+.programs{
+    background-color:white;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    text-align: center;
+}
+
+.programs h1{
+    font-weight: 700;
+    font-size: 36px;
+    text-transform: uppercase;
+    color: tomato;
+    margin: 0;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 48px;
+    text-transform: uppercase;
+    font-family: inherit
+}
+
+.title{
+    color: rgb(65, 65, 65);
+    font-weight: bold;
+    font-size: 25px;
+}
+
+
+
+.programs > .row {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 90px;
+}
+
