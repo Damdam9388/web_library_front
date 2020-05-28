@@ -6,6 +6,8 @@ import Footer from "./Layout/Footer/ConditionGeneral.js";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import * as CONSTANTS from "./constants";
 import Login from "./Components/Login/Login.js";
+import Contact from "./Components/Contact/Contact.js";
+import About from "./Components/About/About.js";
 import History from "./Components/Utils/History.js";
 import AuthContext from "./Components/Context/AuthContext";
 import UserContext from "./Components/Context/UserContext";
@@ -26,16 +28,18 @@ const App = () => {
     return (
         <AuthContext.Provider value={contextValue}>
             <UserContext.Provider value={userValue}>
-              <Router history={History}>
-                  <Nav logoTitle="WEBSTER"/>
-                  <div>
+            <Router history={History}>
+                <Nav logoTitle="WEBSTER"/>
+                <div>
                     <Switch>
                         <Route path={CONSTANTS.LOGIN} component={Login}/>
+                        <Route path={CONSTANTS.ABOUT} component={About}/>
+                        <Route path={CONSTANTS.CONTACT} component={Contact}/>
                         <Route path={CONSTANTS.LANDINGPAGE} component ={LandingPage}/>
                     </Switch>
-                  </div>
-              </Router>
-              <Footer/>
+                </div>
+            </Router>
+            <Footer/>
             </UserContext.Provider>
         </AuthContext.Provider>
 

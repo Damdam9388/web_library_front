@@ -3,9 +3,10 @@ import "./Nav.scss";
 import {Link} from 'react-router-dom';
 import * as CONSTANTS from "../../constants";
 
+
 class Nav extends Component {
     render = () => (
-      <div className="container-fluid banner  navbar-fixed-top">
+      <div className="container-fluid banner navbar-fixed-top">
         <div className="row">
             <div className="col-md-12">
               <div className="navbar navbar-md">
@@ -14,9 +15,11 @@ class Nav extends Component {
                 </div>
                   <ul className="nav">
                     <li className="nav-item dropdown">
-                      <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      
+                      <Link className="nav-link dropdown-toggle" to={CONSTANTS.PROGRAMMINGLANGUAGE} id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       PROGRAMMING LANGUAGE
-                      </a>
+                      </Link>
+                      
                       <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a className="dropdown-item" href="#">Java</a>
                         <a className="dropdown-item" href="#">PHP</a>
@@ -27,9 +30,9 @@ class Nav extends Component {
                       </div>
                     </li>
                     <li className="nav-item dropdown">
-                      <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <Link className="nav-link dropdown-toggle" to={CONSTANTS.FRAMEWORK} id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       FRAMEWORKS
-                      </a>
+                      </Link>
                       <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a className="dropdown-item" href="#">Spring</a>
                         <a className="dropdown-item" href="#">Symfony</a>
@@ -37,7 +40,10 @@ class Nav extends Component {
                       </div>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">CONTACT</a>
+                        <Link className="nav-link" to={CONSTANTS.CONTACT}>CONTACT</Link>
+                    </li> 
+                    <li className="nav-item">
+                        <Link className="nav-link" to={CONSTANTS.ABOUT}>ABOUT</Link>
                     </li> 
                     <li className="nav-item">
                         <Link className="nav-link" to={CONSTANTS.LOGIN}>LOGIN</Link>
