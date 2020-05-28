@@ -1,9 +1,7 @@
 .header{
     margin-top: 0px;
-    background: url('../../Images/img6.jpg');
-    background-position: top;
+    background: url('../../Images/img6.jpg') no-repeat top;
     background-size: cover;
-    background-repeat: no-repeat;
     height: 60vh;
 }
 h1{
@@ -40,7 +38,7 @@ h1{
     display: inline-block;
 }
 
-.header a:hoover{
+.header a:hover{
     background: rgb(231, 155, 141);
 }
 

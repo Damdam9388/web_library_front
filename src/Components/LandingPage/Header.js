@@ -1,11 +1,8 @@
 import React, {Component}from 'react';
 import './Header.scss'
 
-class Header extends Component {
-
-    
-    render(){
-        return(
+const Header = () => {
+    return(
             <div className="header row">
                     <div className="col-12 mt-5">
                         <h1 className="text-center mt-5">YOUR STUDY PARTNER</h1>
@@ -14,7 +11,5 @@ class Header extends Component {
                     </div>
             </div>
         );
-    }
 };
-
 export default Header;

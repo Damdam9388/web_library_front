@@ -52,7 +52,9 @@ const LoginForm = (props) => {
 
                 <div className="col-md-12 text-center">
                     <Button
+                        type="submit"
                         rightIcon="arrow-forward"
+                        variantColor="telegram"
                         variant="solid"
                         width="150px"
                         border="transparent"

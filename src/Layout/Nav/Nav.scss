@@ -4,11 +4,12 @@
     background-color:rgb(255, 254, 254) ;
 }
 
-.banner .navbar-brand{
+.banner .navbar-brand .navbar-brand-link{
     color: tomato;
     font-size: 1.8em;
     font-weight: 700;
     margin-left: 3%;
+    text-decoration: none;
 }
 
 .banner .nav{
