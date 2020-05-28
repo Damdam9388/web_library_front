@@ -9,27 +9,27 @@ class Nav extends Component {
               <div className="navbar navbar-md">
                 <div className="navbar-brand">WEBSTER</div>
                   <ul className="nav">
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li className="nav-item dropdown">
+                      <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       PROGRAMMING LANGUAGE
                       </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Java</a>
-                        <a class="dropdown-item" href="#">PHP</a>
-                        <a class="dropdown-item" href="#">JavaScript</a>
-                        <a class="dropdown-item" href="#">HTML/CSS/Bootstrap</a>
-                        <a class="dropdown-item" href="#">JavaScript</a>
-                        <a class="dropdown-item" href="#">MySQL</a>
+                      <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a className="dropdown-item" href="#">Java</a>
+                        <a className="dropdown-item" href="#">PHP</a>
+                        <a className="dropdown-item" href="#">JavaScript</a>
+                        <a className="dropdown-item" href="#">HTML/CSS/Bootstrap</a>
+                        <a className="dropdown-item" href="#">JavaScript</a>
+                        <a className="dropdown-item" href="#">MySQL</a>
                       </div>
                     </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li className="nav-item dropdown">
+                      <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       FRAMEWORKS
                       </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Spring</a>
-                        <a class="dropdown-item" href="#">Symfony</a>
-                        <a class="dropdown-item" href="#">React</a>
+                      <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a className="dropdown-item" href="#">Spring</a>
+                        <a className="dropdown-item" href="#">Symfony</a>
+                        <a className="dropdown-item" href="#">React</a>
                       </div>
                     </li>
                     <li className="nav-item">

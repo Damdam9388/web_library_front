@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Goals.scss';
 
 class Goals extends Component{
-    render(){
+    render = () =>{
         return(
 
             <div className="goals">
@@ -16,7 +16,7 @@ class Goals extends Component{
             </div>
 
         );
-    }
+    };
 }
 
 export default Goals;
