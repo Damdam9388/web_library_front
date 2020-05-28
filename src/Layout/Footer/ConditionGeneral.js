@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './ConditionGeneral.scss';
 
 class ConditionGeneral extends Component{
-    render(){
+    render = ()=> {
         return(
 
             <div className="condition">
@@ -10,7 +10,7 @@ class ConditionGeneral extends Component{
             </div>
 
         );
-    }
+    };
 }
 
 export default ConditionGeneral;

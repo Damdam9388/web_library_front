@@ -1,12 +1,14 @@
 .condition{
-    background-color:whitesmoke;
-    padding-top: 35px;
-    padding-bottom: 35px;
+    padding: 2.5rem;
+    background-color: tomato;
+    color: #fff;
+    font-size: 0.75rem;
     text-align: center;
-    display : table-row;
-    height: 100px;
+    height: 90px;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
 }
-
 .general-condition{
     color: inherit;
     font-size: .875rem;
