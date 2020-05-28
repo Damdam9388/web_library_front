@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import "./Nav.scss";
+import {Link} from 'react-router-dom';
+import * as CONSTANTS from "../../constants";
 
 class Nav extends Component {
     render = () => (
-      <div className="container-fluid banner">
+      <div className="container-fluid banner  navbar-fixed-top">
         <div className="row">
             <div className="col-md-12">
               <div className="navbar navbar-md">
@@ -36,15 +38,10 @@ class Nav extends Component {
                         <a className="nav-link" href="#">CONTACT</a>
                     </li> 
                     <li className="nav-item">
-                        <a className="nav-link" href="#">LOGIN</a>
+                        <Link className="nav-link" to={CONSTANTS.LOGIN}>LOGIN</Link>
                     </li>
                   </ul>
                 </div>
-            </div>
-            <div className="col-md-6 offset-md-3 info">
-                <h1 className="text-center">Your study partner</h1>
-                <p>Learn to code in Java, Symfony, React...</p>
-                <a href="#" className="btn btn-md text-center">GET STARTED</a>
             </div>
           </div>
       </div>
