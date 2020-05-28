@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
+import "bootstrap";
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { ThemeProvider } from "@chakra-ui/core";
 
+const ThemedApp = () => <ThemeProvider> <App /> </ThemeProvider>;
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ThemedApp />,
   document.getElementById('root')
 );
 

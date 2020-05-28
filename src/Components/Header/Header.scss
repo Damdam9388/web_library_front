@@ -1,0 +1,46 @@
+.header{
+    margin-top: 0px;
+    background: url('../../Images/img6.jpg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60vh;
+}
+h1{
+    font-size: 3em;
+    font-weight: 500;
+    color: tomato;
+    margin-top: 0px;
+}
+
+.header  p{
+    font-size: 2em;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    margin-top: 90px;
+}
+
+.header a{
+    margin-left: 50%;
+    margin-top: 80px;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-family: 'Raleway',sans-serif;
+    text-transform: uppercase;
+    color: black;
+    background-color: black;
+    background-image: linear-gradient(to right, #f3ad94 0%, coral 100%);
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: all 0.5s linear;
+    border: 0;
+    display: inline-block;
+}
+
+.header a:hoover{
+    background: rgb(231, 155, 141);
+}
+
