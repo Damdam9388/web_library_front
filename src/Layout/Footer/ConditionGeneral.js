@@ -6,7 +6,7 @@ class ConditionGeneral extends Component{
         return(
 
             <div className="condition">
-                <span class="general-condition">© 2020 Webster Inc. All rights reserved.</span>
+                <span className="general-condition">© 2020 Webster Inc. All rights reserved.</span>
             </div>
 
         );

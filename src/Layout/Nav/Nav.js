@@ -9,7 +9,9 @@ class Nav extends Component {
         <div className="row">
             <div className="col-md-12">
               <div className="navbar navbar-md">
-                <div className="navbar-brand">WEBSTER</div>
+                <div className="navbar-brand">
+                  <Link className="navbar-brand-link" to={CONSTANTS.LANDINGPAGE}>WEBSTER</Link>
+                </div>
                   <ul className="nav">
                     <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
