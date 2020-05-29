@@ -8,8 +8,9 @@ class LandingPage extends Component {
     return (
         <>
             <Header />
-            <Programs/>
             <Goals />
+            <Programs/>
+            
         </>
     );
   };

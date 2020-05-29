@@ -6,6 +6,9 @@ import History from "../Utils/History";
 import UserContext from "../Context/UserContext";
 import {ENDPOINT_LOGIN} from "../../UrlConstants"
 import { Box } from "@chakra-ui/core";
+import './LoginForm.scss';
+import Nav from '../../Layout/Nav/Nav.js';
+
 
 const Login = (props) => {
     const {updateLogged} = useContext(AuthContext);
@@ -22,8 +25,8 @@ const Login = (props) => {
                 const token = response.data.token;
                 console.log(token);
                 localStorage.setItem("tokenUser", token);
-                const userLogin = response.data.login;
-                localStorage.setItem("username", userLogin);
+                const userLogin = response.data.data.login;
+                localStorage.setItem("userLogin", userLogin);
                 updateUsername(userLogin);
                 updateLogged(true);
                 History.push('/');
@@ -35,7 +38,9 @@ const Login = (props) => {
 
     return (
     <>
-        <div className="row contain" style={{height:'100vh'}}>
+    <Nav />
+    <div className="form"> 
+        <div className="row contain" style={{height:'50vh'}}>
             <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
                 <Box bg="tomato" w="25%" p={4} color="white">
                     <div className="logo mb-3">
@@ -47,6 +52,7 @@ const Login = (props) => {
                 </Box>
             </div>
         </div>
+        </div> 
     </>
     );
 };
