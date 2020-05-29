@@ -35,7 +35,7 @@ const Login = (props) => {
 
     return (
     <>
-        <div className="row contain" style={{height:'100vh'}}>
+        <div className="row contain" style={{height:'50vh'}}>
             <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
                 <Box bg="tomato" w="25%" p={4} color="white">
                     <div className="logo mb-3">

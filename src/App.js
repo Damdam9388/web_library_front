@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.scss';
 import Nav from "./Layout/Nav/Nav.js";
-import Footer from "./Layout/Footer/ConditionGeneral.js";
+import Footer from "./Layout/Footer/Footer.js";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import * as CONSTANTS from "./constants";
 import Login from "./Components/Login/Login.js";
