@@ -6,6 +6,8 @@ import Footer from "./Layout/Footer/ConditionGeneral.js";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import * as CONSTANTS from "./constants";
 import Login from "./Components/Login/Login.js";
+import ForgotPassword from "./Components/Login/ForgotPassword";
+import ChangeForgotPassword from "./Components/Login/ChangeForgotPassword";
 import History from "./Components/Utils/History.js";
 import AuthContext from "./Components/Context/AuthContext";
 import UserContext from "./Components/Context/UserContext";
@@ -30,6 +32,8 @@ const App = () => {
                   <Nav logoTitle="WEBSTER"/>
                   <div>
                     <Switch>
+                        <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword}/>
+                        <Route path={CONSTANTS.FORGOT_PASSWORD} component={ForgotPassword}/>
                         <Route path={CONSTANTS.LOGIN} component={Login}/>
                         <Route path={CONSTANTS.LANDINGPAGE} component ={LandingPage}/>
                     </Switch>
