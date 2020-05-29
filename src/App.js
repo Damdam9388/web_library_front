@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.scss';
-import Nav from "./Layout/Nav/Nav.js";
 import Footer from "./Layout/Footer/Footer.js";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import * as CONSTANTS from "./constants";
@@ -29,15 +28,13 @@ const App = () => {
         <AuthContext.Provider value={contextValue}>
             <UserContext.Provider value={userValue}>
             <Router history={History}>
-                <Nav logoTitle="WEBSTER"/>
-                <div>
+        
                     <Switch>
                         <Route path={CONSTANTS.LOGIN} component={Login}/>
                         <Route path={CONSTANTS.ABOUT} component={About}/>
                         <Route path={CONSTANTS.CONTACT} component={Contact}/>
                         <Route path={CONSTANTS.LANDINGPAGE} component ={LandingPage}/>
                     </Switch>
-                </div>
             </Router>
             <Footer/>
             </UserContext.Provider>
