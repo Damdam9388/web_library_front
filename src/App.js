@@ -7,13 +7,15 @@ import * as CONSTANTS from "./constants";
 import Login from "./Components/Login/Login.js";
 import Contact from "./Components/Contact/Contact.js";
 import About from "./Components/About/About.js";
+import ForgotPassword from "./Components/Login/ForgotPassword";
+import ChangeForgotPassword from "./Components/Login/ChangeForgotPassword";
 import History from "./Components/Utils/History.js";
 import AuthContext from "./Components/Context/AuthContext";
 import UserContext from "./Components/Context/UserContext";
 
 const App = () => {
     const [isLogged, setLogged] = useState(localStorage.getItem('tokenUser') !== null);
-    const [username, setUsername] = useState(localStorage.getItem('username') !== null);
+    const [username, setUsername] = useState(localStorage.getItem('userLogin') !== null);
     const contextValue = {
         isLogged:isLogged,
         updateLogged:setLogged
@@ -30,6 +32,8 @@ const App = () => {
             <Router history={History}>
         
                     <Switch>
+                        <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword}/>
+                        <Route path={CONSTANTS.FORGOT_PASSWORD} component={ForgotPassword}/>
                         <Route path={CONSTANTS.LOGIN} component={Login}/>
                         <Route path={CONSTANTS.ABOUT} component={About}/>
                         <Route path={CONSTANTS.CONTACT} component={Contact}/>
