@@ -7,6 +7,7 @@
     font-size: 52px;
     margin-bottom: 85px;
     text-align: center;
+    font-weight: bold;
 
 }
 .paragraph p{
@@ -14,6 +15,7 @@
     text-align: center;
     margin-bottom: 90px;
     font-size: 20px;
+    color: white;
 }
 
 .team{
@@ -25,17 +27,17 @@
 }
 
 .team .team-member{
-    background-color: rgb(119, 117, 117);
+    background-color: white;
     margin: 5px;
     margin-bottom: 20px;
     width: 300px;
     padding: 20px;
-    color: white;
+    color: black;
     position: relative;
 }
 
 .team .team-member h3{
-    color: white;
+    color: black;
     font-size: 26px;
     margin-top: 50px;
 }

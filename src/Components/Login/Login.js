@@ -6,6 +6,9 @@ import History from "../Utils/History";
 import UserContext from "../Context/UserContext";
 import {ENDPOINT_LOGIN} from "../../UrlConstants"
 import { Box } from "@chakra-ui/core";
+import './LoginForm.scss';
+import Nav from '../../Layout/Nav/Nav.js';
+
 
 const Login = (props) => {
     const {updateLogged} = useContext(AuthContext);
@@ -35,6 +38,8 @@ const Login = (props) => {
 
     return (
     <>
+    <Nav />
+    <div className="form"> 
         <div className="row contain" style={{height:'50vh'}}>
             <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
                 <Box bg="tomato" w="25%" p={4} color="white">
@@ -47,6 +52,7 @@ const Login = (props) => {
                 </Box>
             </div>
         </div>
+        </div> 
     </>
     );
 };

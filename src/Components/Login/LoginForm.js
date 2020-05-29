@@ -3,6 +3,7 @@ import {Button, Input, Stack, InputGroup, InputLeftElement, InputRightElement} f
 import Icon from "@chakra-ui/core/dist/Icon";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import FormControl from "@chakra-ui/core/dist/FormControl";
+import './LoginForm.scss';
 
 const LoginForm = (props) => {
     const [show, setShow] = useState(false);
@@ -10,9 +11,9 @@ const LoginForm = (props) => {
 
 
     return (
+      <div className="form"> 
         <form onSubmit={props.getLogin}>
             <Stack spacing={3}>
-
                 <FormControl isRequired>
                     <FormLabel htmlFor="InputEmail">Email</FormLabel>
                     <InputGroup>
@@ -64,7 +65,7 @@ const LoginForm = (props) => {
                 </div>
             </Stack>
         </form>
-
+        </div>
     );
 };
 export default LoginForm;
