@@ -8,7 +8,7 @@ class Nav extends Component {
     render = () => (
       <div className="container-fluid banner navbar-fixed-top">
         <div className="row">
-            <div className="col-md-12">
+            <div className="col-md-12 background">
               <div className="navbar navbar-md">
                 <div className="navbar-brand">
                   <Link className="navbar-brand-link" to={CONSTANTS.LANDINGPAGE}>WEBSTER</Link>
@@ -29,7 +29,7 @@ class Nav extends Component {
                         <a className="dropdown-item" href="#">MySQL</a>
                       </div>
                     </li>
-                    <li className="nav-item dropdown">
+                    <li className="nav-item dropdown menu">
                       <Link className="nav-link dropdown-toggle" to={CONSTANTS.FRAMEWORK} id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       FRAMEWORKS
                       </Link>

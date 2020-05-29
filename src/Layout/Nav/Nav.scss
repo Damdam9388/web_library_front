@@ -1,7 +1,10 @@
 
 .banner .navbar{
     margin-top: 1%;
-    background-color:rgb(255, 254, 254) ;
+    background-color: rgba(0, 0, 0, 0);
+}
+.row .background{
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .banner .navbar-brand .navbar-brand-link{
@@ -14,13 +17,15 @@
 
 .banner .nav{
     margin-right:2%;
+  
 }
 
 .banner .nav li a{
-    color: rgb(65, 65, 65);
+    color: rgb(139, 132, 132);
     font-size: 1.2em;
     font-weight: 700;
 }
+
 .banner .nav li a:hover, .banner .nav li a:focus, .banner .nav li a.active {
     background-color: tomato;
 }
