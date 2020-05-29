@@ -1,5 +1,14 @@
+html, body {
+  height: 100%;
+  margin: 0; padding: 0;
+}
+body {
+  display : table;
+  width: 100%;
+}
 .App {
   text-align: center;
+  height: 100%;
 }
 
 .App-logo {
@@ -36,3 +45,4 @@
     transform: rotate(360deg);
   }
 }
+

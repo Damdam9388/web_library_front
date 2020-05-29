@@ -3,8 +3,8 @@ import LoginForm from "./LoginForm";
 import axios from "axios";
 import AuthContext from "../Context/AuthContext";
 import History from "../Utils/History";
-import * as CONSTANTS from "../../constants";
 import UserContext from "../Context/UserContext";
+import {ENDPOINT_LOGIN} from "../../UrlConstants"
 import { Box } from "@chakra-ui/core";
 
 const Login = (props) => {
@@ -16,7 +16,7 @@ const Login = (props) => {
         const password = e.target.elements.password.value;
         console.log("mail = " + email + " et password = " + password);
         e.preventDefault();
-        axios.post(CONSTANTS.LOGIN, {username: email, password: password})
+        axios.post(ENDPOINT_LOGIN, {username: email, password: password})
             .then(response => {
                 console.log(response);
                 const token = response.data.token;
@@ -34,25 +34,20 @@ const Login = (props) => {
     };
 
     return (
-
-        <div className="container">
-            <div className="row">
-                <div className="col-md-4 mx-auto">
-                    <div id="first">
-                        <Box bg="tomato" w="100%" p={4} color="white">
-                            <div className="logo mb-3">
-                                <div className="col-md-12 text-center">
-                                    <h1 className="login_title text-white">Login</h1>
-                                </div>
-                            </div>
-                            <LoginForm getLogin={axiosData}/>
-                        </Box>
+    <>
+        <div className="row contain" style={{height:'100vh'}}>
+            <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
+                <Box bg="tomato" w="25%" p={4} color="white">
+                    <div className="logo mb-3">
+                        <div className="col-md-12 text-center">
+                            <h1 className="login_title text-white">Login</h1>
+                        </div>
                     </div>
-                </div>
-
+                    <LoginForm getLogin={axiosData}/>
+                </Box>
             </div>
         </div>
-
+    </>
     );
 };
 export default Login;
