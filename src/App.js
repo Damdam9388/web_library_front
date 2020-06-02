@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { ThemeProvider, ColorModeProvider, CSSReset} from "@chakra-ui/core";
 import './App.scss';
 import Nav from "./Layout/Nav/Nav.js";
 import Footer from "./Layout/Footer/ConditionGeneral.js";
@@ -26,22 +27,27 @@ const App = () => {
     };
 
     return (
-        <AuthContext.Provider value={contextValue}>
-            <UserContext.Provider value={userValue}>
-              <Router history={History}>
-                  <Nav logoTitle="WEBSTER"/>
-                  <div>
-                    <Switch>
-                        <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword}/>
-                        <Route path={CONSTANTS.FORGOT_PASSWORD} component={ForgotPassword}/>
-                        <Route path={CONSTANTS.LOGIN} component={Login}/>
-                        <Route path={CONSTANTS.LANDINGPAGE} component ={LandingPage}/>
-                    </Switch>
-                  </div>
-              </Router>
-              <Footer/>
-            </UserContext.Provider>
-        </AuthContext.Provider>
+        <ThemeProvider>
+            <ColorModeProvider>
+                <CSSReset/>
+                    <AuthContext.Provider value={contextValue}>
+                        <UserContext.Provider value={userValue}>
+                          <Router history={History}>
+                              <Nav logoTitle="WEBSTER"/>
+                              <div>
+                                <Switch>
+                                    <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword}/>
+                                    <Route path={CONSTANTS.FORGOT_PASSWORD} component={ForgotPassword}/>
+                                    <Route path={CONSTANTS.LOGIN} component={Login}/>
+                                    <Route path={CONSTANTS.LANDINGPAGE} component ={LandingPage}/>
+                                </Switch>
+                              </div>
+                          </Router>
+                          <Footer/>
+                        </UserContext.Provider>
+                    </AuthContext.Provider>
+            </ColorModeProvider>
+        </ThemeProvider>
 
     );
 
