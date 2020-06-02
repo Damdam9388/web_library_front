@@ -3,6 +3,7 @@ import {Button, Input, Stack, InputGroup, InputLeftElement, InputRightElement, C
 import Icon from "@chakra-ui/core/dist/Icon";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import FormControl from "@chakra-ui/core/dist/FormControl";
+import './LoginForm.scss';
 import {Link} from "react-router-dom";
 import * as CONSTANTS from "../../constants";
 import Box from "@chakra-ui/core/dist/Box";
@@ -13,9 +14,15 @@ const LoginForm = (props) => {
 
 
     return (
+      <div className="form"> 
         <form onSubmit={props.getLogin}>
+<<<<<<< HEAD
 
             <FormControl isRequired>
+=======
+            <Stack spacing={3}>
+                <FormControl isRequired>
+>>>>>>> ce5741ceb29d742b5033004f638c016b33e47223
                     <FormLabel htmlFor="InputEmail">Email</FormLabel>
                     <InputGroup>
                         <InputLeftElement children={<Icon name="email" color="black" />} />
@@ -70,8 +77,12 @@ const LoginForm = (props) => {
                 </Button>
 
         </form>
+<<<<<<< HEAD
 
 
+=======
+        </div>
+>>>>>>> ce5741ceb29d742b5033004f638c016b33e47223
     );
 };
 export default LoginForm;

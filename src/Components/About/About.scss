@@ -1,0 +1,62 @@
+.wrapper{
+    margin-top: 5%;
+}
+.wrapper h1{
+    font-family: 'Lucida Console', monospace;
+    color: tomato;
+    font-size: 52px;
+    margin-bottom: 85px;
+    text-align: center;
+    font-weight: bold;
+
+}
+.paragraph p{
+    font-family: 'Lucida Console', monospace;
+    text-align: center;
+    margin-bottom: 90px;
+    font-size: 20px;
+    color: white;
+}
+
+.team{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: auto;
+    justify-content: center;
+}
+
+.team .team-member{
+    background-color: white;
+    margin: 5px;
+    margin-bottom: 20px;
+    width: 300px;
+    padding: 20px;
+    color: black;
+    position: relative;
+}
+
+.team .team-member h3{
+    color: black;
+    font-size: 26px;
+    margin-top: 50px;
+}
+.team .team-member .team-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+    top: -50px;
+    left: 50%;
+    transform:translateX(-50%);
+    background-color: white;
+    position: absolute;
+
+}
+
+.team .team-member .team-img .img {
+    width: 90px;
+    height: 90px;
+    padding: 10px;
+
+}
+ 

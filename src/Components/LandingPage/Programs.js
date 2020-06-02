@@ -15,7 +15,7 @@ class Programs extends Component{
                     <div><span><img src="https://img.icons8.com/color/60/000000/react-native.png"/></span><h4 className='title shake-crazy shake-freeze'>React</h4></div>
                     <div><span><img src="https://img.icons8.com/color/60/000000/java-coffee-cup-logo.png"/></span><h4 className='title shake-crazy shake-freeze'>Java</h4></div>
                     <div><span><img src="https://img.icons8.com/color/60/000000/spring-logo.png"/></span><h4 className='title shake-crazy shake-freeze'>Spring</h4></div>
-                 
+        
                 </div>
             </div>
 
