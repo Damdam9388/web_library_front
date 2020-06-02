@@ -6,13 +6,9 @@ import { useHistory } from 'react-router-dom';
 import UserContext from "../Context/UserContext";
 import {ENDPOINT_LOGIN} from "../../UrlConstants"
 import { Box } from "@chakra-ui/core";
-<<<<<<< HEAD
 import "./Login.scss";
-=======
 import './LoginForm.scss';
 import Nav from '../../Layout/Nav/Nav.js';
-
->>>>>>> ce5741ceb29d742b5033004f638c016b33e47223
 
 const Login = (props) => {
     const {updateLogged} = useContext(AuthContext);
@@ -44,13 +40,10 @@ const Login = (props) => {
 
     return (
     <>
-<<<<<<< HEAD
-        <div className="row contain" style={{height:"100vh"}}>
-=======
+
     <Nav />
     <div className="form"> 
         <div className="row contain" style={{height:'50vh'}}>
->>>>>>> ce5741ceb29d742b5033004f638c016b33e47223
             <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
                 <Box bg="orange.400" w="25%" p={4} color="white">
                     <div className="logo mb-3">
