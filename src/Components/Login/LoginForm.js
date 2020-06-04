@@ -6,6 +6,7 @@ import FormControl from "@chakra-ui/core/dist/FormControl";
 import './LoginForm.scss';
 import {Link} from "react-router-dom";
 import * as CONSTANTS from "../../constants";
+import Box from "@chakra-ui/core/dist/Box";
 
 const LoginForm = (props) => {
     const [show, setShow] = useState(false);
@@ -15,8 +16,7 @@ const LoginForm = (props) => {
     return (
       <div className="form"> 
         <form onSubmit={props.getLogin}>
-            <Stack spacing={3}>
-                <FormControl isRequired>
+            <FormControl isRequired>
                     <FormLabel htmlFor="InputEmail">Email</FormLabel>
                     <InputGroup>
                         <InputLeftElement children={<Icon name="email" color="black" />} />
@@ -46,32 +46,34 @@ const LoginForm = (props) => {
                             placeholder="Enter Password..."
                         />
                         <InputRightElement width="4.5rem">
-                            <Button h="2rem" size="sm" onClick={handleClick}>
+                            <Button className="text-white bg-dark" h="2rem" size="sm" onClick={handleClick}>
                                 {show ? "Hide" : "Show"}
                             </Button>
                         </InputRightElement>
                     </InputGroup>
                 </FormControl>
 
-                <div className="forgot_password">
-                    <Link to={CONSTANTS.FORGOT_PASSWORD}>If you forgot your password click here !</Link>
-                </div>
+                <Stack isInline float="right"  mb={5}>
+                    <Box>
+                        <Link to={CONSTANTS.FORGOT_PASSWORD}>Forgot your password</Link>
+                    </Box>
+                </Stack>
 
-                <div className="col-md-12 text-center">
-                    <Button
-                        type="submit"
-                        rightIcon="arrow-forward"
-                        variantColor="telegram"
-                        variant="solid"
-                        width="150px"
-                        border="transparent"
-                    >
-                        Login
-                    </Button>
-                </div>
-            </Stack>
+                <Button
+                    type="submit"
+                    rightIcon="arrow-forward"
+                    variantColor="telegram"
+                    variant="solid"
+                    width="full"
+                    border="transparent"
+                >
+                    Login
+                </Button>
+
         </form>
+
         </div>
+
     );
 };
 export default LoginForm;

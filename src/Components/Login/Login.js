@@ -2,17 +2,19 @@ import React, {useContext} from "react";
 import LoginForm from "./LoginForm";
 import axios from "axios";
 import AuthContext from "../Context/AuthContext";
-import History from "../Utils/History";
+import { useHistory } from 'react-router-dom';
 import UserContext from "../Context/UserContext";
 import {ENDPOINT_LOGIN} from "../../UrlConstants"
 import { Box } from "@chakra-ui/core";
+import "./Login.scss";
 import './LoginForm.scss';
 import Nav from '../../Layout/Nav/Nav.js';
-
 
 const Login = (props) => {
     const {updateLogged} = useContext(AuthContext);
     const {updateUsername} = useContext(UserContext);
+
+    let history = useHistory();
 
     const axiosData = (e) => {
         const email = e.target.elements.email.value;
@@ -29,7 +31,7 @@ const Login = (props) => {
                 localStorage.setItem("userLogin", userLogin);
                 updateUsername(userLogin);
                 updateLogged(true);
-                History.push('/');
+                history.push('/');
             }, (error) => {
                 console.log(error);
                 localStorage.removeItem("tokenUser");
@@ -38,14 +40,15 @@ const Login = (props) => {
 
     return (
     <>
+
     <Nav />
     <div className="form"> 
         <div className="row contain" style={{height:'50vh'}}>
             <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
-                <Box bg="tomato" w="25%" p={4} color="white">
+                <Box bg="orange.400" w="25%" p={4} color="white">
                     <div className="logo mb-3">
                         <div className="col-md-12 text-center">
-                            <h1 className="login_title text-white">Login</h1>
+                            <h1 className="login_title text-white" style={{fontSize:"35px", fontWeight:"600"}}>Sign In</h1>
                         </div>
                     </div>
                     <LoginForm getLogin={axiosData}/>
