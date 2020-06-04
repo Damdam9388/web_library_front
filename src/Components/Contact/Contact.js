@@ -1,48 +1,39 @@
-import React, {Component}from 'react';
-import './Contact.scss'
-import Nav from '../../Layout/Nav/Nav.js';
+import React, {useContext} from "react";
+import ContactForm from "./ContactForm";
+import axios from "axios";
+import { useHistory } from 'react-router-dom';
+import {ENDPOINT_CONTACT} from "../../UrlConstants"
+import './ContactForm.scss';
 
-const Contact = () => {
+
+const Contact = (props) => {
+
+    let history = useHistory();
+
+    //Récupération des valeurs du formulaire
+    const axiosData = (e) => {
+        const name = e.target.elements.name.value;
+        const email = e.target.elements.email.value;
+        const subject = e.target.elements.subject.value;
+        const message = e.target.elements.message.value;
+        console.log("name : " + name + "email : " + email + "subject : " + subject + "message : " + message);
+        //Eviter la propagation de l'évenement
+        e.preventDefault();
+        //Envoyer la requette à symfony
+        axios.post(ENDPOINT_CONTACT, {name: name, email: email, subject: subject, message: message})
+            .then(response => {
+                console.log(response);
+            })
+            .catch(erreur => {
+                console.log(erreur);
+            });
+    };
+
     return(
         <>
-        <Nav />
-                <div className="contact">
-                    <h1>CONTACT US</h1>
-                    <div class="container">
-                        <h4>We'd love to hear from you!</h4>
-                        
-                        <div class="row input-container">
-                                <div class="col-xs-12">
-                                    <div class="styled-input wide">
-                                        <input type="text" required />
-                                        <label>Name</label> 
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12">
-                                    <div class="styled-input">
-                                        <input type="text" required />
-                                        <label>Email</label> 
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12">
-                                    <div class="styled-input" style= {{float:'right'}}>
-                                        <input type="text" required />
-                                        <label>Subject</label> 
-                                    </div>
-                                </div>
-                                <div class="col-xs-12">
-                                    <div class="styled-input wide">
-                                        <textarea required></textarea>
-                                        <label>Message</label>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12">
-                                    <div class="btn-lrg submit-btn">Send Message</div>
-                                </div>
-                        </div>
-                    </div>
-                </div>
+        <ContactForm sendMessage={axiosData} />
         </>
-        );
+    );
 };
+
 export default Contact;
