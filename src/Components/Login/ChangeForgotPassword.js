@@ -14,9 +14,9 @@ const ChangeForgotPassword = ({match}) => {
     console.log(match.params);
     const changePassword = (e) => {
         const token = match.params.token;
-        const newPassword = e.target.elements.password.value;
+        const password = e.target.elements.password.value;
         e.preventDefault();
-        axios.put(`${ENDPOINT_CHANGE_PASS}/${token}`, {newPassword})
+        axios.put(`${ENDPOINT_CHANGE_PASS}/${token}`, {password})
             .then(response => {
                 console.log(response);
             }, (error) => {
@@ -33,7 +33,7 @@ const ChangeForgotPassword = ({match}) => {
                     <Input
                         variant="outline"
                         type={show ? "text" : "password"}
-                        name="newPassword"
+                        name="password"
                         id="password"
                         className="form-control"
                         aria-describedby="emailHelp"
