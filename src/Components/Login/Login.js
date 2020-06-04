@@ -1,28 +1,27 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import LoginForm from "./LoginForm";
-import axios from "axios";
 import AuthContext from "../Context/AuthContext";
 import { useHistory } from 'react-router-dom';
 import UserContext from "../Context/UserContext";
-import {ENDPOINT_LOGIN} from "../../UrlConstants"
 import { Box } from "@chakra-ui/core";
-import "./Login.scss";
 import './LoginForm.scss';
 import Nav from '../../Layout/Nav/Nav.js';
+import {getLogin} from "../../Services/AuthenticationServices";
 
 const Login = (props) => {
     const {updateLogged} = useContext(AuthContext);
     const {updateUsername} = useContext(UserContext);
-
+    const [loading, setLoading] = useState(false);
     let history = useHistory();
 
-    const axiosData = (e) => {
+    const axiosLogin = (e) => {
+        setLoading(true);
         const email = e.target.elements.email.value;
         const password = e.target.elements.password.value;
         console.log("mail = " + email + " et password = " + password);
         e.preventDefault();
-        axios.post(ENDPOINT_LOGIN, {username: email, password: password})
-            .then(response => {
+        getLogin(email, password)
+            .then((response) => {
                 console.log(response);
                 const token = response.data.token;
                 console.log(token);
@@ -32,10 +31,12 @@ const Login = (props) => {
                 updateUsername(userLogin);
                 updateLogged(true);
                 history.push('/');
-            }, (error) => {
+            })
+            .catch((error) => {
                 console.log(error);
                 localStorage.removeItem("tokenUser");
-            });
+            })
+            .finally(() => setLoading(false));
     };
 
     return (
@@ -51,7 +52,7 @@ const Login = (props) => {
                             <h1 className="login_title text-white" style={{fontSize:"35px", fontWeight:"600"}}>Sign In</h1>
                         </div>
                     </div>
-                    <LoginForm getLogin={axiosData}/>
+                    <LoginForm getLogin={axiosLogin} load={loading}/>
                 </Box>
             </div>
         </div>

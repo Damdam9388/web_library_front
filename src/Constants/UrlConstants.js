@@ -1,4 +1,4 @@
-export const URL_API = "https://localhost:8000/";
+export const URL_API = `${process.env.REACT_APP_API_URL}`;
 
 export const ENDPOINT_LOGIN= URL_API + "api/login_check";
 

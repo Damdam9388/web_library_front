@@ -5,17 +5,18 @@ import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import FormControl from "@chakra-ui/core/dist/FormControl";
 import './LoginForm.scss';
 import {Link} from "react-router-dom";
-import * as CONSTANTS from "../../constants";
+import * as CONSTANTS from "../../Constants/constants";
 import Box from "@chakra-ui/core/dist/Box";
+import Circle from "better-react-spinkit/dist/Circle";
 
-const LoginForm = (props) => {
+const LoginForm = ({getLogin, load}) => {
     const [show, setShow] = useState(false);
     const handleClick = () => setShow(!show);
 
 
     return (
       <div className="form"> 
-        <form onSubmit={props.getLogin}>
+        <form onSubmit={getLogin}>
             <FormControl isRequired>
                     <FormLabel htmlFor="InputEmail">Email</FormLabel>
                     <InputGroup>
@@ -59,16 +60,31 @@ const LoginForm = (props) => {
                     </Box>
                 </Stack>
 
-                <Button
-                    type="submit"
-                    rightIcon="arrow-forward"
-                    variantColor="telegram"
-                    variant="solid"
-                    width="full"
-                    border="transparent"
-                >
-                    Login
-                </Button>
+
+                    {load ? (
+                        <Button
+                            type="submit"
+                            variantColor="telegram"
+                            variant="solid"
+                            width="full"
+                            border="transparent"
+                        >
+                            <Circle/>
+                        </Button>
+                    ) : (
+                        <Button
+                            type="submit"
+                            rightIcon="arrow-forward"
+                            variantColor="telegram"
+                            variant="solid"
+                            width="full"
+                            border="transparent"
+                        >
+                        Login
+                        </Button>
+                    )
+                    }
+
 
         </form>
 

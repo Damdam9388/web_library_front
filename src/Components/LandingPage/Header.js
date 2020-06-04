@@ -1,6 +1,6 @@
 import React, {Component}from 'react';
 import './Header.scss'
-import * as CONSTANTS from "../../constants";
+import * as CONSTANTS from "../../Constants/constants";
 import {Link} from 'react-router-dom';
 
 const Header = () => {
