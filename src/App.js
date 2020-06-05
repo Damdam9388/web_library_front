@@ -4,6 +4,7 @@ import './App.scss';
 import Footer from "./Layout/Footer/Footer.js";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import * as CONSTANTS from "./constants";
+import SignUp from "./Components/SignUp/SignUp.js";
 import Login from "./Components/Login/Login.js";
 import Contact from "./Components/Contact/Contact.js";
 import About from "./Components/About/About.js";
@@ -34,6 +35,7 @@ const App = () => {
                     <Switch>
                         <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword}/>
                         <Route path={CONSTANTS.FORGOT_PASSWORD} component={ForgotPassword}/>
+                        <Route path={CONSTANTS.SIGNUP} component={SignUp}/>
                         <Route path={CONSTANTS.LOGIN} component={Login}/>
                         <Route path={CONSTANTS.ABOUT} component={About}/>
                         <Route path={CONSTANTS.CONTACT} component={Contact}/>

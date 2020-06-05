@@ -48,6 +48,9 @@ class Nav extends Component {
                     <li className="nav-item">
                         <Link className="nav-link" to={CONSTANTS.LOGIN}>LOGIN</Link>
                     </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to={CONSTANTS.SIGNUP}>SIGNUP</Link>
+                    </li>
                   </ul>
                 </div>
             </div>
