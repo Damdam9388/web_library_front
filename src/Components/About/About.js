@@ -1,6 +1,6 @@
-import React, {Component}from 'react';
+import React from 'react';
 import './About.scss'
-import { Avatar, AvatarBadge } from "@chakra-ui/core";
+import { Avatar } from "@chakra-ui/core";
 import Nav from '../../Layout/Nav/Nav.js';
 
 const About = () => {

@@ -1,9 +1,8 @@
-import React, {useContext} from "react";
+import React from "react";
 import ContactForm from "./ContactForm";
-import axios from "axios";
 import { useHistory } from 'react-router-dom';
-import {ENDPOINT_CONTACT} from "../../Constants/UrlConstants"
 import './ContactForm.scss';
+import {getContact} from "../../Services/ContactServices";
 
 
 const Contact = (props) => {
@@ -20,7 +19,7 @@ const Contact = (props) => {
         //Eviter la propagation de l'évenement
         e.preventDefault();
         //Envoyer la requette à symfony
-        axios.post(ENDPOINT_CONTACT, {name: name, email: email, subject: subject, message: message})
+        getContact(name, email, subject, message)
             .then(response => {
                 console.log(response);
             })
