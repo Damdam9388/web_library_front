@@ -1,12 +1,8 @@
-import React, {Component}from 'react';
+import React from 'react';
 import './ContactForm.scss'
 import Nav from '../../Layout/Nav/Nav.js';
 
-
-
-
-
-const Contact = (props) => {
+const Contact = ({sendMessage}) => {
     return(
         <>
         <Nav />
@@ -14,7 +10,7 @@ const Contact = (props) => {
                     <h1>CONTACT US</h1>
                     <div className="container">
                         <h4>We'd love to hear from you!</h4>
-                        <form onSubmit={props.sendMessage}> 
+                        <form onSubmit={sendMessage}>
                         <div className="row input-container">
                                 <div className="col-xs-12">
                                     <div className="styled-input wide">
@@ -36,7 +32,7 @@ const Contact = (props) => {
                                 </div>
                                 <div className="col-xs-12">
                                     <div className="styled-input wide">
-                                        <textarea required name ="message" id ="message"></textarea>
+                                        <textarea required name ="message" id ="message"/>
                                         <label>Message</label>
                                     </div>
                                 </div>

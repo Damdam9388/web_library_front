@@ -15,9 +15,10 @@ const ChangeForgotPassword = ({match}) => {
         const password = e.target.elements.password.value;
         e.preventDefault();
         userChangeForgotPassword(token, password)
-            .then(response => {
+            .then((response) => {
                 console.log(response);
-            }, (error) => {
+            })
+            .catch((error) => {
                 console.log(error);
             });
     };

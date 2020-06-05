@@ -13,7 +13,8 @@ const ForgotPassword = () => {
         userForgotPassword(email)
             .then(response => {
                 console.log(response);
-            }, (error) => {
+            })
+            .catch((error) => {
                 console.log(error);
             });
     };
