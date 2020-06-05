@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import ContactForm from "./ContactForm";
 import axios from "axios";
 import { useHistory } from 'react-router-dom';
-import {ENDPOINT_CONTACT} from "../../UrlConstants"
+import {ENDPOINT_CONTACT} from "../../Constants/UrlConstants"
 import './ContactForm.scss';
 
 
