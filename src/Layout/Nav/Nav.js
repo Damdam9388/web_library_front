@@ -8,7 +8,7 @@ class Nav extends Component {
     render = () => (
       <div className="container-fluid banner navbar-fixed-top">
         <div className="row">
-            <div className="col-md-12 background">
+            <div className="col-md-12 background" id="color">
               <div className="navbar navbar-md">
                 <div className="navbar-brand">
                   <Link className="navbar-brand-link" to={CONSTANTS.LANDINGPAGE}>WEBSTER</Link>

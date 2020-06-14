@@ -46,7 +46,7 @@ const Login = (props) => {
     <div className="form"> 
         <div className="row contain" style={{height:'50vh'}}>
             <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
-                <Box bg="orange.400" w="25%" p={4} color="white">
+                <Box bg="#263246" w="25%" p={4} color="#d83a3a">
                     <div className="logo mb-3">
                         <div className="col-md-12 text-center">
                             <h1 className="login_title text-white" style={{fontSize:"35px", fontWeight:"600"}}>Sign In</h1>

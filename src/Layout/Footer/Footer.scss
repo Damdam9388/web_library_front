@@ -1,7 +1,7 @@
 .condition{
     padding: 2.5rem;
-    background-color: tomato;
-    color: rgb(54, 52, 52);
+    background-color: #263246;
+    color: #d83a3a;
     font-size: 0.75rem;
     text-align: center;
     height: 90px;
@@ -17,4 +17,14 @@
     width: 100%;
     position: absolute;
     bottom: 0;
+
+}
+
+.footer{
+    width: 100%;
+    background-color: #263246;
+    display: block;
+    margin: 0 auto;
+    bottom: 0;
+    position: absolute;
 }
