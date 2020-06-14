@@ -8,10 +8,10 @@ class Goals extends Component{
             <div className="goals">
                 <h1>REACH YOUR GOALS WITH WEBSTER</h1>
                 <div className="row">
-                    <div><span><ion-icon name="ribbon-outline"/></span><h4>Skills</h4></div>
-                    <div><span><ion-icon name="briefcase-outline"/></span><h4>New career</h4></div>
-                    <div><span><ion-icon name="trending-up-outline"/></span><h4>Evolution</h4></div>
-                    <div><span><ion-icon name="laptop-outline"/></span><h4>Training</h4></div>
+                    <div><span><ion-icon name="ribbon-outline"/></span><h3>Skills</h3></div>
+                    <div><span><ion-icon name="briefcase-outline"/></span><h3>New career</h3></div>
+                    <div><span><ion-icon name="trending-up-outline"/></span><h3>Evolution</h3></div>
+                    <div><span><ion-icon name="laptop-outline"/></span><h3>Training</h3></div>
                 </div>
             </div>
 
