@@ -3,9 +3,9 @@
 }
 .wrapper h1{
     font-family: 'Lucida Console', monospace;
-    color: tomato;
+    color: #d83a3a;
     font-size: 52px;
-    margin-bottom: 85px;
+    margin-bottom: 50px;
     text-align: center;
     font-weight: bold;
 
@@ -27,17 +27,18 @@
 }
 
 .team .team-member{
-    background-color: #2d2d2d;
-    margin: 5px;
+    background-color: #263246;
+    margin: 30px;
     margin-bottom: 20px;
+    margin-top: 0px;
     width: 300px;
-    padding: 20px;
+    padding: 60px;
     color: white;
     position: relative;
 }
 
 .team .team-member h3{
-    color: tomato;
+    color: #d83a3a;
     font-size: 26px;
     margin-top: 50px;
 }
@@ -48,7 +49,7 @@
     top: -50px;
     left: 50%;
     transform:translateX(-50%);
-    background-color: #2d2d2d;
+    background-color: #263246;
     position: absolute;
 
 }
