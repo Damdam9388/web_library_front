@@ -18,19 +18,15 @@ const LoginForm = ({getLogin, load}) => {
       <div className="form"> 
         <form onSubmit={getLogin}>
             <FormControl isRequired>
-                    <FormLabel htmlFor="InputEmail">Email</FormLabel>
-                    <InputGroup>
-                        <InputLeftElement children={<Icon name="email" color="black" />} />
-                        <Input
-                            variant="outline"
+                    <label htmlFor="InputEmail">Email</label>
+                    <input
                             type="email"
+                            className="email_input"
                             name="email"
-                            className="form-control"
                             id="email"
                             aria-describedby="emailHelp"
                             placeholder="Enter email..."
-                        />
-                    </InputGroup>
+                    />
                 </FormControl>
 
                 <FormControl isRequired>
