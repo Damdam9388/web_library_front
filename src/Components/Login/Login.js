@@ -3,7 +3,9 @@ import LoginForm from "./LoginForm";
 import AuthContext from "../Context/AuthContext";
 import { useHistory } from 'react-router-dom';
 import UserContext from "../Context/UserContext";
+import { Box } from "@chakra-ui/core";
 import './LoginForm.scss';
+import Nav from '../../Layout/Nav/Nav.js';
 import {getLogin} from "../../Services/AuthenticationServices";
 
 const Login = (props) => {
@@ -40,18 +42,18 @@ const Login = (props) => {
     return (
     <>
 
-        <div className="logo_Webster">
-        </div>
+    <Nav />
     <div className="form"> 
-        <div className="row contain">
+        <div className="row contain" style={{height:'50vh'}}>
             <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
-                <div className="box_login">
+                <Box bg="#263246" w="25%" p={4} color="#d83a3a">
+                    <div className="logo mb-3">
                         <div className="col-md-12 text-center">
-                            <h1 className="title_login">LOG IN</h1>
-                            <p className="welcome_back">WELCOME BACK ON WEBSTER</p>
+                            <h1 className="login_title text-white" style={{fontSize:"35px", fontWeight:"600"}}>Sign In</h1>
                         </div>
+                    </div>
                     <LoginForm getLogin={axiosLogin} load={loading}/>
-                </div>
+                </Box>
             </div>
         </div>
         </div> 
