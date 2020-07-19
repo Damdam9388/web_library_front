@@ -1,13 +1,11 @@
 import React, {useState} from "react";
-import {Button, Input, Stack, InputGroup, InputLeftElement, InputRightElement} from "@chakra-ui/core";
-import Icon from "@chakra-ui/core/dist/Icon";
+import {Button, Input, Stack, InputGroup, InputRightElement} from "@chakra-ui/core";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import FormControl from "@chakra-ui/core/dist/FormControl";
 import './LoginForm.scss';
 import {Link} from "react-router-dom";
 import * as CONSTANTS from "../../Constants/constants";
-import Box from "@chakra-ui/core/dist/Box";
-import Circle from "better-react-spinkit/dist/Circle";
+import {Circle} from "better-react-spinkit";
 
 const LoginForm = ({getLogin, load}) => {
     const [show, setShow] = useState(false);
@@ -15,55 +13,85 @@ const LoginForm = ({getLogin, load}) => {
 
 
     return (
-      <div className="form"> 
+      <div className="form">
         <form onSubmit={getLogin}>
-            <FormControl isRequired>
-                    <label htmlFor="InputEmail">Email</label>
-                    <input
+            <Stack spacing={3}>
+                <FormControl isRequired>
+                        <FormLabel htmlFor="email" color="black">Email</FormLabel>
+                        <Input
+                            mb="1rem"
+                            borderTop="none"
+                            borderLeft="none"
+                            borderRight="none"
+                            borderRadius="none"
+                            borderBottomColor="black"
+                            bg="transparent"
                             type="email"
-                            className="email_input"
                             name="email"
                             id="email"
                             aria-describedby="emailHelp"
                             placeholder="Enter email..."
-                    />
-                </FormControl>
-
-                <FormControl isRequired>
-                    <FormLabel htmlFor="InputPassword">Password</FormLabel>
-                    <InputGroup>
-                        <InputLeftElement children={<Icon name="lock" color="black" />} />
-                        <Input
-                            variant="outline"
-                            type={show ? "text" : "password"}
-                            name="password"
-                            id="password"
-                            className="form-control"
-                            aria-describedby="emailHelp"
-                            placeholder="Enter Password..."
+                            _focus={{
+                                outline: "none",
+                                bg: "transparent",
+                                color: "black",
+                            }}
+                            color="black"
+                            p="0"
                         />
-                        <InputRightElement width="4.5rem">
-                            <Button className="text-white bg-dark" h="2rem" size="sm" onClick={handleClick}>
-                                {show ? "Hide" : "Show"}
-                            </Button>
-                        </InputRightElement>
-                    </InputGroup>
-                </FormControl>
+                    </FormControl>
 
-                <Stack isInline float="right"  mb={5}>
-                    <Box>
-                        <Link to={CONSTANTS.FORGOT_PASSWORD}>Forgot your password</Link>
-                    </Box>
-                </Stack>
+                    <FormControl isRequired>
+                        <FormLabel htmlFor="password" color="black">Password</FormLabel>
+                        <InputGroup>
+                            <Input
+                                borderTop="none"
+                                borderLeft="none"
+                                borderRight="none"
+                                borderRadius="none"
+                                bg="transparent"
+                                type={show ? "text" : "password"}
+                                name="password"
+                                id="password"
+                                borderBottomColor="black"
+                                aria-describedby="emailHelp"
+                                placeholder="Enter Password..."
+                                p="0"
+                                color="black"
+                                _focus={{
+                                    outline: "none",
+                                    bg: "transparent",
+                                    color: "black",
+                                }}
+                            />
+                            <InputRightElement width="4.5rem">
+                                <Button className="text-dark" bg="#FC8181" borderColor="#FC8181" h="2.1rem" onClick={handleClick} _hover={{ bg: "#F6AD55", borderColor: "#F6AD55" }}>
+                                    {show ? "Hide" : "Show"}
+                                </Button>
+                            </InputRightElement>
+                        </InputGroup>
+                    </FormControl>
+
+
+                    <div className="row mb-5">
+                        <div className="col-md-12 d-flex flex-column justify-content-end align-items-md-end">
+                            <Button color="dark" bg="#F6AD55" borderColor="#F6AD55" size="sm" _hover={{ bg: "#FC8181", borderColor: "#FC8181" }}>
+                                <Link className="text-dark" to={CONSTANTS.FORGOT_PASSWORD}>Forgot your password</Link>
+                            </Button>
+                        </div>
+                    </div>
+
+
 
 
                     {load ? (
                         <Button
                             type="submit"
-                            variantColor="telegram"
+                            bg="#FC8181"
                             variant="solid"
                             width="full"
                             border="transparent"
+                            _hover={{ bg: "#F6AD55" }}
                         >
                             <Circle/>
                         </Button>
@@ -71,17 +99,18 @@ const LoginForm = ({getLogin, load}) => {
                         <Button
                             type="submit"
                             rightIcon="arrow-forward"
-                            variantColor="telegram"
+                            bg="#FC8181"
                             variant="solid"
                             width="full"
                             border="transparent"
+                            _hover={{ bg: "#F6AD55" }}
                         >
                         Login
                         </Button>
                     )
                     }
 
-
+            </Stack>
         </form>
 
         </div>

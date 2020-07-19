@@ -12,6 +12,7 @@ import ChangeForgotPassword from "./Components/Login/ChangeForgotPassword";
 import History from "./Components/Utils/History.js";
 import AuthContext from "./Components/Context/AuthContext";
 import UserContext from "./Components/Context/UserContext";
+import Nav from "./Layout/Nav/Nav";
 
 const App = () => {
     const [isLogged, setLogged] = useState(localStorage.getItem('tokenUser') !== null);
@@ -26,24 +27,37 @@ const App = () => {
         updateUsername:setUsername
     };
 
-    return (
-        <AuthContext.Provider value={contextValue}>
-            <UserContext.Provider value={userValue}>
-            <Router history={History}>
-        
-                    <Switch>
-                        <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword}/>
-                        <Route path={CONSTANTS.FORGOT_PASSWORD} component={ForgotPassword}/>
-                        <Route path={CONSTANTS.LOGIN} component={Login}/>
-                        <Route path={CONSTANTS.ABOUT} component={About}/>
-                        <Route path={CONSTANTS.CONTACT} component={Contact}/>
-                        <Route path={CONSTANTS.LANDINGPAGE} component ={LandingPage}/>
-                    </Switch>
-            </Router>
-            <Footer/>
-            </UserContext.Provider>
-        </AuthContext.Provider>
+    const landing = () => {
+        return(
+            <>
+                <Nav />
+                <Switch>
+                    <Route path={CONSTANTS.ABOUT} component={About}/>
+                    <Route path={CONSTANTS.CONTACT} component={Contact}/>
+                    <Route path={CONSTANTS.LANDINGPAGE} component ={LandingPage}/>
+                </Switch>
+            </>
+        )
+    };
 
+    return (
+        <div className="container">
+            <AuthContext.Provider value={contextValue}>
+                <UserContext.Provider value={userValue}>
+                <Router history={History}>
+
+                        <Switch>
+                            <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword}/>
+                            <Route path={CONSTANTS.FORGOT_PASSWORD} component={ForgotPassword}/>
+                            <Route path={CONSTANTS.LOGIN} component={Login}/>
+                            <Route component ={landing}/>
+                        </Switch>
+                    <Footer/>
+                </Router>
+
+                </UserContext.Provider>
+            </AuthContext.Provider>
+        </div>
     );
 
 };
