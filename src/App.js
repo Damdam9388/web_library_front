@@ -13,6 +13,7 @@ import ChangeForgotPassword from "./Components/Login/ChangeForgotPassword";
 import History from "./Components/Utils/History.js";
 import AuthContext from "./Components/Context/AuthContext";
 import UserContext from "./Components/Context/UserContext";
+import Nav from "./Layout/Nav/Nav";
 
 const App = () => {
     const [isLogged, setLogged] = useState(localStorage.getItem('tokenUser') !== null);
@@ -25,6 +26,19 @@ const App = () => {
     const userValue = {
         username:username,
         updateUsername:setUsername
+    };
+
+    const landing = () => {
+        return(
+            <>
+                <Nav />
+                <Switch>
+                    <Route path={CONSTANTS.ABOUT} component={About}/>
+                    <Route path={CONSTANTS.CONTACT} component={Contact}/>
+                    <Route path={CONSTANTS.LANDINGPAGE} component ={LandingPage}/>
+                </Switch>
+            </>
+        )
     };
 
     return (
@@ -45,7 +59,6 @@ const App = () => {
             <Footer/>
             </UserContext.Provider>
         </AuthContext.Provider>
-
     );
 
 };

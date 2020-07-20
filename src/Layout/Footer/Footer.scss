@@ -1,20 +1,17 @@
-.condition{
-    padding: 2.5rem;
-    background-color: tomato;
-    color: rgb(54, 52, 52);
-    font-size: 0.75rem;
-    text-align: center;
-    height: 90px;
-    width: 100%;
-    font-weight: bold;
-}
-.general-condition{
-    color: inherit;
-    font-size: .875rem;
-}
 .footer{
-    margin: 0 auto;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
+    background-color: #263246;
+    height: 40vh;
+    margin-top: -50px;
 }
+
+.explore, .legal {
+    list-style: none;
+}
+
+.facebook_link, .instagram_link, .twitter_link{
+    width: 3.5rem;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+    margin-bottom: 2rem;
+}
+

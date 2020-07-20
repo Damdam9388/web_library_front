@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 import "./Nav.scss";
 import {Link} from 'react-router-dom';
 import * as CONSTANTS from "../../Constants/constants";
+import logo from './../../Images/logo-via-logohub.png';
+import {ABOUT} from "../../Constants/constants";
+import {CONTACT} from "../../Constants/constants";
 
 
 class Nav extends Component {
     render = () => (
-      <div className="container-fluid banner navbar-fixed-top">
-        <div className="row">
-            <div className="col-md-12 background">
-              <div className="navbar navbar-md">
+              <div className="navbar navbar-md p-4">
                 <div className="navbar-brand">
-                  <Link className="navbar-brand-link" to={CONSTANTS.LANDINGPAGE}>WEBSTER</Link>
+                  <Link className="navbar-brand-link pl-5" to={CONSTANTS.LANDINGPAGE}>
+                    <img src={logo} alt="logo" width="40%"/>
+                  </Link>
                 </div>
                   <ul className="nav">
                     <li className="nav-item dropdown">
@@ -53,9 +55,7 @@ class Nav extends Component {
                     </li>
                   </ul>
                 </div>
-            </div>
-          </div>
-      </div>
+
     );
   }
   
