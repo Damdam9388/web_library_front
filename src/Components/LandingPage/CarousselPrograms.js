@@ -10,10 +10,6 @@ import vueJs from "../../Images/vue-js.png";
 import React from "react";
 
 const CarousselPrograms = () => {
-<<<<<<< HEAD
-=======
-
->>>>>>> 3b13befcd86865b077793b1df5af61e6116ac2c6
     return (
         <>
         <div className="row d-lg-none d-sm-inline" style={{background: "#FC8181"}}>
@@ -27,17 +23,11 @@ const CarousselPrograms = () => {
                                          src={javascript}
                                          alt="javascript" height="250px"/>
                                 </div>
-<<<<<<< HEAD
-                            </div>
-                        </div>
-
-=======
 
                             </div>
                         </div>
 
 
->>>>>>> 3b13befcd86865b077793b1df5af61e6116ac2c6
                         <div className="carousel-item">
                             <div className="row">
                                 <div className="col-sm-12 d-flex flex-column justify-content-center align-items-center">
@@ -45,17 +35,11 @@ const CarousselPrograms = () => {
                                          src={java}
                                          alt="java" height="250px"/>
                                 </div>
-<<<<<<< HEAD
-                            </div>
-                        </div>
-
-=======
 
                             </div>
                         </div>
 
 
->>>>>>> 3b13befcd86865b077793b1df5af61e6116ac2c6
                         <div className="carousel-item">
                             <div className="row">
                                 <div className="col-sm-12 d-flex flex-column justify-content-center align-items-center">
@@ -63,10 +47,6 @@ const CarousselPrograms = () => {
                                          src={php}
                                          alt="php" height="250px"/>
                                 </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> 3b13befcd86865b077793b1df5af61e6116ac2c6
                             </div>
                         </div>
 
@@ -104,10 +84,6 @@ const CarousselPrograms = () => {
                                          src={laravel}
                                          alt="laravel" height="250px"/>
                                 </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> 3b13befcd86865b077793b1df5af61e6116ac2c6
                             </div>
                         </div>
                         <div className="carousel-item">
@@ -131,10 +107,6 @@ const CarousselPrograms = () => {
 
                     </div>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 3b13befcd86865b077793b1df5af61e6116ac2c6
                     <a className="carousel-control-prev" href="#gallery" role="button" data-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"/>
                     <span className="sr-only">Previous</span>
@@ -175,10 +147,6 @@ const CarousselPrograms = () => {
                                          alt="php" height="250px"/>
                                 </div>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 3b13befcd86865b077793b1df5af61e6116ac2c6
                             </div>
                         </div>
 
@@ -198,20 +166,12 @@ const CarousselPrograms = () => {
                                          alt="spring" height="250px"/>
                                 </div>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 3b13befcd86865b077793b1df5af61e6116ac2c6
                                 <div
                                     className="col-md-4 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
                                          src={reactjs}
                                          alt="react" height="250px"/>
                                 </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> 3b13befcd86865b077793b1df5af61e6116ac2c6
                             </div>
                         </div>
 
@@ -231,20 +191,12 @@ const CarousselPrograms = () => {
                                          alt="bootstrap" height="250px"/>
                                 </div>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 3b13befcd86865b077793b1df5af61e6116ac2c6
                                 <div
                                     className="col-md-4 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
                                          src={vueJs}
                                          alt="vue" height="250px"/>
                                 </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> 3b13befcd86865b077793b1df5af61e6116ac2c6
                             </div>
                         </div>
 
