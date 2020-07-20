@@ -3,18 +3,18 @@ import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import {Button, Input, InputGroup, InputLeftElement} from "@chakra-ui/core";
 import Icon from "@chakra-ui/core/dist/Icon";
 import FormControl from "@chakra-ui/core/dist/FormControl";
-import axios from "axios";
-import {ENDPOINT_FORGOT_PASS} from "../../UrlConstants";
+import {userForgotPassword} from "../../Services/AuthenticationServices";
 
 const ForgotPassword = () => {
 
     const sendEmail = (e) => {
         const email = e.target.elements.email.value;
         e.preventDefault();
-        axios.post(ENDPOINT_FORGOT_PASS, {username: email})
+        userForgotPassword(email)
             .then(response => {
                 console.log(response);
-            }, (error) => {
+            })
+            .catch((error) => {
                 console.log(error);
             });
     };

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "./Nav.scss";
 import {Link} from 'react-router-dom';
-import * as CONSTANTS from "../../constants";
+import * as CONSTANTS from "../../Constants/constants";
 
 
 class Nav extends Component {
@@ -21,22 +21,22 @@ class Nav extends Component {
                       </Link>
                       
                       <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a className="dropdown-item" href="#">Java</a>
-                        <a className="dropdown-item" href="#">PHP</a>
-                        <a className="dropdown-item" href="#">JavaScript</a>
-                        <a className="dropdown-item" href="#">HTML/CSS/Bootstrap</a>
-                        <a className="dropdown-item" href="#">JavaScript</a>
-                        <a className="dropdown-item" href="#">MySQL</a>
+                        <a className="dropdown-item" href="/">Java</a>
+                        <a className="dropdown-item" href="/">PHP</a>
+                        <a className="dropdown-item" href="/">JavaScript</a>
+                        <a className="dropdown-item" href="/">HTML/CSS/Bootstrap</a>
+                        <a className="dropdown-item" href="/">JavaScript</a>
+                        <a className="dropdown-item" href="/">MySQL</a>
                       </div>
                     </li>
                     <li className="nav-item dropdown menu">
                       <Link className="nav-link dropdown-toggle" to={CONSTANTS.FRAMEWORK} id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      FRAMEWORKS
+                      FRAMEWORK
                       </Link>
                       <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a className="dropdown-item" href="#">Spring</a>
-                        <a className="dropdown-item" href="#">Symfony</a>
-                        <a className="dropdown-item" href="#">React</a>
+                        <a className="dropdown-item" href="/">Spring</a>
+                        <a className="dropdown-item" href="/">Symfony</a>
+                        <a className="dropdown-item" href="/">React</a>
                       </div>
                     </li>
                     <li className="nav-item">

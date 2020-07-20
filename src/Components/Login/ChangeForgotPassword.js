@@ -3,23 +3,22 @@ import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import {Button, Input, InputGroup, InputLeftElement, InputRightElement} from "@chakra-ui/core";
 import Icon from "@chakra-ui/core/dist/Icon";
 import FormControl from "@chakra-ui/core/dist/FormControl";
-import axios from "axios";
-import {ENDPOINT_CHANGE_PASS} from "../../UrlConstants";
 import {withRouter} from "react-router-dom";
+import {userChangeForgotPassword} from "../../Services/AuthenticationServices";
 
 const ChangeForgotPassword = ({match}) => {
     const [show, setShow] = useState(false);
     const handleClick = () => setShow(!show);
 
-    console.log(match.params);
     const changePassword = (e) => {
         const token = match.params.token;
         const password = e.target.elements.password.value;
         e.preventDefault();
-        axios.put(`${ENDPOINT_CHANGE_PASS}/${token}`, {password})
-            .then(response => {
+        userChangeForgotPassword(token, password)
+            .then((response) => {
                 console.log(response);
-            }, (error) => {
+            })
+            .catch((error) => {
                 console.log(error);
             });
     };
