@@ -27,7 +27,7 @@ const Presentation = () => {
                 <img className="img-fluid" src={img1} alt="img1" width="100%"/>
             </div>
             <div
-                className="col-md-6 d-flex flex-column justify-content-center align-items-center bg-dark text-white">
+                className="col-md-6 d-flex flex-column justify-content-center align-items-center text-white" style={{backgroundColor: "#263246"}}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 A, accusamus assumenda blanditiis debitis dolorem eius,
                 expedita facilis in ipsam itaque laborum natus officia
@@ -50,7 +50,7 @@ const Presentation = () => {
                 />
             </div>
             <div
-                className="col-md-6 d-flex flex-column justify-content-center align-items-center bg-dark text-white">
+                className="col-md-6 d-flex flex-column justify-content-center align-items-center text-white" style={{backgroundColor: "#263246"}}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 A, accusamus assumenda blanditiis debitis dolorem eius,
                 expedita facilis in ipsam itaque laborum natus officia quam
