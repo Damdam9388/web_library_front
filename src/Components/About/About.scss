@@ -1,5 +1,6 @@
 .wrapper{
     margin-top: 5%;
+    min-height: 1055px;
 }
 .wrapper h1{
     font-family: 'Lucida Console', monospace;
@@ -28,9 +29,7 @@
 
 .team .team-member{
     background-color: #263246;
-    margin: 30px;
-    margin-bottom: 20px;
-    margin-top: 0px;
+    margin: 0px 30px 20px;
     width: 300px;
     padding: 60px;
     color: white;

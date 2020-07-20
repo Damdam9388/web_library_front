@@ -1,16 +1,20 @@
 import React, { Component } from "react";
-import Programs from "./Programs.js";
-import Goals from "./Goals.js";
-import Header from "./Header.js";
-import Nav from "../../Layout/Nav/Nav.js";
+import "./landing.scss";
+import FirstLook from "./FirstLook";
+import Presentation from "./Presentation";
+import CarousselPrograms from "./CarousselPrograms";
+
 class LandingPage extends Component {
   render = () => {
     return (
         <>
-        <Nav />
-            <Header />
-            <Goals />
-            <Programs />
+            <div className="wrap">
+                <FirstLook/>
+
+                <Presentation/>
+
+                <CarousselPrograms/>
+            </div>
         </>
     );
   };

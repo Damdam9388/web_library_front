@@ -4,9 +4,10 @@ import AuthContext from "../Context/AuthContext";
 import { useHistory } from 'react-router-dom';
 import UserContext from "../Context/UserContext";
 import { Box } from "@chakra-ui/core";
+import './login.scss';
 import './LoginForm.scss';
-import Nav from '../../Layout/Nav/Nav.js';
 import {getLogin} from "../../Services/AuthenticationServices";
+import backgroundImage from './../../Images/laptop-2557468_1920.jpg';
 
 const Login = (props) => {
     const {updateLogged} = useContext(AuthContext);
@@ -40,24 +41,16 @@ const Login = (props) => {
     };
 
     return (
-    <>
-
-    <Nav />
-    <div className="form"> 
-        <div className="row contain" style={{height:'50vh'}}>
-            <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
-                <Box bg="#263246" w="25%" p={4} color="#d83a3a">
-                    <div className="logo mb-3">
-                        <div className="col-md-12 text-center">
-                            <h1 className="login_title text-white" style={{fontSize:"35px", fontWeight:"600"}}>Sign In</h1>
-                        </div>
+    <div className="row" style={{height:"100vh", backgroundImage:`url(${backgroundImage})`}}>
+        <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
+                <Box bg="#F7FAFC" opacity="0.9" w="45%" p={4} mb={5} rounded="md" className="align-self-center">
+                    <div className="col-md-12 text-center">
+                        <h1 className="login_title text-dark font-weight-bold mb-5" style={{fontSize:"35px", fontWeight:"600"}}>Sign In</h1>
                     </div>
                     <LoginForm getLogin={axiosLogin} load={loading}/>
                 </Box>
-            </div>
         </div>
-        </div> 
-    </>
+    </div>
     );
 };
 export default Login;

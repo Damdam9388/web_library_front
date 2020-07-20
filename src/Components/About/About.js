@@ -1,12 +1,10 @@
 import React from 'react';
 import './About.scss'
 import { Avatar } from "@chakra-ui/core";
-import Nav from '../../Layout/Nav/Nav.js';
 
 const About = () => {
     return(
         <>
-        <Nav />
                 <div className="wrapper">
                     <h1>MEET THE TEAM</h1>
                     <div className="paragraph">
