@@ -28,7 +28,6 @@ class Nav extends Component {
                   <Link className="d-flex flex-column justify-content-center align-items-center navbar-brand-link pl-2" to={CONSTANTS.LANDINGPAGE}>
                           <img src={logo} alt="logo" width="70%"/>
                   </Link>
-
           </div>
 
             <div className="col-md-12 d-flex flex-column justify-content-center align-items-center pt-3">

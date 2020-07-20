@@ -22,6 +22,7 @@ const Contact = (props) => {
         getContact(name, email, subject, message)
             .then(response => {
                 console.log(response);
+                history.push('/');
             })
             .catch(erreur => {
                 console.log(erreur);

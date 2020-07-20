@@ -4,6 +4,7 @@ import './App.scss';
 import Footer from "./Layout/Footer/Footer.js";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import * as CONSTANTS from "./Constants/constants";
+import SignUp from "./Components/SignUp/SignUp.js";
 import Login from "./Components/Login/Login.js";
 import Contact from "./Components/Contact/Contact.js";
 import About from "./Components/About/About.js";
@@ -41,23 +42,23 @@ const App = () => {
     };
 
     return (
-        <div className="container">
-            <AuthContext.Provider value={contextValue}>
-                <UserContext.Provider value={userValue}>
-                <Router history={History}>
-
-                        <Switch>
-                            <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword}/>
-                            <Route path={CONSTANTS.FORGOT_PASSWORD} component={ForgotPassword}/>
-                            <Route path={CONSTANTS.LOGIN} component={Login}/>
-                            <Route component ={landing}/>
-                        </Switch>
-                    <Footer/>
-                </Router>
-
-                </UserContext.Provider>
-            </AuthContext.Provider>
-        </div>
+        <AuthContext.Provider value={contextValue}>
+            <UserContext.Provider value={userValue}>
+            <Router history={History}>
+        
+                    <Switch>
+                        <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword}/>
+                        <Route path={CONSTANTS.FORGOT_PASSWORD} component={ForgotPassword}/>
+                        <Route path={CONSTANTS.SIGNUP} component={SignUp}/>
+                        <Route path={CONSTANTS.LOGIN} component={Login}/>
+                        <Route path={CONSTANTS.ABOUT} component={About}/>
+                        <Route path={CONSTANTS.CONTACT} component={Contact}/>
+                        <Route path={CONSTANTS.LANDINGPAGE} component ={LandingPage}/>
+                    </Switch>
+            </Router>
+            <Footer/>
+            </UserContext.Provider>
+        </AuthContext.Provider>
     );
 
 };
