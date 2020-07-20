@@ -34,18 +34,7 @@ const Presentation = () => {
                 quam quis soluta totam veritatis? Non, tenetur!
             </div>
 
-<<<<<<< HEAD
-            <div
-                className="col-sm order-4 col-md-6 d-flex flex-column justify-content-center align-items-center bg-dark text-white">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Aliquam architecto excepturi facere hic, illo iure, molestiae
-                necessitatibus non obcaecati officia pariatur placeat quas quo
-                repellat repellendus saepe tempora ullam voluptates.
-            </div>
-            <div className="col-sm order-3 col-md-6 px-0">
-=======
             <div className="order-sm-12 col-md-6 px-0">
->>>>>>> 3b13befcd86865b077793b1df5af61e6116ac2c6
                 <img className="img-fluid" src={img2} alt="img2" width="100%"/>
             </div>
 
