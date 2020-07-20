@@ -43,7 +43,7 @@ const Presentation = () => {
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Aliquam architecto excepturi facere hic, illo iure, molestiae
             necessitatibus non obcaecati officia pariatur placeat quas quo
-            repellat repellendus saepe tempora ullam voluptates.
+
         </div>
 
             <div className="col-md-6 px-0">
