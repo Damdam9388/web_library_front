@@ -4,6 +4,7 @@ import * as CONSTANTS from "../../Constants/constants";
 import React from "react";
 
 const FirstLook = () => {
+
     return (
         <>
             <div className="row d-lg-none d-sm-block">
@@ -33,6 +34,7 @@ const FirstLook = () => {
             </div>
         </>
     );
+
 };
 
 export default FirstLook;
