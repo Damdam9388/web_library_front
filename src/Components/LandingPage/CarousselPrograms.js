@@ -12,7 +12,7 @@ import React from "react";
 const CarousselPrograms = () => {
     return (
         <>
-        <div className="row d-lg-none d-sm-inline" style={{background: "#FC8181"}}>
+        <div className="row d-lg-none d-sm-inline" style={{background: "#d83a3a"}}>
             <div className="col-sm-12">
                 <div id="gallery1" className="carousel slide" data-ride="carousel">
                     <div className="carousel-inner">
@@ -20,8 +20,8 @@ const CarousselPrograms = () => {
                             <div className="row">
                                 <div className="col-sm-12 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
-                                         src={javascript}
-                                         alt="javascript" height="250px"/>
+                                        src={javascript}
+                                        alt="javascript" height="250px"/>
                                 </div>
 
                             </div>
@@ -32,8 +32,8 @@ const CarousselPrograms = () => {
                             <div className="row">
                                 <div className="col-sm-12 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
-                                         src={java}
-                                         alt="java" height="250px"/>
+                                        src={java}
+                                        alt="java" height="250px"/>
                                 </div>
 
                             </div>
@@ -44,8 +44,8 @@ const CarousselPrograms = () => {
                             <div className="row">
                                 <div className="col-sm-12 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
-                                         src={php}
-                                         alt="php" height="250px"/>
+                                        src={php}
+                                        alt="php" height="250px"/>
                                 </div>
                             </div>
                         </div>
@@ -54,8 +54,8 @@ const CarousselPrograms = () => {
                             <div className="row">
                                 <div className="col-sm-12 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
-                                         src={symfony}
-                                         alt="symfony" height="250px"/>
+                                        src={symfony}
+                                        alt="symfony" height="250px"/>
                                 </div>
                             </div>
                         </div>
@@ -63,8 +63,8 @@ const CarousselPrograms = () => {
                             <div className="row">
                                 <div className="col-sm-12 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
-                                         src={springboot}
-                                         alt="spring" height="250px"/>
+                                        src={springboot}
+                                        alt="spring" height="250px"/>
                                 </div>
                             </div>
                         </div>
@@ -72,8 +72,8 @@ const CarousselPrograms = () => {
                             <div className="row">
                                 <div className="col-sm-12 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
-                                         src={reactjs}
-                                         alt="react" height="250px"/>
+                                        src={reactjs}
+                                        alt="react" height="250px"/>
                                 </div>
                             </div>
                         </div>
@@ -81,8 +81,8 @@ const CarousselPrograms = () => {
                             <div className="row">
                                 <div className="col-sm-12 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
-                                         src={laravel}
-                                         alt="laravel" height="250px"/>
+                                        src={laravel}
+                                        alt="laravel" height="250px"/>
                                 </div>
                             </div>
                         </div>
@@ -90,8 +90,8 @@ const CarousselPrograms = () => {
                             <div className="row">
                                 <div className="col-sm-12 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
-                                         src={bootstrapI}
-                                         alt="bootstrap" height="250px"/>
+                                        src={bootstrapI}
+                                        alt="bootstrap" height="250px"/>
                                 </div>
                             </div>
                         </div>
@@ -99,8 +99,8 @@ const CarousselPrograms = () => {
                             <div className="row">
                                 <div className="col-sm-12 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
-                                         src={vueJs}
-                                         alt="vueJs" height="250px"/>
+                                        src={vueJs}
+                                        alt="vueJs" height="250px"/>
                                 </div>
                             </div>
                         </div>
@@ -121,7 +121,7 @@ const CarousselPrograms = () => {
             </div>
         </div>
 
-        <div className="row d-none d-lg-block" style={{background: "#FC8181"}}>
+        <div className="row d-none d-lg-block" style={{background: "#d83a3a"}}>
             <div className="col-md-12 px-0">
                 <div id="gallery" className="carousel slide" data-ride="carousel">
                     <div className="carousel-inner">
@@ -129,22 +129,22 @@ const CarousselPrograms = () => {
                             <div className="row">
                                 <div className="col-md-4 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
-                                         src={javascript}
-                                         alt="javascript" height="250px"/>
+                                        src={javascript}
+                                        alt="javascript" height="250px"/>
                                 </div>
 
                                 <div
                                     className="col-md-4 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
-                                         src={java}
-                                         alt="java" height="250px"/>
+                                        src={java}
+                                        alt="java" height="250px"/>
                                 </div>
 
                                 <div
                                     className="col-md-4 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
-                                         src={php}
-                                         alt="php" height="250px"/>
+                                        src={php}
+                                        alt="php" height="250px"/>
                                 </div>
 
                             </div>
@@ -155,22 +155,22 @@ const CarousselPrograms = () => {
                                 <div
                                     className="col-md-4 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
-                                         src={symfony}
-                                         alt="symfony" height="250px"/>
+                                        src={symfony}
+                                        alt="symfony" height="250px"/>
                                 </div>
 
                                 <div
                                     className="col-md-4 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
-                                         src={springboot}
-                                         alt="spring" height="250px"/>
+                                        src={springboot}
+                                        alt="spring" height="250px"/>
                                 </div>
 
                                 <div
                                     className="col-md-4 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
-                                         src={reactjs}
-                                         alt="react" height="250px"/>
+                                        src={reactjs}
+                                        alt="react" height="250px"/>
                                 </div>
                             </div>
                         </div>
@@ -180,22 +180,22 @@ const CarousselPrograms = () => {
                                 <div
                                     className="col-md-4 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
-                                         src={laravel}
-                                         alt="laravel" height="250px"/>
+                                        src={laravel}
+                                        alt="laravel" height="250px"/>
                                 </div>
 
                                 <div
                                     className="col-md-4 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
-                                         src={bootstrapI}
-                                         alt="bootstrap" height="250px"/>
+                                        src={bootstrapI}
+                                        alt="bootstrap" height="250px"/>
                                 </div>
 
                                 <div
                                     className="col-md-4 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
-                                         src={vueJs}
-                                         alt="vue" height="250px"/>
+                                        src={vueJs}
+                                        alt="vue" height="250px"/>
                                 </div>
                             </div>
                         </div>

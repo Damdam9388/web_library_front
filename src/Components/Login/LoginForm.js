@@ -13,7 +13,7 @@ const LoginForm = ({getLogin, load}) => {
 
 
     return (
-      <div className="form">
+    <div className="form">
         <form onSubmit={getLogin}>
             <Stack spacing={3}>
                 <FormControl isRequired>
