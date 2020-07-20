@@ -14,7 +14,7 @@ const CarousselPrograms = () => {
         <>
         <div className="row d-lg-none d-sm-inline" style={{background: "#FC8181"}}>
             <div className="col-sm-12">
-                <div id="gallery" className="carousel slide" data-ride="carousel">
+                <div id="gallery1" className="carousel slide" data-ride="carousel">
                     <div className="carousel-inner">
                         <div className="carousel-item active">
                             <div className="row">
@@ -107,12 +107,12 @@ const CarousselPrograms = () => {
 
                     </div>
 
-                    <a className="carousel-control-prev" href="#gallery" role="button" data-slide="prev">
+                    <a className="carousel-control-prev" href="#gallery1" role="button" data-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"/>
                     <span className="sr-only">Previous</span>
                     </a>
 
-                    <a className="carousel-control-next" href="#gallery" role="button" data-slide="next">
+                    <a className="carousel-control-next" href="#gallery1" role="button" data-slide="next">
                         <span className="carousel-control-next-icon" aria-hidden="true"/>
                         <span className="sr-only">Next</span>
                     </a>
