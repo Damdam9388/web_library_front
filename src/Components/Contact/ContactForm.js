@@ -5,7 +5,6 @@ import Nav from '../../Layout/Nav/Nav.js';
 const Contact = ({sendMessage}) => {
     return(
         <>
-        <Nav />
                 <div className="contact">
                     <h1>CONTACT US</h1>
                     <div className="container">
