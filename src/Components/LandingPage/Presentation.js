@@ -6,7 +6,7 @@ import React from "react";
 const Presentation = () => {
     return <>
         <div className="row" id="sentence"
-             style={{backgroundColor: "#FC8181", height: "20rem", paddingTop: "2%", paddingBottom: "2%"}}>
+            style={{backgroundColor: "#d83a3a", height: "20rem", paddingTop: "2%", paddingBottom: "2%"}}>
             <div
                 className="col-md-12 d-flex flex-column justify-content-center align-items-center p-5 text-white font-weight-bold">
                 <q className="text-center display-4" style={{fontFamily: "Baskerville Old Face"}}>
@@ -20,7 +20,7 @@ const Presentation = () => {
                 <img className="img-fluid" src={img1} alt="img1" width="100%"/>
             </div>
             <div
-                className="col-md-6 d-flex flex-column justify-content-center align-items-center bg-dark text-white">
+                className="col-md-6 d-flex flex-column justify-content-center align-items-center text-white" style={{backgroundColor: "#263246"}}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 A, accusamus assumenda blanditiis debitis dolorem eius,
                 expedita facilis in ipsam itaque laborum natus officia
@@ -28,7 +28,7 @@ const Presentation = () => {
             </div>
 
             <div
-                className="col-md-6 d-flex flex-column justify-content-center align-items-center bg-dark text-white">
+                className="col-md-6 d-flex flex-column justify-content-center align-items-center text-white" style={{backgroundColor: "#263246"}}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Aliquam architecto excepturi facere hic, illo iure, molestiae
                 necessitatibus non obcaecati officia pariatur placeat quas quo
@@ -43,7 +43,7 @@ const Presentation = () => {
                 />
             </div>
             <div
-                className="col-md-6 d-flex flex-column justify-content-center align-items-center bg-dark text-white">
+                className="col-md-6 d-flex flex-column justify-content-center align-items-center text-white" style={{backgroundColor: "#263246"}}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 A, accusamus assumenda blanditiis debitis dolorem eius,
                 expedita facilis in ipsam itaque laborum natus officia quam

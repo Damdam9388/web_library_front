@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import "./Nav.scss";
 import {Link} from 'react-router-dom';
 import * as CONSTANTS from "../../Constants/constants";
-import logo from './../../Images/logo-via-logohub.png';
+import logo from './../../Images/logo.PNG';
 import {ABOUT} from "../../Constants/constants";
 import {CONTACT} from "../../Constants/constants";
 
@@ -16,7 +16,7 @@ class Nav extends Component {
                   </Link>
                 </div>
                   <ul className="nav">
-                    <Link className="text-dark font-weight-bold pr-5 about_link" to={ABOUT}>About</Link>
+                    <Link className="text-dark font-weight-bold pr-5 about_link" to={ABOUT}>About the team</Link>
                     <Link className="text-dark font-weight-bold pr-5 contact_link" to={CONTACT}>Contact</Link>
                   </ul>
                 </div>
