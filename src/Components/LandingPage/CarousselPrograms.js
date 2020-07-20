@@ -10,6 +10,7 @@ import vueJs from "../../Images/vue-js.png";
 import React from "react";
 
 const CarousselPrograms = () => {
+
     return (
         <>
         <div className="row d-lg-none d-sm-inline" style={{background: "#FC8181"}}>
@@ -23,8 +24,10 @@ const CarousselPrograms = () => {
                                          src={javascript}
                                          alt="javascript" height="250px"/>
                                 </div>
+
                             </div>
                         </div>
+
 
                         <div className="carousel-item">
                             <div className="row">
@@ -33,8 +36,10 @@ const CarousselPrograms = () => {
                                          src={java}
                                          alt="java" height="250px"/>
                                 </div>
+
                             </div>
                         </div>
+
 
                         <div className="carousel-item">
                             <div className="row">
@@ -43,6 +48,7 @@ const CarousselPrograms = () => {
                                          src={php}
                                          alt="php" height="250px"/>
                                 </div>
+
                             </div>
                         </div>
 
@@ -80,6 +86,7 @@ const CarousselPrograms = () => {
                                          src={laravel}
                                          alt="laravel" height="250px"/>
                                 </div>
+
                             </div>
                         </div>
                         <div className="carousel-item">
@@ -102,6 +109,7 @@ const CarousselPrograms = () => {
                         </div>
 
                     </div>
+
 
                     <a className="carousel-control-prev" href="#gallery" role="button" data-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"/>
@@ -143,6 +151,7 @@ const CarousselPrograms = () => {
                                          alt="php" height="250px"/>
                                 </div>
 
+
                             </div>
                         </div>
 
@@ -162,12 +171,14 @@ const CarousselPrograms = () => {
                                          alt="spring" height="250px"/>
                                 </div>
 
+
                                 <div
                                     className="col-md-4 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
                                          src={reactjs}
                                          alt="react" height="250px"/>
                                 </div>
+
                             </div>
                         </div>
 
@@ -187,12 +198,14 @@ const CarousselPrograms = () => {
                                          alt="bootstrap" height="250px"/>
                                 </div>
 
+
                                 <div
                                     className="col-md-4 d-flex flex-column justify-content-center align-items-center">
                                     <img className="p-lg-5"
                                          src={vueJs}
                                          alt="vue" height="250px"/>
                                 </div>
+
                             </div>
                         </div>
 

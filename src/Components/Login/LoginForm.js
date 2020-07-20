@@ -65,7 +65,7 @@ const LoginForm = ({getLogin, load}) => {
                                 }}
                             />
                             <InputRightElement width="4.5rem">
-                                <Button className="text-dark" bg="#FC8181" borderColor="#FC8181" h="2.1rem" onClick={handleClick} _hover={{ bg: "#F6AD55", borderColor: "#F6AD55" }}>
+                                <Button className="text-white" bg="#263246" borderColor="#263246" h="2.1rem" onClick={handleClick} _hover={{ bg: "#AAF", borderColor: "#AAF" }}>
                                     {show ? "Hide" : "Show"}
                                 </Button>
                             </InputRightElement>
@@ -75,8 +75,8 @@ const LoginForm = ({getLogin, load}) => {
 
                     <div className="row mb-5">
                         <div className="col-md-12 d-flex flex-column justify-content-end align-items-md-end">
-                            <Button color="dark" bg="#F6AD55" borderColor="#F6AD55" size="sm" _hover={{ bg: "#FC8181", borderColor: "#FC8181" }}>
-                                <Link className="text-dark" to={CONSTANTS.FORGOT_PASSWORD}>Forgot your password</Link>
+                            <Button color="dark" bg="#d83a3a" borderColor="#d83a3a" size="sm" _hover={{ bg: "#FC8181", borderColor: "#FC8181" }}>
+                                <Link className="text-white" to={CONSTANTS.FORGOT_PASSWORD}>Forgot your password</Link>
                             </Button>
                         </div>
                     </div>
@@ -99,11 +99,11 @@ const LoginForm = ({getLogin, load}) => {
                         <Button
                             type="submit"
                             rightIcon="arrow-forward"
-                            bg="#FC8181"
+                            bg="#263246"
                             variant="solid"
                             width="full"
                             border="transparent"
-                            _hover={{ bg: "#F6AD55" }}
+                            _hover={{ bg: "#AAF" }}
                         >
                         Login
                         </Button>
