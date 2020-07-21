@@ -57,21 +57,6 @@ const SignUpForm = ({ getSignUp, load }) => {
             />
           </InputGroup>
         </FormControl>
-        <FormControl isRequired>
-          <FormLabel htmlFor="InputEmail">Confirm Password</FormLabel>
-          <InputGroup>
-            <InputLeftElement children={<Icon name="lock" color="black" />} />
-            <Input
-              variant="outline"
-              type="password"
-              name="confirmPassword"
-              className="form-control"
-              id="confirmPassword"
-              aria-describedby="passswordHelp"
-              placeholder="Confirm password..."
-            />
-          </InputGroup>
-        </FormControl>
         {load ? (
           <Button
             type="submit"

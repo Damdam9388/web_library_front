@@ -1,8 +1,9 @@
 import axios from 'axios';
 import {ENDPOINT_CHANGE_PASS, ENDPOINT_FORGOT_PASS, ENDPOINT_SIGNUP, ENDPOINT_LOGIN} from "../Constants/UrlConstants";
 
-export const getSignUp = (userName, email, password, confirmPassword) => {
-     return axios.post(ENDPOINT_SIGNUP,{login:userName, email: email, plainPassword: password})
+
+export const getSignUp = (userName, email, password) => {
+     return axios.post(ENDPOINT_SIGNUP,{login:userName, email: email, password: password})
 };
 
 export const getLogin = (email, password) => {
