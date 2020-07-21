@@ -1,6 +1,6 @@
 export const URL_API = `${process.env.REACT_APP_API_URL}`;
 
-export const ENDPOINT_SIGNUP= URL_API + "signup_check";
+export const ENDPOINT_SIGNUP= URL_API + "api/users";
 
 export const ENDPOINT_LOGIN= URL_API + "api/login_check";
 

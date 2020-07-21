@@ -11,7 +11,7 @@ const ConnectedUserPage = ()=>{
     const {username} = useContext(UserContext);
 
     return(
-        <div> 
+        <div className="wrap" style={{height:"100vh"}}>
 
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <img className= "pr-5" src={logo} alt="logo" width="15%"/>    
