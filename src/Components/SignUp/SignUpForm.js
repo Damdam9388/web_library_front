@@ -64,7 +64,7 @@ const SignUpForm = ({ getSignUp, load }) => {
             <Input
               variant="outline"
               type="password"
-              name="password"
+              name="confirmPassword"
               className="form-control"
               id="confirmPassword"
               aria-describedby="passswordHelp"

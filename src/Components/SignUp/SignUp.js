@@ -14,13 +14,13 @@ const SignUp = (props) => {
 
   const axiosSignUp = (e) => {
     setIsLoading(true);
-    const userName = e.target.elements.userName.value;
+    const login = e.target.elements.username.value;
     const email = e.target.elements.email.value;
-    const password = e.target.elements.password.value;
+    const plainPassword = e.target.elements.password.value;
     const confirmPassword = e.target.elements.confirmPassword.value;
-    console.log("username = " + userName + "mail = " + email + " password = " + password + "confirmPassword = " + confirmPassword);
+    console.log("username = " + login + "mail = " + email + " password = " + plainPassword + "confirmPassword = " + confirmPassword);
     e.preventDefault();
-    getSignUp(userName, email, password, confirmPassword)
+    getSignUp(login, email, plainPassword, confirmPassword)
       .then((res) => {
         console.log(res);
         history.push("/");
