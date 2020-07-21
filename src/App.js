@@ -14,7 +14,9 @@ import History from "./Components/Utils/History.js";
 import AuthContext from "./Components/Context/AuthContext";
 import UserContext from "./Components/Context/UserContext";
 import Nav from "./Layout/Nav/Nav";
+import Programs from "./Components/ProgramsPage/Programs";
 import ConnectedUserPage from "./Components/Pages/ConnectedUserPage";
+
 
 const App = () => {
     const [isLogged, setLogged] = useState(localStorage.getItem('tokenUser') !== null);
@@ -49,6 +51,7 @@ const App = () => {
                 <Router history={History}>
 
                         <Switch>
+                            <Route path = {CONSTANTS.PROGRAMS} component={Programs}/>
                             <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword}/>
                             <Route path={CONSTANTS.FORGOT_PASSWORD} component={ForgotPassword}/>
                             <Route path={CONSTANTS.SIGNUP} component={SignUp}/>
