@@ -6,6 +6,7 @@ export const PROGRAMMINGLANGUAGE= "/Programming-language";
 export const FRAMEWORK = "/Framework";
 export const FORGOT_PASSWORD = "/forgot_password";
 export const CHANGE_PASSWORD = "/changeForgotPassword";
+export const CONFIRM_ACCOUNT = "/confirmAccount";
 export const SIGNUP = "/Signup";
 export const PROGRAMS =  "/programs"
 export const CONNECTED_USER = "/Logged-In";

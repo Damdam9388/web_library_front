@@ -24,7 +24,7 @@ const ConnectedUserPage = ()=>{
                         <Link className="text-dark font-weight-bold pr-5 nav-link" to={CONNECTED_USER}>Home</Link>
                     </li>
                     <li className="nav-item active">
-                        <Link className="text-dark font-weight-bold pr-5 nav-link" to={CONNECTED_USER}>Programs</Link>
+                        <Link className="text-dark font-weight-bold pr-5 nav-link" to={CONSTANTS.PROGRAMS}>Programs</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="text-dark font-weight-bold pr-5 nav-link" to={CONSTANTS.LOGIN}>Logout</Link>
