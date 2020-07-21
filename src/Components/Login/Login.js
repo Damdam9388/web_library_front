@@ -8,7 +8,6 @@ import './login.scss';
 import './LoginForm.scss';
 import {getLogin} from "../../Services/AuthenticationServices";
 import backgroundImage from './../../Images/laptop-2557468_1920.jpg';
-import * as CONSTANTS from './../../Constants/constants';
 
 const Login = (props) => {
     const {updateLogged} = useContext(AuthContext);
