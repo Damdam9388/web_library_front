@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import SignUpForm from "./SignUpForm";
 import AuthContext from "../Context/AuthContext";
 import { useHistory } from "react-router-dom";
@@ -10,12 +10,11 @@ const SignUp = (props) => {
   const [user, setUser] = useState([]);
   const { userHasSigned } = useContext(AuthContext);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
   let history = useHistory();
   
   const axiosSignUp = (e) => {
     setIsLoading(true);
-    const userName = e.target.elements.userName.value;
+    const userName = e.target.elements.username.value;
     const email = e.target.elements.email.value;
     const password = e.target.elements.password.value;
     console.log("username = " + userName + "mail = " + email + " password = " + password);
@@ -45,7 +44,7 @@ const SignUp = (props) => {
                     <h1 className="login_title text-white">SignUp</h1>
                   </div>
                 </div>
-                <SignUpForm getSignUp={axiosSignUp} isLoading={isLoading} error={error} />
+                <SignUpForm getSignUp={axiosSignUp} isLoading={isLoading} />
               </Box>
             </div>
           </div>
