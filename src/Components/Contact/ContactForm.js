@@ -1,6 +1,5 @@
 import React from 'react';
 import './ContactForm.scss'
-import Nav from '../../Layout/Nav/Nav.js';
 
 const Contact = ({sendMessage}) => {
     return(

@@ -14,6 +14,7 @@ import History from "./Components/Utils/History.js";
 import AuthContext from "./Components/Context/AuthContext";
 import UserContext from "./Components/Context/UserContext";
 import Nav from "./Layout/Nav/Nav";
+import ConnectedUserPage from "./Components/Pages/ConnectedUserPage";
 
 const App = () => {
     const [isLogged, setLogged] = useState(localStorage.getItem('tokenUser') !== null);
@@ -52,6 +53,7 @@ const App = () => {
                             <Route path={CONSTANTS.FORGOT_PASSWORD} component={ForgotPassword}/>
                             <Route path={CONSTANTS.SIGNUP} component={SignUp}/>
                             <Route path={CONSTANTS.LOGIN} component={Login}/>
+                            <Route path={CONSTANTS.CONNECTED_USER} component ={ConnectedUserPage}/>
                             <Route component ={landing}/>
                         </Switch>
                     <Footer/>
