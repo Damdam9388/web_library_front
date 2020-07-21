@@ -4,10 +4,10 @@ import { Button, Input, Stack, InputGroup, InputLeftElement } from "@chakra-ui/c
 import Icon from "@chakra-ui/core/dist/Icon";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import FormControl from "@chakra-ui/core/dist/FormControl";
-import './SignUpForm.scss';
+//import './SignUpForm.scss';
 import Circle from "better-react-spinkit/dist/Circle";
 
-const SignUpForm = ({ getSignUp, load }) => {
+const SignUpForm = ({ getSignUp, load, error }) => {
   return (
     <div className="form">
       <form onSubmit={getSignUp}>
@@ -54,21 +54,6 @@ const SignUpForm = ({ getSignUp, load }) => {
               id="password"
               aria-describedby="passswordHelp"
               placeholder="Enter password..."
-            />
-          </InputGroup>
-        </FormControl>
-        <FormControl isRequired>
-          <FormLabel htmlFor="InputEmail">Confirm Password</FormLabel>
-          <InputGroup>
-            <InputLeftElement children={<Icon name="lock" color="black" />} />
-            <Input
-              variant="outline"
-              type="password"
-              name="password"
-              className="form-control"
-              id="confirmPassword"
-              aria-describedby="passswordHelp"
-              placeholder="Confirm password..."
             />
           </InputGroup>
         </FormControl>
