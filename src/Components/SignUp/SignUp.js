@@ -1,14 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import SignUpForm from "./SignUpForm";
-import AuthContext from "../Context/AuthContext";
 import { useHistory } from "react-router-dom";
 import { Box } from "@chakra-ui/core";
 import "./SignUpForm.scss";
 import { getSignUp } from "../../Services/AuthenticationServices";
 
 const SignUp = (props) => {
-  const [user, setUser] = useState([]);
-  const { userHasSigned } = useContext(AuthContext);
   const [isLoading, setIsLoading] = useState(false);
   let history = useHistory();
   
@@ -19,16 +16,15 @@ const SignUp = (props) => {
     const password = e.target.elements.password.value;
     console.log("username = " + userName + "mail = " + email + " password = " + password);
     e.preventDefault();
-    
-      getSignUp(userName, email, password)
-        .then((res) => {
-          console.log(res);
-          history.push("/");
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-        .finally(() => setIsLoading(false));
+    getSignUp(userName, email, password)
+      .then((res) => {
+        console.log(res);
+        history.push("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => setIsLoading(false));
   };
 
 

@@ -12,8 +12,8 @@ class Footer extends Component{
             <div>
                 <div className="row text-center">
                     <div className="col-md-3 pt-5" style={{backgroundColor: "#263246"}}>
-                        <h2 className="text-white font-weight-bold mb-3">Webster</h2>
-                        <p className="text-white-50">We create possibilities <br/> for everyone</p>
+                        <h3 className="text-white font-weight-bold">Webster</h3>
+                        <span className="text-white-50">We create possibilities <br/> for everyone</span>
                     </div>
 
                     <div className="col-md-3 text-white pt-5" style={{backgroundColor: "#263246"}}>
