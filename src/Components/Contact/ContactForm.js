@@ -1,7 +1,12 @@
-import React from 'react';
+import React, {useState} from "react";
+import {Button, Input, Stack, InputGroup, InputRightElement} from "@chakra-ui/core";
 import './ContactForm.scss'
+import {Circle} from "better-react-spinkit";
 
-const Contact = ({sendMessage}) => {
+
+const Contact = ({sendMessage, load}) => {
+    const [show, setShow] = useState(false);
+    const handleClick = () => setShow(!show);
     return(
         <>
                 <div className="contact">
@@ -34,9 +39,31 @@ const Contact = ({sendMessage}) => {
                                         <label>Message</label>
                                     </div>
                                 </div>
-                                <button className="col-xs-12">
-                                    <div className="btn-lrg submit-btn" type="submit">Send Message</div>
-                                </button>
+                                {load ? (
+                                    <Button
+                                        type="submit"
+                                        bg="#d83a3a"
+                                        variant="solid"
+                                        width="full"
+                                        border="transparent"
+                                        _hover={{ bg: "#d43c3c" }}
+                                    >
+                                        <Circle/>
+                                    </Button>
+                                ) : (
+                                    <Button
+                                        type="submit"
+                                        rightIcon="arrow-forward"
+                                        bg="#263246"
+                                        variant="solid"
+                                        width="full"
+                                        border="transparent"
+                                        _hover={{ bg: "#6d7788" }}
+                                    >
+                                    Send Message
+                                    </Button>
+                                )
+                                }
                         </div>
                         </form>
                     </div>
