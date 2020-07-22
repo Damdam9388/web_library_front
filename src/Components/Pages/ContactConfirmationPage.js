@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import UserContext from "../Context/UserContext";
+import React from "react";
 import './ConnectedUserPage.scss';
 import {Link} from 'react-router-dom';
 import { Alert } from "@chakra-ui/core";
@@ -9,9 +8,6 @@ import { AlertDescription } from "@chakra-ui/core";
 import * as CONSTANTS from "../../Constants/constants";
 
 const ContactConfirmationPage = ()=>{
-    //Récupération du nom du user connecté
-    const {username} = useContext(UserContext);
-
     return(
         <div className="wrap" style={{height:"100vh"}}>
         <Alert
@@ -27,14 +23,14 @@ const ContactConfirmationPage = ()=>{
             Message sent!
         </AlertTitle>
         <AlertDescription maxWidth="sm">
-            Thanks for contacting us. Our team will get back to you soon.<br></br>
+            Thanks for contacting us. Our team will get back to you soon.<br/>
         
             <Link className="text-dark font-weight-bold pr-5 about_link" to={CONSTANTS.LANDINGPAGE}>Go back to landing page</Link>
         </AlertDescription>
         </Alert>
         </div>
     );
-}
+};
     
 
 

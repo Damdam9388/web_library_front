@@ -1,12 +1,10 @@
-import React, {useState} from "react";
-import {Button, Input, Stack, InputGroup, InputRightElement} from "@chakra-ui/core";
+import React from "react";
+import {Button} from "@chakra-ui/core";
 import './ContactForm.scss'
 import {Circle} from "better-react-spinkit";
 
 
 const Contact = ({sendMessage, load}) => {
-    const [show, setShow] = useState(false);
-    const handleClick = () => setShow(!show);
     return(
         <>
                 <div className="contact">
