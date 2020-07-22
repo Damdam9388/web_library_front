@@ -8,8 +8,9 @@ export const FORGOT_PASSWORD = "/forgot_password";
 export const CHANGE_PASSWORD = "/changeForgotPassword";
 export const CONFIRM_ACCOUNT = "/confirmAccount";
 export const SIGNUP = "/Signup";
-export const PROGRAMS =  "/programs"
+export const PROGRAMS =  "/programs";
 export const CONNECTED_USER = "/Logged-In";
-export const PROGRAM_SINGLE = "/programSinglePage";
-export const CONTACT_CONFIRMATION = "/Confirmation-message"
+export const PROGRAM_SINGLE = "/programResources";
+export const FRAMEWORK_SINGLE = "/frameworkResources";
+export const CONTACT_CONFIRMATION = "/Confirmation-message";
 
