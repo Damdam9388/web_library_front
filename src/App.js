@@ -63,6 +63,7 @@ const App = () => {
                             <Route path={CONSTANTS.LOGIN} component={Login}/>
                             <Route path={CONSTANTS.CONNECTED_USER} component ={ConnectedUserPage}/>
                             <Route path={CONSTANTS.CONTACT_CONFIRMATION} component ={ContactConfirmationPage}/>
+                            <Route path={CONSTANTS.ADD_RESOURCE} component ={ContactConfirmationPage}/>
                             <Route component ={landing}/>
                         </Switch>
                     <Footer/>
