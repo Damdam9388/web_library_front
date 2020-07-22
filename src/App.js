@@ -19,6 +19,7 @@ import ConnectedUserPage from "./Components/Pages/ConnectedUserPage";
 import ConfirmAccount from "./Components/SignUp/ConfirmAccount";
 import ProgramResources from "./Components/ProgramsPage/ProgramResources";
 import ContactConfirmationPage from "./Components/Pages/ContactConfirmationPage";
+import FrameworkResources from "./Components/ResourcesPage/FrameworkResources";
 
 
 const App = () => {
@@ -54,9 +55,10 @@ const App = () => {
                 <Router history={History}>
 
                         <Switch>
-                            <Route path = {CONSTANTS.PROGRAM_SINGLE + "/:id+"} component={ProgramResources}/>
-                            <Route path = {CONSTANTS.PROGRAMS} component={Programs}/>
-                            <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword}/>
+                            <Route path = {CONSTANTS.FRAMEWORK_SINGLE + "/:id+"} component={FrameworkResources} />
+                            <Route path = {CONSTANTS.PROGRAM_SINGLE + "/:id+"} component={ProgramResources} />
+                            <Route path = {CONSTANTS.PROGRAMS} component={Programs} />
+                            <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword} />
                             <Route path={CONSTANTS.CONFIRM_ACCOUNT + "/:token"} component={ConfirmAccount} />
                             <Route path={CONSTANTS.FORGOT_PASSWORD} component={ForgotPassword}/>
                             <Route path={CONSTANTS.SIGNUP} component={SignUp}/>
