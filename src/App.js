@@ -17,6 +17,7 @@ import Nav from "./Layout/Nav/Nav";
 import Programs from "./Components/ProgramsPage/Programs";
 import ConnectedUserPage from "./Components/Pages/ConnectedUserPage";
 import ConfirmAccount from "./Components/SignUp/ConfirmAccount";
+import ProgramResources from "./Components/ProgramsPage/ProgramResources";
 
 
 const App = () => {
@@ -52,6 +53,7 @@ const App = () => {
                 <Router history={History}>
 
                         <Switch>
+                            <Route path = {CONSTANTS.PROGRAM_SINGLE + "/:id+"} component={ProgramResources}/>
                             <Route path = {CONSTANTS.PROGRAMS} component={Programs}/>
                             <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword}/>
                             <Route path={CONSTANTS.CONFIRM_ACCOUNT + "/:token"} component={ConfirmAccount} />

@@ -34,8 +34,8 @@ class Footer extends Component{
 
                     <div className="col-md-3 pt-5" style={{backgroundColor: "#263246"}}>
                         <h3 className="mb-3 text-white h5">Legal</h3>
-                            <a href="#" className="text-white-50">Terms</a> <br/>
-                            <a href="#" className="text-white-50">Privacy</a>
+                            <a href="http://facebook.com" className="text-white-50">Terms</a> <br/>
+                            <a href="http://facebook.com" className="text-white-50">Privacy</a>
                     </div>
                 </div>
 

@@ -1,25 +1,25 @@
 import React, {useState, useEffect} from "react";
-import {getPrograms} from "../../Services/ProgramsServices";
-import Program from "./Program";
+import {getResources} from "../../Services/ProgramsServices";
 import {Circle} from "better-react-spinkit";
+import Resource from "../ResourcesPage/Resource";
 
-const Programs = () => {
-    const [programs, setPrograms] = useState();
-    const [loading, setLoading] = useState(true);
+const ProgramResources = ({match}) => {
+    const [resources, setResources] = useState();
     const token = localStorage.getItem('tokenUser');
     const config = {headers: {Authorization: "Bearer " + token}};
-
+    const [loading, setLoading] = useState(true);
+    const idTopicProgram = match.params.id;
 
     useEffect(() => {
-        getPrograms(config)
+        getResources(idTopicProgram, config)
             .then((res) => {
-                const programsList = res.data["hydra:member"];
-                setPrograms(programsList);
-                console.log(programsList);
+                const resourcesList = res.data["hydra:member"];
+                setResources(resourcesList);
+                console.log(resourcesList);
             })
             .catch((err) => console.error(err))
             .finally(() => setLoading(false));
-    }, [config]);
+    }, [config, idTopicProgram]);
 
     return (
         <div style={{height:"100vh"}}>
@@ -27,16 +27,14 @@ const Programs = () => {
                 {loading ? (
                     <Circle />
                 ) : (
-                    programs.map((program, index) => {
+                    resources.map((resource, index) => {
                         return (
-                            <Program key={index} program={program} />
+                            <Resource key={index} resource={resource} />
                         );
                     })
                 )}
             </div>
         </div>
-
     );
 };
-
-export default Programs;
+export default ProgramResources;

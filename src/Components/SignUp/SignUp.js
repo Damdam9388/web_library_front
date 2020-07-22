@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import SignUpForm from "./SignUpForm";
 import { useHistory } from "react-router-dom";
 import { Box } from "@chakra-ui/core";
