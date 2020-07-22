@@ -11,4 +11,5 @@ export const SIGNUP = "/Signup";
 export const PROGRAMS =  "/programs"
 export const CONNECTED_USER = "/Logged-In";
 export const PROGRAM_SINGLE = "/programSinglePage";
+export const CONTACT_CONFIRMATION = "/Confirmation-message"
 

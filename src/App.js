@@ -18,6 +18,7 @@ import Programs from "./Components/ProgramsPage/Programs";
 import ConnectedUserPage from "./Components/Pages/ConnectedUserPage";
 import ConfirmAccount from "./Components/SignUp/ConfirmAccount";
 import ProgramResources from "./Components/ProgramsPage/ProgramResources";
+import ContactConfirmationPage from "./Components/Pages/ContactConfirmationPage";
 
 
 const App = () => {
@@ -61,6 +62,7 @@ const App = () => {
                             <Route path={CONSTANTS.SIGNUP} component={SignUp}/>
                             <Route path={CONSTANTS.LOGIN} component={Login}/>
                             <Route path={CONSTANTS.CONNECTED_USER} component ={ConnectedUserPage}/>
+                            <Route path={CONSTANTS.CONTACT_CONFIRMATION} component ={ContactConfirmationPage}/>
                             <Route component ={landing}/>
                         </Switch>
                     <Footer/>
