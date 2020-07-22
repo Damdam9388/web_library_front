@@ -20,7 +20,7 @@ const ProgramResources = ({match}) => {
             })
             .catch((err) => console.error(err))
             .finally(() => setLoading(false));
-    }, [config, idTopicProgram]);
+    }, []);
 
     return (
         <div style={{height:"100vh"}}>
