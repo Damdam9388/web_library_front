@@ -12,20 +12,25 @@ const ConfirmAccount = ({match}) => {
         getConfirmAccount(token)
             .then((res) => {
                 console.log(res);
-                history.push(CONSTANTS.LOGIN)
+                history.push(CONSTANTS.LOGIN);
             })
             .catch((err) => console.error(err))
             .finally(() => setLoading(false));
-    }, []);
+    }, [history, match.params.token]);
     return (
-        <div className="row" style={{height: "100vh"}}>
-            <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
-                <div className="jumbotron" style={{width:"70%"}} >
-                    <p>Patientez pendant la création de votre compte</p>
-                    <p>Vous allez être redirigé sur la page de Login</p>
+        <>
+        { loading ?
+            <div className="row" style={{height: "100vh"}}>
+                <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
+                    <div className="jumbotron" style={{width:"70%"}} >
+                        <p>Patientez pendant la création de votre compte</p>
+                        <p>Vous allez être redirigé sur la page de Login</p>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </div> :
+                <div> </div>
+        }
+        </>
     );
 };
 export default ConfirmAccount;

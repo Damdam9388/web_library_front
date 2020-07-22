@@ -1,41 +1,40 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, {useState, useEffect} from "react";
 import {getPrograms} from "../../Services/ProgramsServices";
 import Program from "./Program";
-import AuthContext from "./../Context/AuthContext";
 import {Circle} from "better-react-spinkit";
 
 const Programs = () => {
     const [programs, setPrograms] = useState();
     const [loading, setLoading] = useState(true);
-    const {isLogged} = useContext(AuthContext);
     const token = localStorage.getItem('tokenUser');
     const config = {headers: {Authorization: "Bearer " + token}};
+
 
     useEffect(() => {
         getPrograms(config)
             .then((res) => {
                 const programsList = res.data["hydra:member"];
                 setPrograms(programsList);
+                console.log(programsList);
             })
             .catch((err) => console.error(err))
             .finally(() => setLoading(false));
-    }, []);
+    }, [config]);
 
     return (
         <div style={{height:"100vh"}}>
-
-                    <div className="card-deck">
-                        {loading ? (
-                            <Circle />
-                        ) : (
-                            programs.map((program, index) => {
-                                return (
-                                    <Program key={index} program={program} />
-                                );
-                            })
-                        )}
-                    </div>
-                </div>
+            <div className="card-deck">
+                {loading ? (
+                    <Circle />
+                ) : (
+                    programs.map((program, index) => {
+                        return (
+                            <Program key={index} program={program} />
+                        );
+                    })
+                )}
+            </div>
+        </div>
 
     );
 };
