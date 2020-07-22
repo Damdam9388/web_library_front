@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {getResources} from "../../Services/ProgramsServices";
 import {Circle} from "better-react-spinkit";
 import Resource from "../ResourcesPage/Resource";
+import Framework from "../ResourcesPage/Framework";
 
 const ProgramResources = ({match}) => {
     const [resources, setResources] = useState();
@@ -29,7 +30,10 @@ const ProgramResources = ({match}) => {
                 ) : (
                     resources.map((resource, index) => {
                         return (
-                            <Resource key={index} resource={resource} />
+                            <>
+                                <Framework key={index} resource={resource} index={index} />
+                                <Resource key={index} resource={resource} />
+                            </>
                         );
                     })
                 )}
