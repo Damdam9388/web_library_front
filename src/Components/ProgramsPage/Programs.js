@@ -9,7 +9,6 @@ const Programs = () => {
     const token = localStorage.getItem('tokenUser');
     const config = {headers: {Authorization: "Bearer " + token}};
 
-
     useEffect(() => {
         getPrograms(config)
             .then((res) => {
@@ -19,7 +18,7 @@ const Programs = () => {
             })
             .catch((err) => console.error(err))
             .finally(() => setLoading(false));
-    }, [config]);
+    }, []);
 
     return (
         <div style={{height:"100vh"}}>
