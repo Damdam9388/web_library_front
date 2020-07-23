@@ -29,9 +29,6 @@ const ConnectedUserPage = ()=>{
                     <li className="nav-item">
                         <Link className="text-dark font-weight-bold pr-5 nav-link" to={CONSTANTS.LOGIN}>Logout</Link>
                     </li>
-                    <li className="nav-item">
-                        <Link className="text-dark font-weight-bold pr-5 nav-link" to={CONSTANTS.ADD_RESOURCE}>Add resource</Link>
-                    </li>
                 </ul>
                     <span className="navbar-text font-weight-bold">
                         Welcome {username}

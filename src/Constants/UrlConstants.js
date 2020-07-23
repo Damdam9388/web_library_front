@@ -15,3 +15,5 @@ export const ENDPOINT_PROGRAMS = URL_API + "api/programs";
 export const ENDPOINT_CONFIRM = URL_API + "confirm-user";
 
 export const ENDPOINT_RESOURCE_PROGRAM = URL_API + "api/ressources?topic=";
+
+export const ENDPOINT_ADD_RESOURCE = URL_API + "api/ressources";
