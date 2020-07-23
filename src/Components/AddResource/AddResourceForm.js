@@ -15,7 +15,7 @@ const AddResourceForm = ({getAddedResource, load})=>{
             <FormControl isRequired>
             <FormLabel htmlFor="Name">Name</FormLabel>
             <InputGroup>
-                <InputLeftElement/>
+                <InputLeftElement />
                 <Input
                 variant="outline"
                 type="text"
