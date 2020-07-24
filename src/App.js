@@ -17,9 +17,9 @@ import Nav from "./Layout/Nav/Nav";
 import Programs from "./Components/ProgramsPage/Programs";
 import ConnectedUserPage from "./Components/Pages/ConnectedUserPage";
 import ConfirmAccount from "./Components/SignUp/ConfirmAccount";
-import ProgramResources from "./Components/ProgramsPage/ProgramResources";
+import ProgramInfo from "./Components/ProgramsPage/ProgramInfo";
 import ContactConfirmationPage from "./Components/Pages/ContactConfirmationPage";
-import FrameworkResources from "./Components/ResourcesPage/FrameworkResources";
+import FrameworkInfo from "./Components/ResourcesPage/FrameworkInfo";
 import AddResource from "./Components/AddResource/AddResource";
 
 
@@ -57,8 +57,8 @@ const App = () => {
 
                         <Switch>
                             <Route path={CONSTANTS.ADD_RESOURCE} component ={AddResource}/>
-                            <Route path = {CONSTANTS.FRAMEWORK_SINGLE + "/:id+"} component={FrameworkResources} />
-                            <Route path = {CONSTANTS.PROGRAM_SINGLE + "/:id+"} component={ProgramResources} />
+                            <Route path = {CONSTANTS.FRAMEWORK_SINGLE + "/:id+"} component={FrameworkInfo} />
+                            <Route path = {CONSTANTS.PROGRAM_SINGLE + "/:id+"} component={ProgramInfo} />
                             <Route path = {CONSTANTS.PROGRAMS} component={Programs} />
                             <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword} />
                             <Route path={CONSTANTS.CONFIRM_ACCOUNT + "/:token"} component={ConfirmAccount} />

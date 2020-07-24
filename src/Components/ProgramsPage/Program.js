@@ -8,7 +8,7 @@ const Program = ({program}) => {
         <div className="col-md-4 card" style={{ width: "18rem" }}>
             <div className="card-body">
                 <h5 className="card-title text-center">{program.programName}</h5>
-                <Link className="btn btn-primary" to={`${CONSTANTS.PROGRAM_SINGLE}${program.topic["@id"]}`}>
+                <Link className="btn btn-primary" to={`${CONSTANTS.PROGRAM_SINGLE}${program["@id"]}`}>
                     Go inside the program
                 </Link>
             </div>
