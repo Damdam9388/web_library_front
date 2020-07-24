@@ -16,7 +16,7 @@ const ProgramResources = ({match}) => {
             .then((res) => {
                 const resourcesList = res.data["hydra:member"];
                 setResources(resourcesList);
-                console.log(resourcesList);
+                console.log("les ressources :",resourcesList);
             })
             .catch((err) => console.error(err))
             .finally(() => setLoading(false));
@@ -30,10 +30,10 @@ const ProgramResources = ({match}) => {
                 ) : (
                     resources.map((resource, index) => {
                         return (
-                            <>
-                                <Framework key={index} resource={resource} index={index} />
-                                <Resource key={index} resource={resource} />
-                            </>
+                            <div className="col-md-12" key={index}>
+                                <Framework resource={resource} index={index} />
+                                <Resource resource={resource} />
+                            </div>
                         );
                     })
                 )}
