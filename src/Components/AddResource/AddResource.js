@@ -10,7 +10,8 @@ const AddResource = (props) => {
     const [isLoading, setIsLoading] = useState(false);
     const [data, setData] = useState(null);
     const token = localStorage.getItem('tokenUser');
-    const config = {headers: {Authorization:"Bearer" + token}};
+    //Bien veiller à mettre un espace avant la fermeture des guillemets pour que le back comprend que c'est une bearer
+    const config = {headers: {Authorization:"Bearer " + token}};
 
     const axiosAddResource = (e) => {
     setIsLoading(true);
