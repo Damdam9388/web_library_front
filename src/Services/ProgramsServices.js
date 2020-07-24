@@ -6,6 +6,6 @@ export const getPrograms = (config) => {
     return axios.get(CONSTANTS.ENDPOINT_PROGRAMS, config)
 };
 
-export const getResources = (id, config) => {
+export const getProgramInfo = (id, config) => {
     return axios.get(CONSTANTS.ENDPOINT_RESOURCE_PROGRAM + `${id}`,config)
 };

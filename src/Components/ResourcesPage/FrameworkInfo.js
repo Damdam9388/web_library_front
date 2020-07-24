@@ -1,22 +1,21 @@
 import React, {useState, useEffect} from "react";
-import {getResources} from "../../Services/ProgramsServices";
+import {getProgramInfo} from "../../Services/ProgramsServices";
 import {Circle} from "better-react-spinkit";
 import Resource from "../ResourcesPage/Resource";
-import Framework from "../ResourcesPage/Framework";
 
-const ProgramResources = ({match}) => {
-    const [resources, setResources] = useState();
+const FrameworkInfo = ({match}) => {
+    const [ressources, setRessources] = useState();
     const token = localStorage.getItem('tokenUser');
     const config = {headers: {Authorization: "Bearer " + token}};
     const [loading, setLoading] = useState(true);
-    const idTopicProgram = match.params.id;
+    const idFramework = match.params.id;
 
     useEffect(() => {
-        getResources(idTopicProgram, config)
+        getProgramInfo(idFramework, config)
             .then((res) => {
-                const resourcesList = res.data["hydra:member"];
-                setResources(resourcesList);
-                console.log("les ressources :",resourcesList);
+                const resourcesList = res.data.topic.ressources;
+                setRessources(resourcesList);
+                console.log(resourcesList);
             })
             .catch((err) => console.error(err))
             .finally(() => setLoading(false));
@@ -28,12 +27,11 @@ const ProgramResources = ({match}) => {
                 {loading ? (
                     <Circle />
                 ) : (
-                    resources.map((resource, index) => {
+                    ressources.map((resource) => {
                         return (
-                            <div className="col-md-12" key={index}>
-                                <Framework resource={resource} index={index} />
-                                <Resource resource={resource} />
-                            </div>
+                            <>
+                                <Resource key={resource['@id']} resource={resource} />
+                            </>
                         );
                     })
                 )}
@@ -41,4 +39,5 @@ const ProgramResources = ({match}) => {
         </div>
     );
 };
-export default ProgramResources;
+export default FrameworkInfo;
+
