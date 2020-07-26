@@ -3,6 +3,7 @@ import {Circle} from "better-react-spinkit";
 import { Button, Input, Stack, InputGroup, InputLeftElement } from "@chakra-ui/core";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import FormControl from "@chakra-ui/core/dist/FormControl";
+import { Select } from "@chakra-ui/core";
 
 const AddResourceForm = ({getAddedResource, load})=>{
 
@@ -44,62 +45,37 @@ const AddResourceForm = ({getAddedResource, load})=>{
 
             <FormControl isRequired>
             <FormLabel htmlFor="name">Author</FormLabel>
-            <InputGroup>
-                <InputLeftElement/>
-                <Input
-                variant="outline"
-                type="text"
-                name="author"
-                id="author"
-                className="form-control"
-                placeholder="Author..."
-                />
-            </InputGroup>
+            <Select placeholder="Select option" variant="outline" type="text" name="author" id="author" className="form-control">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </Select>
             </FormControl>
 
             <FormControl isRequired>
             <FormLabel htmlFor="language">Language</FormLabel>
-            <InputGroup>
-                <InputLeftElement/>
-                <Input
-                variant="outline"
-                type="text"
-                name="language"
-                id="language"
-                className="form-control"
-                placeholder="Language..."
-                />
-            </InputGroup>
+            <Select placeholder="Language..." variant="outline" type="text" name="language" id="language" className="form-control">
+                <option value="option1">French</option>
+                <option value="option2">English</option>
+            </Select>
             </FormControl>
 
             <FormControl isRequired>
             <FormLabel htmlFor="level">Level</FormLabel>
-            <InputGroup>
-                <InputLeftElement/>
-                <Input
-                variant="outline"
-                type="text"
-                name="level"
-                id="level"
-                className="form-control"
-                placeholder="Level..."
-                />
-            </InputGroup>
+            <Select placeholder="Level..." variant="outline" type="text" name="level" id="level" className="form-control">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </Select>
             </FormControl>
 
             <FormControl isRequired>
             <FormLabel htmlFor="level">Topic</FormLabel>
-            <InputGroup>
-                <InputLeftElement/>
-                <Input
-                variant="outline"
-                type="text"
-                name="topic"
-                id="topic"
-                className="form-control"
-                placeholder="Topic..."
-                />
-            </InputGroup>
+            <Select placeholder="Topic..." variant="outline" type="text" name="topic" id="topic" className="form-control">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </Select>
             </FormControl>
 
             {load ? (
