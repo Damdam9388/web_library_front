@@ -45,10 +45,10 @@ const AddResourceForm = ({getAddedResource, load})=>{
 
             <FormControl isRequired>
             <FormLabel htmlFor="name">Author</FormLabel>
-            <Select placeholder="Select option" variant="outline" type="text" name="author" id="author" className="form-control">
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
+            <Select placeholder="Author..." variant="outline" type="text" name="author" id="author" className="form-control">
+                {this.state.authors.map(author => (
+                    <option value = {author.id}>{author.name}</option>))
+                })
             </Select>
             </FormControl>
 
@@ -63,18 +63,18 @@ const AddResourceForm = ({getAddedResource, load})=>{
             <FormControl isRequired>
             <FormLabel htmlFor="level">Level</FormLabel>
             <Select placeholder="Level..." variant="outline" type="text" name="level" id="level" className="form-control">
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
+                {this.state.levels.map(level => (
+                    <option value = {level.id}>{level.name}</option>))
+                })
             </Select>
             </FormControl>
 
             <FormControl isRequired>
             <FormLabel htmlFor="level">Topic</FormLabel>
             <Select placeholder="Topic..." variant="outline" type="text" name="topic" id="topic" className="form-control">
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
+                {this.state.topics.map(topic => (
+                    <option value = {topic.id}>{topic.descr}</option>))
+                })
             </Select>
             </FormControl>
 
