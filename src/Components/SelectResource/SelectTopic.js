@@ -30,7 +30,7 @@ class SelectTopic extends Component {
     render(){
         return (
                 <div className="container">
-                    {this.state.topics.map(author => (<ul key={topic.id}>{topic.discr}</ul>))}
+                    {this.state.topics.map(topic => (<ul key={topic.id}>{topic.discr}</ul>))}
                 </div>
         )
     }
