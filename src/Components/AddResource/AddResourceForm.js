@@ -4,6 +4,10 @@ import { Button, Input, Stack, InputGroup, InputLeftElement } from "@chakra-ui/c
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import FormControl from "@chakra-ui/core/dist/FormControl";
 import { Select } from "@chakra-ui/core";
+import SelectAuthor from "../SelectResource/SelectAuthor";
+import SelectLevel from "../SelectResource/SelectAuthor";
+import SelectTopic from "../SelectResource/SelectAuthor";
+
 
 const AddResourceForm = ({getAddedResource, load})=>{
 
@@ -45,11 +49,7 @@ const AddResourceForm = ({getAddedResource, load})=>{
 
             <FormControl isRequired>
             <FormLabel htmlFor="name">Author</FormLabel>
-            <Select placeholder="Author..." variant="outline" type="text" name="author" id="author" className="form-control">
-                {this.state.authors.map(author => (
-                    <option value = {author.id}>{author.name}</option>))
-                })
-            </Select>
+            <SelectAuthor></SelectAuthor>
             </FormControl>
 
             <FormControl isRequired>
@@ -62,20 +62,12 @@ const AddResourceForm = ({getAddedResource, load})=>{
 
             <FormControl isRequired>
             <FormLabel htmlFor="level">Level</FormLabel>
-            <Select placeholder="Level..." variant="outline" type="text" name="level" id="level" className="form-control">
-                {this.state.levels.map(level => (
-                    <option value = {level.id}>{level.name}</option>))
-                })
-            </Select>
+            <SelectLevel></SelectLevel> 
             </FormControl>
 
             <FormControl isRequired>
             <FormLabel htmlFor="level">Topic</FormLabel>
-            <Select placeholder="Topic..." variant="outline" type="text" name="topic" id="topic" className="form-control">
-                {this.state.topics.map(topic => (
-                    <option value = {topic.id}>{topic.descr}</option>))
-                })
-            </Select>
+            <SelectTopic></SelectTopic> 
             </FormControl>
 
             {load ? (
