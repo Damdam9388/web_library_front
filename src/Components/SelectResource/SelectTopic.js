@@ -9,12 +9,12 @@ const SelectTopic = () => {
     const config = {headers: {Authorization: "Bearer " + token}};
         
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchTopicData = async () => {
             const response = await axios.get(CONSTANTS.ENDPOINT_SELECT_TOPIC, config);
             setTopics(response.data);
             console.log(response.data);
         }
-    fetchData();
+    fetchTopicData();
     }, []);
         
     return (

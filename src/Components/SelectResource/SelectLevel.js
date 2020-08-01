@@ -9,12 +9,12 @@ const SelectLevel = () => {
     const config = {headers: {Authorization: "Bearer " + token}};
         
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchLevelData = async () => {
             const response = await axios.get(CONSTANTS.ENDPOINT_SELECT_LEVEL, config);
             setLevels(response.data);
             console.log(response.data);
         }
-    fetchData();
+    fetchLevelData();
     }, []);
         
     return (

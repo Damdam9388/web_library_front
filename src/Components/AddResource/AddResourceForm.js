@@ -66,7 +66,7 @@ const AddResourceForm = ({getAddedResource, load})=>{
             </FormControl>
 
             <FormControl isRequired>
-            <FormLabel htmlFor="level">Topic</FormLabel>
+            <FormLabel htmlFor="topic">Topic</FormLabel>
             <SelectTopic></SelectTopic> 
             </FormControl>
 

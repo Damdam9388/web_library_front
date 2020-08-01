@@ -8,12 +8,12 @@ const SelectAuthor = () => {
     const token = localStorage.getItem('tokenUser');
     const config = {headers: {Authorization: "Bearer " + token}};
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchAuthorData = async () => {
             const response = await axios.get(CONSTANTS.ENDPOINT_SELECT_AUTHOR, config);
             setAuthors(response.data);
             console.log(response.data);
         }
-    fetchData();
+    fetchAuthorData();
     }, []);
         
     return (
