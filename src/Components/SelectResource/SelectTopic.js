@@ -9,21 +9,24 @@ const SelectTopic = () => {
     const config = {headers: {Authorization: "Bearer " + token}};
         
     useEffect(() => {
-        const fetchTopicData = async () => {
-            const response = await axios.get(CONSTANTS.ENDPOINT_SELECT_TOPIC, config);
-            setTopics(response.data);
-            console.log(response.data);
-        }
-    fetchTopicData();
+        console.log("Hi, TOPIC");
+            axios.get(CONSTANTS.ENDPOINT_SELECT_TOPIC, config)
+                .then(response => {
+                    const selectTopic = response.data['hydra:member'];
+                    setTopics(selectTopic);
+                }, (error) => {
+                    console.log(error);
+                });
     }, []);
         
     return (
-
-        <Select placeholder="Topic..." variant="outline" type="text" name="topic" id="topic" className="form-control">
-                {topics.map(topic => (
-                    <option value = {topic.id}>{topic.name}</option>))
-                })
-        </Select>
+        <div> 
+            <Select placeholder="Topic..." variant="outline" type="text" name="topic" id="topic" className="form-control">
+                    {topics.map(topic => (
+                        <option key={topic.id}>{topic.name}</option>))
+                    })
+            </Select>
+        </div>
     );
 }
 

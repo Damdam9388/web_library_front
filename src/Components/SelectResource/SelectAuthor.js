@@ -7,22 +7,26 @@ const SelectAuthor = () => {
     const [authors, setAuthors] = useState([]);
     const token = localStorage.getItem('tokenUser');
     const config = {headers: {Authorization: "Bearer " + token}};
+
     useEffect(() => {
-        const fetchAuthorData = async () => {
-            const response = await axios.get(CONSTANTS.ENDPOINT_SELECT_AUTHOR, config);
-            setAuthors(response.data);
-            console.log(response.data);
-        }
-    fetchAuthorData();
+        console.log("Hi, AUTHOR");
+            axios.get(CONSTANTS.ENDPOINT_SELECT_AUTHOR, config)
+                .then(response => {
+                    const selectAuthor = response.data['hydra:member'];
+                    setAuthors(selectAuthor);
+                }, (error) => {
+                    console.log(error);
+                });
     }, []);
         
     return (
-
-        <Select placeholder="Author..." variant="outline" type="text" name="author" id="author" className="form-control">
-                {authors.map(author => (
-                    <option value = {author.id}>{author.name}</option>))
-                })
-        </Select>
+        <div> 
+            <Select placeholder="Author..." variant="outline" type="text" name="author" id="author" className="form-control">
+                    {authors.map(author => (
+                        <option key={author.id}>{author.name}</option>))
+                    })
+            </Select>
+        </div>
     );
 }
 

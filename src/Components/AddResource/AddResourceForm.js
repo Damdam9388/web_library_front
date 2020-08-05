@@ -5,8 +5,8 @@ import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import FormControl from "@chakra-ui/core/dist/FormControl";
 import { Select } from "@chakra-ui/core";
 import SelectAuthor from "../SelectResource/SelectAuthor";
-import SelectLevel from "../SelectResource/SelectAuthor";
-import SelectTopic from "../SelectResource/SelectAuthor";
+import SelectLevel from "../SelectResource/SelectLevel";
+import SelectTopic from "../SelectResource/SelectTopic";
 
 
 const AddResourceForm = ({getAddedResource, load})=>{

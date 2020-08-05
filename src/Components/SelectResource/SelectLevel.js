@@ -9,21 +9,24 @@ const SelectLevel = () => {
     const config = {headers: {Authorization: "Bearer " + token}};
         
     useEffect(() => {
-        const fetchLevelData = async () => {
-            const response = await axios.get(CONSTANTS.ENDPOINT_SELECT_LEVEL, config);
-            setLevels(response.data);
-            console.log(response.data);
-        }
-    fetchLevelData();
+        console.log("Hi, LEVEL");
+        axios.get(CONSTANTS.ENDPOINT_SELECT_LEVEL, config)
+            .then(response => {
+                const selectLevel = response.data['hydra:member'];
+                setLevels(selectLevel);
+            }, (error) => {
+                console.log(error);
+            });
     }, []);
         
     return (
-
-        <Select placeholder="Level..." variant="outline" type="text" name="level" id="level" className="form-control">
-                {levels.map(level => (
-                    <option value = {level.id}>{level.name}</option>))
-                })
-        </Select>
+        <div> 
+            <Select placeholder="Level..." variant="outline" type="level" name="level" id="level" className="form-control">
+                    {levels.map(level => (
+                        <option key={level.id}>{level.name}</option>))
+                    })
+            </Select>
+        </div>
     );
 }
 
