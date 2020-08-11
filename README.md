@@ -52,9 +52,14 @@ Before continuing, make sure to:
 
 ``` git clone https://github.com/Damdam9388/web_library_front.git```
 
+
 #### install the dependencies: 
 
 ```yarn install```
+
+#### Create a .env.local file 
+
+- REACT_APP_API_URL=https://localhost:8000/
 
 #### Launch the server
 
