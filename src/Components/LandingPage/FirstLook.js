@@ -26,8 +26,8 @@ const FirstLook = () => {
                 <div className="col-md-5 d-flex flex-column justify-content-center align-items-center">
                     <span className="font-weight-bold mb-5" style={{fontSize:"3rem", color:"#263246"}}>Your study partner</span>
                     <div className="btn-group d-inline-block mt-lg-5">
-                        <Link type="button" className="buttons_landing mr-5" to={CONSTANTS.LOGIN}>Sign in</Link>
-                        <Link type="button" className="buttons_landing" to={CONSTANTS.SIGNUP}>Register</Link>
+                        <Link type="button" className="buttons_landing mr-5" to={CONSTANTS.LOGIN}>LOGIN</Link>
+                        <Link type="button" className="buttons_landing" to={CONSTANTS.SIGNUP}>SIGN UP</Link>
                     </div>
                 </div>
 

@@ -52,11 +52,11 @@ const Contact = ({sendMessage, load}) => {
                                     <Button
                                         type="submit"
                                         rightIcon="arrow-forward"
-                                        bg="#263246"
+                                        bg="#d83a3a"
                                         variant="solid"
                                         width="full"
                                         border="transparent"
-                                        _hover={{ bg: "#6d7788" }}
+                                        _hover={{ bg: "#fd3636" }}
                                     >
                                     Send Message
                                     </Button>

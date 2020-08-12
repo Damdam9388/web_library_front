@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 import './ContactForm.scss';
 import {getContact} from "../../Services/ContactServices";
 import * as CONSTANTS from "../../Constants/constants";
+import backgroundImage from './../../Images/marble.jpg';
+import { Box } from "@chakra-ui/core";
 
 const Contact = (props) => {
     const [loading, setLoading] = useState(false);
@@ -33,7 +35,11 @@ const Contact = (props) => {
 
     return(
         <>
-        <ContactForm sendMessage={axiosData} load={loading}/>
+        <div style={{ height: '150vh', backgroundImage:`url(${backgroundImage})`}}>
+            <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
+                    <ContactForm sendMessage={axiosData} load={loading}/>
+            </div>
+        </div>
         </>
     );
 };

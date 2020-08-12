@@ -27,7 +27,7 @@ const ProgramInfo = ({match}) => {
     }, []);
 
     return (
-        <div style={{height:"100vh"}}>
+        <div style={{height:"200vh", marginTop:"20px"}}>
             <div className="card-deck">
 
                 {loading ? (

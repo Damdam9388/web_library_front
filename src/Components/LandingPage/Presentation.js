@@ -28,10 +28,10 @@ const Presentation = () => {
             </div>
             <div
                 className="order-sm-1 col-md-6 d-flex flex-column justify-content-center align-items-center text-white" style={{backgroundColor: "#263246"}}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                A, accusamus assumenda blanditiis debitis dolorem eius,
-                expedita facilis in ipsam itaque laborum natus officia
-                quam quis soluta totam veritatis? Non, tenetur!
+                "When you start with a language, it is common to find
+                a number of errors and problems.
+                Learning to understand and resolve the mistakes
+                independently, is an important part of learning." Grafikart
             </div>
 
             <div className="order-sm-12 col-md-6 px-0">
@@ -40,9 +40,10 @@ const Presentation = () => {
 
             <div
             className="order-sm-12 col-md-6 d-flex flex-column justify-content-center align-items-center text-white" style={{backgroundColor: "#263246"}}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Aliquam architecto excepturi facere hic, illo iure, molestiae
-            necessitatibus non obcaecati officia pariatur placeat quas quo
+            "To write code, the KISS principle applies: Keep It Simple Stupid
+            In programming, there are always plenty of ways to achieve the same result.
+            So choose the easiest method.
+            It will be easier to understand your code in the future and to maintain it because it is simpler."John Taieb
 
         </div>
 
@@ -52,10 +53,10 @@ const Presentation = () => {
             </div>
             <div
                 className="col-md-6 d-flex flex-column justify-content-center align-items-center text-white" style={{backgroundColor: "#263246"}}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                A, accusamus assumenda blanditiis debitis dolorem eius,
-                expedita facilis in ipsam itaque laborum natus officia quam
-                quis soluta totam veritatis? Non, tenetur!
+            "Learning to code is anything but swallowing up a lot of theoretical lessons that you learn by heart.
+            This is the wrong method. It is already super boring and eventually you won't be able to cope on your own in a new project. 
+            Code cannot be learned by heart! Have fun inventing new features! Create things and if you find it fun, 
+            then you're on the right track!" John Taieb
             </div>
         </div>
     </>;

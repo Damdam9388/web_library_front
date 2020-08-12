@@ -99,11 +99,11 @@ const LoginForm = ({getLogin, load}) => {
                         <Button
                             type="submit"
                             rightIcon="arrow-forward"
-                            bg="#263246"
-                            variant="solid"
+                            bg="#d83a3a"
+                            variant="red"
                             width="full"
                             border="transparent"
-                            _hover={{ bg: "#AAF" }}
+                            _hover={{ bg: "#fd3636" }}
                         >
                         Login
                         </Button>
