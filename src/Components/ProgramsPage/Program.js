@@ -5,6 +5,7 @@ import * as CONSTANTS from "./../../Constants/constants";
 const Program = ({program}) => {
 
     return(
+        
         <div className="col-md-4 card" style={{ width: "18rem", marginTop:"250px", height:"150px"}}>
             <div className="card-body">
                 <h5 className="card-title text-center">{program.programName}</h5>

@@ -9,6 +9,8 @@ const AddResource = (props) => {
     let history = useHistory();
     const [isLoading, setIsLoading] = useState(false);
     const [data, setData] = useState(null);
+    //Bearer Token" est un JSON Web Token dont le rôle est d'indiquer 
+    //que l'utilisateur qui accède aux ressources est bien authentifié.
     const token = localStorage.getItem('tokenUser');
     const config = {headers: {Authorization:"Bearer " + token, 'Content-type': 'application/json'}};
 
