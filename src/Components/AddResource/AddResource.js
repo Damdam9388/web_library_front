@@ -6,6 +6,10 @@ import * as CONSTANTS from "../../Constants/constants";
 
 
 const AddResource = (props) => {
+    //L'objet history permet d'interagir avec l'historique du navigateur.
+    //C'est grâce à cet objet que l'on peut envoyer une URL dans l'historique du 
+    //navigateur pour revenir en arrière. 
+    //On peut utiliser "history" depuis n'importe quel fichier du projet.
     let history = useHistory();
     const [isLoading, setIsLoading] = useState(false);
     const [data, setData] = useState(null);
@@ -14,6 +18,7 @@ const AddResource = (props) => {
     const token = localStorage.getItem('tokenUser');
     const config = {headers: {Authorization:"Bearer " + token, 'Content-type': 'application/json'}};
 
+    //Récupération des valeurs du formulaire
     const axiosAddResource = (e) => {
     setIsLoading(true);
     setData({
@@ -24,6 +29,9 @@ const AddResource = (props) => {
         level : e.target.elements.level.value,
         topic : e.target.elements.topic.value
     });
+    // PreventDefault indique à l'agent utilisateur que si l'événement n'est pas traité explicitement, 
+    // son action par défaut ne doit pas être prise en compte comme elle le serait normalement. 
+    // L'événement continue à se propager comme d'habitude, 
     e.preventDefault();
 
     };

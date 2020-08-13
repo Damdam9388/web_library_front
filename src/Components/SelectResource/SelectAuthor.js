@@ -4,12 +4,14 @@ import * as CONSTANTS from "../../Constants/UrlConstants";
 import { Select } from "@chakra-ui/core";
 
 const SelectAuthor = () => {
+    //Déclarer une variable d'état "authors"
     const [authors, setAuthors] = useState([]);
     const token = localStorage.getItem('tokenUser');
     const config = {headers: {Authorization: "Bearer " + token}};
 
     useEffect(() => {
         console.log("Hi, AUTHOR");
+        //we send a GET request using axios
             axios.get(CONSTANTS.ENDPOINT_SELECT_AUTHOR, config)
                 .then(response => {
                     const selectAuthor = response.data['hydra:member'];
