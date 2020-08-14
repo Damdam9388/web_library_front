@@ -4,7 +4,7 @@ import './ContactForm.scss'
 import {Circle} from "better-react-spinkit";
 
 
-const Contact = ({sendMessage, load}) => {
+const ContactForm = ({sendMessage, load}) => {
     return(
         <>
                 <div className="contact">
@@ -69,4 +69,4 @@ const Contact = ({sendMessage, load}) => {
         </>
     );
 };
-export default Contact;
+export default ContactForm;

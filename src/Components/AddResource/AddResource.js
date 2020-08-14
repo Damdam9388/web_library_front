@@ -35,7 +35,7 @@ const AddResource = (props) => {
     e.preventDefault();
 
     };
-
+    //Envoyer la requête à Symfony using React Hook `useEffect`
     useEffect(() => {
         console.log(data)
         addResource(data, config)
