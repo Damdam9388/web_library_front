@@ -1,7 +1,5 @@
 # WEBSTER 
 
-Cette application est une sorte de **librairie de tutoriels** en lien avec la programmation informatique. 
-
 This application is a kind of **web library of tutorials** related to computer programming.
 
 ## The team 
@@ -22,7 +20,7 @@ This application is a kind of **web library of tutorials** related to computer p
 
 ## The project
 
-The projet has been developed as part of the web developement training program at [Le Cnam - House Of Code] remotely, starting from 27th April 2020 to 23rd September 2020. 
+The project has been developed as part of the web developement training program at [Le Cnam - House Of Code] remotely, starting from April 27th 2020 to September 23rd 2020. 
 
 This application is intended primarily for students of the House Of Code program, but its usefulness can be extended to the majority of learners in the field of computer programming.
 
