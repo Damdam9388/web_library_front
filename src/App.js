@@ -7,7 +7,7 @@ import * as CONSTANTS from "./Constants/constants";
 import SignUp from "./Components/SignUp/SignUp.js";
 import Login from "./Components/Login/Login.js";
 import Contact from "./Components/Contact/Contact.js";
-import About from "./Components/About/About.js";
+import Team from "./Components/Team/Team.js";
 import ForgotPassword from "./Components/Login/ForgotPassword";
 import ChangeForgotPassword from "./Components/Login/ChangeForgotPassword";
 import History from "./Components/Utils/History.js";
@@ -41,7 +41,7 @@ const App = () => {
             <>
                 <Nav />
                 <Switch>
-                    <Route path={CONSTANTS.ABOUT} component={About}/>
+                    <Route path={CONSTANTS.TEAM} component={Team}/>
                     <Route path={CONSTANTS.CONTACT} component={Contact}/>
                     <Route path={CONSTANTS.LANDINGPAGE} component ={LandingPage}/>
                 </Switch>

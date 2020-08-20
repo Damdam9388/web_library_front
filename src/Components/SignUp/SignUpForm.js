@@ -4,7 +4,6 @@ import { Button, Input, Stack, InputGroup, InputLeftElement } from "@chakra-ui/c
 import Icon from "@chakra-ui/core/dist/Icon";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import FormControl from "@chakra-ui/core/dist/FormControl";
-import './SignUpForm.scss';
 import Circle from "better-react-spinkit/dist/Circle";
 
 const SignUpForm = ({ getSignUp, load }) => {
@@ -72,10 +71,11 @@ const SignUpForm = ({ getSignUp, load }) => {
             <Button
               type="submit"
               rightIcon="arrow-forward"
-              variantColor="telegram"
+              variantColor="red"
               variant="solid"
               width="150px"
               border="transparent"
+              _hover={{ bg: "#fd3636" }}
             >
               Sign Up
             </Button>

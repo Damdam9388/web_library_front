@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { Box } from "@chakra-ui/core";
 import "./SignUpForm.scss";
 import {getSignUp} from "../../Services/AuthenticationServices";
+import backgroundImage from './../../Images/marble.jpg';
 
 const SignUp = (props) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -31,12 +32,12 @@ const SignUp = (props) => {
   return (
     <>
       <div className="form">
-        <div className="row contain" style={{ height: '50vh' }}>
+        <div className="row contain" style={{ height: '100vh', backgroundImage:`url(${backgroundImage})`}}>
           <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
-            <Box bg="tomato" w="25%" p={4} color="white">
+            <Box bg="#F7FAFC" opacity="0.9" w="45%" p={4} mb={5} rounded="md" className="align-self-center">
               <div className="logo mb-3">
                 <div className="col-md-12 text-center">
-                  <h1 className="login_title text-white">SignUp</h1>
+                  <h1 className="login_title text-dark font-weight-bold mb-5" style={{fontSize:"35px", fontWeight:"600"}}>SIGN UP</h1>
                 </div>
               </div>
               <SignUpForm getSignUp={axiosSignUp} isLoading={isLoading} />

@@ -33,7 +33,9 @@ const Contact = (props) => {
 
     return(
         <>
-        <ContactForm sendMessage={axiosData} load={loading}/>
+            <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
+                    <ContactForm sendMessage={axiosData} load={loading}/>
+            </div>
         </>
     );
 };

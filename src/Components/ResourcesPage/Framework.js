@@ -9,11 +9,11 @@ const Framework = ({framework}) => {
             <div className="card-body">
                 <h5 className="card-title text-center">{framework.frameworkName}</h5>
                 <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
-                    <a href={framework.docUrl}  className="btn btn-primary">Link to the doc</a>
-                    <Link className="btn btn-primary" to={`${CONSTANTS.FRAMEWORK_SINGLE}${framework['@id']}`}>
+                    <a href={framework.docUrl}  className="btn btn-danger">Link to the doc</a><br></br>
+                    <Link className="btn btn-danger" to={`${CONSTANTS.FRAMEWORK_SINGLE}${framework['@id']}`}>
                         Go inside the framework
                     </Link><br></br>
-                    <Link className="btn btn-primary" to={CONSTANTS.ADD_RESOURCE}>Add resource</Link>
+                    <Link className="btn btn-danger" to={CONSTANTS.ADD_RESOURCE}>Add resource</Link>
                 </div>
             </div>
         </div>
