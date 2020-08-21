@@ -10,17 +10,20 @@ const SelectAuthor = () => {
     //que l'utilisateur qui accède aux ressources est bien authentifié.
     const token = localStorage.getItem('tokenUser');
     const config = {headers: {Authorization: "Bearer " + token}};
-
+    //We want to do some side of effect whenever something happens
+    //It will be executed each time our application renders
     useEffect(() => {
         console.log("Hi, AUTHOR");
         //we send a GET request using axios
             axios.get(CONSTANTS.ENDPOINT_SELECT_AUTHOR, config)
                 .then(response => {
+                    //hydra:member : sert à récupérer les éléments (objets JSON) contenu dans la reponse
                     const selectAuthor = response.data['hydra:member'];
                     setAuthors(selectAuthor);
                 }, (error) => {
                     console.log(error);
                 });
+    //This "[]" array never actually changes between diffrent renders
     }, []);
         
     return (
