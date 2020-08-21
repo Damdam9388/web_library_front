@@ -47,7 +47,8 @@ const AddResource = (props) => {
                 console.log(error);
             })
             .finally(() => setIsLoading(false));
-
+    //Whenever the data inside of our array [data] changes, we gonna re-run this hook, 
+    //otherwise we'll not re-run it
     }, [data]);
 
 

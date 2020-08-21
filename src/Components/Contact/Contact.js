@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import ContactForm from "./ContactForm";
 import { useHistory } from 'react-router-dom';
 import './ContactForm.scss';
-import {getContact} from "../../Services/ContactServices";
+import {sendContactMessageInfo} from "../../Services/ContactServices";
 import * as CONSTANTS from "../../Constants/constants";
 
 const Contact = (props) => {
@@ -20,7 +20,7 @@ const Contact = (props) => {
         //Eviter la propagation de l'évenement
         e.preventDefault();
         //Envoyer la requette à symfony
-        getContact(name, email, subject, message)
+        sendContactMessageInfo(name, email, subject, message)
             .then(response => {
                 console.log(response);
                 history.push(CONSTANTS.CONTACT_CONFIRMATION);
