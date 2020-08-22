@@ -14,6 +14,8 @@ const SelectTopic = () => {
                 .then(response => {
                     const selectTopic = response.data['hydra:member'];
                     setTopics(selectTopic);
+                    console.log("******TOPIC*****")
+                    console.log(selectTopic)
                 }, (error) => {
                     console.log(error);
                 });
@@ -23,7 +25,7 @@ const SelectTopic = () => {
         <div> 
             <Select placeholder="Topic..." variant="outline" type="text" name="topic" id="topic" className="form-control">
                     {topics.map(topic => (
-                        <option key={topic.id}>{topic.name}</option>))
+                        <option key={topic.id}>{topic.programmingLanguage}</option>))
                     })
             </Select>
         </div>

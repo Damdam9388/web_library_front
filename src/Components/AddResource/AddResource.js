@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState,useEffect} from "react";
 import AddResourceForm from "./AddResourceForm";
 import { useHistory } from "react-router-dom";
 import {addResource} from "../../Services/AddResourceServices";

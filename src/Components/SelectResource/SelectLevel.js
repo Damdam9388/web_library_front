@@ -14,6 +14,9 @@ const SelectLevel = () => {
             .then(response => {
                 const selectLevel = response.data['hydra:member'];
                 setLevels(selectLevel);
+                console.log("******LEVEL*****")
+                console.log(selectLevel)
+                
             }, (error) => {
                 console.log(error);
             });
@@ -23,7 +26,7 @@ const SelectLevel = () => {
         <div> 
             <Select placeholder="Level..." variant="outline" type="level" name="level" id="level" className="form-control">
                     {levels.map(level => (
-                        <option key={level.id}>{level.name}</option>))
+                        <option key={level.id}>{level.levelName}</option>))
                     })
             </Select>
         </div>
