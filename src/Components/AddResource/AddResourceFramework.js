@@ -1,11 +1,11 @@
 import React, {useState,useEffect} from "react";
-import AddResourceForm from "./AddResourceForm";
+import AddResourceFormFramework from "./AddResourceFormFramework";
 import { useHistory } from "react-router-dom";
 import {addResource} from "../../Services/AddResourceServices";
 import * as CONSTANTS from "../../Constants/constants";
 
 
-const AddResource = (props) => {
+const AddResourceFramework = (props) => {
     //L'objet history permet d'interagir avec l'historique du navigateur.
     //C'est grâce à cet objet que l'on peut envoyer une URL dans l'historique du 
     //navigateur pour revenir en arrière. 
@@ -27,8 +27,7 @@ const AddResource = (props) => {
         author : e.target.elements.author.value,
         language : e.target.elements.language.value,
         level : e.target.elements.level.value,
-        program : e.target.elements.program.value,
-        framework : e.target.elements.framework.value
+        topic : e.target.elements.framework.value
     });
     // PreventDefault indique à l'agent utilisateur que si l'événement n'est pas traité explicitement, 
     // son action par défaut ne doit pas être prise en compte comme elle le serait normalement. 
@@ -55,8 +54,8 @@ const AddResource = (props) => {
 
     return (
     <>
-        <AddResourceForm getAddedResource={axiosAddResource} isLoading={isLoading} />
+        <AddResourceFormFramework getAddedResource={axiosAddResource} isLoading={isLoading} />
     </>
     );
 };
-export default AddResource;
+export default AddResourceFramework;

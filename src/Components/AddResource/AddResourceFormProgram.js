@@ -11,11 +11,11 @@ import SelectFramework from "../SelectResource/SelectFramework";
 import { Box } from "@chakra-ui/core";
 import UserContext from "../Context/UserContext";
 import {Link} from 'react-router-dom';
-import * as CONSTANTS from "./../../Constants/constants";
+import * as CONSTANTS from "../../Constants/constants";
 import logo from './../../Images/logo.PNG';
-import { CONNECTED_USER } from "./../../Constants/constants";
+import { CONNECTED_USER } from "../../Constants/constants";
 
-const AddResourceForm = ({getAddedResource, load})=>{
+const AddResourceFormProgram = ({getAddedResource, load})=>{
 const {username} = useContext(UserContext);
 
     return(
@@ -103,11 +103,6 @@ const {username} = useContext(UserContext);
                             <SelectProgram></SelectProgram> 
                             </FormControl>
 
-                            <FormControl isRequired>
-                            <FormLabel htmlFor="framework">Framework</FormLabel>
-                            <SelectFramework></SelectFramework> 
-                            </FormControl>
-
                             {load ? (
                             <Button
                                 type="submit"
@@ -143,4 +138,4 @@ const {username} = useContext(UserContext);
     
 
 
-export default AddResourceForm;
+export default AddResourceFormProgram;
