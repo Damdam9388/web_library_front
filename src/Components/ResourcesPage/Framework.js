@@ -13,7 +13,7 @@ const Framework = ({framework}) => {
                     <Link className="btn btn-danger" to={`${CONSTANTS.FRAMEWORK_SINGLE}${framework['@id']}`}>
                         Go inside the framework
                     </Link><br></br>
-                    <Link className="btn btn-danger" to={CONSTANTS.ADD_RESOURCE}>Add resource</Link>
+                    <Link className="btn btn-danger" to={CONSTANTS.ADD_RESOURCE_FRAMEWORK}>Add resource</Link>
                 </div>
             </div>
         </div>

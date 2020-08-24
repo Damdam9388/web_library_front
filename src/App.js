@@ -20,7 +20,8 @@ import ConfirmAccount from "./Components/SignUp/ConfirmAccount";
 import ProgramInfo from "./Components/ProgramsPage/ProgramInfo";
 import ContactConfirmationPage from "./Components/Pages/ContactConfirmationPage";
 import FrameworkInfo from "./Components/ResourcesPage/FrameworkInfo";
-import AddResource from "./Components/AddResource/AddResource";
+import AddResourceProgram from "./Components/AddResource/AddResourceProgram";
+import AddResourceFramework from "./Components/AddResource/AddResourceFramework";
 
 
 const App = () => {
@@ -56,7 +57,8 @@ const App = () => {
                 <Router history={History}>
 
                         <Switch>
-                            <Route path={CONSTANTS.ADD_RESOURCE} component ={AddResource}/>
+                            <Route path={CONSTANTS.ADD_RESOURCE_PROGRAM} component ={AddResourceProgram}/>
+                            <Route path={CONSTANTS.ADD_RESOURCE_FRAMEWORK} component ={AddResourceFramework}/>
                             <Route path = {CONSTANTS.FRAMEWORK_SINGLE + "/:id+"} component={FrameworkInfo} />
                             <Route path = {CONSTANTS.PROGRAM_SINGLE + "/:id+"} component={ProgramInfo} />
                             <Route path = {CONSTANTS.PROGRAMS} component={Programs} />
