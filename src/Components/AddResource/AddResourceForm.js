@@ -6,7 +6,8 @@ import FormControl from "@chakra-ui/core/dist/FormControl";
 import { Select } from "@chakra-ui/core";
 import SelectAuthor from "../SelectResource/SelectAuthor";
 import SelectLevel from "../SelectResource/SelectLevel";
-import SelectTopic from "../SelectResource/SelectTopic";
+import SelectProgram from "../SelectResource/SelectProgram";
+import SelectFramework from "../SelectResource/SelectFramework";
 import { Box } from "@chakra-ui/core";
 import UserContext from "../Context/UserContext";
 import {Link} from 'react-router-dom';
@@ -87,8 +88,8 @@ const {username} = useContext(UserContext);
                             <FormControl isRequired>
                             <FormLabel htmlFor="language">Language</FormLabel>
                             <Select placeholder="Language..." variant="outline" type="text" name="language" id="language" className="form-control">
-                                <option value="option1">French</option>
-                                <option value="option2">English</option>
+                                <option value="French">French</option>
+                                <option value="English">English</option>
                             </Select>
                             </FormControl>
 
@@ -98,8 +99,13 @@ const {username} = useContext(UserContext);
                             </FormControl>
 
                             <FormControl isRequired>
-                            <FormLabel htmlFor="topic">Topic</FormLabel>
-                            <SelectTopic></SelectTopic> 
+                            <FormLabel htmlFor="program">Program</FormLabel>
+                            <SelectProgram></SelectProgram> 
+                            </FormControl>
+
+                            <FormControl isRequired>
+                            <FormLabel htmlFor="framework">Framework</FormLabel>
+                            <SelectFramework></SelectFramework> 
                             </FormControl>
 
                             {load ? (

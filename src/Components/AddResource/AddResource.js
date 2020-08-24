@@ -27,7 +27,8 @@ const AddResource = (props) => {
         author : e.target.elements.author.value,
         language : e.target.elements.language.value,
         level : e.target.elements.level.value,
-        topic : e.target.elements.topic.value
+        program : e.target.elements.program.value,
+        framework : e.target.elements.framework.value
     });
     // PreventDefault indique à l'agent utilisateur que si l'événement n'est pas traité explicitement, 
     // son action par défaut ne doit pas être prise en compte comme elle le serait normalement. 

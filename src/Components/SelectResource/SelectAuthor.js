@@ -13,7 +13,6 @@ const SelectAuthor = () => {
     //We want to do some side of effect whenever something happens
     //It will be executed each time our application renders
     useEffect(() => {
-        console.log("Hi, AUTHOR");
         //axios will perform a Http request to the api
         //Data is hosted in an endpoint
             axios.get(CONSTANTS.ENDPOINT_SELECT_AUTHOR, config)
@@ -35,7 +34,13 @@ const SelectAuthor = () => {
         <div> 
             <Select placeholder="Author..." variant="outline" type="text" name="author" id="author" className="form-control">
                     {authors.map(author => (
-                        <option key={author.id}>{author.authorName}</option>))
+                        //["@id"] pour chercher l'IRI
+                        //Avec un IRI c impossible d'avoir les mêmes identifiants
+                        //on utilise du JSON ld et pas du JSON
+                        //ça permet de donner des identifiants uniques pour chaque objet que tu as 
+                        //Le key sert à React pour la gestion du VirtualDOM
+                        //La value sert au formulaire pour la valeur de l'option séléctionnée l'option 
+                        <option key={author["@id"]} value={author["@id"]}>{author.authorName}</option>))
                     })
             </Select>
         </div>
