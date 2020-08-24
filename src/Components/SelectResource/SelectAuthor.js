@@ -10,62 +10,37 @@ const SelectAuthor = () => {
     //que l'utilisateur qui accède aux ressources est bien authentifié.
     const token = localStorage.getItem('tokenUser');
     const config = {headers: {Authorization: "Bearer " + token}};
-
+    //We want to do some side of effect whenever something happens
+    //It will be executed each time our application renders
     useEffect(() => {
         console.log("Hi, AUTHOR");
-        //we send a GET request using axios
+        //axios will perform a Http request to the api
+        //Data is hosted in an endpoint
             axios.get(CONSTANTS.ENDPOINT_SELECT_AUTHOR, config)
+            //get the response and store the data
                 .then(response => {
+                    //hydra:member : sert à récupérer les éléments (objets JSON) contenu dans la reponse
                     const selectAuthor = response.data['hydra:member'];
                     setAuthors(selectAuthor);
+                    console.log("******AUHTOR*****")
+                    console.log(selectAuthor)
+                    
                 }, (error) => {
                     console.log(error);
                 });
+    //This "[]" array never actually changes between diffrent renders
     }, []);
         
     return (
         <div> 
             <Select placeholder="Author..." variant="outline" type="text" name="author" id="author" className="form-control">
                     {authors.map(author => (
-                        <option key={author.id}>{author.name}</option>))
+                        <option key={author.id}>{author.authorName}</option>))
                     })
             </Select>
         </div>
     );
 }
-
-//     //State will apply to the po sts object 
-//     //We can pass data or functions down into components through props
-//     constructor(props){
-//         super(props);
-//         //Set initial state
-//         this.state={
-//             authors:[]
-//         };
-//     }
-
-//     componentDidMount() {
-//         //axios will perform a Http request to the api
-//         //Data is hosted in an endpoint
-//         useEffect(async () => {
-//              await axios.get(CONSTANTS.ENDPOINT_SELECT_AUTHOR)
-//         //get the response and store the data
-//             .then(response => {
-//                 console.log(respone);
-//                 this.setState({authors: response.data});
-//             })
-//             .catch(error => console.log(error));
-//     },[]);
-
-//     //render the data
-//     render(){
-//         return (
-//                 <div className="container">
-//                     {this.state.authors.map(author => (<ul key={author.id}>{author.name}</ul>))}
-//                 </div>
-//         )
-//     }
-// }
 
 
 export default SelectAuthor;

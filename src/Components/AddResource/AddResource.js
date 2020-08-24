@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState,useEffect} from "react";
 import AddResourceForm from "./AddResourceForm";
 import { useHistory } from "react-router-dom";
 import {addResource} from "../../Services/AddResourceServices";
@@ -47,7 +47,8 @@ const AddResource = (props) => {
                 console.log(error);
             })
             .finally(() => setIsLoading(false));
-
+    //Whenever the data inside of our array [data] changes, we gonna re-run this hook, 
+    //otherwise we'll not re-run it
     }, [data]);
 
 
