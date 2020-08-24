@@ -34,7 +34,7 @@ const SelectAuthor = () => {
         <div> 
             <Select placeholder="Author..." variant="outline" type="text" name="author" id="author" className="form-control">
                     {authors.map(author => (
-                        //["@id"] : chercher l'IRI
+                        //["@id"] pour chercher l'IRI
                         //Avec un IRI c impossible d'avoir les mêmes identifiants
                         //on utilise du JSON ld et pas du JSON
                         //ça permet de donner des identifiants uniques pour chaque objet que tu as 
