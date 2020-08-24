@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
 import "./Nav.scss";
 import {Link} from 'react-router-dom';
-import * as CONSTANTS from "../../Constants/constants";
-import logo from './../../Images/logo.PNG';
 import * as CONSTANTS from "./../../Constants/constants";
 import logo from './../../Images/logo.PNG';
-import { CONNECTED_USER } from "./../../Constants/constants";
+import { CONNECTED_USER } from "../../Constants/constants";
 
-class Nav extends Component {
-    render = () => (
-        
+const ConnectedUserNav = ({username}) => {
+
+    return (
     <>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <img className= "pr-5" src={logo} alt="logo" width="15%"/>    
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
+                <span className="navbar-toggler-icon"/>
             </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
@@ -37,4 +35,4 @@ class Nav extends Component {
     );
 }
 
-export default Nav;
+export default ConnectedUserNav;

@@ -1,12 +1,16 @@
-
-import React from "react";
+import React, {useState} from "react";
 import { Button, Input, Stack, InputGroup, InputLeftElement } from "@chakra-ui/core";
 import Icon from "@chakra-ui/core/dist/Icon";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import FormControl from "@chakra-ui/core/dist/FormControl";
 import Circle from "better-react-spinkit/dist/Circle";
+import ButtonSubmitLoader from "../Utils/ButtonSubmitLoader";
+import ButtonSubmitDefault from "../Utils/ButtonSubmitDefault";
 
 const SignUpForm = ({ getSignUp, load }) => {
+
+  const [title, setTitle] = useState("Sign up");
+
   return (
     <div className="form">
       <form onSubmit={getSignUp}>
@@ -56,29 +60,11 @@ const SignUpForm = ({ getSignUp, load }) => {
             />
           </InputGroup>
         </FormControl>
-        {load ? (
-          <Button
-            type="submit"
-            variantColor="telegram"
-            variant="solid"
-            width="full"
-            border="transparent"
 
-          >
-            <Circle />
-          </Button>
+        {load ? (
+          <ButtonSubmitLoader />
         ) : (
-            <Button
-              type="submit"
-              rightIcon="arrow-forward"
-              variantColor="red"
-              variant="solid"
-              width="150px"
-              border="transparent"
-              _hover={{ bg: "#fd3636" }}
-            >
-              Sign Up
-            </Button>
+            <ButtonSubmitDefault title={title} />
           )
         }
         </Stack>

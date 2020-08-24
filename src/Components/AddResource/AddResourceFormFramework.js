@@ -6,43 +6,18 @@ import FormControl from "@chakra-ui/core/dist/FormControl";
 import { Select } from "@chakra-ui/core";
 import SelectAuthor from "../SelectResource/SelectAuthor";
 import SelectLevel from "../SelectResource/SelectLevel";
-import SelectProgram from "../SelectResource/SelectProgram";
 import SelectFramework from "../SelectResource/SelectFramework";
 import { Box } from "@chakra-ui/core";
 import UserContext from "../Context/UserContext";
-import {Link} from 'react-router-dom';
-import * as CONSTANTS from "../../Constants/constants";
-import logo from './../../Images/logo.PNG';
-import { CONNECTED_USER } from "../../Constants/constants";
+import ConnectedUserNav from "../../Layout/Nav/ConnectedUserNav";
 
 const AddResourceFormFramework = ({getAddedResource, load})=>{
-const {username} = useContext(UserContext);
+    const {username} = useContext(UserContext);
 
     return(
         <div style={{height:"150vh"}}> 
             
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <img className= "pr-5" src={logo} alt="logo" width="15%"/>    
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav mr-auto">
-                        <li className="nav-item active">
-                            <Link className="text-dark font-weight-bold pr-5 nav-link" to={CONNECTED_USER}>Home</Link>
-                        </li>
-                        <li className="nav-item active">
-                            <Link className="text-dark font-weight-bold pr-5 nav-link" to={CONSTANTS.PROGRAMS}>Programs</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="text-dark font-weight-bold pr-5 nav-link" to={CONSTANTS.LOGIN}>Logout</Link>
-                        </li>
-                    </ul>
-                    <span className="navbar-text font-weight-bold">
-                        Welcome {username}
-                    </span>
-                </div>
-            </nav>
+            <ConnectedUserNav username={username} />
             <div className="col-md-12 d-flex flex-column justify-content-center align-items-center"> 
                 <Box w="80%" p={4} mb={5} className="align-self-center">
                     <div className="form" style={{height:"140vh"}}>
@@ -80,9 +55,10 @@ const {username} = useContext(UserContext);
                             </InputGroup>
                             </FormControl>
 
-                            <FormControl isRequired>
+                            <FormControl isRequired id="parap">
                             <FormLabel htmlFor="name">Author</FormLabel>
                             <SelectAuthor></SelectAuthor>
+                            <button>Ajouter un auteur</button>
                             </FormControl>
 
                             <FormControl isRequired>

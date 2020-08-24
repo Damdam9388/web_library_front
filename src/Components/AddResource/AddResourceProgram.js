@@ -1,8 +1,7 @@
 import React, {useState,useEffect} from "react";
 import AddResourceFormProgram from "./AddResourceFormProgram";
 import { useHistory } from "react-router-dom";
-import {addResource} from "../../Services/AddResourceServices";
-import * as CONSTANTS from "../../Constants/constants";
+import {loadResources} from "../../Services/AddResourceServices";
 
 
 const AddResourceProgram = (props) => {
@@ -37,16 +36,7 @@ const AddResourceProgram = (props) => {
     };
     //Envoyer la requête à Symfony using React Hook `useEffect`
     useEffect(() => {
-        console.log(data)
-        addResource(data, config)
-            .then((res) => {
-                console.log(res);
-                history.push(CONSTANTS.PROGRAMS);
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-            .finally(() => setIsLoading(false));
+        loadResources(data, config, history, setIsLoading)
     //Whenever the data inside of our array [data] changes, we gonna re-run this hook, 
     //otherwise we'll not re-run it
     }, [data]);

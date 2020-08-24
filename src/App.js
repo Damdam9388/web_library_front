@@ -19,7 +19,7 @@ import ConnectedUserPage from "./Components/Pages/ConnectedUserPage";
 import ConfirmAccount from "./Components/SignUp/ConfirmAccount";
 import ProgramInfo from "./Components/ProgramsPage/ProgramInfo";
 import ContactConfirmationPage from "./Components/Pages/ContactConfirmationPage";
-import FrameworkInfo from "./Components/ResourcesPage/FrameworkInfo";
+import FrameworkInfo from "./Components/FrameworkPage/FrameworkInfo";
 import AddResourceProgram from "./Components/AddResource/AddResourceProgram";
 import AddResourceFramework from "./Components/AddResource/AddResourceFramework";
 

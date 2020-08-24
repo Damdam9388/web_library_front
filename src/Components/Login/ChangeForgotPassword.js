@@ -5,9 +5,11 @@ import Icon from "@chakra-ui/core/dist/Icon";
 import FormControl from "@chakra-ui/core/dist/FormControl";
 import {withRouter} from "react-router-dom";
 import {userChangeForgotPassword} from "../../Services/AuthenticationServices";
+import ButtonSubmitDefault from "../Utils/ButtonSubmitDefault";
 
 const ChangeForgotPassword = ({match}) => {
     const [show, setShow] = useState(false);
+    const [title, setTitle] = useState("submit");
     const handleClick = () => setShow(!show);
 
     const changePassword = (e) => {
@@ -50,16 +52,7 @@ const ChangeForgotPassword = ({match}) => {
                         </FormControl>
             
                         <div className="col-md-12 text-center">
-                            <Button
-                                type="submit"
-                                rightIcon="arrow-forward"
-                                variantColor="telegram"
-                                variant="solid"
-                                width="150px"
-                                border="transparent"
-                            >
-                            submit
-                            </Button>
+                            <ButtonSubmitDefault title={title} />
                         </div>
                     </form>
                 </div>
