@@ -1,4 +1,5 @@
-import React, {useContext, useState}from "react";
+
+import React, {useState, useContext}from "react";
 import {Circle} from "better-react-spinkit";
 import { Button, Input, Stack, InputGroup, InputLeftElement } from "@chakra-ui/core";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
@@ -11,15 +12,16 @@ import { Box } from "@chakra-ui/core";
 import UserContext from "../Context/UserContext";
 import ConnectedUserNav from "../../Layout/Nav/ConnectedUserNav";
 
-const AddResourceFormFramework = ({getAddedResource, isLoading})=>{
+
+const AddResourceFormFramework = ({getAddedResource, load, getAddedResourceInput})=>{
     const {username} = useContext(UserContext);
     const [showInput, setShowInput] = useState(false);
 
-    const displayInput = (e) => {
+    const changeInput = (e) => {
         setShowInput(true);
     }
 
-    const displaySelect = (e) => {
+    const changeInputToFalse = (e) => {
         setShowInput(false);
     }
 
@@ -33,7 +35,10 @@ const AddResourceFormFramework = ({getAddedResource, isLoading})=>{
                 <Box w="80%" p={4} mb={5} className="align-self-center">
                     <div className="form" style={{height:"140vh"}}>
                         <h2 className="text-uppercase" style={{color:"#d83a3a"}}>Add a new resource</h2>
-                        <form onSubmit={getAddedResource}>
+                        {/* On utilise l operateur ternaire : si showInput est vrai alors on soumet avec getAddedResourceInput*/}
+                        {/* sinon on utilise getAddedResource */}
+                        <form onSubmit={showInput ? getAddedResourceInput : getAddedResource}>
+
                             <Stack spacing={4}>
 
                             <FormControl isRequired>
@@ -66,29 +71,33 @@ const AddResourceFormFramework = ({getAddedResource, isLoading})=>{
                             </InputGroup>
                             </FormControl>
 
-                            { showInput ?
-                                (<FormControl isRequired>
-                                    <FormLabel htmlFor="author">Author</FormLabel>
-                                    <InputGroup>
-                                    <InputLeftElement/>
-                                        <Input
-                                            variant="outline"
-                                            type="text"
-                                            name="author"
-                                            id="author"
-                                            className="form-control"
-                                            placeholder="author..."
-                                        />
-                                    </InputGroup>
-                                    <button onClick={displaySelect}>Select an author</button>
-                                </FormControl>)
-                                :
-                                (<FormControl isRequired id="parap">
-                                    <FormLabel htmlFor="name">Author</FormLabel>
-                                        <SelectAuthor></SelectAuthor>
-                                        <button onClick={displayInput}>Add a new author</button>
-                                </FormControl>)
+
+                                {
+                                    showInput ?
+                                        <FormControl isRequired>
+                                            <FormLabel htmlFor="author">Author</FormLabel>
+                                            <InputGroup>
+                                                <InputLeftElement/>
+                                                <Input
+                                                    variant="outline"
+                                                    type="text"
+                                                    name="author"
+                                                    id="author"
+                                                    className="form-control"
+                                                    placeholder="author..."
+                                                />
+                                            </InputGroup>
+                                            <button onClick={changeInputToFalse}>Sélectionner un auteur existant</button>
+                                        </FormControl>
+                                        :
+                                        <FormControl isRequired id="parap">
+                                            <FormLabel htmlFor="name">Author</FormLabel>
+                                            <SelectAuthor></SelectAuthor>
+                                            <button onClick={changeInput}>Ajouter un auteur</button>
+                                        </FormControl>
                                 }
+
+
 
                             <FormControl isRequired>
                             <FormLabel htmlFor="language">Language</FormLabel>

@@ -7,7 +7,6 @@ import InputContact from "./InputContact";
 const ContactForm = ({sendMessage, load}) => {
 
     const [title, setTitle] = useState("Send Message");
-    const [nameId, setNameId] = useState(["name", "email", "subject"]);
 
     return(
         <>
@@ -19,17 +18,23 @@ const ContactForm = ({sendMessage, load}) => {
                         <div className="row input-container">
                             <div className="col-xs-12">
                                 <div className="styled-input wide">
-                                    <InputContact nameId={nameId[0]} label={"Name"} placeholder={"name"}/>
+
+                                    <InputContact nameId={"name"} label={"Name"}/>
+
                                 </div>
                             </div>
                             <div className="col-md-6 col-sm-12">
                                 <div className="styled-input">
-                                    <InputContact nameId={nameId[1]} label={"Email"} placeholder={"Email"}/>
+
+                                    <InputContact nameId={"email"} label={"Email"}/>
+
                                 </div>
                             </div>
                             <div className="col-md-6 col-sm-12">
                                 <div className="styled-input" style={{float: 'right'}}>
-                                    <InputContact nameId={nameId[2]} label={"Subject"} placeholder={"subject"}/>
+
+                                    <InputContact nameId={"Subject"} label={"Subject"}/>
+
                                 </div>
                             </div>
                             <div className="col-xs-12">
