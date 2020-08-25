@@ -22,6 +22,11 @@ import ContactConfirmationPage from "./Components/Pages/ContactConfirmationPage"
 import FrameworkInfo from "./Components/FrameworkPage/FrameworkInfo";
 import AddResourceProgram from "./Components/AddResource/AddResourceProgram";
 import AddResourceFramework from "./Components/AddResource/AddResourceFramework";
+import Dashboard from "./Components/Admin/Dashboard";
+import UsersContainer from "./Components/Admin/Manage/Users/UsersContainer";
+import ResourcesContainer from "./Components/Admin/Manage/ResourcesContainer";
+import ProgramsContainer from "./Components/Admin/Manage/ProgramsContainer";
+import UpdateUserForm from "./Components/Admin/Manage/Users/UpdateUserForm";
 
 
 const App = () => {
@@ -68,6 +73,11 @@ const App = () => {
                             <Route path={CONSTANTS.SIGNUP} component={SignUp}/>
                             <Route path={CONSTANTS.LOGIN} component={Login}/>
                             <Route path={CONSTANTS.CONNECTED_USER} component ={ConnectedUserPage}/>
+                            <Route path={CONSTANTS.ADMIN_DASHBOARD} component ={Dashboard}/>
+                            <Route path={CONSTANTS.ADMIN_USERS} component ={UsersContainer}/>
+                            <Route path={CONSTANTS.ADMIN_RESOURCES} component ={ResourcesContainer}/>
+                            <Route path={CONSTANTS.ADMIN_PROGRAMS} component ={ProgramsContainer}/>
+                            <Route path={CONSTANTS.ADMIN_UPDATE + "/:id+/:login/:email"} component ={UpdateUserForm}/>
                             <Route path={CONSTANTS.CONTACT_CONFIRMATION} component ={ContactConfirmationPage}/>
                             <Route component ={landing}/>
                         </Switch>

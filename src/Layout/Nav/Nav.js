@@ -32,7 +32,7 @@ class Nav extends Component {
 
             <div className="col-md-12 d-flex flex-column justify-content-center align-items-center pt-3">
                 <button className="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
+                    <span className="navbar-toggler-icon"/>
                 </button>
             </div>
 

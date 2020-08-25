@@ -2,11 +2,11 @@ import React, {useState} from "react";
 import './ContactForm.scss'
 import ButtonSubmitLoader from "../Utils/ButtonSubmitLoader";
 import ButtonSubmitDefault from "../Utils/ButtonSubmitDefault";
+import InputContact from "./InputContact";
 
 const ContactForm = ({sendMessage, load}) => {
 
     const [title, setTitle] = useState("Send Message");
-    const [nameId, setNameId] = useState(["name", "email", "subject"]);
 
     return(
         <>
@@ -18,17 +18,17 @@ const ContactForm = ({sendMessage, load}) => {
                         <div className="row input-container">
                             <div className="col-xs-12">
                                 <div className="styled-input wide">
-                                    <inputContact nameId={nameId[0]} label={"Name"}/>
+                                    <InputContact nameId={"name"} label={"Name"}/>
                                 </div>
                             </div>
                             <div className="col-md-6 col-sm-12">
                                 <div className="styled-input">
-                                    <inputContact nameId={nameId[1]} label={"Email"}/>
+                                    <InputContact nameId={"email"} label={"Email"}/>
                                 </div>
                             </div>
                             <div className="col-md-6 col-sm-12">
                                 <div className="styled-input" style={{float: 'right'}}>
-                                    <inputContact nameId={nameId[2]} label={"Subject"}/>
+                                    <InputContact nameId={"Subject"} label={"Subject"}/>
                                 </div>
                             </div>
                             <div className="col-xs-12">

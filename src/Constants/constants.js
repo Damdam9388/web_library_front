@@ -14,4 +14,9 @@ export const PROGRAM_SINGLE = "/programInfo";
 export const CONTACT_CONFIRMATION = "/Confirmation-message";
 export const ADD_RESOURCE_PROGRAM = "/add-program-resource";
 export const ADD_RESOURCE_FRAMEWORK = "/add-framework-resource";
+export const ADMIN_DASHBOARD = "/admin/dashboard";
+export const ADMIN_USERS = "/admin/users";
+export const ADMIN_PROGRAMS = "/admin/programs";
+export const ADMIN_RESOURCES = "/admin/resources";
+export const ADMIN_UPDATE = "/admin/update";
 
