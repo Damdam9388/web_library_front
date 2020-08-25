@@ -7,7 +7,7 @@ import Circle from "better-react-spinkit/dist/Circle";
 import ButtonSubmitLoader from "../Utils/ButtonSubmitLoader";
 import ButtonSubmitDefault from "../Utils/ButtonSubmitDefault";
 
-const SignUpForm = ({ getSignUp, load }) => {
+const SignUpForm = ({ getSignUp, isLoading }) => {
 
   const [title, setTitle] = useState("Sign up");
 
@@ -61,7 +61,7 @@ const SignUpForm = ({ getSignUp, load }) => {
           </InputGroup>
         </FormControl>
 
-        {load ? (
+        {isLoading ? (
           <ButtonSubmitLoader />
         ) : (
             <ButtonSubmitDefault title={title} />
