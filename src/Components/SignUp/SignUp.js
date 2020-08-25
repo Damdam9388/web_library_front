@@ -3,12 +3,8 @@ import SignUpForm from "./SignUpForm";
 import { useHistory } from "react-router-dom";
 import { Box } from "@chakra-ui/core";
 import "./SignUpForm.scss";
-<<<<<<< HEAD
-import { getSignUp } from "../../Services/AuthenticationServices";
-=======
 import {getSignUp} from "../../Services/AuthenticationServices";
 import backgroundImage from './../../Images/marble.jpg';
->>>>>>> 4271ffafe13ed0f43ff243d4bf78a704ec3c09dc
 
 const SignUp = (props) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -35,17 +31,6 @@ const SignUp = (props) => {
 
   return (
     <>
-<<<<<<< HEAD
-      <div className="wrap" style={{ height: '100vh' }}>
-        <div className="form">
-          <div className="row contain">
-            <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
-              <Box bg="tomato" w="25%" p={4} color="white">
-                <div className="logo mb-3">
-                  <div className="col-md-12 text-center">
-                    <h1 className="login_title text-white">SignUp</h1>
-                  </div>
-=======
       <div className="form">
         <div className="row contain" style={{ height: '100vh', backgroundImage:`url(${backgroundImage})`}}>
           <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
@@ -53,11 +38,10 @@ const SignUp = (props) => {
               <div className="logo mb-3">
                 <div className="col-md-12 text-center">
                   <h1 className="login_title text-dark font-weight-bold mb-5" style={{fontSize:"35px", fontWeight:"600"}}>SIGN UP</h1>
->>>>>>> 4271ffafe13ed0f43ff243d4bf78a704ec3c09dc
                 </div>
                 <SignUpForm getSignUp={axiosSignUp} isLoading={isLoading} />
-              </Box>
-            </div>
+              </div>
+            </Box>  
           </div>
         </div>
       </div>
