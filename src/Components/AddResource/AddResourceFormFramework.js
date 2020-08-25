@@ -1,4 +1,4 @@
-import React, {useContext}from "react";
+import React, {useContext, useState}from "react";
 import {Circle} from "better-react-spinkit";
 import { Button, Input, Stack, InputGroup, InputLeftElement } from "@chakra-ui/core";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
@@ -11,8 +11,19 @@ import { Box } from "@chakra-ui/core";
 import UserContext from "../Context/UserContext";
 import ConnectedUserNav from "../../Layout/Nav/ConnectedUserNav";
 
-const AddResourceFormFramework = ({getAddedResource, load})=>{
+const AddResourceFormFramework = ({getAddedResource, isLoading})=>{
     const {username} = useContext(UserContext);
+    const [showInput, setShowInput] = useState(false);
+
+    const displayInput = (e) => {
+        setShowInput(true);
+    }
+
+    const displaySelect = (e) => {
+        setShowInput(false);
+    }
+
+
 
     return(
         <div style={{height:"150vh"}}> 
@@ -40,7 +51,7 @@ const AddResourceFormFramework = ({getAddedResource, load})=>{
                             </InputGroup>
                             </FormControl>
 
-                            <FormControl isRequired>
+                            <FormControl isRequiredl>
                             <FormLabel htmlFor="URL">Url</FormLabel>
                             <InputGroup>
                                 <InputLeftElement/>
@@ -55,11 +66,29 @@ const AddResourceFormFramework = ({getAddedResource, load})=>{
                             </InputGroup>
                             </FormControl>
 
-                            <FormControl isRequired id="parap">
-                            <FormLabel htmlFor="name">Author</FormLabel>
-                            <SelectAuthor></SelectAuthor>
-                            <button>Ajouter un auteur</button>
-                            </FormControl>
+                            { showInput ?
+                                (<FormControl isRequired>
+                                    <FormLabel htmlFor="author">Author</FormLabel>
+                                    <InputGroup>
+                                    <InputLeftElement/>
+                                        <Input
+                                            variant="outline"
+                                            type="text"
+                                            name="author"
+                                            id="author"
+                                            className="form-control"
+                                            placeholder="author..."
+                                        />
+                                    </InputGroup>
+                                    <button onClick={displaySelect}>Select an author</button>
+                                </FormControl>)
+                                :
+                                (<FormControl isRequired id="parap">
+                                    <FormLabel htmlFor="name">Author</FormLabel>
+                                        <SelectAuthor></SelectAuthor>
+                                        <button onClick={displayInput}>Add a new author</button>
+                                </FormControl>)
+                                }
 
                             <FormControl isRequired>
                             <FormLabel htmlFor="language">Language</FormLabel>
@@ -80,7 +109,7 @@ const AddResourceFormFramework = ({getAddedResource, load})=>{
                             <SelectFramework></SelectFramework> 
                             </FormControl>
 
-                            {load ? (
+                            {isLoading ? (
                             <Button
                                 type="submit"
                                 variantColor="telegram"

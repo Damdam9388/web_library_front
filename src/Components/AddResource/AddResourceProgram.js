@@ -23,7 +23,8 @@ const AddResourceProgram = (props) => {
     setData({
         name : e.target.elements.name.value,
         url : e.target.elements.url.value,
-        author : e.target.elements.author.value,
+        //a chaque fois il va créer un nouveau auteur
+        author : {name:e.target.elements.author.value},
         language : e.target.elements.language.value,
         level : e.target.elements.level.value,
         topic : e.target.elements.program.value

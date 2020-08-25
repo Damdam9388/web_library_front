@@ -26,3 +26,5 @@ export const ENDPOINT_SELECT_PROGRAM = URL_API + "api/topic_programming_language
 
 export const ENDPOINT_SELECT_FRAMEWORK = URL_API + "api/topic_frameworks";
 
+export const ENDPOINT_ADD_AUTHOR = URL_API + "api/authors";
+
