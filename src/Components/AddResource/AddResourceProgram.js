@@ -17,27 +17,52 @@ const AddResourceProgram = (props) => {
     const token = localStorage.getItem('tokenUser');
     const config = {headers: {Authorization:"Bearer " + token, 'Content-type': 'application/json'}};
 
-    //Récupération des valeurs du formulaire
-    const axiosAddResource = (e) => {
-    setIsLoading(true);
-    setData({
-        name : e.target.elements.name.value,
-        url : e.target.elements.url.value,
-        //a chaque fois il va créer un nouveau auteur
-        author : {name:e.target.elements.author.value},
-        language : e.target.elements.language.value,
-        level : e.target.elements.level.value,
-        topic : e.target.elements.program.value
-    });
-    // PreventDefault indique à l'agent utilisateur que si l'événement n'est pas traité explicitement, 
-    // son action par défaut ne doit pas être prise en compte comme elle le serait normalement. 
-    // L'événement continue à se propager comme d'habitude, 
-    e.preventDefault();
 
-    };
+    //Récupération des valeurs du formulaire avec méthode axiosAddResourceInput(lié avec getAddedResourceInput)
+    // donc méthode utilisée si on crée un auteur en meme temps qu'on crée la ressource
+    const axiosAddResourceInput = (e) => {
+        setIsLoading(true);
+        setData({
+            name : e.target.elements.name.value,
+            url : e.target.elements.url.value,
+            //ici on crée un nouvel auteur, il faut donc créé un nouvel objet JSON
+            //c'est pourquoi name:e.target.elements.author.value est entre accolade
+            author : {name:e.target.elements.author.value},
+            language : e.target.elements.language.value,
+            level : e.target.elements.level.value,
+            topic : e.target.elements.program.value
+        });
+        // PreventDefault indique à l'agent utilisateur que si l'événement n'est pas traité explicitement, 
+        // son action par défaut ne doit pas être prise en compte comme elle le serait normalement. 
+        // L'événement continue à se propager comme d'habitude, 
+        e.preventDefault();
+    
+        };
+    
+        //Récupération des valeurs du formulaire avec méthode axiosAddResource(lié avec getAddedResource)
+        // méthode utilisée si on selectionne un auteur existant lors de la création de la ressource
+        const axiosAddResource = (e) => {
+            setIsLoading(true);
+            setData({
+                name : e.target.elements.name.value,
+                url : e.target.elements.url.value,
+                author : e.target.elements.author.value,
+                language : e.target.elements.language.value,
+                level : e.target.elements.level.value,
+                topic : e.target.elements.program.value
+            });
+            // PreventDefault indique à l'agent utilisateur que si l'événement n'est pas traité explicitement,
+            // son action par défaut ne doit pas être prise en compte comme elle le serait normalement.
+            // L'événement continue à se propager comme d'habitude,
+            e.preventDefault();
+            
+        };
+
     //Envoyer la requête à Symfony using React Hook `useEffect`
     useEffect(() => {
+        console.log(setData);
         loadResources(data, config, history, setIsLoading)
+        console.log(data);
     //Whenever the data inside of our array [data] changes, we gonna re-run this hook, 
     //otherwise we'll not re-run it
     }, [data]);
@@ -45,7 +70,7 @@ const AddResourceProgram = (props) => {
 
     return (
     <>
-        <AddResourceFormProgram getAddedResource={axiosAddResource} isLoading={isLoading} />
+        <AddResourceFormProgram getAddedResource={axiosAddResource} isLoading={isLoading} getAddedResourceInput={axiosAddResourceInput}/>
     </>
     );
 };
