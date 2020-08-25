@@ -1,3 +1,4 @@
+
 import React, {useState, useContext}from "react";
 import {Circle} from "better-react-spinkit";
 import { Button, Input, Stack, InputGroup, InputLeftElement } from "@chakra-ui/core";
@@ -11,6 +12,7 @@ import { Box } from "@chakra-ui/core";
 import UserContext from "../Context/UserContext";
 import ConnectedUserNav from "../../Layout/Nav/ConnectedUserNav";
 
+
 const AddResourceFormFramework = ({getAddedResource, load, getAddedResourceInput})=>{
     const {username} = useContext(UserContext);
     const [showInput, setShowInput] = useState(false);
@@ -22,6 +24,8 @@ const AddResourceFormFramework = ({getAddedResource, load, getAddedResourceInput
     const changeInputToFalse = (e) => {
         setShowInput(false);
     }
+
+
 
     return(
         <div style={{height:"150vh"}}> 
@@ -52,7 +56,7 @@ const AddResourceFormFramework = ({getAddedResource, load, getAddedResourceInput
                             </InputGroup>
                             </FormControl>
 
-                            <FormControl isRequired>
+                            <FormControl isRequiredl>
                             <FormLabel htmlFor="URL">Url</FormLabel>
                             <InputGroup>
                                 <InputLeftElement/>
@@ -66,6 +70,7 @@ const AddResourceFormFramework = ({getAddedResource, load, getAddedResourceInput
                                 />
                             </InputGroup>
                             </FormControl>
+
 
                                 {
                                     showInput ?
@@ -93,6 +98,7 @@ const AddResourceFormFramework = ({getAddedResource, load, getAddedResourceInput
                                 }
 
 
+
                             <FormControl isRequired>
                             <FormLabel htmlFor="language">Language</FormLabel>
                             <Select placeholder="Language..." variant="outline" type="text" name="language" id="language" className="form-control">
@@ -112,7 +118,7 @@ const AddResourceFormFramework = ({getAddedResource, load, getAddedResourceInput
                             <SelectFramework></SelectFramework> 
                             </FormControl>
 
-                            {load ? (
+                            {isLoading ? (
                             <Button
                                 type="submit"
                                 variantColor="telegram"

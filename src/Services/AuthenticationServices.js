@@ -9,7 +9,7 @@ import {
 
 
 export const getSignUp = (userName, email, password) => {
-     return axios.post(ENDPOINT_SIGNUP,{login:userName, email: email, password: password})
+     return axios.post(ENDPOINT_SIGNUP,{login: userName, email: email, password: password})
 };
 
 export const getLogin = (email, password) => {

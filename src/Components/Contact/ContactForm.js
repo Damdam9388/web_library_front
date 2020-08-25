@@ -18,23 +18,29 @@ const ContactForm = ({sendMessage, load}) => {
                         <div className="row input-container">
                             <div className="col-xs-12">
                                 <div className="styled-input wide">
+
                                     <InputContact nameId={"name"} label={"Name"}/>
+
                                 </div>
                             </div>
                             <div className="col-md-6 col-sm-12">
                                 <div className="styled-input">
+
                                     <InputContact nameId={"email"} label={"Email"}/>
+
                                 </div>
                             </div>
                             <div className="col-md-6 col-sm-12">
                                 <div className="styled-input" style={{float: 'right'}}>
+
                                     <InputContact nameId={"Subject"} label={"Subject"}/>
+
                                 </div>
                             </div>
                             <div className="col-xs-12">
                                 <div className="styled-input wide">
                                     <textarea required name="message" id="message"/>
-                                    <label>Message</label>
+                                    <label>message</label>
                                 </div>
                             </div>
 
