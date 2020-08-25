@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import ContactForm from "./ContactForm";
 import { useHistory } from 'react-router-dom';
 import './ContactForm.scss';
-import {getContact} from "../../Services/ContactServices";
+import {sendContactMessageInfo} from "../../Services/ContactServices";
 import * as CONSTANTS from "../../Constants/constants";
 
 const Contact = (props) => {
@@ -16,11 +16,10 @@ const Contact = (props) => {
         const email = e.target.elements.email.value;
         const subject = e.target.elements.subject.value;
         const message = e.target.elements.message.value;
-        console.log("name : " + name + "email : " + email + "subject : " + subject + "message : " + message);
         //Eviter la propagation de l'évenement
         e.preventDefault();
         //Envoyer la requette à symfony
-        getContact(name, email, subject, message)
+        sendContactMessageInfo(name, email, subject, message)
             .then(response => {
                 console.log(response);
                 history.push(CONSTANTS.CONTACT_CONFIRMATION);
@@ -33,7 +32,9 @@ const Contact = (props) => {
 
     return(
         <>
-        <ContactForm sendMessage={axiosData} load={loading}/>
+            <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
+                    <ContactForm sendMessage={axiosData} load={loading}/>
+            </div>
         </>
     );
 };

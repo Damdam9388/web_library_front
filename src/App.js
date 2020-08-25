@@ -7,7 +7,7 @@ import * as CONSTANTS from "./Constants/constants";
 import SignUp from "./Components/SignUp/SignUp.js";
 import Login from "./Components/Login/Login.js";
 import Contact from "./Components/Contact/Contact.js";
-import About from "./Components/About/About.js";
+import Team from "./Components/Team/Team.js";
 import ForgotPassword from "./Components/Login/ForgotPassword";
 import ChangeForgotPassword from "./Components/Login/ChangeForgotPassword";
 import History from "./Components/Utils/History.js";
@@ -17,9 +17,11 @@ import Nav from "./Layout/Nav/Nav";
 import Programs from "./Components/ProgramsPage/Programs";
 import ConnectedUserPage from "./Components/Pages/ConnectedUserPage";
 import ConfirmAccount from "./Components/SignUp/ConfirmAccount";
-import ProgramResources from "./Components/ProgramsPage/ProgramResources";
+import ProgramInfo from "./Components/ProgramsPage/ProgramInfo";
 import ContactConfirmationPage from "./Components/Pages/ContactConfirmationPage";
-import FrameworkResources from "./Components/ResourcesPage/FrameworkResources";
+import FrameworkInfo from "./Components/FrameworkPage/FrameworkInfo";
+import AddResourceProgram from "./Components/AddResource/AddResourceProgram";
+import AddResourceFramework from "./Components/AddResource/AddResourceFramework";
 
 
 const App = () => {
@@ -40,7 +42,7 @@ const App = () => {
             <>
                 <Nav />
                 <Switch>
-                    <Route path={CONSTANTS.ABOUT} component={About}/>
+                    <Route path={CONSTANTS.TEAM} component={Team}/>
                     <Route path={CONSTANTS.CONTACT} component={Contact}/>
                     <Route path={CONSTANTS.LANDINGPAGE} component ={LandingPage}/>
                 </Switch>
@@ -55,16 +57,18 @@ const App = () => {
                 <Router history={History}>
 
                         <Switch>
-                            <Route path = {CONSTANTS.FRAMEWORK_SINGLE + "/:id+"} component={FrameworkResources} />
-                            <Route path = {CONSTANTS.PROGRAM_SINGLE + "/:id+"} component={ProgramResources} />
+                            <Route path={CONSTANTS.ADD_RESOURCE_PROGRAM} component ={AddResourceProgram}/>
+                            <Route path={CONSTANTS.ADD_RESOURCE_FRAMEWORK} component ={AddResourceFramework}/>
+                            <Route path = {CONSTANTS.FRAMEWORK_SINGLE + "/:id+"} component={FrameworkInfo} />
+                            <Route path = {CONSTANTS.PROGRAM_SINGLE + "/:id+"} component={ProgramInfo} />
                             <Route path = {CONSTANTS.PROGRAMS} component={Programs} />
                             <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword} />
                             <Route path={CONSTANTS.CONFIRM_ACCOUNT + "/:token"} component={ConfirmAccount} />
-                            <Route path={CONSTANTS.FORGOT_PASSWORD} component={ForgotPassword} />
-                            <Route path={CONSTANTS.SIGNUP} component={SignUp} />
-                            <Route path={CONSTANTS.LOGIN} component={Login} />
-                            <Route path={CONSTANTS.CONNECTED_USER} component ={ConnectedUserPage} />
-                            <Route path={CONSTANTS.CONTACT_CONFIRMATION} component ={ContactConfirmationPage} />
+                            <Route path={CONSTANTS.FORGOT_PASSWORD} component={ForgotPassword}/>
+                            <Route path={CONSTANTS.SIGNUP} component={SignUp}/>
+                            <Route path={CONSTANTS.LOGIN} component={Login}/>
+                            <Route path={CONSTANTS.CONNECTED_USER} component ={ConnectedUserPage}/>
+                            <Route path={CONSTANTS.CONTACT_CONFIRMATION} component ={ContactConfirmationPage}/>
                             <Route component ={landing}/>
                         </Switch>
                     <Footer/>

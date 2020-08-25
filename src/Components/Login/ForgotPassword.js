@@ -1,11 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import {Button, Input, InputGroup, InputLeftElement} from "@chakra-ui/core";
 import Icon from "@chakra-ui/core/dist/Icon";
 import FormControl from "@chakra-ui/core/dist/FormControl";
 import {userForgotPassword} from "../../Services/AuthenticationServices";
+import ButtonSubmitDefault from "../Utils/ButtonSubmitDefault";
 
 const ForgotPassword = () => {
+
+    const [title, setTitle] = useState("submit");
 
     const sendEmail = (e) => {
         const email = e.target.elements.email.value;
@@ -41,16 +44,7 @@ const ForgotPassword = () => {
                         </FormControl>
             
                         <div className="col-md-12 text-center mt-lg-5">
-                        <Button
-                            type="submit"
-                            rightIcon="arrow-forward"
-                            variantColor="telegram"
-                            variant="solid"
-                            width="150px"
-                            border="transparent"
-                        >
-                        submit
-                        </Button>
+                            <ButtonSubmitDefault title={title} />
                         </div>
                     </form>
                 </div>

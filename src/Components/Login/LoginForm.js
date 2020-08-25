@@ -5,10 +5,12 @@ import FormControl from "@chakra-ui/core/dist/FormControl";
 import './LoginForm.scss';
 import {Link} from "react-router-dom";
 import * as CONSTANTS from "../../Constants/constants";
-import {Circle} from "better-react-spinkit";
+import ButtonSubmitLoader from "../Utils/ButtonSubmitLoader";
+import ButtonSubmitDefault from "../Utils/ButtonSubmitDefault";
 
 const LoginForm = ({getLogin, load}) => {
     const [show, setShow] = useState(false);
+    const [title, setTitle] = useState("Login");
     const handleClick = () => setShow(!show);
 
 
@@ -85,28 +87,9 @@ const LoginForm = ({getLogin, load}) => {
 
 
                     {load ? (
-                        <Button
-                            type="submit"
-                            bg="#FC8181"
-                            variant="solid"
-                            width="full"
-                            border="transparent"
-                            _hover={{ bg: "#F6AD55" }}
-                        >
-                            <Circle/>
-                        </Button>
+                        <ButtonSubmitLoader/>
                     ) : (
-                        <Button
-                            type="submit"
-                            rightIcon="arrow-forward"
-                            bg="#263246"
-                            variant="solid"
-                            width="full"
-                            border="transparent"
-                            _hover={{ bg: "#AAF" }}
-                        >
-                        Login
-                        </Button>
+                        <ButtonSubmitDefault title={title}/>
                     )
                     }
 

@@ -3,7 +3,7 @@ import "./Nav.scss";
 import {Link} from 'react-router-dom';
 import * as CONSTANTS from "../../Constants/constants";
 import logo from './../../Images/logo.PNG';
-import {ABOUT} from "../../Constants/constants";
+import {TEAM} from "../../Constants/constants";
 import {CONTACT} from "../../Constants/constants";
 
 
@@ -17,7 +17,7 @@ class Nav extends Component {
             </Link>
           </div>
             <ul className="nav">
-              <Link className="text-dark font-weight-bold pr-5 about_link" to={ABOUT}>About</Link>
+              <Link className="text-dark font-weight-bold pr-5 about_link" to={TEAM}>Team</Link>
               <Link className="text-dark font-weight-bold pr-5 contact_link" to={CONTACT}>Contact</Link>
             </ul>
         </div>
@@ -40,7 +40,7 @@ class Nav extends Component {
           <div className="collapse navbar-collapse d-sm-inline" id="navbarTogglerDemo03">
             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
               <li className="nav-item">
-                <Link className="text-dark font-weight-bold pr-5 about_link" to={ABOUT}>About</Link>
+                <Link className="text-dark font-weight-bold pr-5 about_link" to={TEAM}>Team</Link>
               </li>
               <li className="nav-item">
                 <Link className="text-dark font-weight-bold pr-5 contact_link" to={CONTACT}>Contact</Link>

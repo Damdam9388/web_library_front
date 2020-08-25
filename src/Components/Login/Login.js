@@ -7,7 +7,7 @@ import { Box } from "@chakra-ui/core";
 import './login.scss';
 import './LoginForm.scss';
 import {getLogin} from "../../Services/AuthenticationServices";
-import backgroundImage from './../../Images/laptop-2557468_1920.jpg';
+import backgroundImage from './../../Images/marble.jpg';
 import * as CONSTANTS from "../../Constants/constants";
 
 const Login = (props) => {
@@ -46,7 +46,7 @@ const Login = (props) => {
         <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
                 <Box bg="#F7FAFC" opacity="0.9" w="45%" p={4} mb={5} rounded="md" className="align-self-center">
                     <div className="col-md-12 text-center">
-                        <h1 className="login_title text-dark font-weight-bold mb-5" style={{fontSize:"35px", fontWeight:"600"}}>Sign In</h1>
+                        <h1 className="login_title text-dark font-weight-bold mb-5" style={{fontSize:"35px", fontWeight:"600"}}>LOGIN</h1>
                     </div>
                     <LoginForm getLogin={axiosLogin} load={loading}/>
                 </Box>

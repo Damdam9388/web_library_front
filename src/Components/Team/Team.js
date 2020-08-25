@@ -1,8 +1,9 @@
 import React from 'react';
-import './About.scss'
+import './Team.scss'
 import { Avatar } from "@chakra-ui/core";
 
-const About = () => {
+
+const Team = () => {
     return(
         <>
                 <div className="wrapper">
@@ -48,4 +49,4 @@ const About = () => {
                 </>
         );
 };
-export default About;
+export default Team;
