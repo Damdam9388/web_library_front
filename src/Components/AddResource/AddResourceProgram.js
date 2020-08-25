@@ -60,9 +60,7 @@ const AddResourceProgram = (props) => {
 
     //Envoyer la requête à Symfony using React Hook `useEffect`
     useEffect(() => {
-        console.log(setData);
         loadResources(data, config, history, setIsLoading)
-        console.log(data);
     //Whenever the data inside of our array [data] changes, we gonna re-run this hook, 
     //otherwise we'll not re-run it
     }, [data]);
