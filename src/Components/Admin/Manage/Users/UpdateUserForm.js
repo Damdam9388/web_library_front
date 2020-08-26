@@ -24,7 +24,7 @@ useEffect(() => {
 
     const updateThisUser = (e) => {
         e.preventDefault();
-        Axios.put(`${URL_API}/` + match.params.id, {login:e.target.elements.login.value}, config)
+        Axios.put(`${URL_API}` + match.params.id, {login:e.target.elements.login.value}, config)
             .then(history.push(ADMIN_USERS));
     };
 

@@ -13,6 +13,7 @@ import ChangeForgotPassword from "./Components/Login/ChangeForgotPassword";
 import History from "./Components/Utils/History.js";
 import AuthContext from "./Components/Context/AuthContext";
 import UserContext from "./Components/Context/UserContext";
+import UserRole from "./Components/Context/RoleContext";
 import Nav from "./Layout/Nav/Nav";
 import Programs from "./Components/ProgramsPage/Programs";
 import ConnectedUserPage from "./Components/Pages/ConnectedUserPage";
@@ -28,14 +29,23 @@ import ResourcesContainer from "./Components/Admin/Manage/ResourcesContainer";
 import ProgramsContainer from "./Components/Admin/Manage/ProgramsContainer";
 import UpdateUserForm from "./Components/Admin/Manage/Users/UpdateUserForm";
 import PrivateRoute from "./Components/Security/PrivateRoute";
+import RoleContext from "./Components/Context/RoleContext";
+import AdminRoute from "./Components/Security/AdminRoute";
 
 const App = () => {
     const [isLogged, setLogged] = useState(localStorage.getItem('tokenUser') !== null);
     const [username, setUsername] = useState(localStorage.getItem('userLogin') !== null);
+    const [role, setRole] = useState(localStorage.getItem('userRole'));
+
     const contextValue = {
         isLogged:isLogged,
         updateLogged:setLogged
     };
+
+    const roleValue = {
+        role: role,
+        updateRole: setRole
+    }
 
     const userValue = {
         username:username,
@@ -63,6 +73,7 @@ const App = () => {
         <div className="container-fluid">
             <AuthContext.Provider value={contextValue}>
                 <UserContext.Provider value={userValue}>
+                    <RoleContext.Provider value={roleValue} >
                 <Router history={History}>
 
                         <Switch>
@@ -74,11 +85,11 @@ const App = () => {
                             <PrivateRoute path={CONSTANTS.PROGRAM_SINGLE + "/:id+"} component={ProgramInfo} />
                             <PrivateRoute path={CONSTANTS.PROGRAMS} component={Programs} />
 
-                            <Route path={CONSTANTS.ADMIN_DASHBOARD} component ={Dashboard}/>
-                            <Route path={CONSTANTS.ADMIN_USERS} component ={UsersContainer}/>
-                            <Route path={CONSTANTS.ADMIN_UPDATE + "/:id+/:login/:email"} component ={UpdateUserForm}/>
-                            <Route path={CONSTANTS.ADMIN_RESOURCES} component ={ResourcesContainer}/>
-                            <Route path={CONSTANTS.ADMIN_PROGRAMS} component ={ProgramsContainer}/>
+                            <AdminRoute path={CONSTANTS.ADMIN_DASHBOARD} component ={Dashboard}/>
+                            <AdminRoute path={CONSTANTS.ADMIN_USERS} component ={UsersContainer}/>
+                            <AdminRoute path={CONSTANTS.ADMIN_UPDATE + "/:id+/:login/:email"} component ={UpdateUserForm}/>
+                            <AdminRoute path={CONSTANTS.ADMIN_RESOURCES} component ={ResourcesContainer}/>
+                            <AdminRoute path={CONSTANTS.ADMIN_PROGRAMS} component ={ProgramsContainer}/>
 
                             <Route path={CONSTANTS.CONTACT_CONFIRMATION} component ={ContactConfirmationPage}/>
                             <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword} />
@@ -91,7 +102,7 @@ const App = () => {
                         </Switch>
                     <Footer/>
                 </Router>
-
+                    </RoleContext.Provider>
                 </UserContext.Provider>
             </AuthContext.Provider>
         </div>
