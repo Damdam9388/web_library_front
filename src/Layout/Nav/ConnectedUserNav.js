@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import React, {Component, useState} from 'react';
 import "./Nav.scss";
 import {Link} from 'react-router-dom';
 import * as CONSTANTS from "./../../Constants/constants";
 import logo from './../../Images/logo.PNG';
 import { CONNECTED_USER } from "../../Constants/constants";
 
-const ConnectedUserNav = ({username}) => {
+const ConnectedUserNav = () => {
+
+    const [username, setUsername] = useState(localStorage.getItem('userLogin'));
 
     return (
     <>

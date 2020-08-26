@@ -9,11 +9,14 @@ import './LoginForm.scss';
 import {getLogin} from "../../Services/AuthenticationServices";
 import backgroundImage from './../../Images/background2.jpg';
 import * as CONSTANTS from "../../Constants/constants";
+import RoleContext from "../Context/RoleContext";
 
 const Login = (props) => {
     const {updateLogged} = useContext(AuthContext);
     const {updateUsername} = useContext(UserContext);
+    const {updateRole} = useContext(RoleContext);
     const [loading, setLoading] = useState(false);
+
     let history = useHistory();
 
     const axiosLogin = (e) => {
@@ -32,7 +35,9 @@ const Login = (props) => {
                 localStorage.setItem("userLogin", userLogin);
                 updateUsername(userLogin);
                 updateLogged(true);
-                history.push(CONSTANTS.CONNECTED_USER);
+                localStorage.setItem("userRole", response.data.data.roles[0]);
+                updateRole(response.data.data.roles[0]);
+                history.push(response.data.data.roles[0] === 'ROLE_ADMIN' ? CONSTANTS.ADMIN_DASHBOARD : CONSTANTS.CONNECTED_USER);
             })
             .catch((error) => {
                 console.log(error);

@@ -3,7 +3,6 @@ import AddResourceFormFramework from "./AddResourceFormFramework";
 import { useHistory } from "react-router-dom";
 import {loadResources} from "../../Services/AddResourceServices";
 
-
 const AddResourceFramework = (props) => {
     //L'objet history permet d'interagir avec l'historique du navigateur.
     //C'est grâce à cet objet que l'on peut envoyer une URL dans l'historique du 
