@@ -13,7 +13,7 @@ import UserContext from "../Context/UserContext";
 import ConnectedUserNav from "../../Layout/Nav/ConnectedUserNav";
 
 
-const AddResourceFormFramework = ({getAddedResource, load, getAddedResourceInput})=>{
+const AddResourceFormFramework = ({getAddedResource, isLoading, getAddedResourceInput})=>{
     const {username} = useContext(UserContext);
     const [showInput, setShowInput] = useState(false);
 
@@ -24,7 +24,6 @@ const AddResourceFormFramework = ({getAddedResource, load, getAddedResourceInput
     const changeInputToFalse = (e) => {
         setShowInput(false);
     }
-
 
 
     return(
@@ -56,19 +55,19 @@ const AddResourceFormFramework = ({getAddedResource, load, getAddedResourceInput
                             </InputGroup>
                             </FormControl>
 
-                            <FormControl isRequiredl>
-                            <FormLabel htmlFor="URL">Url</FormLabel>
-                            <InputGroup>
-                                <InputLeftElement/>
-                                <Input
-                                variant="outline"
-                                type="text"
-                                name="url"
-                                id="url"
-                                className="form-control"
-                                placeholder="Url..."
-                                />
-                            </InputGroup>
+                            <FormControl isRequired>
+                            <FormLabel htmlFor="url">Url</FormLabel>
+                                <InputGroup>
+                                    <InputLeftElement/>
+                                    <Input
+                                    variant="outline"
+                                    type="text"
+                                    name="url"
+                                    id="url"
+                                    className="form-control"
+                                    placeholder="Url..."
+                                    />
+                                </InputGroup>
                             </FormControl>
 
 
@@ -87,13 +86,13 @@ const AddResourceFormFramework = ({getAddedResource, load, getAddedResourceInput
                                                     placeholder="author..."
                                                 />
                                             </InputGroup>
-                                            <button onClick={changeInputToFalse}>Sélectionner un auteur existant</button>
+                                            <button onClick={changeInputToFalse}>Select an existing author</button>
                                         </FormControl>
                                         :
                                         <FormControl isRequired id="parap">
                                             <FormLabel htmlFor="name">Author</FormLabel>
                                             <SelectAuthor></SelectAuthor>
-                                            <button onClick={changeInput}>Ajouter un auteur</button>
+                                            <button onClick={changeInput}>Add a new author</button>
                                         </FormControl>
                                 }
 
