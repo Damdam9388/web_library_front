@@ -16,15 +16,9 @@ class Nav extends Component {
             <img src={logo} alt="logo" width="40%" />
           </Link>
         </div>
-        <ul className="nav">
-          <Link className="text-dark font-weight-bold pr-5 about_link" to={TEAM}>Team</Link>
-          <Link className="text-dark font-weight-bold pr-5 contact_link" to={CONTACT}>Contact</Link>
-        </ul>
       </div>
-    
-      
     </>
   );
 }
-
+  
 export default Nav;

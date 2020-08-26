@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.scss';
 import Footer from "./Layout/Footer/Footer.js";
@@ -13,6 +13,7 @@ import ChangeForgotPassword from "./Components/Login/ChangeForgotPassword";
 import History from "./Components/Utils/History.js";
 import AuthContext from "./Components/Context/AuthContext";
 import UserContext from "./Components/Context/UserContext";
+import UserRole from "./Components/Context/RoleContext";
 import Nav from "./Layout/Nav/Nav";
 import Programs from "./Components/ProgramsPage/Programs";
 import ConnectedUserPage from "./Components/Pages/ConnectedUserPage";
@@ -22,20 +23,38 @@ import ContactConfirmationPage from "./Components/Pages/ContactConfirmationPage"
 import FrameworkInfo from "./Components/FrameworkPage/FrameworkInfo";
 import AddResourceProgram from "./Components/AddResource/AddResourceProgram";
 import AddResourceFramework from "./Components/AddResource/AddResourceFramework";
-
+import Dashboard from "./Components/Admin/Dashboard";
+import UsersContainer from "./Components/Admin/Manage/Users/UsersContainer";
+import ResourcesContainer from "./Components/Admin/Manage/ResourcesContainer";
+import ProgramsContainer from "./Components/Admin/Manage/ProgramsContainer";
+import UpdateUserForm from "./Components/Admin/Manage/Users/UpdateUserForm";
+import PrivateRoute from "./Components/Security/PrivateRoute";
+import RoleContext from "./Components/Context/RoleContext";
+import AdminRoute from "./Components/Security/AdminRoute";
 
 const App = () => {
     const [isLogged, setLogged] = useState(localStorage.getItem('tokenUser') !== null);
     const [username, setUsername] = useState(localStorage.getItem('userLogin') !== null);
+    const [role, setRole] = useState(localStorage.getItem('userRole'));
+
     const contextValue = {
         isLogged:isLogged,
         updateLogged:setLogged
     };
 
+    const roleValue = {
+        role: role,
+        updateRole: setRole
+    }
+
     const userValue = {
         username:username,
         updateUsername:setUsername
     };
+
+    useEffect(() => {
+        console.log(isLogged);
+    })
 
     const landing = () => {
         return(
@@ -51,29 +70,39 @@ const App = () => {
     };
 
     return (
-        <div className="container">
+        <div className="container-fluid">
             <AuthContext.Provider value={contextValue}>
                 <UserContext.Provider value={userValue}>
+                    <RoleContext.Provider value={roleValue} >
                 <Router history={History}>
 
                         <Switch>
-                            <Route path={CONSTANTS.ADD_RESOURCE_PROGRAM} component ={AddResourceProgram}/>
-                            <Route path={CONSTANTS.ADD_RESOURCE_FRAMEWORK} component ={AddResourceFramework}/>
-                            <Route path = {CONSTANTS.FRAMEWORK_SINGLE + "/:id+"} component={FrameworkInfo} />
-                            <Route path = {CONSTANTS.PROGRAM_SINGLE + "/:id+"} component={ProgramInfo} />
-                            <Route path = {CONSTANTS.PROGRAMS} component={Programs} />
+
+                            <PrivateRoute path={CONSTANTS.CONNECTED_USER} component ={ConnectedUserPage}/>
+                            <PrivateRoute path={CONSTANTS.ADD_RESOURCE_PROGRAM} component ={AddResourceProgram}/>
+                            <PrivateRoute path={CONSTANTS.ADD_RESOURCE_FRAMEWORK} component ={AddResourceFramework}/>
+                            <PrivateRoute path={CONSTANTS.FRAMEWORK_SINGLE + "/:id+"} component={FrameworkInfo} />
+                            <PrivateRoute path={CONSTANTS.PROGRAM_SINGLE + "/:id+"} component={ProgramInfo} />
+                            <PrivateRoute path={CONSTANTS.PROGRAMS} component={Programs} />
+
+                            <AdminRoute path={CONSTANTS.ADMIN_DASHBOARD} component ={Dashboard}/>
+                            <AdminRoute path={CONSTANTS.ADMIN_USERS} component ={UsersContainer}/>
+                            <AdminRoute path={CONSTANTS.ADMIN_UPDATE + "/:id+/:login/:email"} component ={UpdateUserForm}/>
+                            <AdminRoute path={CONSTANTS.ADMIN_RESOURCES} component ={ResourcesContainer}/>
+                            <AdminRoute path={CONSTANTS.ADMIN_PROGRAMS} component ={ProgramsContainer}/>
+
+                            <Route path={CONSTANTS.CONTACT_CONFIRMATION} component ={ContactConfirmationPage}/>
                             <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword} />
                             <Route path={CONSTANTS.CONFIRM_ACCOUNT + "/:token"} component={ConfirmAccount} />
                             <Route path={CONSTANTS.FORGOT_PASSWORD} component={ForgotPassword}/>
                             <Route path={CONSTANTS.SIGNUP} component={SignUp}/>
                             <Route path={CONSTANTS.LOGIN} component={Login}/>
-                            <Route path={CONSTANTS.CONNECTED_USER} component ={ConnectedUserPage}/>
-                            <Route path={CONSTANTS.CONTACT_CONFIRMATION} component ={ContactConfirmationPage}/>
-                            <Route component ={landing}/>
+                            <Route component ={landing} />
+
                         </Switch>
                     <Footer/>
                 </Router>
-
+                    </RoleContext.Provider>
                 </UserContext.Provider>
             </AuthContext.Provider>
         </div>

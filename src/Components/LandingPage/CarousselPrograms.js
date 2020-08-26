@@ -12,7 +12,7 @@ import React from "react";
 const CarousselPrograms = () => {
     return (
         <>
-        <div className="row d-lg-none d-sm-inline" style={{background: "#d83a3a"}}>
+        <div className="row d-lg-none d-sm-inline" style={{background: "#4a9bd1"}}>
             <div className="col-sm-12">
                 <div id="gallery1" className="carousel slide" data-ride="carousel">
                     <div className="carousel-inner">
@@ -121,7 +121,7 @@ const CarousselPrograms = () => {
             </div>
         </div>
 
-        <div className="row d-none d-lg-block" style={{background: "#d83a3a"}}>
+        <div className="row d-none d-lg-block" style={{background: "#4a9bd1"}}>
             <div className="col-md-12 px-0">
                 <div id="gallery" className="carousel slide" data-ride="carousel">
                     <div className="carousel-inner">

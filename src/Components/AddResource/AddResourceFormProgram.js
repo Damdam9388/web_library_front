@@ -1,4 +1,4 @@
-import React, {useContext}from "react";
+import React, {useContext, useState}from "react";
 import {Circle} from "better-react-spinkit";
 import { Button, Input, Stack, InputGroup, InputLeftElement } from "@chakra-ui/core";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
@@ -11,8 +11,18 @@ import { Box } from "@chakra-ui/core";
 import UserContext from "../Context/UserContext";
 import ConnectedUserNav from "../../Layout/Nav/ConnectedUserNav";
 
-const AddResourceFormProgram = ({getAddedResource, load})=>{
-const {username} = useContext(UserContext);
+const AddResourceFormProgram = ({getAddedResource, isLoading, getAddedResourceInput})=>{
+    const {username} = useContext(UserContext);
+    const [showInput, setShowInput] = useState(false);
+
+    const changeInput = (e) => {
+        setShowInput(true);
+    }
+
+    const changeInputToFalse = (e) => {
+        setShowInput(false);
+    }
+
 
     return(
         <div style={{height:"150vh"}}>
@@ -21,8 +31,11 @@ const {username} = useContext(UserContext);
             <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
                 <Box w="80%" p={4} mb={5} className="align-self-center">
                     <div className="form" style={{height:"140vh"}}>
-                        <h2 className="text-uppercase" style={{color:"#d83a3a"}}>Add a new resource</h2>
-                        <form onSubmit={getAddedResource}>
+                        <h2 className="text-uppercase" style={{color:"#4a9bd1"}}>Add a new resource</h2>
+                        {/* On utilise l operateur ternaire : si showInput est vrai alors on soumet avec getAddedResourceInput*/}
+                        {/* sinon on utilise getAddedResource */}
+                        <form onSubmit={showInput ? getAddedResourceInput : getAddedResource}>
+
                             <Stack spacing={4}>
 
                             <FormControl isRequired>
@@ -41,7 +54,7 @@ const {username} = useContext(UserContext);
                             </FormControl>
 
                             <FormControl isRequired>
-                            <FormLabel htmlFor="URL">Url</FormLabel>
+                            <FormLabel htmlFor="url">Url</FormLabel>
                             <InputGroup>
                                 <InputLeftElement/>
                                 <Input
@@ -55,10 +68,31 @@ const {username} = useContext(UserContext);
                             </InputGroup>
                             </FormControl>
 
-                            <FormControl isRequired>
-                            <FormLabel htmlFor="name">Author</FormLabel>
-                            <SelectAuthor></SelectAuthor>
-                            </FormControl>
+
+                            {
+                                    showInput ?
+                                        <FormControl isRequired>
+                                            <FormLabel htmlFor="author">Author</FormLabel>
+                                            <InputGroup>
+                                                <InputLeftElement/>
+                                                <Input
+                                                    variant="outline"
+                                                    type="text"
+                                                    name="author"
+                                                    id="author"
+                                                    className="form-control"
+                                                    placeholder="author..."
+                                                />
+                                            </InputGroup>
+                                            <button onClick={changeInputToFalse}>Select an existing author</button>
+                                        </FormControl>
+                                        :
+                                        <FormControl isRequired id="parap">
+                                            <FormLabel htmlFor="name">Author</FormLabel>
+                                            <SelectAuthor></SelectAuthor>
+                                            <button onClick={changeInput}>Add a new author</button>
+                                        </FormControl>
+                                }
 
                             <FormControl isRequired>
                             <FormLabel htmlFor="language">Language</FormLabel>
@@ -78,7 +112,7 @@ const {username} = useContext(UserContext);
                             <SelectProgram></SelectProgram>
                             </FormControl>
 
-                            {load ? (
+                            {isLoading ? (
                             <Button
                                 type="submit"
                                 variantColor="telegram"

@@ -1,4 +1,4 @@
-import devImg from "../../Images/developer.png";
+import devImg from "../../Images/dev6.jpg";
 import {Link} from "react-router-dom";
 import * as CONSTANTS from "../../Constants/constants";
 import React from "react";
@@ -24,7 +24,7 @@ const FirstLook = () => {
                 </div>
 
                 <div className="col-md-5 d-flex flex-column justify-content-center align-items-center">
-                    <span className="font-weight-bold mb-5" style={{fontSize:"3rem", color:"#263246"}}>Your study partner</span>
+                    <span className="font-weight-bold mb-5" style={{fontSize:"3rem", color:"#4a9bd1"}}>Your study partner</span>
                     <div className="btn-group d-inline-block mt-lg-5">
                         <Link type="button" className="buttons_landing mr-5" to={CONSTANTS.LOGIN}>LOGIN</Link>
                         <Link type="button" className="buttons_landing" to={CONSTANTS.SIGNUP}>SIGN UP</Link>
