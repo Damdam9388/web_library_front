@@ -31,7 +31,7 @@ const AddResourceFormProgram = ({getAddedResource, isLoading, getAddedResourceIn
             <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
                 <Box w="80%" p={4} mb={5} className="align-self-center">
                     <div className="form" style={{height:"140vh"}}>
-                        <h2 className="text-uppercase" style={{color:"#d83a3a"}}>Add a new resource</h2>
+                        <h2 className="text-uppercase" style={{color:"#4a9bd1"}}>Add a new resource</h2>
                         {/* On utilise l operateur ternaire : si showInput est vrai alors on soumet avec getAddedResourceInput*/}
                         {/* sinon on utilise getAddedResource */}
                         <form onSubmit={showInput ? getAddedResourceInput : getAddedResource}>

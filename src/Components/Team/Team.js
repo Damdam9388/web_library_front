@@ -9,7 +9,7 @@ const Team = () => {
                 <div className="wrapper">
                     <h1>MEET THE TEAM</h1>
                     <div className="paragraph">
-                        <p>This projet was developed as a part of House Of Code training.</p>
+                        <p>This projet was developed as a part of "House Of Code" training program.</p>
                     </div>
 
                     <div className="team">

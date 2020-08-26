@@ -1,6 +1,6 @@
 .contact h1{
     font-family: 'Lucida Console', monospace;
-    color: #d83a3a;
+    color: #4a9bd1;
     font-size: 52px;
     margin-bottom: 30px;
     margin-top: 50px;
@@ -13,7 +13,7 @@ h4 {
     font-family: 'Roboto', sans-serif, 'arial';
     font-weight: 400;
     font-size: 20px;
-    color: #263246;
+    color: #0d234b;
     line-height: 1.5;
     text-align: center;
     font-weight: bold;
@@ -65,7 +65,7 @@ textarea {
     border: 0;
     width: 100%;
     font-size: 1rem;
-    background-color:  #263246;;
+    background-color:  #0d234b;;
     color: white;
     border-radius: 4px;
 }
@@ -95,20 +95,20 @@ textarea {
     padding: 7px 35px;
     border-radius: 60px;
     display: inline-block;
-    background-color: #d83a3a;
+    background-color:  #4a9bd1;
     color: white;
     font-size: 18px;
     cursor: pointer;
-    box-shadow: 0 2px 5px 0 #2d2d2d,
-                0 2px 10px 0 #2d2d2d;
+    box-shadow: 0 2px 5px 0 #4a9bd1,
+                0 2px 10px 0 #4a9bd1;
     -webkit-transition: all 300ms ease;
     transition: all 300ms ease;
 }
 
 .submit-btn:hover {
     transform: translateY(1px);
-    box-shadow: 0 1px 1px 0 #2d2d2d,
-                0 1px 1px 0 #2d2d2d;
+    box-shadow: 0 1px 1px 0 #4a9bd1
+                0 1px 1px 0  #4a9bd1;
 }
 
 @media (max-width: 768px) {
@@ -125,6 +125,6 @@ input[type=checkbox] + label {
 } 
 
 input[type=checkbox]:checked + label {
-    color: #d83a3a;
+    color:  #4a9bd1;
     font-style: normal;
 }
