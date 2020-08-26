@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {useHistory} from "react-router-dom";
 import Axios from "axios";
-import {ENDPOINT_ALL_USERS} from "../../../../Constants/UrlConstants";
+import {ENDPOINT_ALL_USERS, URL_API} from "../../../../Constants/UrlConstants";
 import ConnectedUserNav from "../../../../Layout/Nav/ConnectedUserNav";
 import {Box, Button, Input, InputGroup, InputLeftElement, Stack} from "@chakra-ui/core";
 import FormControl from "@chakra-ui/core/dist/FormControl";
@@ -14,27 +14,21 @@ const UpdateUserForm = ({match}) => {
 
     const {username} = useContext(UserContext);
     const [title, setTitle] = useState("Send");
-    const [data, setData] = useState(null);
     let history = useHistory();
     const token = localStorage.getItem('tokenUser');
-    const config = {headers: {Authorization: "Bearer " + token}};
+    const config = {headers: {Authorization: "Bearer " + token, 'Content-type': 'application/json'}};
 
 useEffect(() => {
     console.log(match.params.id);
 })
 
     const updateThisUser = (e) => {
-        setData({
-        login:e.target.elements.login.value
-        });
         e.preventDefault();
+        Axios.put(`${URL_API}/` + match.params.id, {login:e.target.elements.login.value}, config)
+            .then(history.push(ADMIN_USERS));
     };
 
-    useEffect(() => {
-            Axios.put(`${ENDPOINT_ALL_USERS}/` + match.params.id, data, config)
-                .then(history.push(ADMIN_USERS));
 
-    }, [data])
 
     return (
         <div style={{height:"150vh"}}>
@@ -54,8 +48,8 @@ useEffect(() => {
                                         <Input
                                             variant="outline"
                                             type="text"
-                                            name="login"
-                                            id="login"
+                                            name="id"
+                                            id="id"
                                             className="form-control"
                                             placeholder={match.params.id}
                                             isDisabled={true}
@@ -94,7 +88,7 @@ useEffect(() => {
                                     </InputGroup>
                                 </FormControl>
 
-                                <ButtonSubmitDefault title={title}/>
+                                <ButtonSubmitDefault title={title} />
 
                             </Stack>
                         </form>
