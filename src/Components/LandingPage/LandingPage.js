@@ -4,8 +4,8 @@ import FirstLook from "./FirstLook";
 import Presentation from "./Presentation";
 import CarousselPrograms from "./CarousselPrograms";
 
-class LandingPage extends Component {
-  render = () => {
+const LandingPage = () => {
+
     return (
         <>
             <div className="wrap">
@@ -17,7 +17,6 @@ class LandingPage extends Component {
             </div>
         </>
     );
-  };
 }
 
 export default LandingPage;
