@@ -4,12 +4,13 @@ import React from "react";
 const ButtonSubmitDefault = ({title}) => {
     return <Button
         type="submit"
+        color="white"
         rightIcon="arrow-forward"
-        bg="#d83a3a"
+        bg="#0d234b"
         variant="red"
         width="full"
         border="transparent"
-        _hover={{bg: "#fd3636"}}
+        _hover={{bg: "#4a9bd1"}}
     >
         {title}
     </Button>;

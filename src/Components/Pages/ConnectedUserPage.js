@@ -11,8 +11,8 @@ const ConnectedUserPage = ()=>{
         <div className="wrap" style={{height:"100vh"}}>
 
             <ConnectedUserNav username={username} />
-            <h2 className="text-uppercase">Welcome back! We're glad your here.</h2>
-            <p className="lead">You have recently consulted the followings programs : </p>
+            <h2 className="text-uppercase">Welcome back, We're glad your here !</h2>
+            <p className="lead">Go check out our Programs ! </p>
 
         </div>
         

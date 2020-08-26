@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { Box } from "@chakra-ui/core";
 import "./SignUpForm.scss";
 import {getSignUp} from "../../Services/AuthenticationServices";
-import backgroundImage from './../../Images/marble.jpg';
+import backgroundImage from './../../Images/background2.jpg';
 
 const SignUp = (props) => {
   const [isLoading, setIsLoading] = useState(false);
