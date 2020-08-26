@@ -60,7 +60,7 @@ const App = () => {
     };
 
     return (
-        <div className="container">
+        <div className="container-fluid">
             <AuthContext.Provider value={contextValue}>
                 <UserContext.Provider value={userValue}>
                 <Router history={History}>

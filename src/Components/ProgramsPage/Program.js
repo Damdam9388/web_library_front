@@ -10,7 +10,7 @@ const Program = ({program}) => {
             <div className="card-body">
                 <h5 className="card-title text-center">{program.programName}</h5>
                 <div className="text-center">
-                <Link className="btn btn-danger" to={`${CONSTANTS.PROGRAM_SINGLE}${program["@id"]}`}>
+                <Link className="btn btn-primary" to={`${CONSTANTS.PROGRAM_SINGLE}${program["@id"]}`}>
                     Go inside the program
                 </Link>
                 </div>

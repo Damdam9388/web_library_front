@@ -7,7 +7,7 @@ import { Box } from "@chakra-ui/core";
 import './login.scss';
 import './LoginForm.scss';
 import {getLogin} from "../../Services/AuthenticationServices";
-import backgroundImage from './../../Images/marble.jpg';
+import backgroundImage from './../../Images/background2.jpg';
 import * as CONSTANTS from "../../Constants/constants";
 
 const Login = (props) => {

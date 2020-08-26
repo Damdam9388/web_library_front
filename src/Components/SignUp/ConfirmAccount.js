@@ -23,8 +23,8 @@ const ConfirmAccount = ({match}) => {
             <div className="row" style={{height: "100vh"}}>
                 <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
                     <div className="jumbotron" style={{width:"70%"}} >
-                        <p>Patientez pendant la création de votre compte</p>
-                        <p>Vous allez être redirigé sur la page de Login</p>
+                        <p>Please be patient</p>
+                        <p>You will be redirected to the login page</p>
                     </div>
                 </div>
             </div> :
