@@ -17,11 +17,11 @@ const AddResourceFormFramework = ({getAddedResource, isLoading, getAddedResource
     const {username} = useContext(UserContext);
     const [showInput, setShowInput] = useState(false);
 
-    const changeInput = (e) => {
+    const changeInput = () => {
         setShowInput(true);
     }
 
-    const changeInputToFalse = (e) => {
+    const changeInputToFalse = () => {
         setShowInput(false);
     }
 
@@ -91,7 +91,7 @@ const AddResourceFormFramework = ({getAddedResource, isLoading, getAddedResource
                                         :
                                         <FormControl isRequired id="parap">
                                             <FormLabel htmlFor="name">Author</FormLabel>
-                                            <SelectAuthor></SelectAuthor>
+                                            <SelectAuthor/>
                                             <button onClick={changeInput}>Add a new author</button>
                                         </FormControl>
                                 }
@@ -108,16 +108,16 @@ const AddResourceFormFramework = ({getAddedResource, isLoading, getAddedResource
 
                             <FormControl isRequired>
                             <FormLabel htmlFor="level">Level</FormLabel>
-                            <SelectLevel></SelectLevel> 
+                            <SelectLevel/>
                             </FormControl>
 
 
                             <FormControl isRequired>
                             <FormLabel htmlFor="framework">Framework</FormLabel>
-                            <SelectFramework></SelectFramework> 
+                            <SelectFramework/>
                             </FormControl>
 
-                            {load ? (
+                            {isLoading ? (
                             <Button
                                 type="submit"
                                 variantColor="telegram"
