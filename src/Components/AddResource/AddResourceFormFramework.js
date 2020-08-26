@@ -118,7 +118,7 @@ const AddResourceFormFramework = ({getAddedResource, load, getAddedResourceInput
                             <SelectFramework></SelectFramework> 
                             </FormControl>
 
-                            {isLoading ? (
+                            {load ? (
                             <Button
                                 type="submit"
                                 variantColor="telegram"

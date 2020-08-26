@@ -24,7 +24,7 @@ const SelectProgram = () => {
         <div> 
             <Select placeholder="Program..." variant="outline" type="text" name="program" id="program" className="form-control">
                     {programs.map(program => (
-                        <option key={program["@id"]} value={program["@id"]}>{program.programmingLanguage}</option>))
+                        <option key={program["@id"]} value={program["@id"]}>{program.programmingLanguage.programName}</option>))
                     })
             </Select>
         </div>
