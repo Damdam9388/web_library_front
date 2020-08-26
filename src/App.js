@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.scss';
 import Footer from "./Layout/Footer/Footer.js";
@@ -27,7 +27,7 @@ import UsersContainer from "./Components/Admin/Manage/Users/UsersContainer";
 import ResourcesContainer from "./Components/Admin/Manage/ResourcesContainer";
 import ProgramsContainer from "./Components/Admin/Manage/ProgramsContainer";
 import UpdateUserForm from "./Components/Admin/Manage/Users/UpdateUserForm";
-
+import PrivateRoute from "./Components/Security/PrivateRoute";
 
 const App = () => {
     const [isLogged, setLogged] = useState(localStorage.getItem('tokenUser') !== null);
@@ -41,6 +41,10 @@ const App = () => {
         username:username,
         updateUsername:setUsername
     };
+
+    useEffect(() => {
+        console.log(isLogged);
+    })
 
     const landing = () => {
         return(
@@ -62,24 +66,28 @@ const App = () => {
                 <Router history={History}>
 
                         <Switch>
-                            <Route path={CONSTANTS.ADD_RESOURCE_PROGRAM} component ={AddResourceProgram}/>
-                            <Route path={CONSTANTS.ADD_RESOURCE_FRAMEWORK} component ={AddResourceFramework}/>
-                            <Route path = {CONSTANTS.FRAMEWORK_SINGLE + "/:id+"} component={FrameworkInfo} />
-                            <Route path = {CONSTANTS.PROGRAM_SINGLE + "/:id+"} component={ProgramInfo} />
-                            <Route path = {CONSTANTS.PROGRAMS} component={Programs} />
+
+                            <PrivateRoute path={CONSTANTS.CONNECTED_USER} component ={ConnectedUserPage}/>
+                            <PrivateRoute path={CONSTANTS.ADD_RESOURCE_PROGRAM} component ={AddResourceProgram}/>
+                            <PrivateRoute path={CONSTANTS.ADD_RESOURCE_FRAMEWORK} component ={AddResourceFramework}/>
+                            <PrivateRoute path={CONSTANTS.FRAMEWORK_SINGLE + "/:id+"} component={FrameworkInfo} />
+                            <PrivateRoute path={CONSTANTS.PROGRAM_SINGLE + "/:id+"} component={ProgramInfo} />
+                            <PrivateRoute path={CONSTANTS.PROGRAMS} component={Programs} />
+
+                            <Route path={CONSTANTS.ADMIN_DASHBOARD} component ={Dashboard}/>
+                            <Route path={CONSTANTS.ADMIN_USERS} component ={UsersContainer}/>
+                            <Route path={CONSTANTS.ADMIN_UPDATE + "/:id+/:login/:email"} component ={UpdateUserForm}/>
+                            <Route path={CONSTANTS.ADMIN_RESOURCES} component ={ResourcesContainer}/>
+                            <Route path={CONSTANTS.ADMIN_PROGRAMS} component ={ProgramsContainer}/>
+
+                            <Route path={CONSTANTS.CONTACT_CONFIRMATION} component ={ContactConfirmationPage}/>
                             <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword} />
                             <Route path={CONSTANTS.CONFIRM_ACCOUNT + "/:token"} component={ConfirmAccount} />
                             <Route path={CONSTANTS.FORGOT_PASSWORD} component={ForgotPassword}/>
                             <Route path={CONSTANTS.SIGNUP} component={SignUp}/>
                             <Route path={CONSTANTS.LOGIN} component={Login}/>
-                            <Route path={CONSTANTS.CONNECTED_USER} component ={ConnectedUserPage}/>
-                            <Route path={CONSTANTS.ADMIN_DASHBOARD} component ={Dashboard}/>
-                            <Route path={CONSTANTS.ADMIN_USERS} component ={UsersContainer}/>
-                            <Route path={CONSTANTS.ADMIN_RESOURCES} component ={ResourcesContainer}/>
-                            <Route path={CONSTANTS.ADMIN_PROGRAMS} component ={ProgramsContainer}/>
-                            <Route path={CONSTANTS.ADMIN_UPDATE + "/:id+/:login/:email"} component ={UpdateUserForm}/>
-                            <Route path={CONSTANTS.CONTACT_CONFIRMATION} component ={ContactConfirmationPage}/>
-                            <Route component ={landing}/>
+                            <Route component ={landing} />
+
                         </Switch>
                     <Footer/>
                 </Router>
