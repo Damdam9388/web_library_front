@@ -8,11 +8,12 @@ import ButtonSubmitLoader from "../Utils/ButtonSubmitLoader";
 import ButtonSubmitDefault from "../Utils/ButtonSubmitDefault";
 
 const SignUpForm = ({ getSignUp, isLoading }) => {
-
+  //pour la refactorisation du bouton submit
   const [title, setTitle] = useState("Sign up");
 
   return (
     <div className="form">
+      {/*en fait la méthode axiosSignUp qui est derrière*/}
       <form onSubmit={getSignUp}>
         <Stack spacing={3}>
         <FormControl isRequired>
@@ -61,12 +62,14 @@ const SignUpForm = ({ getSignUp, isLoading }) => {
           </InputGroup>
         </FormControl>
 
-        {isLoading ? (
-          <ButtonSubmitLoader />
-        ) : (
-            <ButtonSubmitDefault title={title} />
+          {isLoading ? (
+              //si load = true(on rappelle que load est en fait isLoading) alors le loader tourne au milieu du bouton
+              <ButtonSubmitLoader/>
+          ) : (
+              //si load = false, le bouton se présente normalement
+              <ButtonSubmitDefault title={title}/>
           )
-        }
+          }
         </Stack>
       </form>
     </div>
