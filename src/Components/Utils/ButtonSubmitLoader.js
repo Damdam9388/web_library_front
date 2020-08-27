@@ -2,6 +2,7 @@ import {Button} from "@chakra-ui/core";
 import {Circle} from "better-react-spinkit";
 import React from "react";
 
+//composant du bouton avec le loader actif(cad données entrain de chargées) de soumission des formulaires
 const ButtonSubmitLoader = () =>{
     return <Button
         type="submit"
