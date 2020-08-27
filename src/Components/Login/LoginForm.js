@@ -9,13 +9,15 @@ import ButtonSubmitLoader from "../Utils/ButtonSubmitLoader";
 import ButtonSubmitDefault from "../Utils/ButtonSubmitDefault";
 
 const LoginForm = ({getLogin, load}) => {
+    //cf chakra ui
     const [show, setShow] = useState(false);
-    const [title, setTitle] = useState("Login");
     const handleClick = () => setShow(!show);
-
+    //pour la refactorisation du bouton submit
+    const [title, setTitle] = useState("Login");
 
     return (
     <div className="form">
+        {/*en fait la méthode axiosLogin qui est derrière*/}
         <form onSubmit={getLogin}>
             <Stack spacing={3}>
                 <FormControl isRequired>
@@ -74,7 +76,7 @@ const LoginForm = ({getLogin, load}) => {
                         </InputGroup>
                     </FormControl>
 
-
+                    {/*bouton pour accéder au formulaire de mot de passe oublié*/}
                     <div className="row mb-5">
                         <div className="col-md-12 d-flex flex-column justify-content-end align-items-md-end">
                             <Button color="dark" bg="#4a9bd1" borderColor="#4a9bd1" size="sm" _hover={{ bg: "#78a6c5", borderColor: "#78a6c5" }}>
@@ -87,8 +89,10 @@ const LoginForm = ({getLogin, load}) => {
 
 
                     {load ? (
+                        //si load = true(on rappelle que load est en fait isLoading) alors le loader tourne au milieu du bouton
                         <ButtonSubmitLoader/>
                     ) : (
+                        //si load = false, le bouton se présente normalement
                         <ButtonSubmitDefault title={title}/>
                     )
                     }
