@@ -1,6 +1,7 @@
 import {Button} from "@chakra-ui/core";
 import React from "react";
 
+//composant du bouton normal de soumission des formulaires
 const ButtonSubmitDefault = ({title}) => {
     return <Button
         type="submit"

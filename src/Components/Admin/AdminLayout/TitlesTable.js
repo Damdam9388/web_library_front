@@ -1,5 +1,7 @@
 import React from "react";
 
+//composant qui regroupe les titres de la table des items
+//pour que l'admin puisse s'y retrouver dans la gestion des items
 const TitlesTable = () => {
     return (
         <thead>
