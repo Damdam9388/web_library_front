@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./landing.scss";
 import FirstLook from "./FirstLook";
 import Presentation from "./Presentation";
