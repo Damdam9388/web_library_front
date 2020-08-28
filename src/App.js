@@ -24,12 +24,14 @@ import AddResourceProgram from "./Components/AddResource/AddResourceProgram";
 import AddResourceFramework from "./Components/AddResource/AddResourceFramework";
 import Dashboard from "./Components/Admin/Dashboard";
 import UsersContainer from "./Components/Admin/Manage/Users/UsersContainer";
-import ResourcesContainer from "./Components/Admin/Manage/ResourcesContainer";
-import ProgramsContainer from "./Components/Admin/Manage/ProgramsContainer";
+import ResourcesContainer from "./Components/Admin/Manage/Resources/ResourcesContainer";
+import ProgramsContainer from "./Components/Admin/Manage/programs/ProgramsContainer";
 import UpdateUserForm from "./Components/Admin/Manage/Users/UpdateUserForm";
 import PrivateRoute from "./Components/Security/PrivateRoute";
 import RoleContext from "./Components/Context/RoleContext";
 import AdminRoute from "./Components/Security/AdminRoute";
+import UpdateProgramForm from "./Components/Admin/Manage/programs/UpdateProgramForm";
+import UpdateResourceForm from "./Components/Admin/Manage/Resources/UpdateResourceForm";
 
 const App = () => {
     const [isLogged, setLogged] = useState(localStorage.getItem('tokenUser') !== null);
@@ -86,9 +88,11 @@ const App = () => {
 
                             <AdminRoute path={CONSTANTS.ADMIN_DASHBOARD} component ={Dashboard}/>
                             <AdminRoute path={CONSTANTS.ADMIN_USERS} component ={UsersContainer}/>
-                            <AdminRoute path={CONSTANTS.ADMIN_UPDATE + "/:id+/:login/:email"} component ={UpdateUserForm}/>
-                            <AdminRoute path={CONSTANTS.ADMIN_RESOURCES} component ={ResourcesContainer}/>
                             <AdminRoute path={CONSTANTS.ADMIN_PROGRAMS} component ={ProgramsContainer}/>
+                            <AdminRoute path={CONSTANTS.ADMIN_RESOURCES} component ={ResourcesContainer}/>
+                            <AdminRoute path={CONSTANTS.ADMIN_UPDATE_PROGRAM + "/:id+/:programName"} component ={UpdateProgramForm}/>
+                            <AdminRoute path={CONSTANTS.ADMIN_UPDATE_RESOURCE + "/:id+"} component ={UpdateResourceForm}/>
+                            <AdminRoute path={CONSTANTS.ADMIN_UPDATE + "/:id+/:login/:email"} component ={UpdateUserForm}/>
 
                             <Route path={CONSTANTS.CONTACT_CONFIRMATION} component ={ContactConfirmationPage}/>
                             <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword} />
