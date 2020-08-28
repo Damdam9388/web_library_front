@@ -14,6 +14,7 @@ const AddResourceProgram = (props) => {
     const [data, setData] = useState(null);
     //Bearer Token" est un JSON Web Token dont le rôle est d'indiquer 
     //que l'utilisateur qui accède aux ressources est bien authentifié.
+    //'Content-type': 'application/json' pour dire que ce qui est contenu dans le body ce qui est envoyer dans la requête c du json
     const token = localStorage.getItem('tokenUser');
     const config = {headers: {Authorization:"Bearer " + token, 'Content-type': 'application/json'}};
 
