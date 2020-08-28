@@ -18,5 +18,7 @@ export const ADMIN_DASHBOARD = "/admin/dashboard";
 export const ADMIN_USERS = "/admin/users";
 export const ADMIN_PROGRAMS = "/admin/programs";
 export const ADMIN_RESOURCES = "/admin/resources";
-export const ADMIN_UPDATE = "/admin/update";
+export const ADMIN_UPDATE = "/admin/update/user";
+export const ADMIN_UPDATE_PROGRAM = "/admin/update/program";
+export const ADMIN_UPDATE_RESOURCE = "/admin/update/resource";
 
