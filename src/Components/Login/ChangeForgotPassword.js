@@ -14,17 +14,10 @@ const ChangeForgotPassword = ({match}) => {
     const [title] = useState("submit");
     const handleClick = () => setShow(!show);
 
-    //action de la requête pour créer un nouveau mot de passe
-    //qui va etre envoyé au back-end via une requête PUT (cad UPDATE)
     const changePassword = (e) => {
-        //Le lien dans le mail contient un token transmis par le back-end
-        //il faut récupérer ce token afin de le renvoyer au back-end dans la requête
-        //ce token servira à authentifier l'utilisateur
         const token = match.params.token;
-        //le nouveau mot de passe créé
         const password = e.target.elements.password.value;
         e.preventDefault();
-        //on envoie la requête PUT
         userChangeForgotPassword(token, password)
             .then((response) => {
                 console.log(response);
