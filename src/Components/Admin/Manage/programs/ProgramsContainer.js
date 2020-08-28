@@ -1,12 +1,17 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {ENDPOINT_PROGRAMS} from "../../../../Constants/UrlConstants";
-import ProgramTable from "./ProgramTable";
+import {ADMIN_UPDATE_PROGRAM} from "../../../../Constants/constants";
+import TitlesTable from "../../AdminLayout/TitlesTable";
+import TitlePage from "../../AdminLayout/TitlePage";
+import Item from "../Item";
 
 const ProgramsContainer = () => {
     const [programs, setPrograms] = useState([]);
     const token = localStorage.getItem('tokenUser');
     const config = {headers: {Authorization: "Bearer " + token}};
+    const titles = ['#', 'name', 'Update', 'delete']
+    const userAttributesKey = ['programName'];
 
     useEffect(() => {
         axios.get(ENDPOINT_PROGRAMS, config)
@@ -20,24 +25,12 @@ const ProgramsContainer = () => {
 
     return (
         <div>
-            <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
-                <h2 className="my-5">Page de gestion des programmes</h2>
-            </div>
+            <TitlePage title="Page de gestion des programs" />
+
 
             <table className="table">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">name</th>
-                    <th scope="col">Update</th>
-                    <th scope="col">Delete</th>
-                </tr>
-                </thead>
-                <tbody>
-                {
-                    programs ? programs.map(program => <ProgramTable key={program['@id']} program={program} />) : <div></div>
-                }
-                </tbody>
+                <TitlesTable titles={titles}/>
+                <Item items={programs} attributeskey={userAttributesKey} endpoint={ADMIN_UPDATE_PROGRAM}/>
 
             </table>
 

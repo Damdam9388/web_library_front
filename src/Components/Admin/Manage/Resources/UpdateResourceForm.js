@@ -127,7 +127,10 @@ const UpdateResourceForm = ({match}) => {
                                           </Select>
                                       </FormControl>
 
-                                      <SelectLevel/>
+                                      <FormControl isRequired>
+                                          <FormLabel htmlFor="level">Level</FormLabel>
+                                            <SelectLevel/>
+                                      </FormControl>
 
                                       <FormControl isRequired>
                                           <FormLabel htmlFor="publisher">Publisher</FormLabel>
