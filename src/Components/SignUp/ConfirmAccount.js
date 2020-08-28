@@ -9,20 +9,16 @@ const ConfirmAccount = ({match}) => {
     let history = useHistory();
 
     useEffect(() => {
-        //le user doit recevoir un mail de la part du back
-        //ce mail contient un lien qui envoit vers cette et contient un token qui va etre renvoyé au back-end
-        //afin d'authentifier le user donc sécurité
         const token = match.params.token;
-        //méthode PUT qui envoie sur la route /confirm-user/{token} du back-end et donc à la méthode confirmUser du AccountActivatorController
         getConfirmAccount(token)
             .then((res) => {
                 console.log(res);
-                //on renvoie le user à la page de login afin qu'il s'authentifie une fois le compte activé
                 history.push(CONSTANTS.LOGIN);
             })
             .catch((err) => console.error(err))
             .finally(() => setLoading(false));
     }, [history, match.params.token]);
+
     return (
         <>
         { loading ?
