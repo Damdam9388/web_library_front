@@ -64,7 +64,7 @@ const AddResourceProgram = (props) => {
         loadResources(data, config, history, setIsLoading)
     //Whenever the data inside of our array [data] changes, we gonna re-run this hook, 
     //otherwise we'll not re-run it
-    }, [data]);
+    }, [data, config, history]);
 
 
     return (

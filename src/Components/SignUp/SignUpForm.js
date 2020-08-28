@@ -1,15 +1,14 @@
 import React, {useState} from "react";
-import { Button, Input, Stack, InputGroup, InputLeftElement } from "@chakra-ui/core";
+import { Input, Stack, InputGroup, InputLeftElement } from "@chakra-ui/core";
 import Icon from "@chakra-ui/core/dist/Icon";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import FormControl from "@chakra-ui/core/dist/FormControl";
-import Circle from "better-react-spinkit/dist/Circle";
 import ButtonSubmitLoader from "../Utils/ButtonSubmitLoader";
 import ButtonSubmitDefault from "../Utils/ButtonSubmitDefault";
 
 const SignUpForm = ({ getSignUp, isLoading }) => {
   //pour la refactorisation du bouton submit
-  const [title, setTitle] = useState("Sign up");
+  const [title] = useState("Sign up");
 
   return (
     <div className="form">

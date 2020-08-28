@@ -11,7 +11,7 @@ import ButtonSubmitDefault from "../Utils/ButtonSubmitDefault";
 //il fait suite au composant ForgotPassword
 const ChangeForgotPassword = ({match}) => {
     const [show, setShow] = useState(false);
-    const [title, setTitle] = useState("submit");
+    const [title] = useState("submit");
     const handleClick = () => setShow(!show);
 
     //action de la requête pour créer un nouveau mot de passe
