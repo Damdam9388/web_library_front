@@ -9,12 +9,10 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
         <Route
             {...rest}
             render={(props) =>
-                //si isLogged = true alors on à accès aux routes définies comme PrivateRoute
                 isLogged ? (
                     <Component {...props} />
                 ) : (
                     <Redirect
-                        //sinon on est redirigé sur la page de login
                         to={{
                             pathname: "/login",
                             state: { from: props.location }
