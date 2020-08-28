@@ -1,9 +1,9 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {useHistory} from "react-router-dom";
 import Axios from "axios";
-import {ENDPOINT_ALL_USERS, URL_API} from "../../../../Constants/UrlConstants";
+import {URL_API} from "../../../../Constants/UrlConstants";
 import ConnectedUserNav from "../../../../Layout/Nav/ConnectedUserNav";
-import {Box, Button, Input, InputGroup, InputLeftElement, Stack} from "@chakra-ui/core";
+import {Box, Input, InputGroup, InputLeftElement, Stack} from "@chakra-ui/core";
 import FormControl from "@chakra-ui/core/dist/FormControl";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import UserContext from "../../../Context/UserContext";
@@ -13,7 +13,7 @@ import {ADMIN_USERS} from "../../../../Constants/constants";
 const UpdateUserForm = ({match}) => {
 
     const {username} = useContext(UserContext);
-    const [title, setTitle] = useState("Send");
+    const [title] = useState("Send");
     let history = useHistory();
     const token = localStorage.getItem('tokenUser');
     const config = {headers: {Authorization: "Bearer " + token, 'Content-type': 'application/json'}};

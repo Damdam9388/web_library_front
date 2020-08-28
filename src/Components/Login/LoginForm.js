@@ -13,7 +13,7 @@ const LoginForm = ({getLogin, load}) => {
     const [show, setShow] = useState(false);
     const handleClick = () => setShow(!show);
     //pour la refactorisation du bouton submit
-    const [title, setTitle] = useState("Login");
+    const [title] = useState("Login");
 
     return (
     <div className="form">
