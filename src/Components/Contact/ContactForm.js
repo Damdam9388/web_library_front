@@ -6,7 +6,7 @@ import InputContact from "./InputContact";
 
 const ContactForm = ({sendMessage, load}) => {
 
-    const [title, setTitle] = useState("Send Message");
+    const [title] = useState("Send Message");
 
     return(
         <>

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
-import {Button, Input, InputGroup, InputLeftElement} from "@chakra-ui/core";
+import {Input, InputGroup, InputLeftElement} from "@chakra-ui/core";
 import Icon from "@chakra-ui/core/dist/Icon";
 import FormControl from "@chakra-ui/core/dist/FormControl";
 import {userForgotPassword} from "../../Services/AuthenticationServices";
@@ -9,7 +9,7 @@ import ButtonSubmitDefault from "../Utils/ButtonSubmitDefault";
 //composant du formulaire de mot de passe oublié pour demander une reinitialisation du mot de passe au back-end
 const ForgotPassword = () => {
 
-    const [title, setTitle] = useState("submit");
+    const [title] = useState("submit");
 
     //la requete part depuis cette méthode
     const sendEmail = (e) => {
