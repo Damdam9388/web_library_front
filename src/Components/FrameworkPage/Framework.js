@@ -9,7 +9,7 @@ const Framework = ({framework}) => {
             <div className="card-body">
                 <h5 className="card-title text-center">{framework.frameworkName}</h5>
                 <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
-                    <a href={framework.docUrl}  className="btn btn-primary">Link to the doc</a><br/>
+                    <a href={framework.docUrl}  className="btn btn-primary" target="blank">Link to the doc</a><br/>
                     {/*
                     on pointe a la manière program.js vers le composant frameworkInfo.js en passant
                     l'id hydra dans l'url pour récupérer les ressources du framework

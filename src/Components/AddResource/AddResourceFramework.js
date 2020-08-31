@@ -1,55 +1,37 @@
 import React, {useState,useEffect} from "react";
 import AddResourceFormFramework from "./AddResourceFormFramework";
 import { useHistory } from "react-router-dom";
-import {loadResources} from "../../Services/AddResourceServices";
+import {addResources} from "../../Services/AddResourceServices";
 
 const AddResourceFramework = (props) => {
 
     let history = useHistory();
+    const [authorInput, setAuthorInput] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const [data, setData] = useState(null);
     const token = localStorage.getItem('tokenUser');
     const config = {headers: {Authorization:"Bearer " + token, 'Content-type': 'application/json'}};
 
     // méthode utilisée si on crée un auteur en meme temps qu'on crée la ressource
-    const axiosAddResourceInput = (e) => {
+    const axiosAddResource = (e) => {
     setIsLoading(true);
-    setData({
+    e.preventDefault();
+    let author = authorInput ? {name:e.target.elements.author.value} : e.target.elements.author.value;
+    const data = {
         name : e.target.elements.name.value,
         url : e.target.elements.url.value,
         //ici on crée un nouvel auteur, il faut donc créé un nouvel objet JSON
         //c'est pourquoi name:e.target.elements.author.value est entre accolade
-        author : {name:e.target.elements.author.value},
+        author : author,
         language : e.target.elements.language.value,
         level : e.target.elements.level.value,
         topic : e.target.elements.framework.value
-    });
-    e.preventDefault();
-
     };
-
-    //méthode utilisée si on utilise un auteur existant lors de la création de la ressource
-    const axiosAddResource = (e) => {
-        setIsLoading(true);
-        setData({
-            name : e.target.elements.name.value,
-            url : e.target.elements.url.value,
-            author : e.target.elements.author.value,
-            language : e.target.elements.language.value,
-            level : e.target.elements.level.value,
-            topic : e.target.elements.framework.value
-        });
-        e.preventDefault();
-
+        addResources(data, config, history, setIsLoading);
     };
-    useEffect(() => {
-        loadResources(data, config, history, setIsLoading)
-    }, [data]);
-
-
+    
     return (
     <>
-        <AddResourceFormFramework getAddedResource={axiosAddResource} isLoading={isLoading} getAddedResourceInput={axiosAddResourceInput}/>
+        <AddResourceFormFramework getAddedResource={axiosAddResource} isLoading={isLoading} isInput={authorInput} setInput={setAuthorInput}/>
     </>
     );
 };

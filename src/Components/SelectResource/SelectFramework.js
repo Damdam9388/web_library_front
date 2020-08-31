@@ -25,7 +25,7 @@ const SelectFramework = () => {
             <Select placeholder="Framework..." variant="outline" type="text" name="framework" id="framework" className="form-control">
                     {frameworks.map(framework => (
                         <option key={framework["@id"]} value={framework["@id"]}>{framework.framework.frameworkName}</option>))
-                    })
+                    }
             </Select>
         </div>
     );

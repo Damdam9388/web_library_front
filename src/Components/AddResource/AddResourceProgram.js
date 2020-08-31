@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from "react";
 import AddResourceFormProgram from "./AddResourceFormProgram";
 import { useHistory } from "react-router-dom";
-import {loadResources} from "../../Services/AddResourceServices";
+import {addResources} from "../../Services/AddResourceServices";
 
 
 const AddResourceProgram = (props) => {
@@ -45,7 +45,7 @@ const AddResourceProgram = (props) => {
         };
 
     useEffect(() => {
-        loadResources(data, config, history, setIsLoading)
+        addResources(data, config, history, setIsLoading)
     }, [data, config, history]);
 
 
