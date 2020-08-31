@@ -39,6 +39,7 @@ const SignUp = (props) => {
                 <div className="col-md-12 text-center">
                   <h1 className="login_title text-dark font-weight-bold mb-5" style={{fontSize:"35px", fontWeight:"600"}}>SIGN UP</h1>
                 </div>
+                <SignUpForm getSignUp={axiosSignUp} isLoading={isLoading} />
               </div>
               {/*composant qui envoie vers le formulaire react d'inscription et on lui passe la méthode axiosSignUp et la valeur de isloading*/}
               <SignUpForm getSignUp={axiosSignUp} isLoading={isLoading} />
