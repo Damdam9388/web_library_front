@@ -92,7 +92,7 @@ const AddResourceFormFramework = ({ getAddedResource, isLoading, isInput, setInp
                                                 name="author"
                                                 placeholder="Author..."
                                                 endpoint={CONSTANTS.ENDPOINT_SELECT_AUTHOR}
-                                                lblAttributeKey="authorName"
+                                                lblAttributeKey="label"
                                             />
                                             <button onClick={changeInput}>Add a new author</button>
                                         </FormControl>
@@ -102,10 +102,10 @@ const AddResourceFormFramework = ({ getAddedResource, isLoading, isInput, setInp
 
                                 <FormControl isRequired>
                                     <FormLabel htmlFor="language">Language</FormLabel>
-                                    <Select placeholder="Language..." variant="outline" type="text" name="language" id="language" className="form-control">
+                                    <select placeholder="Language..." variant="outline" type="text" name="language" id="language" className="form-control">
                                         <option value="French">French</option>
                                         <option value="English">English</option>
-                                    </Select>
+                                    </select>
                                 </FormControl>
 
                                 <FormControl isRequired>
@@ -114,7 +114,7 @@ const AddResourceFormFramework = ({ getAddedResource, isLoading, isInput, setInp
                                         name="level"
                                         placeholder="Level..."
                                         endpoint={CONSTANTS.ENDPOINT_SELECT_LEVEL}
-                                        lblAttributeKey="levelName"
+                                        lblAttributeKey="label"
                                     />
                                 </FormControl>
 
