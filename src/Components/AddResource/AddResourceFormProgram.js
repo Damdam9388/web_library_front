@@ -3,23 +3,22 @@ import { Circle } from "better-react-spinkit";
 import { Button, Input, Stack, InputGroup, InputLeftElement } from "@chakra-ui/core";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import FormControl from "@chakra-ui/core/dist/FormControl";
-import { Select } from "@chakra-ui/core";
-import SelectProgram from "../SelectResource/SelectProgram";
 import { Box } from "@chakra-ui/core";
 import UserContext from "../Context/UserContext";
 import ConnectedUserNav from "../../Layout/Nav/ConnectedUserNav";
 import * as CONSTANTS from "../../Constants/UrlConstants";
+import Select from "../SelectResource/Select";
 
-const AddResourceFormProgram = ({ getAddedResource, isLoading, getAddedResourceInput }) => {
+const AddResourceFormProgram = ({ getAddedResource, isLoading, isInput, setInput }) => {
     const { username } = useContext(UserContext);
-    const [showInput, setShowInput] = useState(false);
+
 
     const changeInput = (e) => {
-        setShowInput(true);
+        setInput(true);
     }
 
     const changeInputToFalse = (e) => {
-        setShowInput(false);
+        setInput(false);
     }
 
 
@@ -33,7 +32,7 @@ const AddResourceFormProgram = ({ getAddedResource, isLoading, getAddedResourceI
                         <h2 className="text-uppercase" style={{ color: "#4a9bd1" }}>Add a new resource</h2>
                         {/* On utilise l operateur ternaire : si showInput est vrai alors on soumet avec getAddedResourceInput*/}
                         {/* sinon on utilise getAddedResource */}
-                        <form onSubmit={showInput ? getAddedResourceInput : getAddedResource}>
+                        <form onSubmit={getAddedResource}>
 
                             <Stack spacing={4}>
 
@@ -69,7 +68,7 @@ const AddResourceFormProgram = ({ getAddedResource, isLoading, getAddedResourceI
 
 
                                 {
-                                    showInput ?
+                                    isInput ?
                                         <FormControl isRequired>
                                             <FormLabel htmlFor="author">Author</FormLabel>
                                             <InputGroup>
@@ -100,10 +99,10 @@ const AddResourceFormProgram = ({ getAddedResource, isLoading, getAddedResourceI
 
                                 <FormControl isRequired>
                                     <FormLabel htmlFor="language">Language</FormLabel>
-                                    <Select placeholder="Language..." variant="outline" type="text" name="language" id="language" className="form-control">
+                                    <select placeholder="Language..." variant="outline" type="text" name="language" id="language" className="form-control">
                                         <option value="French">French</option>
                                         <option value="English">English</option>
-                                    </Select>
+                                    </select>
                                 </FormControl>
 
                                 <FormControl isRequired>
@@ -118,7 +117,12 @@ const AddResourceFormProgram = ({ getAddedResource, isLoading, getAddedResourceI
 
                                 <FormControl isRequired>
                                     <FormLabel htmlFor="program">Program</FormLabel>
-                                    <SelectProgram></SelectProgram>
+                                    <Select
+                                        name="program"
+                                        placeholder="Program..."
+                                        endpoint={CONSTANTS.ENDPOINT_SELECT_PROGRAM}
+                                        lblAttributeKey="label"
+                                    />
                                 </FormControl>
 
                                 {isLoading ? (

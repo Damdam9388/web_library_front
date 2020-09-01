@@ -5,12 +5,14 @@ import Axios from "axios";
 import {URL_API} from "../../../../Constants/UrlConstants";
 import {ADMIN_RESOURCES} from "../../../../Constants/constants";
 import ConnectedUserNav from "../../../../Layout/Nav/ConnectedUserNav";
-import {Box, Input, InputGroup, InputLeftElement, Select, Stack} from "@chakra-ui/core";
+import {Box, Input, InputGroup, InputLeftElement, Stack} from "@chakra-ui/core";
 import FormControl from "@chakra-ui/core/dist/FormControl";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import ButtonSubmitDefault from "../../../Utils/ButtonSubmitDefault";
 import {Wave} from "better-react-spinkit";
-import SelectLevel from "../../../SelectResource/SelectLevel";
+import Select from '../../../SelectResource/Select';
+import * as CONSTANTS from "../../../../Constants/UrlConstants";
+
 
 const UpdateResourceForm = ({match}) => {
 
@@ -49,65 +51,65 @@ const UpdateResourceForm = ({match}) => {
             <ConnectedUserNav username={username} />
 
             {
-              resource ?
-                  <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
-                      <Box w="80%" p={4} mb={5} className="align-self-center">
-                          <div className="form" style={{height:"140vh"}}>
-                              <h2 className="text-uppercase" style={{color:"#d83a3a"}}>Update Resource</h2>
-                              <form onSubmit={updateThisResource}>
-                                  <Stack spacing={4}>
+                resource ?
+                    <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
+                        <Box w="80%" p={4} mb={5} className="align-self-center">
+                            <div className="form" style={{height:"140vh"}}>
+                                <h2 className="text-uppercase" style={{color:"#d83a3a"}}>Update Resource</h2>
+                                <form onSubmit={updateThisResource}>
+                                    <Stack spacing={4}>
 
-                                      <FormControl isRequired>
-                                          <FormLabel htmlFor="id">Id</FormLabel>
-                                          <InputGroup>
-                                              <InputLeftElement />
-                                              <Input
-                                                  variant="outline"
-                                                  type="text"
-                                                  name="id"
-                                                  id="id"
-                                                  className="form-control"
-                                                  placeholder={resource['@id']}
-                                                  isDisabled={true}
-                                              />
-                                          </InputGroup>
-                                      </FormControl>
+                                        <FormControl isRequired>
+                                            <FormLabel htmlFor="id">Id</FormLabel>
+                                            <InputGroup>
+                                                <InputLeftElement />
+                                                <Input
+                                                    variant="outline"
+                                                    type="text"
+                                                    name="id"
+                                                    id="id"
+                                                    className="form-control"
+                                                    placeholder={resource['@id']}
+                                                    isDisabled={true}
+                                                />
+                                            </InputGroup>
+                                        </FormControl>
 
-                                      <FormControl isRequired>
-                                          <FormLabel htmlFor="name">Name</FormLabel>
-                                          <InputGroup>
-                                              <InputLeftElement />
-                                              <Input
-                                                  variant="outline"
-                                                  type="text"
-                                                  name="name"
-                                                  id="name"
-                                                  className="form-control"
-                                                  placeholder={resource.resourceName}
-                                              />
-                                          </InputGroup>
-                                      </FormControl>
+                                        <FormControl isRequired>
+                                            <FormLabel htmlFor="name">Name</FormLabel>
+                                            <InputGroup>
+                                                <InputLeftElement />
+                                                <Input
+                                                    variant="outline"
+                                                    type="text"
+                                                    name="name"
+                                                    id="name"
+                                                    className="form-control"
+                                                    placeholder={resource.resourceName}
+                                                />
+                                            </InputGroup>
+                                        </FormControl>
 
-                                      <FormControl isRequired>
-                                          <FormLabel htmlFor="url">Url</FormLabel>
-                                          <InputGroup>
-                                              <InputLeftElement/>
-                                              <Input
-                                                  variant="outline"
-                                                  type="text"
-                                                  name="url"
-                                                  id="url"
-                                                  className="form-control"
-                                                  placeholder={resource.url}
-                                              />
-                                          </InputGroup>
-                                      </FormControl>
+                                        <FormControl isRequired>
+                                            <FormLabel htmlFor="url">Url</FormLabel>
+                                            <InputGroup>
+                                                <InputLeftElement/>
+                                                <Input
+                                                    variant="outline"
+                                                    type="text"
+                                                    name="url"
+                                                    id="url"
+                                                    className="form-control"
+                                                    placeholder={resource.url}
+                                                />
+                                            </InputGroup>
+                                        </FormControl>
 
-                                      <FormControl isRequired>
-                                          <FormLabel htmlFor="author">Author</FormLabel>
-                                          <InputGroup>
-                                              <InputLeftElement/>
-                                              <Input
+                                        <FormControl isRequired>
+                                            <FormLabel htmlFor="author">Author</FormLabel>
+                                            <InputGroup>
+                                                <InputLeftElement/>
+                                                <Input
                                                   variant="outline"
                                                   type="text"
                                                   name="author"
@@ -127,7 +129,12 @@ const UpdateResourceForm = ({match}) => {
                                           </Select>
                                       </FormControl>
 
-                                      <SelectLevel/>
+                                        <Select
+                                        name="level"
+                                        placeholder="Level..."
+                                        endpoint={CONSTANTS.ENDPOINT_SELECT_LEVEL}
+                                        lblAttributeKey="levelName"
+                                        />
 
                                       <FormControl isRequired>
                                           <FormLabel htmlFor="publisher">Publisher</FormLabel>
