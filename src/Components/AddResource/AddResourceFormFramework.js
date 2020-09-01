@@ -125,7 +125,7 @@ const AddResourceFormFramework = ({ getAddedResource, isLoading, isInput, setInp
                                         name="framework"
                                         placeholder="Framework..."
                                         endpoint={CONSTANTS.ENDPOINT_SELECT_FRAMEWORK}
-                                        lblAttributeKey="framework.frameworkName"
+                                        lblAttributeKey="label"
                                     />
                                 </FormControl>
 
