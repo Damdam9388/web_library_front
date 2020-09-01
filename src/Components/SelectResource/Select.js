@@ -22,7 +22,7 @@ const Select = ({ name, endpoint, placeholder, lblAttributeKey }) => {
     <div>
       <select placeholder={placeholder} variant="outline" name={name} id={name} className="form-control">
         {items.map(item => (
-          <option key={item["@id"]} value={item["@id"]}>{item[lblAttributeKey]}</option>))
+          <option key={item.value} value={item.value}>{item[lblAttributeKey]}</option>))
         }
       </select>
     </div>

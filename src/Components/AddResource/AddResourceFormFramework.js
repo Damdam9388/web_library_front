@@ -93,7 +93,7 @@ const AddResourceFormFramework = ({ getAddedResource, isLoading, isInput, setInp
                                                 name="author"
                                                 placeholder="Author..."
                                                 endpoint={CONSTANTS.ENDPOINT_SELECT_AUTHOR}
-                                                lblAttributeKey="authorName"
+                                                lblAttributeKey="label"
                                             />
                                             <button onClick={changeInput}>Add a new author</button>
                                         </FormControl>
@@ -115,7 +115,7 @@ const AddResourceFormFramework = ({ getAddedResource, isLoading, isInput, setInp
                                         name="level"
                                         placeholder="Level..."
                                         endpoint={CONSTANTS.ENDPOINT_SELECT_LEVEL}
-                                        lblAttributeKey="levelName"
+                                        lblAttributeKey="label"
                                     />
                                 </FormControl>
 
