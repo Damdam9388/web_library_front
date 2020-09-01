@@ -1,13 +1,9 @@
-
 import React, { useState, useContext } from "react";
 import { Circle } from "better-react-spinkit";
 import { Button, Input, Stack, InputGroup, InputLeftElement } from "@chakra-ui/core";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import FormControl from "@chakra-ui/core/dist/FormControl";
 import Select from "../SelectResource/Select";
-import SelectAuthor from "../SelectResource/SelectAuthor";
-import SelectLevel from "../SelectResource/SelectLevel";
-import SelectFramework from "../SelectResource/SelectFramework";
 import { Box } from "@chakra-ui/core";
 import UserContext from "../Context/UserContext";
 import ConnectedUserNav from "../../Layout/Nav/ConnectedUserNav";
