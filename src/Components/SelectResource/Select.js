@@ -11,8 +11,8 @@ const Select = ({ name, endpoint, placeholder, lblAttributeKey }) => {
       .then(response => {
         const selectItems = response.data['hydra:member'];
         setItems(selectItems);
-        console.log("******ITEM*****")
-        console.log(selectItems)
+        console.log("******ITEM*****");
+        console.log(selectItems);
 
       }, (error) => {
         console.log(error);

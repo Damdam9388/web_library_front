@@ -24,6 +24,6 @@ export const ENDPOINT_SELECT_LEVEL = URL_API + "api/levels";
 
 export const ENDPOINT_SELECT_PROGRAM = URL_API + "api/topic_programming_languages";
 
-export const ENDPOINT_SELECT_FRAMEWORK = URL_API + "api/topic_frameworks";
+export const ENDPOINT_SELECT_FRAMEWORK = URL_API + "api/frameworks/getItems";
 
 export const ENDPOINT_ALL_USERS = URL_API + "api/users";
