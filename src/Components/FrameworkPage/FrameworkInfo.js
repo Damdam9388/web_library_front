@@ -23,7 +23,7 @@ const FrameworkInfo = ({match}) => {
             })
             .catch((err) => console.error(err))
             .finally(() => setLoading(false));
-    }, []);
+    }, [ config, idFramework]);
 
     return (
         <div style={{height:"100vh"}}>

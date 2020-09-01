@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import axios from "axios";
 import {ENDPOINT_ADD_RESOURCE} from "../../../../Constants/UrlConstants";
 import ResourceTable from "./ResourceTable";
@@ -17,7 +17,7 @@ const ResourcesContainer = () => {
             }, (error) => {
                 console.log(error);
             });
-    }, []);
+    }, [ config ]);
 
     return (
         <div>
