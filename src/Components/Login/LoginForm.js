@@ -5,7 +5,6 @@ import FormControl from "@chakra-ui/core/dist/FormControl";
 import './LoginForm.scss';
 import {Link} from "react-router-dom";
 import * as CONSTANTS from "../../Constants/constants";
-import ButtonSubmitLoader from "../Utils/ButtonSubmitLoader";
 import ButtonSubmit from "../Utils/ButtonSubmit";
 
 const LoginForm = ({getLogin, load}) => {

@@ -3,7 +3,6 @@ import { Input, Stack, InputGroup, InputLeftElement } from "@chakra-ui/core";
 import Icon from "@chakra-ui/core/dist/Icon";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import FormControl from "@chakra-ui/core/dist/FormControl";
-import ButtonSubmitLoader from "../Utils/ButtonSubmitLoader";
 import ButtonSubmit from "../Utils/ButtonSubmit";
 
 const SignUpForm = ({ getSignUp, isLoading }) => {
