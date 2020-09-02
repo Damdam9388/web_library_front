@@ -1,50 +1,36 @@
 import React, { useEffect, useState} from 'react';
 import axios from "axios";
 import {ENDPOINT_ADD_RESOURCE} from "../../../../Constants/UrlConstants";
-import ResourceTable from "./ResourceTable";
+import TitlesTable from "../../AdminLayout/TitlesTable";
+import TitlePage from "../../AdminLayout/TitlePage";
+import {ADMIN_UPDATE_RESOURCE} from "../../../../Constants/constants";
+import Item from "../Item";
 
 const ResourcesContainer = () => {
 
     const [resources, setResources] = useState([]);
-    const token = localStorage.getItem('tokenUser');
-    const config = {headers: {Authorization: "Bearer " + token}};
+
+    const titles = ['#', 'name', 'url', 'author', 'language', 'level',  'publisher', 'Update', 'delete'];
+    const userAttributesKey = ['resourceName', 'url', 'author', 'language', 'level',  'publisher'];
 
     useEffect(() => {
-        axios.get(ENDPOINT_ADD_RESOURCE, config)
+        const token = localStorage.getItem('tokenUser');
+        axios.get(ENDPOINT_ADD_RESOURCE, {headers: {Authorization: "Bearer " + token}})
             .then(response => {
                 console.log(response);
                 setResources(response.data['hydra:member']);
             }, (error) => {
                 console.log(error);
             });
-    }, [ config ]);
+    }, []);
 
     return (
         <div>
-            <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
-                <h2 className="my-5">Page de gestion des resources</h2>
-            </div>
+            <TitlePage title="Page de gestion des resources"/>
 
             <table className="table">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">name</th>
-                    <th scope="col">url</th>
-                    <th scope="col">author</th>
-                    <th scope="col">language</th>
-                    <th scope="col">level</th>
-                    <th scope="col">Update</th>
-                    <th scope="col">Delete</th>
-                    <th scope="col">publisher</th>
-                </tr>
-                </thead>
-                <tbody>
-                {
-                    resources ? resources.map(resource => <ResourceTable key={resource['@id']} resource={resource} />) : <div></div>
-                }
-                </tbody>
-
+                <TitlesTable titles={titles} />
+                    <Item items={resources} attributeskey={userAttributesKey} endpoint={ADMIN_UPDATE_RESOURCE}/>
             </table>
 
         </div>

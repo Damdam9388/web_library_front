@@ -3,8 +3,7 @@ import { Input, Stack, InputGroup, InputLeftElement } from "@chakra-ui/core";
 import Icon from "@chakra-ui/core/dist/Icon";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import FormControl from "@chakra-ui/core/dist/FormControl";
-import ButtonSubmitLoader from "../Utils/ButtonSubmitLoader";
-import ButtonSubmitDefault from "../Utils/ButtonSubmitDefault";
+import ButtonSubmit from "../Utils/ButtonSubmit";
 
 const SignUpForm = ({ getSignUp, isLoading }) => {
   //pour la refactorisation du bouton submit
@@ -61,13 +60,11 @@ const SignUpForm = ({ getSignUp, isLoading }) => {
           </InputGroup>
         </FormControl>
 
-          {isLoading ? (
-              //si load = true(on rappelle que load est en fait isLoading) alors le loader tourne au milieu du bouton
-              <ButtonSubmitLoader/>
-          ) : (
-              //si load = false, le bouton se présente normalement
-              <ButtonSubmitDefault title={title}/>
-          )
+
+          {/*si load = true(on rappelle que load est en fait isLoading) alors le loader tourne au milieu du bouton*/}
+          {/*si load = false, le bouton se présente normalement*/}
+          <ButtonSubmit title={title} load={isLoading}/>
+
           }
         </Stack>
       </form>

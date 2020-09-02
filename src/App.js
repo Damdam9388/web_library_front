@@ -90,9 +90,9 @@ const App = () => {
                             <AdminRoute path={CONSTANTS.ADMIN_USERS} component ={UsersContainer}/>
                             <AdminRoute path={CONSTANTS.ADMIN_PROGRAMS} component ={ProgramsContainer}/>
                             <AdminRoute path={CONSTANTS.ADMIN_RESOURCES} component ={ResourcesContainer}/>
-                            <AdminRoute path={CONSTANTS.ADMIN_UPDATE_PROGRAM + "/:id+/:programName"} component ={UpdateProgramForm}/>
+                            <AdminRoute path={CONSTANTS.ADMIN_UPDATE_PROGRAM + "/:id+"} component ={UpdateProgramForm}/>
                             <AdminRoute path={CONSTANTS.ADMIN_UPDATE_RESOURCE + "/:id+"} component ={UpdateResourceForm}/>
-                            <AdminRoute path={CONSTANTS.ADMIN_UPDATE + "/:id+/:login/:email"} component ={UpdateUserForm}/>
+                            <AdminRoute path={CONSTANTS.ADMIN_UPDATE + "/:id+"} component ={UpdateUserForm}/>
 
                             <Route path={CONSTANTS.CONTACT_CONFIRMATION} component ={ContactConfirmationPage}/>
                             <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword} />

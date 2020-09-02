@@ -1,5 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
-import UserContext from "../../../Context/UserContext";
+import React, {useEffect, useState} from 'react';
 import {useHistory} from "react-router-dom";
 import Axios from "axios";
 import {URL_API} from "../../../../Constants/UrlConstants";
@@ -8,7 +7,7 @@ import ConnectedUserNav from "../../../../Layout/Nav/ConnectedUserNav";
 import {Box, Input, InputGroup, InputLeftElement, Stack} from "@chakra-ui/core";
 import FormControl from "@chakra-ui/core/dist/FormControl";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
-import ButtonSubmitDefault from "../../../Utils/ButtonSubmitDefault";
+import ButtonSubmit from "../../../Utils/ButtonSubmit";
 import {Wave} from "better-react-spinkit";
 import Select from '../../../SelectResource/Select';
 import * as CONSTANTS from "../../../../Constants/UrlConstants";
@@ -16,7 +15,6 @@ import * as CONSTANTS from "../../../../Constants/UrlConstants";
 
 const UpdateResourceForm = ({match}) => {
 
-    const {username} = useContext(UserContext);
     const [resource, setResource] = useState();
     const [title] = useState("Send");
     let history = useHistory();
@@ -48,7 +46,7 @@ const UpdateResourceForm = ({match}) => {
     return (
         <div style={{height:"150vh"}}>
 
-            <ConnectedUserNav username={username} />
+            <ConnectedUserNav />
 
             {
                 resource ?
@@ -152,7 +150,7 @@ const UpdateResourceForm = ({match}) => {
                                           </InputGroup>
                                       </FormControl>
 
-                                      <ButtonSubmitDefault title={title} />
+                                      <ButtonSubmit title={title} />
 
                                   </Stack>
                               </form>
