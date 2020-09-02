@@ -1,5 +1,4 @@
-
-import React, {useContext } from "react";
+import React, { useContext } from "react";
 import { Circle } from "better-react-spinkit";
 import { Button, Input, Stack, InputGroup, InputLeftElement } from "@chakra-ui/core";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";

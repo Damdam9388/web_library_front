@@ -17,7 +17,7 @@ const Select = ({ name, endpoint, placeholder, lblAttributeKey }) => {
       }, (error) => {
         console.log(error);
       });
-  }, []);
+  }, [ config, endpoint]);
   return (
     <div>
       <select placeholder={placeholder} variant="outline" name={name} id={name} className="form-control">

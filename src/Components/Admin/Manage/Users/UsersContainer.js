@@ -18,7 +18,7 @@ const UsersContainer = () => {
             }, (error) => {
                 console.log(error);
             });
-    }, []);
+    }, [ config ]);
 
     return (
         <div>

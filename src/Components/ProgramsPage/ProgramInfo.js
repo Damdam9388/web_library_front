@@ -25,7 +25,7 @@ const ProgramInfo = ({match}) => {
             })
             .catch((err) => console.error(err))
             .finally(() => setLoading(false));
-    }, []);
+    }, [ config, idProgram]);
 
     
     const DisplayFramework = () => {

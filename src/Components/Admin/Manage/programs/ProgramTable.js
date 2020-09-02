@@ -1,6 +1,4 @@
 import React from 'react';
-import UpdateUser from "../Users/UpdateUser";
-import DeleteUser from "../Users/DeleteUser";
 import UpdateProgram from "./UpdateProgram";
 import DeleteProgram from "./DeleteProgram";
 
