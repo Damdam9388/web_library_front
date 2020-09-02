@@ -9,14 +9,13 @@ import ConnectedUserNav from "../../Layout/Nav/ConnectedUserNav";
 const ProgramInfo = ({match}) => {
     const [resources, setResources] = useState();
     const [frameworks, setFramework] = useState();
-    const token = localStorage.getItem('tokenUser');
-    const config = {headers: {Authorization: "Bearer " + token}};
     const [loading, setLoading] = useState(true);
     const idProgram = match.params.id;
     const {username} = useContext(UserContext);
 
     useEffect(() => {
-        getProgramInfo(idProgram, config)
+        const token = localStorage.getItem('tokenUser');
+        getProgramInfo(idProgram, {headers: {Authorization: "Bearer " + token}})
             .then((res) => {
                 const resourcesList = res.data.topic.ressources;
                 const frameworkList = res.data.frameworks;
