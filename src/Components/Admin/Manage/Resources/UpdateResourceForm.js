@@ -1,5 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
-import UserContext from "../../../Context/UserContext";
+import React, {useEffect, useState} from 'react';
 import {useHistory} from "react-router-dom";
 import Axios from "axios";
 import {URL_API} from "../../../../Constants/UrlConstants";
@@ -16,7 +15,6 @@ import * as CONSTANTS from "../../../../Constants/UrlConstants";
 
 const UpdateResourceForm = ({match}) => {
 
-    const {username} = useContext(UserContext);
     const [resource, setResource] = useState();
     const [title] = useState("Send");
     let history = useHistory();
@@ -48,7 +46,7 @@ const UpdateResourceForm = ({match}) => {
     return (
         <div style={{height:"150vh"}}>
 
-            <ConnectedUserNav username={username} />
+            <ConnectedUserNav />
 
             {
                 resource ?
