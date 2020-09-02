@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import axios from "axios";
 import {ENDPOINT_ADD_RESOURCE} from "../../../../Constants/UrlConstants";
-import TitlesTable from "../../AdminLayout/TitlesTable";
+import ColumnNames from "../../AdminLayout/ColumnNames";
 import TitlePage from "../../AdminLayout/TitlePage";
 import {ADMIN_UPDATE_RESOURCE} from "../../../../Constants/constants";
 import Item from "../Item";
@@ -10,7 +10,7 @@ const ResourcesContainer = () => {
 
     const [resources, setResources] = useState([]);
 
-    const titles = ['#', 'name', 'url', 'author', 'language', 'level',  'publisher', 'Update', 'delete'];
+    const columnNames = ['#', 'name', 'url', 'author', 'language', 'level',  'publisher', 'Update', 'delete'];
     const userAttributesKey = ['resourceName', 'url', 'author', 'language', 'level',  'publisher'];
 
     useEffect(() => {
@@ -29,7 +29,7 @@ const ResourcesContainer = () => {
             <TitlePage title="Page de gestion des resources"/>
 
             <table className="table">
-                <TitlesTable titles={titles} />
+                <ColumnNames columnNames={columnNames} />
                     <Item items={resources} attributeskey={userAttributesKey} endpoint={ADMIN_UPDATE_RESOURCE}/>
             </table>
 

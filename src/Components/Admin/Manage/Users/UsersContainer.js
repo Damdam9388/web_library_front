@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import TitlesTable from "../../AdminLayout/TitlesTable";
+import ColumnNames from "../../AdminLayout/ColumnNames";
 import {ENDPOINT_ALL_USERS} from "../../../../Constants/UrlConstants";
 import {ADMIN_UPDATE} from "../../../../Constants/constants";
 import Item from "../Item";
@@ -14,7 +14,7 @@ const UsersContainer = () => {
     const [loading] = useState(false);
     const token = localStorage.getItem('tokenUser');
     const config = {headers: {Authorization: "Bearer " + token}};
-    const titles = ['#', 'login', 'email', 'update', 'delete'];
+    const columnNames = ['#', 'login', 'email', 'update', 'delete'];
     const userAttributesKey = ['login', 'email'];
 
     useEffect(() => {
@@ -41,7 +41,7 @@ const UsersContainer = () => {
                         <div style={{height:"100vh"}}>
                             <TitlePage title="Page de gestion des users" />
                             <table className="table">
-                                <TitlesTable titles={titles} />
+                                <ColumnNames columnNames={columnNames} />
                                 <Item items={users} attributeskey={userAttributesKey} endpoint={ADMIN_UPDATE} isLoading={loading}/>
                             </table>
                         </div>
