@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Stack } from "@chakra-ui/core";
-import ButtonSubmitLoader from "../Utils/ButtonSubmitLoader";
-import ButtonSubmitDefault from "../Utils/ButtonSubmitDefault";
+import ButtonSubmit from "../Utils/ButtonSubmit";
 import InputFormControl from "../Utils/Form/InputFormControl";
 
 const SignUpForm = ({ getSignUp, isLoading }) => {
@@ -38,12 +37,8 @@ const SignUpForm = ({ getSignUp, isLoading }) => {
             iconName="lock"
             aria-describedby="passswordHelp"
           />
+          <ButtonSubmit title={title} load={isLoading}/>
 
-          {isLoading ? (
-            <ButtonSubmitLoader />
-          ) : (
-            <ButtonSubmitDefault title={title} />
-          )}
         </Stack>
       </form>
     </div>

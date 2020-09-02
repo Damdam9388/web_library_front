@@ -14,7 +14,7 @@ const Resource = ({resource}) => {
                     <a href={resource.url}  className="btn btn-primary" target="blank">Link to the tutorial </a>
                 </div><br></br>
                 <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
-                    <Link className="btn btn-primary" to={CONSTANTS.ADD_RESOURCE_PROGRAM}>Add resource</Link>
+                    <Link className="btn btn-primary" to={`${CONSTANTS.ADD_RESOURCE_PROGRAM}/${false}`}>Add resource</Link>
                 </div><br></br>
                 <span className="float-right mt-3">publié par : {resource.publisher.login}</span>
             </div>

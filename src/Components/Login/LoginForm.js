@@ -11,8 +11,7 @@ import FormControl from "@chakra-ui/core/dist/FormControl";
 import "./LoginForm.scss";
 import { Link } from "react-router-dom";
 import * as CONSTANTS from "../../Constants/constants";
-import ButtonSubmitLoader from "../Utils/ButtonSubmitLoader";
-import ButtonSubmitDefault from "../Utils/ButtonSubmitDefault";
+import ButtonSubmit from "../Utils/ButtonSubmit";
 import InputFormControl from "../Utils/Form/InputFormControl";
 
 const LoginForm = ({ getLogin, load }) => {
@@ -45,7 +44,7 @@ const LoginForm = ({ getLogin, load }) => {
               outline: "none",
               bg: "transparent",
               color: "black",
-              boxShadow: "none"
+              boxShadow: "none",
             }}
             color="black"
             p="0"
@@ -108,13 +107,7 @@ const LoginForm = ({ getLogin, load }) => {
             </div>
           </div>
 
-          {load ? (
-            //si load = true(on rappelle que load est en fait isLoading) alors le loader tourne au milieu du bouton
-            <ButtonSubmitLoader />
-          ) : (
-            //si load = false, le bouton se présente normalement
-            <ButtonSubmitDefault title={title} />
-          )}
+          <ButtonSubmit title={title} load={load} />
         </Stack>
       </form>
     </div>
