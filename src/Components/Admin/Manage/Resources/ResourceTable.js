@@ -1,6 +1,7 @@
 import React from 'react';
 import UpdateResource from "./UpdateResource";
-import DeleteResource from "./DeleteResource";
+import {ENDPOINT_ADD_RESOURCE} from "../../../../Constants/UrlConstants";
+import DeleteItem from "../DeleteItem";
 
 const ResourceTable = ({resource}) => {
     return (
@@ -13,9 +14,9 @@ const ResourceTable = ({resource}) => {
                 <td>{resource.author.authorName}</td>
                 <td>{resource.language}</td>
                 <td>{resource.level.levelName}</td>
-                <td><UpdateResource resource={resource} /> </td>
-                <td> <DeleteResource resource={resource} /> </td>
                 <td>{resource.publisher.login}</td>
+                <td><UpdateResource resource={resource} /> </td>
+                <td> <DeleteItem item={resource} endpoint={ENDPOINT_ADD_RESOURCE}/> </td>
             </tr>
         </>
     );

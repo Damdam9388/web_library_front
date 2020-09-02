@@ -6,7 +6,7 @@ import './LoginForm.scss';
 import {Link} from "react-router-dom";
 import * as CONSTANTS from "../../Constants/constants";
 import ButtonSubmitLoader from "../Utils/ButtonSubmitLoader";
-import ButtonSubmitDefault from "../Utils/ButtonSubmitDefault";
+import ButtonSubmit from "../Utils/ButtonSubmit";
 
 const LoginForm = ({getLogin, load}) => {
     //cf chakra ui
@@ -88,14 +88,9 @@ const LoginForm = ({getLogin, load}) => {
 
 
 
-                    {load ? (
-                        //si load = true(on rappelle que load est en fait isLoading) alors le loader tourne au milieu du bouton
-                        <ButtonSubmitLoader/>
-                    ) : (
-                        //si load = false, le bouton se présente normalement
-                        <ButtonSubmitDefault title={title}/>
-                    )
-                    }
+                {/*si load = true(on rappelle que load est en fait isLoading) alors le loader tourne au milieu du bouton*/}
+                {/*si load = false, le bouton se présente normalement*/}
+                <ButtonSubmit title={title} load={load}/>
 
             </Stack>
         </form>

@@ -5,7 +5,7 @@ import Icon from "@chakra-ui/core/dist/Icon";
 import FormControl from "@chakra-ui/core/dist/FormControl";
 import {withRouter} from "react-router-dom";
 import {userChangeForgotPassword} from "../../Services/AuthenticationServices";
-import ButtonSubmitDefault from "../Utils/ButtonSubmitDefault";
+import ButtonSubmit from "../Utils/ButtonSubmit";
 
 //ce composant est accessible seulement depuis le lien envoyé en mail au user qui demande une reinitialisation de mot de passe
 //il fait suite au composant ForgotPassword
@@ -54,7 +54,7 @@ const ChangeForgotPassword = ({match}) => {
                         </FormControl>
             
                         <div className="col-md-12 text-center">
-                            <ButtonSubmitDefault title={title} />
+                            <ButtonSubmit title={title} />
                         </div>
                     </form>
                 </div>

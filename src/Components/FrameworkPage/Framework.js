@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import * as CONSTANTS from "../../Constants/constants";
 import {Link} from "react-router-dom";
 //affiche les framework individuellement en recupérant le state frameworks de ProgramInfo.js
 const Framework = ({framework}) => {
+
 
     return (
         <div className="col-md-4 card" style={{width: "18rem"}}>
@@ -17,7 +18,7 @@ const Framework = ({framework}) => {
                     <Link className="btn btn-primary" to={`${CONSTANTS.FRAMEWORK_SINGLE}${framework['@id']}`}>
                         Go inside the framework
                     </Link><br/>
-                    <Link className="btn btn-primary" to={CONSTANTS.ADD_RESOURCE_FRAMEWORK}>Add resource</Link>
+                    <Link className="btn btn-primary" to={`${CONSTANTS.ADD_RESOURCE_FRAMEWORK}/${true}`}>Add resource</Link>
                 </div>
             </div>
         </div>

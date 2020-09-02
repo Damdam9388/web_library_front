@@ -8,7 +8,7 @@ import ConnectedUserNav from "../../../../Layout/Nav/ConnectedUserNav";
 import {Box, Input, InputGroup, InputLeftElement, Stack} from "@chakra-ui/core";
 import FormControl from "@chakra-ui/core/dist/FormControl";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
-import ButtonSubmitDefault from "../../../Utils/ButtonSubmitDefault";
+import ButtonSubmit from "../../../Utils/ButtonSubmit";
 import {Wave} from "better-react-spinkit";
 import Select from '../../../SelectResource/Select';
 import * as CONSTANTS from "../../../../Constants/UrlConstants";
@@ -152,7 +152,7 @@ const UpdateResourceForm = ({match}) => {
                                           </InputGroup>
                                       </FormControl>
 
-                                      <ButtonSubmitDefault title={title} />
+                                      <ButtonSubmit title={title} />
 
                                   </Stack>
                               </form>
