@@ -10,11 +10,12 @@ const ButtonSubmit = ({title, load}) => {
     return <Button
         type="submit"
         color="white"
-        rightIcon="arrow-forward"
+        rightIcon={load ? "" : "arrow-forward"}
         bg="#0d234b"
         variant="red"
         width="full"
         border="transparent"
+        className="mt-5"
         _hover={{bg: "#4a9bd1"}}
     >
         {load ? <Circle/> : title}

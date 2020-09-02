@@ -6,26 +6,21 @@ const Select = ({ name, endpoint, placeholder, lblAttributeKey }) => {
 
   useEffect(() => {
     const token = localStorage.getItem("tokenUser");
-    const config = { headers: { Authorization: "Bearer " + token } };
 
-    axios.get(endpoint, config).then(
-      (response) => {
+    axios.get(endpoint, { headers: { Authorization: "Bearer " + token } })
+        .then((response) => {
         const selectItems = response.data["hydra:member"];
         setItems(selectItems);
-        console.log("******ITEM*****");
-        console.log(selectItems);
-      },
-      (error) => {
+        })
+        .catch((error) => {
         console.log(error);
-      }
-    );
+      });
   }, [endpoint]);
 
   return (
     <div>
       <select
         placeholder={placeholder}
-        variant="outline"
         name={name}
         id={name}
         className="form-control"
