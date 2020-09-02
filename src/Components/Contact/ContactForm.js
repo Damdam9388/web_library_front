@@ -1,9 +1,7 @@
 import React, {useState} from "react";
-import './ContactForm.scss'
-import ButtonSubmitLoader from "../Utils/ButtonSubmitLoader";
+import './ContactForm.scss';
 import ButtonSubmit from "../Utils/ButtonSubmit";
 import InputContact from "./InputContact";
-import {Stack} from "@chakra-ui/core";
 
 const ContactForm = ({sendMessage, load}) => {
 
