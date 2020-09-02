@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import './App.scss';
 import Footer from "./Layout/Footer/Footer.js";
 import LandingPage from "./Components/LandingPage/LandingPage";
