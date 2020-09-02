@@ -10,6 +10,7 @@ import UserContext from "../../../Context/UserContext";
 import ButtonSubmit from "../../../Utils/ButtonSubmit";
 import {ADMIN_PROGRAMS} from "../../../../Constants/constants";
 import {Wave} from "better-react-spinkit";
+import InputFormControl from "../../../Utils/Form/InputFormControl";
 
 const UpdateProgramForm = ({match}) => {
 
@@ -47,37 +48,20 @@ const UpdateProgramForm = ({match}) => {
                                 <form onSubmit={updateThisProgram}>
                                     <Stack spacing={4}>
 
-                                        <FormControl isRequired>
-                                            <FormLabel htmlFor="id">Id</FormLabel>
-                                            <InputGroup>
-                                                <InputLeftElement />
-                                                <Input
-                                                    variant="outline"
-                                                    type="text"
-                                                    name="id"
-                                                    id="id"
-                                                    className="form-control"
-                                                    placeholder={resource['@id']}
-                                                    isDisabled={true}
-                                                />
-                                            </InputGroup>
-                                        </FormControl>
+                                        <InputFormControl
+                                            id="id"
+                                            name="id"
+                                            label="id"
+                                            placeholder={resource['@id']}
+                                            isDisabled={true}
+                                        />
 
-                                        <FormControl isRequired>
-                                            <FormLabel htmlFor="programName">programName</FormLabel>
-                                            <InputGroup>
-                                                <InputLeftElement />
-                                                <Input
-                                                    variant="outline"
-                                                    type="text"
-                                                    name="programName"
-                                                    id="programName"
-                                                    className="form-control"
-                                                    placeholder={resource.programName}
-                                                />
-                                            </InputGroup>
-                                        </FormControl>
-
+                                        <InputFormControl
+                                            name="programName"
+                                            id="programName"
+                                            label="Program Name"
+                                            placeholder={resource.programName}
+                                        />
 
                                         <ButtonSubmit title={title} />
 
