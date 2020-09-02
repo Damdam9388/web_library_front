@@ -7,7 +7,7 @@ import {Box, Input, InputGroup, InputLeftElement, Stack} from "@chakra-ui/core";
 import FormControl from "@chakra-ui/core/dist/FormControl";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import UserContext from "../../../Context/UserContext";
-import ButtonSubmitDefault from "../../../Utils/ButtonSubmitDefault";
+import ButtonSubmit from "../../../Utils/ButtonSubmit";
 import {ADMIN_PROGRAMS} from "../../../../Constants/constants";
 import {Wave} from "better-react-spinkit";
 
@@ -79,7 +79,7 @@ const UpdateProgramForm = ({match}) => {
                                         </FormControl>
 
 
-                                        <ButtonSubmitDefault title={title} />
+                                        <ButtonSubmit title={title} />
 
                                     </Stack>
                                 </form>

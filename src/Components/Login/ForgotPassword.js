@@ -4,7 +4,7 @@ import {Input, InputGroup, InputLeftElement} from "@chakra-ui/core";
 import Icon from "@chakra-ui/core/dist/Icon";
 import FormControl from "@chakra-ui/core/dist/FormControl";
 import {userForgotPassword} from "../../Services/AuthenticationServices";
-import ButtonSubmitDefault from "../Utils/ButtonSubmitDefault";
+import ButtonSubmit from "../Utils/ButtonSubmit";
 
 //composant du formulaire de mot de passe oublié pour demander une reinitialisation du mot de passe au back-end
 const ForgotPassword = () => {
@@ -45,7 +45,7 @@ const ForgotPassword = () => {
                         </FormControl>
             
                         <div className="col-md-12 text-center mt-lg-5">
-                            <ButtonSubmitDefault title={title} />
+                            <ButtonSubmit title={title} />
                         </div>
                     </form>
                 </div>

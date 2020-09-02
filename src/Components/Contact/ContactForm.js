@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import './ContactForm.scss'
 import ButtonSubmitLoader from "../Utils/ButtonSubmitLoader";
-import ButtonSubmitDefault from "../Utils/ButtonSubmitDefault";
+import ButtonSubmit from "../Utils/ButtonSubmit";
 import InputContact from "./InputContact";
+import {Stack} from "@chakra-ui/core";
 
 const ContactForm = ({sendMessage, load}) => {
 
@@ -44,12 +45,9 @@ const ContactForm = ({sendMessage, load}) => {
                                 </div>
                             </div>
 
-                            {load ? (
-                                <ButtonSubmitLoader/>
-                            ) : (
-                                <ButtonSubmitDefault title={title}/>
-                            )
-                            }
+                            {/*si load = true(on rappelle que load est en fait isLoading) alors le loader tourne au milieu du bouton*/}
+                            {/*si load = false, le bouton se présente normalement*/}
+                            <ButtonSubmit title={title} load={load}/>
                         </div>
                     </form>
                 </div>

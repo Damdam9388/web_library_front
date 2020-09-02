@@ -9,11 +9,12 @@ import { Box } from "@chakra-ui/core";
 import UserContext from "../Context/UserContext";
 import ConnectedUserNav from "../../Layout/Nav/ConnectedUserNav";
 import * as CONSTANTS from "../../Constants/UrlConstants";
+import ButtonSubmit from "../Utils/ButtonSubmit";
 
 
 const AddResourceFormFramework = ({ getAddedResource, isLoading, isInput, setInput }) => {
     const { username } = useContext(UserContext);
-
+    const title = "add ressource";
 
     const changeInput = (e) => {
         setInput(true);
@@ -130,29 +131,10 @@ const AddResourceFormFramework = ({ getAddedResource, isLoading, isInput, setInp
                                     />
                                 </FormControl>
 
-                                {isLoading ? (
-                                    <Button
-                                        type="submit"
-                                        variantColor="blue"
-                                        variant="solid"
-                                        width="full"
-                                        border="transparent"
-                                    >
-                                        <Circle />
-                                    </Button>
-                                ) : (
-                                        <Button
-                                            type="submit"
-                                            rightIcon="arrow-forward"
-                                            variantColor="blue"
-                                            variant="solid"
-                                            width="150px"
-                                            border="transparent"
-                                        >
-                                            Add resource
-                                        </Button>
-                                    )
-                                }
+                                {/*si load = true(on rappelle que load est en fait isLoading) alors le loader tourne au milieu du bouton*/}
+                                {/*si load = false, le bouton se présente normalement*/}
+                                <ButtonSubmit title={title} load={isLoading}/>
+
 
                             </Stack>
                         </form>
