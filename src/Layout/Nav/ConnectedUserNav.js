@@ -9,6 +9,7 @@ const ConnectedUserNav = () => {
 
     const [username] = useState(localStorage.getItem('userLogin'));
 
+
     return (
     <>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -28,7 +29,7 @@ const ConnectedUserNav = () => {
                     <Link className="text-dark font-weight-bold pr-5 nav-link" to={CONSTANTS.CONTACT}>Contact us</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="text-dark font-weight-bold pr-5 nav-link" to={CONSTANTS.LOGIN}>Logout</Link>
+                    <Link className="text-dark font-weight-bold pr-5 nav-link" onClick={() => localStorage.clear()}  to={CONSTANTS.LOGIN}>Logout</Link>
                 </li>
             </ul>
                 <span className="navbar-text font-weight-bold">
