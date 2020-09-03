@@ -1,9 +1,9 @@
 import React, {useState, useEffect, useContext} from "react";
 import {getProgramInfo} from "../../Services/ProgramsServices";
-import {Wave} from "better-react-spinkit";
 import Resource from "../ResourcesPage/Resource";
 import ConnectedUserNav from "../../Layout/Nav/ConnectedUserNav";
 import UserContext from "../Context/UserContext";
+import WaveLoader from "../Utils/WaveLoader";
 
 //affiche les ressources du framework
 const FrameworkInfo = ({match}) => {
@@ -28,9 +28,7 @@ const FrameworkInfo = ({match}) => {
             <ConnectedUserNav username={username} />
             <div className="card-deck mt-5">
                 {loading ? (
-                    <div style={{minHeight:"100vh"}} className="col-md-12 d-flex flex-column justify-content-center align-items-center">
-                        <Wave size={100} color={"#00acee"} />
-                    </div>
+                    <WaveLoader />
                 ) : (
                     ressources.map((resource) => {
                         return (

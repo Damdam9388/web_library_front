@@ -1,17 +1,13 @@
 import React, {useState} from "react";
-import FormLabel from "@chakra-ui/core/dist/FormLabel";
-import {Button, Input, InputGroup, InputLeftElement, InputRightElement} from "@chakra-ui/core";
-import Icon from "@chakra-ui/core/dist/Icon";
-import FormControl from "@chakra-ui/core/dist/FormControl";
 import {withRouter} from "react-router-dom";
 import {userChangeForgotPassword} from "../../Services/AuthenticationServices";
 import ButtonSubmit from "../Utils/ButtonSubmit";
+import PasswordField from "./PasswordField";
 
 //ce composant est accessible seulement depuis le lien envoyé en mail au user qui demande une reinitialisation de mot de passe
 //il fait suite au composant ForgotPassword
 const ChangeForgotPassword = ({match}) => {
     const [show, setShow] = useState(false);
-    const [title] = useState("submit");
     const handleClick = () => setShow(!show);
 
     const changePassword = (e) => {
@@ -32,29 +28,10 @@ const ChangeForgotPassword = ({match}) => {
             <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
                 <div className="jumbotron" style={{width:"70%"}} >
                     <form onSubmit={changePassword}>
-                        <FormControl isRequired>
-                            <FormLabel htmlFor="InputPassword">Password</FormLabel>
-                            <InputGroup>
-                                <InputLeftElement children={<Icon name="lock" color="black" />} />
-                                <Input
-                                    variant="outline"
-                                    type={show ? "text" : "password"}
-                                    name="password"
-                                    id="password"
-                                    className="form-control"
-                                    aria-describedby="emailHelp"
-                                    placeholder="Enter Password..."
-                                />
-                                <InputRightElement width="4.5rem">
-                                    <Button h="2rem" size="sm" onClick={handleClick}>
-                                        {show ? "Hide" : "Show"}
-                                    </Button>
-                                </InputRightElement>
-                            </InputGroup>
-                        </FormControl>
+                        <PasswordField show={show} handleRightBtnClick={handleClick} />
             
                         <div className="col-md-12 text-center">
-                            <ButtonSubmit title={title} />
+                            <ButtonSubmit title="Submit" />
                         </div>
                     </form>
                 </div>

@@ -4,7 +4,7 @@ import ColumnNames from "../../AdminLayout/ColumnNames";
 import {ENDPOINT_ALL_USERS} from "../../../../Constants/UrlConstants";
 import {ADMIN_UPDATE} from "../../../../Constants/constants";
 import Item from "../Item";
-import {Wave} from "better-react-spinkit";
+import WaveLoader from "../../../Utils/WaveLoader";
 import TitlePage from "../../AdminLayout/TitlePage";
 
 
@@ -31,9 +31,7 @@ const UsersContainer = () => {
         <>
             {
                 isLoading ?
-                    <div style={{minHeight:"100vh"}} className="col-md-12 d-flex flex-column justify-content-center align-items-center">
-                        <Wave size={100} color={"#00acee"} />
-                    </div>
+                    <WaveLoader />
 
                      :
                         <div style={{height:"100vh"}}>

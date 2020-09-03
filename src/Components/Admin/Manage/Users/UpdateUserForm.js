@@ -8,7 +8,9 @@ import ButtonSubmit from "../../../Utils/ButtonSubmit";
 import {ADMIN_USERS} from "../../../../Constants/constants";
 import {Wave} from "better-react-spinkit";
 import IdField from "../../AdminLayout/IdField";
-import InputFormControl from "../../../Utils/Form/InputFormControl";
+import LoginField from "../../AdminLayout/LoginField";
+import EmailField from "../../AdminLayout/EmailField";
+
 
 const UpdateUserForm = ({match}) => {
 
@@ -40,29 +42,19 @@ const UpdateUserForm = ({match}) => {
                 user ?
                     <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
                         <Box w="80%" p={4} mb={5} className="align-self-center">
-                            <div className="form" style={{height:"140vh"}}>
-                                <h2 className="text-uppercase" style={{color:"#d83a3a"}}>Update User</h2>
+                            <div className="form" style={{height: "140vh"}}>
+                                <h2 className="text-uppercase" style={{color: "#d83a3a"}}>Update User</h2>
                                 <form onSubmit={updateThisUser}>
                                     <Stack spacing={4}>
 
-                                        <IdField item={user} />
+                                        <IdField item={user}/>
 
 
-                                        <InputFormControl
-                                            name="login"
-                                            id="login"
-                                            label="login"
-                                            placeholder={user.login}
-                                        />
+                                        <LoginField user={user}/>
 
-                                        <InputFormControl
-                                            name="email"
-                                            id="email"
-                                            placeholder={user.email}
-                                            isDisabled={true}
-                                        />
+                                        <EmailField user={user}/>
 
-                                        <ButtonSubmit title={title} />
+                                        <ButtonSubmit title={title}/>
 
                                     </Stack>
                                 </form>

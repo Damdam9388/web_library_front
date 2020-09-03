@@ -1,14 +1,12 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, {useState, useEffect} from "react";
 import {getPrograms} from "../../Services/ProgramsServices";
 import Program from "./Program";
-import {Wave} from "better-react-spinkit";
-import UserContext from "../Context/UserContext";
 import ConnectedUserNav from "../../Layout/Nav/ConnectedUserNav";
+import WaveLoader from "../Utils/WaveLoader";
 
 const Programs = () => {
     const [programs, setPrograms] = useState();
     const [loading, setLoading] = useState(true);
-    const {username} = useContext(UserContext);
 
     //on utilise un useEffect pour lancer la requete dès le chargement de la page
     useEffect(() => {
@@ -25,13 +23,10 @@ const Programs = () => {
     return (
         <div style={{height:"100vh"}}>
 
-            <ConnectedUserNav username={username} />
+            <ConnectedUserNav />
             <div className="card-deck">
                     {loading ? (
-                            <div style={{minHeight:"100vh"}} className="col-md-12 d-flex flex-column justify-content-center align-items-center">
-                                <Wave size={100} color={"#00acee"} />
-                            </div>
-
+                            <WaveLoader />
                     ) : (
                         programs.map((program, index) => {
                             return (

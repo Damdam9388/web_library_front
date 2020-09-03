@@ -1,10 +1,10 @@
 import React, {useState, useEffect, useContext} from "react";
 import {getProgramInfo} from "../../Services/ProgramsServices";
-import {Wave} from "better-react-spinkit";
 import Resource from "../ResourcesPage/Resource";
 import Framework from "../FrameworkPage/Framework";
 import UserContext from "../Context/UserContext";
 import ConnectedUserNav from "../../Layout/Nav/ConnectedUserNav";
+import WaveLoader from "../Utils/WaveLoader";
 
 const ProgramInfo = ({match}) => {
     const [resources, setResources] = useState();
@@ -50,9 +50,7 @@ const ProgramInfo = ({match}) => {
             <div className="card-deck" style={{marginTop:"20px"}}>
 
                 {loading ? (
-                    <div style={{minHeight:"100vh"}} className="col-md-12 d-flex flex-column justify-content-center align-items-center">
-                        <Wave size={100} color={"#00acee"} />
-                    </div>
+                    <WaveLoader />
                 ) : (
                     <>
                         {<DisplayFramework />}

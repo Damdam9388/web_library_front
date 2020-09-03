@@ -1,19 +1,14 @@
-import React, {useState} from "react";
-import FormLabel from "@chakra-ui/core/dist/FormLabel";
-import {Input, InputGroup, InputLeftElement} from "@chakra-ui/core";
-import Icon from "@chakra-ui/core/dist/Icon";
-import FormControl from "@chakra-ui/core/dist/FormControl";
+import React from "react";
 import {userForgotPassword} from "../../Services/AuthenticationServices";
 import ButtonSubmit from "../Utils/ButtonSubmit";
+import EmailField from "./EmailField";
 
 //composant du formulaire de mot de passe oublié pour demander une reinitialisation du mot de passe au back-end
 const ForgotPassword = () => {
 
-    const [title] = useState("submit");
-
     const sendEmail = (e) => {
-        const email = e.target.elements.email.value;
         e.preventDefault();
+        const email = e.target.elements.email.value;
         userForgotPassword(email)
             .then(response => {
                 console.log(response);
@@ -28,24 +23,10 @@ const ForgotPassword = () => {
             <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
                 <div className="jumbotron" style={{width:"70%"}} >
                     <form onSubmit={sendEmail}>
-                        <FormControl isRequired>
-                            <FormLabel htmlFor="InputEmail">Email</FormLabel>
-                            <InputGroup>
-                                <InputLeftElement children={<Icon name="email" color="black" />} />
-                                <Input
-                                    variant="outline"
-                                    type="email"
-                                    name="email"
-                                    className="form-control"
-                                    id="email"
-                                    aria-describedby="emailHelp"
-                                    placeholder="Enter email..."
-                                />
-                            </InputGroup>
-                        </FormControl>
+                        <EmailField />
             
                         <div className="col-md-12 text-center mt-lg-5">
-                            <ButtonSubmit title={title} />
+                            <ButtonSubmit title="Submit" />
                         </div>
                     </form>
                 </div>
