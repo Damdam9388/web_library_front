@@ -15,11 +15,10 @@ const UpdateUserForm = ({match}) => {
     const [user, setUser] = useState();
     const [title] = useState("Send");
     let history = useHistory();
-    const token = localStorage.getItem('tokenUser');
-    const config = {headers: {Authorization: "Bearer " + token, 'Content-type': 'application/json'}};
 
     useEffect(() => {
-        Axios.get(`${URL_API}${match.params.id}`, config)
+        const token = localStorage.getItem('tokenUser');
+        Axios.get(`${URL_API}${match.params.id}`, {headers: {Authorization: "Bearer " + token, 'Content-type': 'application/json'}})
             .then(response => {
                 setUser(response.data);
             })
@@ -28,7 +27,8 @@ const UpdateUserForm = ({match}) => {
 
     const updateThisUser = (e) => {
         e.preventDefault();
-        Axios.put(`${URL_API}` + match.params.id, {login:e.target.elements.login.value}, config)
+        const token = localStorage.getItem('tokenUser');
+        Axios.put(`${URL_API}` + match.params.id, {login:e.target.elements.login.value}, {headers: {Authorization: "Bearer " + token, 'Content-type': 'application/json'}})
             .then(history.push(ADMIN_USERS));
     };
 

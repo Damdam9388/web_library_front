@@ -17,11 +17,10 @@ const UpdateProgramForm = ({match}) => {
     const [title] = useState("Send");
     const [program, setProgram] = useState();
     let history = useHistory();
-    const token = localStorage.getItem('tokenUser');
-    const config = {headers: {Authorization: "Bearer " + token, 'Content-type': 'application/json'}};
 
     useEffect(() => {
-        Axios.get(`${URL_API}${match.params.id}`, config)
+        const token = localStorage.getItem('tokenUser');
+        Axios.get(`${URL_API}${match.params.id}`, {headers: {Authorization: "Bearer " + token, 'Content-type': 'application/json'}})
             .then(response => {
                 setProgram(response.data);
             })
@@ -30,7 +29,8 @@ const UpdateProgramForm = ({match}) => {
 
     const updateThisProgram = (e) => {
         e.preventDefault();
-        Axios.put(`${URL_API}` + match.params.id, {name:e.target.elements.programName.value}, config)
+        const token = localStorage.getItem('tokenUser');
+        Axios.put(`${URL_API}` + match.params.id, {name:e.target.elements.programName.value}, {headers: {Authorization: "Bearer " + token, 'Content-type': 'application/json'}})
             .then(history.push(ADMIN_PROGRAMS));
     };
 

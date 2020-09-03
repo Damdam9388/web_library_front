@@ -21,11 +21,11 @@ const UpdateResourceForm = ({match}) => {
     const [resource, setResource] = useState();
     const [title] = useState("Send");
     let history = useHistory();
-    const token = localStorage.getItem('tokenUser');
-    const config = {headers: {Authorization: "Bearer " + token, 'Content-type': 'application/json'}};
+
 
     useEffect(() => {
-        Axios.get(`${URL_API}${match.params.id}`, config)
+        const token = localStorage.getItem('tokenUser');
+        Axios.get(`${URL_API}${match.params.id}`, {headers: {Authorization: "Bearer " + token, 'Content-type': 'application/json'}})
             .then(response => {
                 setResource(response.data);
             })
@@ -34,6 +34,7 @@ const UpdateResourceForm = ({match}) => {
 
     const updateThisResource = (e) => {
         e.preventDefault();
+        const token = localStorage.getItem('tokenUser');
         Axios.put(
             `${URL_API}` + match.params.id,
             {
@@ -42,7 +43,7 @@ const UpdateResourceForm = ({match}) => {
                 language:e.target.elements.language.value,
                 level:e.target.elements.level.value,
             },
-            config)
+            {headers: {Authorization: "Bearer " + token, 'Content-type': 'application/json'}})
             .then(history.push(ADMIN_RESOURCES));
     };
 

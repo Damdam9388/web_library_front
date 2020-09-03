@@ -9,13 +9,12 @@ import UserContext from "../Context/UserContext";
 const FrameworkInfo = ({match}) => {
     const [ressources, setRessources] = useState();
     const {username} = useContext(UserContext);
-    const token = localStorage.getItem('tokenUser');
-    const config = {headers: {Authorization: "Bearer " + token}};
     const [loading, setLoading] = useState(true);
     const idFramework = match.params.id;
 
     useEffect(() => {
-        getProgramInfo(idFramework, config)
+        const token = localStorage.getItem('tokenUser');
+        getProgramInfo(idFramework, {headers: {Authorization: "Bearer " + token}})
             .then((res) => {
                 const resourcesList = res.data.topic.ressources;
                 setRessources(resourcesList);
@@ -23,7 +22,7 @@ const FrameworkInfo = ({match}) => {
             })
             .catch((err) => console.error(err))
             .finally(() => setLoading(false));
-    }, [ config, idFramework]);
+    }, [ idFramework]);
 
     return (
         <div style={{height:"100vh"}}>

@@ -8,13 +8,12 @@ import ConnectedUserNav from "../../Layout/Nav/ConnectedUserNav";
 const Programs = () => {
     const [programs, setPrograms] = useState();
     const [loading, setLoading] = useState(true);
-    const token = localStorage.getItem('tokenUser');
-    const config = {headers: {Authorization: "Bearer " + token}};
     const {username} = useContext(UserContext);
 
     //on utilise un useEffect pour lancer la requete dès le chargement de la page
     useEffect(() => {
-        getPrograms(config)
+        const token = localStorage.getItem('tokenUser');
+        getPrograms({headers: {Authorization: "Bearer " + token}})
             .then((res) => {
                 const programsList = res.data["hydra:member"];
                 setPrograms(programsList);
@@ -22,7 +21,7 @@ const Programs = () => {
             })
             .catch((err) => console.error(err))
             .finally(() => setLoading(false));
-    }, [ config ]);
+    }, []);
 
     return (
         <div style={{height:"100vh"}}>
