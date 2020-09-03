@@ -4,12 +4,10 @@ import { useHistory } from "react-router-dom";
 import {addResources} from "../../Services/AddResourceServices";
 
 
-const AddResourceProgram = (props) => {
+const AddResourceProgram = () => {
     let history = useHistory();
     const [authorInput, setAuthorInput] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const token = localStorage.getItem('tokenUser');
-    const config = {headers: {Authorization:"Bearer " + token, 'Content-type': 'application/json'}};
 
 
     // méthode utilisée si on crée un auteur en meme temps qu'on crée la ressource
@@ -27,7 +25,7 @@ const AddResourceProgram = (props) => {
         level : e.target.elements.level.value,
         topic : e.target.elements.program.value
     };
-        addResources(data, config, history, setIsLoading);
+        addResources(data, history, setIsLoading);
     };
 
 

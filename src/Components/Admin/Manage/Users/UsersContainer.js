@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
+import axiosInstance from "../../../../AxiosInstance";
 import ColumnNames from "../../AdminLayout/ColumnNames";
 import {ENDPOINT_ALL_USERS} from "../../../../Constants/UrlConstants";
 import {ADMIN_UPDATE} from "../../../../Constants/constants";
@@ -17,8 +17,7 @@ const UsersContainer = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        const token = localStorage.getItem('tokenUser');
-        axios.get(ENDPOINT_ALL_USERS, {headers: {Authorization: "Bearer " + token}})
+        axiosInstance.get(ENDPOINT_ALL_USERS)
             .then(response => {
                 setUsers(response.data['hydra:member']);
             })

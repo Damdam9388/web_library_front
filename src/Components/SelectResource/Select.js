@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {axiosInstance} from "../../Axios";
+import axiosInstance from "../../AxiosInstance";
 
 const Select = ({ name, endpoint, placeholder, lblAttributeKey }) => {
   const [items, setItems] = useState([]);

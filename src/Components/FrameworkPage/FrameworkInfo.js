@@ -13,8 +13,7 @@ const FrameworkInfo = ({match}) => {
     const idFramework = match.params.id;
 
     useEffect(() => {
-        const token = localStorage.getItem('tokenUser');
-        getProgramInfo(idFramework, {headers: {Authorization: "Bearer " + token}})
+        getProgramInfo(idFramework)
             .then((res) => {
                 const resourcesList = res.data.topic.ressources;
                 setRessources(resourcesList);

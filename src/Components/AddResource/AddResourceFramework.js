@@ -3,12 +3,10 @@ import AddResourceFormFramework from "./AddResourceFormFramework";
 import { useHistory } from "react-router-dom";
 import {addResources} from "../../Services/AddResourceServices";
 
-const AddResourceFramework = (props) => {
+const AddResourceFramework = () => {
     let history = useHistory();
     const [authorInput, setAuthorInput] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const token = localStorage.getItem('tokenUser');
-    const config = {headers: {Authorization:"Bearer " + token, 'Content-type': 'application/json'}};
 
 
     const axiosAddResource = (e) => {
@@ -23,7 +21,7 @@ const AddResourceFramework = (props) => {
         level : e.target.elements.level.value,
         topic : e.target.elements.framework.value
     };
-        addResources(data, config, history, setIsLoading);
+        addResources(data, history, setIsLoading);
     };
     
     return (

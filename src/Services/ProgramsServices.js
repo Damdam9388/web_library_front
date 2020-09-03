@@ -1,11 +1,11 @@
-import axios from 'axios';
+import axiosInstance from "../AxiosInstance";
 import * as CONSTANTS from "../Constants/UrlConstants";
 
 
-export const getPrograms = (config) => {
-    return axios.get(CONSTANTS.ENDPOINT_PROGRAMS, config)
+export const getPrograms = () => {
+    return axiosInstance.get(CONSTANTS.ENDPOINT_PROGRAMS)
 };
 
-export const getProgramInfo = (id, config) => {
-    return axios.get(CONSTANTS.ENDPOINT_RESOURCE_PROGRAM + `${id}`,config)
+export const getProgramInfo = (id) => {
+    return axiosInstance.get(CONSTANTS.ENDPOINT_RESOURCE_PROGRAM + `${id}`)
 };

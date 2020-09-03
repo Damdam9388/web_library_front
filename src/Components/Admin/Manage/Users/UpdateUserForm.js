@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useHistory} from "react-router-dom";
-import Axios from "axios";
+import axiosInstance from "../../../../AxiosInstance";
 import {URL_API} from "../../../../Constants/UrlConstants";
 import ConnectedUserNav from "../../../../Layout/Nav/ConnectedUserNav";
 import {Box, Stack} from "@chakra-ui/core";
@@ -17,8 +17,7 @@ const UpdateUserForm = ({match}) => {
     let history = useHistory();
 
     useEffect(() => {
-        const token = localStorage.getItem('tokenUser');
-        Axios.get(`${URL_API}${match.params.id}`, {headers: {Authorization: "Bearer " + token, 'Content-type': 'application/json'}})
+        axiosInstance.get(`${URL_API}${match.params.id}`)
             .then(response => {
                 setUser(response.data);
             })
@@ -27,8 +26,7 @@ const UpdateUserForm = ({match}) => {
 
     const updateThisUser = (e) => {
         e.preventDefault();
-        const token = localStorage.getItem('tokenUser');
-        Axios.put(`${URL_API}` + match.params.id, {login:e.target.elements.login.value}, {headers: {Authorization: "Bearer " + token, 'Content-type': 'application/json'}})
+        axiosInstance.put(`${URL_API}` + match.params.id, {login:e.target.elements.login.value})
             .then(history.push(ADMIN_USERS));
     };
 

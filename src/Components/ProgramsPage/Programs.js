@@ -12,8 +12,7 @@ const Programs = () => {
 
     //on utilise un useEffect pour lancer la requete dès le chargement de la page
     useEffect(() => {
-        const token = localStorage.getItem('tokenUser');
-        getPrograms({headers: {Authorization: "Bearer " + token}})
+        getPrograms()
             .then((res) => {
                 const programsList = res.data["hydra:member"];
                 setPrograms(programsList);

@@ -14,8 +14,7 @@ const ProgramInfo = ({match}) => {
     const {username} = useContext(UserContext);
 
     useEffect(() => {
-        const token = localStorage.getItem('tokenUser');
-        getProgramInfo(idProgram, {headers: {Authorization: "Bearer " + token}})
+        getProgramInfo(idProgram)
             .then((res) => {
                 const resourcesList = res.data.topic.ressources;
                 const frameworkList = res.data.frameworks;

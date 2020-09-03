@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useHistory} from "react-router-dom";
-import Axios from "axios";
+import axiosInstance from "../../../../AxiosInstance";
 import {URL_API} from "../../../../Constants/UrlConstants";
 import {ADMIN_RESOURCES} from "../../../../Constants/constants";
 import ConnectedUserNav from "../../../../Layout/Nav/ConnectedUserNav";
@@ -24,8 +24,7 @@ const UpdateResourceForm = ({match}) => {
 
 
     useEffect(() => {
-        const token = localStorage.getItem('tokenUser');
-        Axios.get(`${URL_API}${match.params.id}`, {headers: {Authorization: "Bearer " + token, 'Content-type': 'application/json'}})
+        axiosInstance.get(`${URL_API}${match.params.id}`)
             .then(response => {
                 setResource(response.data);
             })
@@ -34,16 +33,14 @@ const UpdateResourceForm = ({match}) => {
 
     const updateThisResource = (e) => {
         e.preventDefault();
-        const token = localStorage.getItem('tokenUser');
-        Axios.put(
+        axiosInstance.put(
             `${URL_API}` + match.params.id,
             {
                 name:e.target.elements.name.value,
                 url:e.target.elements.url.value,
                 language:e.target.elements.language.value,
                 level:e.target.elements.level.value,
-            },
-            {headers: {Authorization: "Bearer " + token, 'Content-type': 'application/json'}})
+            })
             .then(history.push(ADMIN_RESOURCES));
     };
 

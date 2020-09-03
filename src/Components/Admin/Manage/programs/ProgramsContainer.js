@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react';
-import axios from "axios";
+import axiosInstance from "../../../../AxiosInstance";
 import {ENDPOINT_PROGRAMS} from "../../../../Constants/UrlConstants";
 import {ADMIN_UPDATE_PROGRAM} from "../../../../Constants/constants";
 import ColumnNames from "../../AdminLayout/ColumnNames";
@@ -15,8 +15,7 @@ const ProgramsContainer = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        const token = localStorage.getItem('tokenUser');
-        axios.get(ENDPOINT_PROGRAMS, {headers: {Authorization: "Bearer " + token}})
+        axiosInstance.get(ENDPOINT_PROGRAMS)
             .then(response => {
                 console.log(response);
                 setPrograms(response.data['hydra:member']);

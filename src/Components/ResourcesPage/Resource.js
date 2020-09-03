@@ -1,11 +1,9 @@
-import React, {useEffect} from "react";
+import React from "react";
 import * as CONSTANTS from "../../Constants/constants";
 import {Link} from "react-router-dom";
 
 const Resource = ({resource}) => {
-    useEffect(()=>{
-        console.log(resource);
-    })
+
     return (
         <div className="col-md-4 card" style={{width: "18rem"}}>
             <div className="card-body">
