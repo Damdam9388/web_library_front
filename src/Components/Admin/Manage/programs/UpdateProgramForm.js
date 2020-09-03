@@ -4,7 +4,6 @@ import axiosInstance from "../../../../AxiosInstance";
 import {URL_API} from "../../../../Constants/UrlConstants";
 import ConnectedUserNav from "../../../../Layout/Nav/ConnectedUserNav";
 import {Box, Stack} from "@chakra-ui/core";
-import UserContext from "../../../Context/UserContext";
 import ButtonSubmit from "../../../Utils/ButtonSubmit";
 import {ADMIN_PROGRAMS} from "../../../../Constants/constants";
 import {Wave} from "better-react-spinkit";
@@ -13,8 +12,6 @@ import NameField from "../../AdminLayout/NameField";
 
 const UpdateProgramForm = ({match}) => {
 
-    const {username} = useContext(UserContext);
-    const [title] = useState("Send");
     const [program, setProgram] = useState();
     let history = useHistory();
 
@@ -35,7 +32,7 @@ const UpdateProgramForm = ({match}) => {
     return (
         <div style={{height:"150vh"}}>
 
-            <ConnectedUserNav username={username} />
+            <ConnectedUserNav />
             {
                 program ?
                     <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
@@ -49,7 +46,7 @@ const UpdateProgramForm = ({match}) => {
 
                                         <NameField item={program} attribute='programName'/>
 
-                                        <ButtonSubmit title={title} />
+                                        <ButtonSubmit title="Send" />
 
                                     </Stack>
                                 </form>
