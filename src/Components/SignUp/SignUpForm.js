@@ -37,6 +37,7 @@ const SignUpForm = ({ getSignUp, isLoading }) => {
             iconName="lock"
             aria-describedby="passswordHelp"
           />
+
           <ButtonSubmit title={title} load={isLoading}/>
 
         </Stack>
