@@ -1,20 +1,18 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useHistory} from "react-router-dom";
 import Axios from "axios";
 import {URL_API} from "../../../../Constants/UrlConstants";
 import ConnectedUserNav from "../../../../Layout/Nav/ConnectedUserNav";
-import {Box, Input, InputGroup, InputLeftElement, Stack} from "@chakra-ui/core";
-import FormControl from "@chakra-ui/core/dist/FormControl";
-import FormLabel from "@chakra-ui/core/dist/FormLabel";
-import UserContext from "../../../Context/UserContext";
+import {Box, Stack} from "@chakra-ui/core";
 import ButtonSubmit from "../../../Utils/ButtonSubmit";
 import {ADMIN_USERS} from "../../../../Constants/constants";
 import {Wave} from "better-react-spinkit";
+import IdField from "../../AdminLayout/IdField";
+import InputFormControl from "../../../Utils/Form/InputFormControl";
 
 const UpdateUserForm = ({match}) => {
 
-    const {username} = useContext(UserContext);
-    const [resource, setResource] = useState();
+    const [user, setUser] = useState();
     const [title] = useState("Send");
     let history = useHistory();
     const token = localStorage.getItem('tokenUser');
@@ -23,7 +21,7 @@ const UpdateUserForm = ({match}) => {
     useEffect(() => {
         Axios.get(`${URL_API}${match.params.id}`, config)
             .then(response => {
-                setResource(response.data);
+                setUser(response.data);
             })
             .catch(error => console.log(error));
     })
@@ -39,9 +37,9 @@ const UpdateUserForm = ({match}) => {
     return (
         <div style={{height:"150vh"}}>
 
-            <ConnectedUserNav username={username} />
+            <ConnectedUserNav />
             {
-                resource ?
+                user ?
                     <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
                         <Box w="80%" p={4} mb={5} className="align-self-center">
                             <div className="form" style={{height:"140vh"}}>
@@ -49,53 +47,22 @@ const UpdateUserForm = ({match}) => {
                                 <form onSubmit={updateThisUser}>
                                     <Stack spacing={4}>
 
-                                        <FormControl isRequired>
-                                            <FormLabel htmlFor='id'>Id</FormLabel>
-                                            <InputGroup>
-                                                <InputLeftElement />
-                                                <Input
-                                                variant="outline"
-                                                type="text"
-                                                name='id'
-                                                id='id'
-                                                className="form-control"
-                                                placeholder={resource['@id']}
-                                                isDisabled={true}
-                                                />
-                                            </InputGroup>
-                                        </FormControl>
+                                        <IdField item={user} />
 
 
-                                        <FormControl isRequired>
-                                            <FormLabel htmlFor="login">Login</FormLabel>
-                                            <InputGroup>
-                                                <InputLeftElement />
-                                                <Input
-                                                    variant="outline"
-                                                    type="text"
-                                                    name="login"
-                                                    id="login"
-                                                    className="form-control"
-                                                    placeholder={resource.login}
-                                                />
-                                            </InputGroup>
-                                        </FormControl>
+                                        <InputFormControl
+                                            name="login"
+                                            id="login"
+                                            label="login"
+                                            placeholder={user.login}
+                                        />
 
-                                        <FormControl isRequired>
-                                            <FormLabel htmlFor="email">Email</FormLabel>
-                                            <InputGroup>
-                                                <InputLeftElement/>
-                                                <Input
-                                                    variant="outline"
-                                                    type="text"
-                                                    name="email"
-                                                    id="email"
-                                                    className="form-control"
-                                                    placeholder={resource.email}
-                                                    isDisabled={true}
-                                                />
-                                            </InputGroup>
-                                        </FormControl>
+                                        <InputFormControl
+                                            name="email"
+                                            id="email"
+                                            placeholder={user.email}
+                                            isDisabled={true}
+                                        />
 
                                         <ButtonSubmit title={title} />
 

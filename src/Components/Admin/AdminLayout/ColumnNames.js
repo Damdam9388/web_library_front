@@ -2,13 +2,13 @@ import React from "react";
 
 //composant qui regroupe les titres de la table des items
 //pour que l'admin puisse s'y retrouver dans la gestion des items
-const TitlesTable = ({titles}) => {
+const ColumnNames = ({columnNames}) => {
     return (
 
         <thead>
             <tr>
-                {titles ? titles.map((title, index) =>
-                        <th scope="col" key={index}>{title}</th>
+                {columnNames ? columnNames.map((columnName, index) =>
+                        <th scope="col" key={index}>{columnName}</th>
                     )
                     : <th scope="col"/>
                 }
@@ -16,4 +16,4 @@ const TitlesTable = ({titles}) => {
         </thead>
     );
 };
-export default TitlesTable;
+export default ColumnNames;

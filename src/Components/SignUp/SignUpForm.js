@@ -24,7 +24,7 @@ const SignUpForm = ({ getSignUp, isLoading }) => {
           />
 
           <EmailField />
-          <PasswordField show={show} handleRightBtnClick={handleClick}/>
+          <PasswordField show={show} handleRightBtnClick={handleClick}/> 
 
           <ButtonSubmit title={title} load={isLoading}/>
 

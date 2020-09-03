@@ -19,6 +19,7 @@ const InputFormControl = ({
   iconName = null,
   iconColor = "black",
   rightElement = null,
+  isDisabled = false,
   // opérateur spread
   ...additionalInputProperties
 }) => (

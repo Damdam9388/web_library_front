@@ -7,7 +7,7 @@ import { CONNECTED_USER } from "../../Constants/constants";
 
 const ConnectedUserNav = () => {
 
-    const username = useState(localStorage.getItem('userLogin'));
+    const [username] = useState(localStorage.getItem('userLogin'));
 
     return (
     <>

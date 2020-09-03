@@ -11,7 +11,7 @@ import backgroundImage from './../../Images/background2.jpg';
 import * as CONSTANTS from "../../Constants/constants";
 import RoleContext from "../Context/RoleContext";
 
-const Login = (props) => {
+const Login = () => {
     const {updateLogged} = useContext(AuthContext);
     const {updateUsername} = useContext(UserContext);
     const {updateRole} = useContext(RoleContext);
@@ -19,13 +19,11 @@ const Login = (props) => {
     let history = useHistory();
 
     const axiosLogin = (e) => {
+        e.preventDefault();
         setLoading(true);
         //on recupere les données contenues dans le formulaire de login
         const email = e.target.elements.email.value;
         const password = e.target.elements.password.value;
-        e.preventDefault();
-
-
         getLogin(email, password)
             .then((response) => {
                 console.log(response);
