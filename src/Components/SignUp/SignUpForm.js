@@ -2,14 +2,19 @@ import React, { useState } from "react";
 import { Stack } from "@chakra-ui/core";
 import ButtonSubmit from "../Utils/ButtonSubmit";
 import InputFormControl from "../Utils/Form/InputFormControl";
+import EmailField from "../Login/EmailField";
+import PasswordField from "../Login/PasswordField";
 
 const SignUpForm = ({ getSignUp, isLoading }) => {
+  //cf chakra ui
+  const [show, setShow] = useState(false);
+  const handleClick = () => setShow(!show);
   const [title] = useState("Sign up");
 
   return (
     <div className="form">
       <form onSubmit={getSignUp}>
-        <Stack spacing={3}>
+        <Stack spacing={5}>
           <InputFormControl
             id="username"
             name="username"
@@ -18,25 +23,8 @@ const SignUpForm = ({ getSignUp, isLoading }) => {
             iconName="arrow-right"
           />
 
-          <InputFormControl
-            id="email"
-            name="email"
-            label="Email"
-            type="email"
-            placeholder="Enter email..."
-            iconName="email"
-            aria-describedby="emailHelp"
-          />
-
-          <InputFormControl
-            id="password"
-            name="password"
-            label="Password"
-            type="password"
-            placeholder="Enter password..."
-            iconName="lock"
-            aria-describedby="passswordHelp"
-          />
+          <EmailField />
+          <PasswordField show={show} handleRightBtnClick={handleClick}/> 
 
           <ButtonSubmit title={title} load={isLoading}/>
 
