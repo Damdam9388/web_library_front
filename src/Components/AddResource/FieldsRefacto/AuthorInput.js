@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import FormControl from "@chakra-ui/core/dist/FormControl";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import Select from "../../SelectResource/Select";

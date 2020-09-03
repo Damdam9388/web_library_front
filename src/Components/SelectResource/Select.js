@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import {axiosInstance} from "../../Axios";
 
 const Select = ({ name, endpoint, placeholder, lblAttributeKey }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const token = localStorage.getItem("tokenUser");
-
-    axios.get(endpoint, { headers: { Authorization: "Bearer " + token } })
+    axiosInstance.get(endpoint)
         .then((response) => {
         const selectItems = response.data["hydra:member"];
         setItems(selectItems);
-        })
-        .catch((error) => {
+        },(error) => {
         console.log(error);
       });
   }, [endpoint]);
