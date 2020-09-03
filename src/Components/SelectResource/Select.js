@@ -20,11 +20,11 @@ const Select = ({ name, endpoint, placeholder, lblAttributeKey }) => {
   return (
     <div>
       <select
-        placeholder={placeholder}
         name={name}
         id={name}
         className="form-control"
       >
+        <option value={placeholder}>{placeholder}</option>
         {items.map((item) => (
           <option key={item.value} value={item.value}>
             {item[lblAttributeKey]}

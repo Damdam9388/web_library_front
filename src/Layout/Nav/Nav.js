@@ -6,7 +6,6 @@ import logo from './../../Images/logo.PNG';
 import { TEAM } from "../../Constants/constants";
 import { CONTACT } from "../../Constants/constants";
 
-
 class Nav extends Component {
   render = () => (
     <>
@@ -21,6 +20,8 @@ class Nav extends Component {
           <Link className="text-dark font-weight-bold pr-5 contact_link" to={CONTACT}>Contact</Link>
         </ul>
       </div>
+
+
     </>
   );
 }

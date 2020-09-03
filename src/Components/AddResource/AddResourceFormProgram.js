@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Input, Stack, InputGroup, InputLeftElement } from "@chakra-ui/core";
+import {Stack} from "@chakra-ui/core";
 import FormLabel from "@chakra-ui/core/dist/FormLabel";
 import FormControl from "@chakra-ui/core/dist/FormControl";
 import { Box } from "@chakra-ui/core";
@@ -8,6 +8,13 @@ import ConnectedUserNav from "../../Layout/Nav/ConnectedUserNav";
 import * as CONSTANTS from "../../Constants/UrlConstants";
 import Select from "../SelectResource/Select";
 import ButtonSubmit from "../Utils/ButtonSubmit";
+import NameField from  "./FieldsRefacto/NameField";
+import UrlField from "./FieldsRefacto/UrlField";
+import AuthorInput from "./FieldsRefacto/AuthorInput";
+import AuthorSelect from "./FieldsRefacto/AuthorSelect";
+import LanguageField from "./FieldsRefacto/LanguageField";
+import LevelField from "./FieldsRefacto/LevelField";
+
 
 const AddResourceFormProgram = ({ getAddedResource, isLoading, isInput, setInput }) => {
     const { username } = useContext(UserContext);
@@ -36,84 +43,17 @@ const AddResourceFormProgram = ({ getAddedResource, isLoading, isInput, setInput
 
                             <Stack spacing={4}>
 
-                                <FormControl isRequired>
-                                    <FormLabel htmlFor="Name">Name</FormLabel>
-                                    <InputGroup>
-                                        <InputLeftElement />
-                                        <Input
-                                            variant="outline"
-                                            type="text"
-                                            name="name"
-                                            id="name"
-                                            className="form-control"
-                                            placeholder="Title..."
-                                        />
-                                    </InputGroup>
-                                </FormControl>
-
-                                <FormControl isRequired>
-                                    <FormLabel htmlFor="url">Url</FormLabel>
-                                    <InputGroup>
-                                        <InputLeftElement />
-                                        <Input
-                                            variant="outline"
-                                            type="text"
-                                            name="url"
-                                            id="url"
-                                            className="form-control"
-                                            placeholder="Url..."
-                                        />
-                                    </InputGroup>
-                                </FormControl>
-
-
+                                <NameField />
+                                <UrlField />
                                 {
                                     isInput ?
-                                        <FormControl isRequired>
-                                            <FormLabel htmlFor="author">Author</FormLabel>
-                                            <InputGroup>
-                                                <InputLeftElement />
-                                                <Input
-                                                    variant="outline"
-                                                    type="text"
-                                                    name="author"
-                                                    id="author"
-                                                    className="form-control"
-                                                    placeholder="author..."
-                                                />
-                                            </InputGroup>
-                                            <button onClick={changeInputToFalse}>Select an existing author</button>
-                                        </FormControl>
+                                        <AuthorSelect showSelect={changeInputToFalse} />
                                         :
-                                        <FormControl isRequired id="parap">
-                                            <FormLabel htmlFor="name">Author</FormLabel>
-                                            <Select
-                                                name="author"
-                                                placeholder="Author..."
-                                                endpoint={CONSTANTS.ENDPOINT_SELECT_AUTHOR}
-                                                lblAttributeKey="label"
-                                            />
-                                            <button onClick={changeInput}>Add a new author</button>
-                                        </FormControl>
+                                        <AuthorInput showInput={changeInput} />
                                 }
 
-                                <FormControl isRequired>
-                                    <FormLabel htmlFor="language">Language</FormLabel>
-                                    <select placeholder="Language..." variant="outline" type="text" name="language" id="language" className="form-control">
-                                        <option value="French">French</option>
-                                        <option value="English">English</option>
-                                    </select>
-                                </FormControl>
-
-                                <FormControl isRequired>
-                                    <FormLabel htmlFor="level">Level</FormLabel>
-                                    <Select
-                                        name="level"
-                                        placeholder="Level..."
-                                        endpoint={CONSTANTS.ENDPOINT_SELECT_LEVEL}
-                                        lblAttributeKey="label"
-                                    />
-                                </FormControl>
+                                <LanguageField />
+                                <LevelField />
 
                                 <FormControl isRequired>
                                     <FormLabel htmlFor="program">Program</FormLabel>
