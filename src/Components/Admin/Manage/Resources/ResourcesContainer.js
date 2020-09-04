@@ -37,7 +37,7 @@ const ResourcesContainer = () => {
                     <WaveLoader />
 
                     :
-                    <div style={{height: "100vh"}}>
+                    <div style={{height: "220vh"}}>
                         <TitlePage title="Page de gestion des resources"/>
 
                         <table className="table">
