@@ -27,3 +27,6 @@ export const ENDPOINT_SELECT_PROGRAM = URL_API + "api/programs/getItems";
 export const ENDPOINT_SELECT_FRAMEWORK = URL_API + "api/frameworks/getItems";
 
 export const ENDPOINT_ALL_USERS = URL_API + "api/users";
+
+export const ENDPOINT_TOPIC_PROGRAMMING = "api/topic_programming_languages";
+

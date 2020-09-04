@@ -32,6 +32,7 @@ import RoleContext from "./Components/Context/RoleContext";
 import AdminRoute from "./Components/Security/AdminRoute";
 import UpdateProgramForm from "./Components/Admin/Manage/programs/UpdateProgramForm";
 import UpdateResourceForm from "./Components/Admin/Manage/Resources/UpdateResourceForm";
+import AddProgramForm from "./Components/Admin/Manage/programs/AddProgramForm";
 
 const App = () => {
     const [isLogged, setLogged] = useState(localStorage.getItem('tokenUser') !== null);
@@ -93,6 +94,7 @@ const App = () => {
                             <AdminRoute path={CONSTANTS.ADMIN_UPDATE_PROGRAM + "/:id+"} component ={UpdateProgramForm}/>
                             <AdminRoute path={CONSTANTS.ADMIN_UPDATE_RESOURCE + "/:id+"} component ={UpdateResourceForm}/>
                             <AdminRoute path={CONSTANTS.ADMIN_UPDATE + "/:id+"} component ={UpdateUserForm}/>
+                            <AdminRoute path={CONSTANTS.ADD_PROGRAM_FORM} component={AddProgramForm}/>
 
                             <Route path={CONSTANTS.CONTACT_CONFIRMATION} component ={ContactConfirmationPage}/>
                             <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword} />

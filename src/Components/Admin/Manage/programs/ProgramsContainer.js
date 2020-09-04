@@ -7,10 +7,12 @@ import TitlePage from "../../AdminLayout/TitlePage";
 import Item from "../Item";
 import WaveLoader from "../../../Utils/WaveLoader";
 import ConnectedUserNav from "../../../../Layout/Nav/ConnectedUserNav";
+import {Link} from 'react-router-dom';
+import * as CONSTANTS from "../../../../Constants/constants";
 
 const ProgramsContainer = () => {
     const [programs, setPrograms] = useState([]);
-    const columnNames = ['#', 'programName', 'Update', 'delete']
+    const columnNames = ['#', 'programName', 'Update', 'delete'];
     const userAttributesKey = ['programName'];
     const [isLoading, setIsLoading] = useState(false)
 
@@ -30,6 +32,7 @@ const ProgramsContainer = () => {
     return (
         <>
             <ConnectedUserNav />
+            <Link to={CONSTANTS.ADD_PROGRAM_FORM} className="btn btn-primary float-right mt-5">add new Program</Link>
             {isLoading ?
                 <WaveLoader />
                 :
