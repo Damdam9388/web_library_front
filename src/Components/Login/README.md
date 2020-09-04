@@ -128,3 +128,91 @@ const ChangeForgotPassword = ({match}) => {
             });
     };
 ```
+
+Dans le but de factoriser on a créer 3 composants de plus : 
+
+`ButtonForgotPassword.js`
+
+```php
+const ButtonForgotPassword = () => (
+  <div className="row mb-5">
+    <div className="col-md-12 d-flex flex-column justify-content-end align-items-md-end">
+      <Button
+        color="dark"
+        bg="#4a9bd1"
+        borderColor="#4a9bd1"
+        size="sm"
+        _hover={{ bg: "#78a6c5", borderColor: "#78a6c5" }}
+      >
+        <Link className="text-white" to={CONSTANTS.FORGOT_PASSWORD}>
+          Forgot your password
+        </Link>
+      </Button>
+    </div>
+  </div>
+);
+```
+
+`EmailField.js` 
+
+```php
+const EmailField = () => (
+  <InputFormControl
+    id="email"
+    name="email"
+    label="Email"
+    placeholder="Enter Email..."
+    type="email"
+    mb="1rem"
+    borderTop="none"
+    borderLeft="none"
+    borderRight="none"
+    borderRadius="none"
+    borderBottomColor="black"
+    bg="transparent"
+    aria-describedby="emailHelp"
+    _focus={{
+      outline: "none",
+      bg: "transparent",
+      color: "black",
+      boxShadow: "none",
+    }}
+    color="black"
+    p="0"
+  />
+);
+```
+ 
+`PasswordField.js`
+
+```php
+const PasswordField = ({ show, handleRightBtnClick }) => (
+  <InputFormControl
+    name="password"
+    id="password"
+    label="Password"
+    placeholder="Enter Password..."
+    type={show ? "text" : "password"}
+    rightElement={
+      <ButtonShowHide show={show} handleClick={handleRightBtnClick} />
+    }
+    borderTop="none"
+    borderLeft="none"
+    borderRight="none"
+    borderRadius="none"
+    bg="transparent"
+    borderBottomColor="black"
+    aria-describedby="emailHelp"
+    p="0"
+    color="black"
+    _focus={{
+      outline: "none",
+      bg: "transparent",
+      color: "black",
+      boxShadow: "none",
+    }}
+  />
+);
+```
+
+Comme ça on fera appel uniquement au composant en rajoutant nos mettant les valeurs volus, sans à avoir à répéter le même champ à chaque fois.

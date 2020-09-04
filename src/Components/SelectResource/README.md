@@ -51,3 +51,47 @@ const SelectAuthor = () => {
 ```
 
 **==>Même concept pour les autre composants.**
+
+Dans le but de la refacto, on avait regroupé tout ces composants en un seul composant `Select.js` pour éviter la répétition du même code. 
+
+```php
+import React, { useState, useEffect } from "react";
+import axiosInstance from "../../AxiosInstance";
+
+// on a définit des props général à qui vont être remplacé dans nos composants AddResourceFormFramework.js
+// et AddResourceFormProgram.js par les valeurs volu
+const Select = ({ name, endpoint, placeholder, lblAttributeKey }) => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    axiosInstance.get(endpoint)
+        .then((response) => {
+        const selectItems = response.data["hydra:member"];
+        setItems(selectItems);
+        },(error) => {
+        console.log(error);
+      });
+      //on passe un tableau endpoint car le useEffect il a besoin de savoir sur quel changement il doit s'appliquer
+      //en gros on dit que le useEffect doit s'executer à chaque fois que le endpoint va changer, c'est ce qu'on appelle par les dépendances
+  }, [endpoint]);
+
+  return (
+    <div>
+      <select
+        name={name}
+        id={name}
+        className="form-control"
+      >
+        <option value={placeholder}>{placeholder}</option>
+        {items.map((item) => (
+          <option key={item.value} value={item.value}>
+            {item[lblAttributeKey]}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+};
+
+export default Select;
+```

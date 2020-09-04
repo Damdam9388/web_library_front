@@ -203,3 +203,7 @@ const AddResourceProgram = (props) => {
 };
 export default AddResourceProgram;
 ```
+
+
+Cette version en haut est la version avant la refacto, maintenant ce qu'on a fait c'est qu'on a essayé de réduire les lignes de code qui se répétent à chaque fois, notamment les formulaires dans `AddResourceFormFramework.js` et `AddResourceFormProgram.js`. 
+Pour cela, j'ai créer un dossier `FieldsRefacto.js` qui contient des composant pour chaque champs, ce qui nous aidera à faire appel uniquement à ces composants à la place des balises `<FormControl></FormControl>` qu'on avait avant.
