@@ -36,7 +36,7 @@ const ProgramsContainer = () => {
             {isLoading ?
                 <WaveLoader />
                 :
-                <div style={{height:"100vh"}}>
+                <div style={{height:"150vh"}}>
                     <TitlePage title="Page de gestion des programs" />
                         <table className="table">
 
