@@ -1,15 +1,13 @@
 import React from 'react';
 import {useHistory} from "react-router-dom";
-import Axios from "axios";
+import axiosInstance from "../../../AxiosInstance";
 
 const DeleteItem = ({item, endpoint}) => {
 
     let history = useHistory();
-    const token = localStorage.getItem('tokenUser');
-    const config = {headers: {Authorization: "Bearer " + token}};
 
     const deleteThisItem = async() => {
-        await Axios.delete(`${endpoint}/`+item.id, config);
+        await axiosInstance.delete(`${endpoint}/`+item.id);
         await history.go(0);
     };
 

@@ -1,11 +1,11 @@
 import React, { useEffect, useState} from 'react';
-import axios from "axios";
+import axiosInstance from "../../../../AxiosInstance";
 import {ENDPOINT_PROGRAMS} from "../../../../Constants/UrlConstants";
 import {ADMIN_UPDATE_PROGRAM} from "../../../../Constants/constants";
 import ColumnNames from "../../AdminLayout/ColumnNames";
 import TitlePage from "../../AdminLayout/TitlePage";
 import Item from "../Item";
-import {Wave} from "better-react-spinkit";
+import WaveLoader from "../../../Utils/WaveLoader";
 
 const ProgramsContainer = () => {
     const [programs, setPrograms] = useState([]);
@@ -15,8 +15,7 @@ const ProgramsContainer = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        const token = localStorage.getItem('tokenUser');
-        axios.get(ENDPOINT_PROGRAMS, {headers: {Authorization: "Bearer " + token}})
+        axiosInstance.get(ENDPOINT_PROGRAMS)
             .then(response => {
                 console.log(response);
                 setPrograms(response.data['hydra:member']);
@@ -30,9 +29,7 @@ const ProgramsContainer = () => {
     return (
         <>
             {isLoading ?
-                <div style={{minHeight:"100vh"}} className="col-md-12 d-flex flex-column justify-content-center align-items-center">
-                    <Wave size={100} color={"#00acee"} />
-                </div>
+                <WaveLoader />
                 :
                 <div style={{height:"100vh"}}>
                     <TitlePage title="Page de gestion des programs" />
