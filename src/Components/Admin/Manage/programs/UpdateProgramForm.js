@@ -25,7 +25,7 @@ const UpdateProgramForm = ({match}) => {
 
     const updateThisProgram = (e) => {
         e.preventDefault();
-        axiosInstance.put(`${URL_API}` + match.params.id, {name:e.target.elements.programName.value})
+        axiosInstance.put(`${URL_API}` + match.params.id, {programmingLanguage:{name:e.target.elements.name.value}})
             .then(history.push(ADMIN_PROGRAMS));
     };
 

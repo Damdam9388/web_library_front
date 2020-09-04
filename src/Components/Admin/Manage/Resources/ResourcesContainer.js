@@ -42,7 +42,7 @@ const ResourcesContainer = () => {
 
                         <table className="table">
                             <ColumnNames columnNames={columnNames}/>
-                            <Item items={resources} attributeskey={userAttributesKey} endpoint={ADMIN_UPDATE_RESOURCE}/>
+                            <Item items={resources} attributeskey={userAttributesKey} endpoint={ADMIN_UPDATE_RESOURCE} endpointDelete={ENDPOINT_ADD_RESOURCE}/>
                         </table>
                     </div>
             }
