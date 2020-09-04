@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from 'react';
 import axiosInstance from "../../../../AxiosInstance";
-import {ENDPOINT_PROGRAMS} from "../../../../Constants/UrlConstants";
+import {ENDPOINT_TOPIC_PROGRAMMING} from "../../../../Constants/UrlConstants";
 import {ADMIN_UPDATE_PROGRAM} from "../../../../Constants/constants";
 import ColumnNames from "../../AdminLayout/ColumnNames";
 import TitlePage from "../../AdminLayout/TitlePage";
@@ -18,7 +18,7 @@ const ProgramsContainer = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        axiosInstance.get(ENDPOINT_PROGRAMS)
+        axiosInstance.get(ENDPOINT_TOPIC_PROGRAMMING)
             .then(response => {
                 console.log(response);
                 setPrograms(response.data['hydra:member']);
@@ -41,7 +41,7 @@ const ProgramsContainer = () => {
                         <table className="table">
 
                             <ColumnNames columnNames={columnNames}/>
-                            <Item items={programs} attributeskey={userAttributesKey} endpoint={ADMIN_UPDATE_PROGRAM}/>
+                            <Item items={programs} attributeskey={userAttributesKey} endpoint={ADMIN_UPDATE_PROGRAM} endpointDelete={ENDPOINT_TOPIC_PROGRAMMING}/>
 
                         </table>
                 </div>

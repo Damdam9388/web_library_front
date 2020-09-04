@@ -1,7 +1,7 @@
 import React from 'react';
 import DisplayItemInTable from "./DisplayItemInTable";
 
-const Item = ({items, attributeskey, endpoint, isLoading}) => {
+const Item = ({items, attributeskey, endpoint, endpointDelete}) => {
     return (
         <tbody>
         {
@@ -11,6 +11,7 @@ const Item = ({items, attributeskey, endpoint, isLoading}) => {
                     item={item}
                     attributesKey={attributeskey}
                     endpoint={endpoint}
+                    endpointDelete={endpointDelete}
                 />)
                 :
                 <div/>

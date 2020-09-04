@@ -40,7 +40,7 @@ const UsersContainer = () => {
                             <TitlePage title="Page de gestion des users" />
                             <table className="table">
                                 <ColumnNames columnNames={columnNames} />
-                                <Item items={users} attributeskey={userAttributesKey} endpoint={ADMIN_UPDATE} isLoading={isLoading}/>
+                                <Item items={users} attributeskey={userAttributesKey} endpoint={ADMIN_UPDATE} endpointDelete={ENDPOINT_ALL_USERS}/>
                             </table>
                         </div>
             }

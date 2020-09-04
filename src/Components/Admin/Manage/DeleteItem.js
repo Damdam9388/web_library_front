@@ -2,14 +2,15 @@ import React from 'react';
 import {useHistory} from "react-router-dom";
 import axiosInstance from "../../../AxiosInstance";
 
-const DeleteItem = ({item, endpoint}) => {
+const DeleteItem = ({item}) => {
 
     let history = useHistory();
 
     const deleteThisItem = async() => {
-        await axiosInstance.delete(`${endpoint}/`+item.id);
+        await axiosInstance.delete(`${item['@id']}`);
         await history.go(0);
     };
+
 
     return (
         <div>

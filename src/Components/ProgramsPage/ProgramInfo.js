@@ -16,8 +16,9 @@ const ProgramInfo = ({match}) => {
     useEffect(() => {
         getProgramInfo(idProgram)
             .then((res) => {
-                const resourcesList = res.data.topic.ressources;
+                const resourcesList = res.data.ressources;
                 const frameworkList = res.data.frameworks;
+                console.log(res);
                 setResources(resourcesList);
                 setFramework(frameworkList);
             })

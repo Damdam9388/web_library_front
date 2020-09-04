@@ -1,9 +1,8 @@
 import React from 'react';
 import UpdateItem from './UpdateItem';
 import DeleteItem from "./DeleteItem";
-import {ENDPOINT_ALL_USERS} from "../../../Constants/UrlConstants";
 
-const DisplayItemInTable = ({item, attributesKey, endpoint}) => {
+const DisplayItemInTable = ({item, attributesKey, endpoint, endpointDelete}) => {
     return (
         <tr>
             <th scope="row">{item.id}</th>
@@ -17,7 +16,7 @@ const DisplayItemInTable = ({item, attributesKey, endpoint}) => {
             }
 
             <td><UpdateItem item={item} endpoint={endpoint}/> </td>
-            <td> <DeleteItem item={item} endpoint={ENDPOINT_ALL_USERS}/> </td>
+            <td> <DeleteItem item={item} endpoint={endpointDelete}/> </td>
         </tr>
     );
 };
