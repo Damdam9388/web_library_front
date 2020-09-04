@@ -6,6 +6,7 @@ import {ADMIN_UPDATE} from "../../../../Constants/constants";
 import Item from "../Item";
 import WaveLoader from "../../../Utils/WaveLoader";
 import TitlePage from "../../AdminLayout/TitlePage";
+import ConnectedUserNav from "../../../../Layout/Nav/ConnectedUserNav";
 
 
 const UsersContainer = () => {
@@ -29,6 +30,7 @@ const UsersContainer = () => {
 
     return (
         <>
+            <ConnectedUserNav />
             {
                 isLoading ?
                     <WaveLoader />

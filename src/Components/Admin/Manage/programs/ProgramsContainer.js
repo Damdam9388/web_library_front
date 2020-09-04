@@ -6,6 +6,7 @@ import ColumnNames from "../../AdminLayout/ColumnNames";
 import TitlePage from "../../AdminLayout/TitlePage";
 import Item from "../Item";
 import WaveLoader from "../../../Utils/WaveLoader";
+import ConnectedUserNav from "../../../../Layout/Nav/ConnectedUserNav";
 
 const ProgramsContainer = () => {
     const [programs, setPrograms] = useState([]);
@@ -28,6 +29,7 @@ const ProgramsContainer = () => {
 
     return (
         <>
+            <ConnectedUserNav />
             {isLoading ?
                 <WaveLoader />
                 :

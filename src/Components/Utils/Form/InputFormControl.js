@@ -39,6 +39,7 @@ const InputFormControl = ({
         id={id}
         className="form-control"
         placeholder={placeholder}
+        isDisabled={isDisabled}
         {...additionalInputProperties}
       />
 

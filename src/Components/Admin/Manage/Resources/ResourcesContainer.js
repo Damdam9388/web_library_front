@@ -6,6 +6,7 @@ import TitlePage from "../../AdminLayout/TitlePage";
 import {ADMIN_UPDATE_RESOURCE} from "../../../../Constants/constants";
 import Item from "../Item";
 import WaveLoader from "../../../Utils/WaveLoader";
+import ConnectedUserNav from "../../../../Layout/Nav/ConnectedUserNav";
 
 const ResourcesContainer = () => {
 
@@ -30,6 +31,7 @@ const ResourcesContainer = () => {
 
     return (
         <>
+            <ConnectedUserNav />
             {
                 isLoading ?
                     <WaveLoader />
