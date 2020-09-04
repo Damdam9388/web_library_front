@@ -2,10 +2,6 @@ import {Button} from "@chakra-ui/core";
 import React from "react";
 import {Circle} from "better-react-spinkit";
 
-//composant du bouton normal de soumission des formulaires
-//title = le titre du bouton qui apparait tant qu'on pas cliqué dessus
-//load = le state de chargement qui provient du composant parent et qui est a false par defaut
-//du coup le bouton montre le titre si load = false et le composant circle(loader) si load = true
 const ButtonSubmit = ({title, load}) => {
     return <Button
         type="submit"
