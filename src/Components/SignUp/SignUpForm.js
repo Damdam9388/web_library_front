@@ -18,8 +18,8 @@ const SignUpForm = ({ getSignUp, isLoading }) => {
           <InputFormControl
             id="username"
             name="username"
-            label="UserName"
-            placeholder="Enter your user Name..."
+            label="Login"
+            placeholder="Enter your login..."
             iconName="arrow-right"
           />
 
