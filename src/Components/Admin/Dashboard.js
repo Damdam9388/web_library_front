@@ -12,11 +12,11 @@ const Dashboard = () => {
         <div className="wrap" style={{height:"100vh"}}>
 
             <ConnectedUserNav username={username} />
-            <h2 className="text-uppercase">Welcome back dear Admin !.</h2>
+            <h2 className="text-uppercase">Welcome back dear Admin !</h2>
             <ul>
-                <li><Link to={ADMIN_USERS}>users list</Link></li>
-                <li><Link to={ADMIN_PROGRAMS}>programs list</Link></li>
-                <li><Link to={ADMIN_RESOURCES}>resources list</Link></li>
+                <li><Link to={ADMIN_USERS}>Users list</Link></li>
+                <li><Link to={ADMIN_PROGRAMS}>Programs list</Link></li>
+                <li><Link to={ADMIN_RESOURCES}>Resources list</Link></li>
             </ul>
 
         </div>

@@ -14,7 +14,7 @@ const DeleteItem = ({item}) => {
 
     return (
         <div>
-            <button className="btn btn-outline-danger" onClick={deleteThisItem}>delete</button>
+            <button className="btn btn-outline-danger" onClick={deleteThisItem}>Delete</button>
         </div>
     );
 };

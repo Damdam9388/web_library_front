@@ -22,7 +22,7 @@ export const ENDPOINT_SELECT_AUTHOR = URL_API + "api/authors/getItems";
 
 export const ENDPOINT_SELECT_LEVEL = URL_API + "api/levels/getItems";
 
-export const ENDPOINT_SELECT_PROGRAM = URL_API + "api/programs/getItems";
+export const ENDPOINT_SELECT_PROGRAM = URL_API + "api/programsTopic/getItems";
 
 export const ENDPOINT_SELECT_FRAMEWORK = URL_API + "api/frameworks/getItems";
 
