@@ -12,7 +12,7 @@ const AddProgramForm = () => {
 
     const addNewProgram = (e) => {
         e.preventDefault();
-        axiosInstance.post(ENDPOINT_TOPIC_PROGRAMMING, {programmingLanguage:{name:e.target.elements.name.value}} )
+        axiosInstance().post(ENDPOINT_TOPIC_PROGRAMMING, {programmingLanguage:{name:e.target.elements.name.value}} )
             .then((res) => {
                 console.log(res);
                 history.push(CONSTANTS.ADMIN_PROGRAMS);

@@ -9,6 +9,8 @@ import backgroundImage from './../../Images/background2.jpg';
 const SignUp = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   let history = useHistory();
+  const [alertMessage, setAlertMessage] = useState({message:"", level:""});
+  const [showAlert , setShowAlert] = useState(false);
 
   const axiosSignUp = (e) => {
     setIsLoading(true);
@@ -19,20 +21,38 @@ const SignUp = (props) => {
     e.preventDefault();
     getSignUp(userName, email, password)
       .then((res) => {
+        setAlertMessage({message: "Your account has been created, check your email to activate it", level: "alert alert-success"});
         console.log(res);
-        history.push("/");
+
       })
       .catch((error) => {
+        setAlertMessage({message: "Error during creating your account", level: "alert alert-danger"});
         console.log(error);
       })
-      .finally(() => setIsLoading(false));
+      .finally(() => {
+        setIsLoading(false);
+        setShowAlert(true);
+        setTimeout(() => {
+          history.push("/");
+        }, 5000);
+      });
   };
 
 
   return (
     <>
-      <div className="form">
+      <div>
         <div className="row contain" style={{ height: '100vh', backgroundImage:`url(${backgroundImage})`}}>
+          {showAlert ?
+              <div className="col-md-12 text-center">
+                <div className={alertMessage.level} role="alert">
+                  {alertMessage.message}
+                </div>
+              </div>
+
+              :
+              <div/>
+          }
           <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
             <Box bg="#F7FAFC" opacity="0.9" w="50%" p={4} mb={5} rounded="md" className="align-self-center">
               <div className="logo mb-3">

@@ -64,7 +64,7 @@ const Select = ({ name, endpoint, placeholder, lblAttributeKey }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    axiosInstance.get(endpoint)
+    axiosInstance().get(endpoint)
         .then((response) => {
         const selectItems = response.data["hydra:member"];
         setItems(selectItems);

@@ -13,6 +13,7 @@ const ButtonSubmit = ({title, load}) => {
         border="transparent"
         className="mt-5"
         _hover={{bg: "#4a9bd1"}}
+        isDisabled={load ? true : false}
     >
         {load ? <Circle/> : title}
     </Button>;

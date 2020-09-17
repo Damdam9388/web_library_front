@@ -19,7 +19,7 @@ const UpdateUserForm = ({match}) => {
     let history = useHistory();
 
     useEffect(() => {
-        axiosInstance.get(`${URL_API}${match.params.id}`)
+        axiosInstance().get(`${URL_API}${match.params.id}`)
             .then(response => {
                 setUser(response.data);
             })
@@ -28,7 +28,7 @@ const UpdateUserForm = ({match}) => {
 
     const updateThisUser = (e) => {
         e.preventDefault();
-        axiosInstance.put(`${URL_API}` + match.params.id, {login:e.target.elements.login.value})
+        axiosInstance().put(`${URL_API}` + match.params.id, {login:e.target.elements.login.value})
             .then(history.push(ADMIN_USERS));
     };
 

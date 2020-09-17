@@ -16,7 +16,7 @@ const UpdateProgramForm = ({match}) => {
     let history = useHistory();
 
     useEffect(() => {
-        axiosInstance.get(`${URL_API}${match.params.id}`)
+        axiosInstance().get(`${URL_API}${match.params.id}`)
             .then(response => {
                 setProgram(response.data);
             })
@@ -25,7 +25,7 @@ const UpdateProgramForm = ({match}) => {
 
     const updateThisProgram = (e) => {
         e.preventDefault();
-        axiosInstance.put(`${URL_API}` + match.params.id, {programmingLanguage:{name:e.target.elements.name.value}})
+        axiosInstance().put(`${URL_API}` + match.params.id, {programmingLanguage:{name:e.target.elements.name.value}})
             .then(history.push(ADMIN_PROGRAMS));
     };
 
