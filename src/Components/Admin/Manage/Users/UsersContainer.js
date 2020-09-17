@@ -35,7 +35,7 @@ const UsersContainer = () => {
                 isLoading ?
                     <WaveLoader />
 
-                     :
+                    :
                         <div style={{height:"100vh"}}>
                             <TitlePage title="Page de gestion des users" />
                             <table className="table">

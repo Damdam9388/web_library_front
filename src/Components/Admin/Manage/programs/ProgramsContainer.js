@@ -32,7 +32,7 @@ const ProgramsContainer = () => {
     return (
         <>
             <ConnectedUserNav />
-            <Link to={CONSTANTS.ADD_PROGRAM_FORM} className="btn btn-primary float-right mt-5">add new Program</Link>
+            <Link to={CONSTANTS.ADD_PROGRAM_FORM} className="btn btn-primary float-right mt-5">Add new Program</Link>
             {isLoading ?
                 <WaveLoader />
                 :
