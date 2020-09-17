@@ -19,7 +19,6 @@ class Footer extends Component{
                     <div className="col-md-3 text-white pt-5" style={{backgroundColor: "#0d234b"}}>
                         <h3 className="text-white mb-3 h5">Explore</h3>
                         <Link to={CONSTANTS.LANDINGPAGE} className="text-white-50">Landing Page</Link> <br/>
-                        <Link to="#" className="text-white-50">About</Link>
                     </div>
 
                     <div className="col-md-3 pt-5" style={{backgroundColor: "#0d234b"}}>
@@ -34,8 +33,8 @@ class Footer extends Component{
 
                     <div className="col-md-3 pt-5" style={{backgroundColor: "#0d234b"}}>
                         <h3 className="mb-3 text-white h5">Legal</h3>
-                            <a href="http://facebook.com" className="text-white-50">Terms</a> <br/>
-                            <a href="http://facebook.com" className="text-white-50">Privacy</a>
+                            <a href="https://www.termsfeed.com/blog/privacy-policies-vs-terms-conditions/" className="text-white-50">Terms</a> <br/>
+                            <a href="https://www.freeprivacypolicy.com/blog/privacy-policy-vs-terms-conditions/" className="text-white-50">Privacy</a>
                     </div>
                 </div>
 
