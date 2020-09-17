@@ -26,7 +26,7 @@ const UpdateResourceForm = ({match}) => {
 
 
     useEffect(() => {
-        axiosInstance.get(`${URL_API}${match.params.id}`)
+        axiosInstance().get(`${URL_API}${match.params.id}`)
             .then(response => {
                 setResource(response.data);
             })

@@ -18,7 +18,7 @@ const ProgramsContainer = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        axiosInstance.get(ENDPOINT_TOPIC_PROGRAMMING)
+        axiosInstance().get(ENDPOINT_TOPIC_PROGRAMMING)
             .then(response => {
                 console.log(response);
                 setPrograms(response.data['hydra:member']);

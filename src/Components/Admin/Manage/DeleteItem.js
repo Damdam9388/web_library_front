@@ -7,7 +7,7 @@ const DeleteItem = ({item}) => {
     let history = useHistory();
 
     const deleteThisItem = async() => {
-        await axiosInstance.delete(`${item['@id']}`);
+        await axiosInstance().delete(`${item['@id']}`);
         await history.go(0);
     };
 

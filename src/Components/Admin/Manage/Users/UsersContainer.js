@@ -18,7 +18,7 @@ const UsersContainer = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        axiosInstance.get(ENDPOINT_ALL_USERS)
+        axiosInstance().get(ENDPOINT_ALL_USERS)
             .then(response => {
                 setUsers(response.data['hydra:member']);
             })
