@@ -3,7 +3,7 @@ import {getPrograms} from "../../Services/ProgramsServices";
 import Program from "./Program";
 import ConnectedUserNav from "../../Layout/Nav/ConnectedUserNav";
 import WaveLoader from "../Utils/WaveLoader";
-import Background1 from "../../Images/mockup-2443050_1920.jpg";
+import Background1 from "../../Images/background2.jpg";
 
 const Programs = () => {
     const [programs, setPrograms] = useState();
