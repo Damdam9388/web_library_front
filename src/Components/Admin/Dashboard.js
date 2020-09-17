@@ -16,7 +16,7 @@ const Dashboard = () => {
   return (
     <div className="wrap" style={{ height: "100vh" }}>
       <ConnectedUserNav username={username} />
-      <h2 className="text-uppercase">Welcome back dear Admin !</h2>
+      <h2 className="text-uppercase text-center">Welcome back dear Admin !</h2>
       <ul
         style={{ listStyle: "none" }}
         className="mt-5 col-md-4 offset-4 d-flex flex-column justify-content-center align-items-center"
