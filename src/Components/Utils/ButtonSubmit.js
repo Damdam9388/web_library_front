@@ -5,13 +5,12 @@ import {Circle} from "better-react-spinkit";
 const ButtonSubmit = ({title, load}) => {
     return <Button
         type="submit"
-        color="white"
         rightIcon={load ? "" : "arrow-forward"}
-        bg="#0d234b"
-        variant="red"
+        variantColor="blue"
+        variant="outline"
         width="full"
-        border="transparent"
-        className="mt-5"
+        className="mt-5 text-white"
+        bg="#4a9bd1"
         _hover={{bg: "#4a9bd1"}}
         isDisabled={load ? true : false}
     >
