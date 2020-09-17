@@ -1,9 +1,9 @@
 import React, {useState, useEffect, useContext} from "react";
 import {getProgramInfo} from "../../Services/ProgramsServices";
-import Resource from "../ResourcesPage/Resource";
 import ConnectedUserNav from "../../Layout/Nav/ConnectedUserNav";
 import UserContext from "../Context/UserContext";
 import WaveLoader from "../Utils/WaveLoader";
+import ResourceFramework from "../ResourcesPage/ResourceFramework";
 
 //affiche les ressources du framework
 const FrameworkInfo = ({match}) => {
@@ -36,7 +36,7 @@ const FrameworkInfo = ({match}) => {
                                 {/*
                                 on affiche les ressources du framework individuellement
                                 */}
-                                <Resource key={resource['@id']} resource={resource} />
+                                <ResourceFramework key={resource['@id']} resource={resource} />
                             </>
                         );
                     })
