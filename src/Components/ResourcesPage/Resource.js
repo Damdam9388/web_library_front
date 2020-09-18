@@ -4,8 +4,8 @@ import "./resource.scss";
 const Resource = ({resource}) => {
 
     return (
-        <div className="shadow card rounded-0 p-0" style={{width: "18rem"}}>
-            <img className="card-img-top img-fluid" src="https://source.unsplash.com/random/150x100" alt="Card image cap"/>
+        <div className="shadow card rounded-0 p-0 col-md-3" style={{width: "14rem"}}>
+            <img className="card-img-top img-fluid" src="https://source.unsplash.com/random/100x70" alt="random image"/>
             <div className="card-body">
                 <span className="badge badge-pill badge-info">{resource.language}</span>
                 <span className="badge badge-pill badge-success">{resource.level}</span>

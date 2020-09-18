@@ -41,7 +41,7 @@ const ProgramInfo = ({match}) => {
     return (
         <>
             <ConnectedUserNav username={username} />
-            <div style={{height:"100vh"}} className="d-flex">
+            <div style={{minHeight:"100vh"}} className="d-flex">
 
                     {loading ? (
                         <WaveLoader />
@@ -73,13 +73,7 @@ const ProgramInfo = ({match}) => {
                                     </div>
                                 </div>
                                 <div className="card-deck" style={{marginTop:"20px"}}>
-                                    <div className="row">
-                                        <div className="col-md-4">
-                                            <DisplayResource />
-                                        </div>
-                                    </div>
-
-
+                                    <DisplayResource />
                                 </div>
                             </div>
                         </>
