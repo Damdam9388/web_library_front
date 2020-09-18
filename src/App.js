@@ -7,6 +7,7 @@ import * as CONSTANTS from "./Constants/constants";
 import SignUp from "./Components/SignUp/SignUp.js";
 import Login from "./Components/Login/Login.js";
 import Contact from "./Components/Contact/Contact.js";
+import ContactForConUser from "./Components/ContactForConUser/Contact.js";
 import Team from "./Components/Team/Team.js";
 import ForgotPassword from "./Components/Login/ForgotPassword";
 import ChangeForgotPassword from "./Components/Login/ChangeForgotPassword";
@@ -81,6 +82,7 @@ const App = () => {
                         <Switch>
 
                             <PrivateRoute path={CONSTANTS.CONNECTED_USER} component ={ConnectedUserPage}/>
+                            <PrivateRoute path={CONSTANTS.CONTACTUS} component={ContactForConUser}/>
                             <PrivateRoute path={CONSTANTS.ADD_RESOURCE_PROGRAM} component ={AddResourceProgram}/>
                             <PrivateRoute path={CONSTANTS.ADD_RESOURCE_FRAMEWORK} component ={AddResourceFramework}/>
                             <PrivateRoute path={CONSTANTS.FRAMEWORK_SINGLE + "/:id+"} component={FrameworkInfo} />
