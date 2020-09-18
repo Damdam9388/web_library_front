@@ -32,7 +32,15 @@ const ProgramsContainer = () => {
     return (
         <>
             <ConnectedUserNav />
-            <Link to={CONSTANTS.ADD_PROGRAM_FORM} className="btn btn-primary float-right mt-5">Add new Program</Link>
+
+                <Link
+                    className="btn btn-primary my-2 border-0 mx-5 float-left"
+                    style={{background:"linear-gradient(to right, #457fca, #5691c8)"}}
+                    to={`${CONSTANTS.ADMIN_DASHBOARD}`}>
+                    Back to admin dashboard
+                </Link>
+
+            <Link to={CONSTANTS.ADD_PROGRAM_FORM} className="btn btn-primary float-right my-2 mx-5">Add new Program</Link>
             {isLoading ?
                 <WaveLoader />
                 :
