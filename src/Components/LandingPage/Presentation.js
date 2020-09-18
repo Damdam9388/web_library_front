@@ -22,12 +22,12 @@ const Presentation = () => {
             </div>
         </div>
 
-        <div className="row atouts">
-            <div className="order-sm-12 col-md-6 px-0">
+        <div className="row atouts mx-5">
+            <div className="order-sm-12 col-md-6 px-1">
                 <img className="img-fluid" src={img1} alt="img1" width="100%"/>
             </div>
             <div
-                className="font-weight-bold order-sm-1 col-md-6 d-flex flex-column justify-content-center align-items-center text-dark" style={{backgroundColor: "#FFFFFF"}}>
+                className="font-weight-bold px-1 order-sm-1 col-md-6 d-flex flex-column justify-content-center align-items-center text-dark" style={{backgroundColor: "#FFFFFF"}}>
                 "When you start with a language, it is common to find
                 a number of errors and problems.
                 Learning to understand and resolve the mistakes

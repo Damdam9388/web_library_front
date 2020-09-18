@@ -72,7 +72,7 @@ const App = () => {
     };
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid p-0">
             <AuthContext.Provider value={contextValue}>
                 <UserContext.Provider value={userValue}>
                     <RoleContext.Provider value={roleValue} >
