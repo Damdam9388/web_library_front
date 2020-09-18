@@ -47,7 +47,7 @@ const ProgramInfo = ({match}) => {
                         <WaveLoader />
                     ) : (
                         <>
-                            <div className="col-md-2 align-self-stretch m-0" style={{height:"100vh", background:"linear-gradient(to right, #457fca, #5691c8)"}}>
+                            <div className="col-md-2 align-self-stretch m-0" style={{minHeight:"100vh", background:"linear-gradient(to right, #457fca, #5691c8)"}}>
                                 <ul className="text-center" style={{padding:"0"}}>
 
                                     <h4 className="text-white my-5">frameworks</h4>
@@ -72,9 +72,13 @@ const ProgramInfo = ({match}) => {
                                         </Link>
                                     </div>
                                 </div>
-                                <div className="card-deck" style={{marginTop:"20px"}}>
-                                    <DisplayResource />
-                                </div>
+                                    <div className="row d-flex justify-content-center">
+                                            <DisplayResource />
+
+                                    </div>
+
+
+
                             </div>
                         </>
                     )}
