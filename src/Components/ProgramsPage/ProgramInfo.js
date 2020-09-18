@@ -66,7 +66,7 @@ const ProgramInfo = ({match}) => {
                                     <div className="col-md-12">
                                         <Link
                                             className="btn btn-primary my-5 border-0 float-right"
-                                              style={{background:"linear-gradient(to right, #457fca, #5691c8)"}}
+                                            style={{background:"linear-gradient(to right, #457fca, #5691c8)"}}
                                             to={`${CONSTANTS.ADD_RESOURCE_PROGRAM}`}>
                                             Add resource
                                         </Link>

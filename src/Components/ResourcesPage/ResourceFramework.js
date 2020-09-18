@@ -1,22 +1,25 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import * as CONSTANTS from "../../Constants/constants";
+import "./resource.scss";
 
 const ResourceFramework = ({resource}) => {
     return (
-        <div className="col-md-4 card" style={{width: "18rem"}}>
+        <div className="shadow card rounded-0 p-0 col-md-3 mx-2 mb-2">
+            <img className="card-img-top img-fluid" src="https://source.unsplash.com/random/100x70/?programer" alt="random image"/>
             <div className="card-body">
-                <h5 className="card-title text-center">{resource.resourceName}</h5>
-                <p className="pt-2">Language : {resource.language}</p>
-                <p className="pt-2">Author : {resource.author}</p>
-                <p className="pt-2">Level : {resource.level}</p>
-                <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
-                    <a href={resource.url}  className="btn btn-primary" target="blank">Link to the tutorial </a>
-                </div><br/>
-                <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
-                    <Link className="btn btn-primary" to={`${CONSTANTS.ADD_RESOURCE_FRAMEWORK}/${false}`}>Add resource</Link>
-                </div><br/>
-                <span className="float-right mt-3">published by : {resource.publisher}</span>
+                <span className="badge badge-pill badge-info">{resource.language}</span>
+                <span className="badge badge-pill badge-success">{resource.level}</span>
+                <br/>
+                <p className="card-title text-center h6 pt-4">{resource.resourceName}</p>
+                <span className="badge badge-pill badge-primary float-right">by {resource.author}</span>
+
+
+
+                <div className="col-md-12 d-flex justify-content-center">
+                <a href={resource.url}  className="btn btn-default btn-lg mt-5" target="blank">Link to the tutorial </a>
+                </div>
+
             </div>
         </div>
     );
