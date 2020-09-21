@@ -4,7 +4,7 @@ import "./resource.scss";
 const Resource = ({resource}) => {
 
     return (
-        <div className="shadow card rounded-0 p-0 col-md-3 mx-2 mb-2">
+        <div className="shadow card p-0 col-md-3 mx-5 mb-5">
             <img className="card-img-top img-fluid" src="https://source.unsplash.com/random/100x70/?programer" alt="random image"/>
             <div className="card-body">
                 <span className="badge badge-pill badge-info">{resource.language}</span>
