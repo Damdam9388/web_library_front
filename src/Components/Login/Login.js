@@ -1,7 +1,7 @@
 import React, {useContext, useState} from "react";
 import LoginForm from "./LoginForm";
 import AuthContext from "../Context/AuthContext";
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import UserContext from "../Context/UserContext";
 import { Box } from "@chakra-ui/core";
 import './login.scss';
@@ -59,9 +59,12 @@ const Login = () => {
     return (
     <div className="row" style={{height:"100vh", backgroundImage:`url(${backgroundImage})`}}>
         <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
-                <Box bg="#F7FAFC" opacity="0.9" w="45%" p={4} mb={5} rounded="md" className="align-self-center">
+                <Box bg="#F7FAFC" opacity="0.9" width={["100%",1 / 2, 1 / 3]} p={4} mb={5} rounded="md" className="align-self-center font-weight-lighter">
                     <div className="col-md-12 text-center">
-                        <h1 className="login_title text-dark font-weight-bold mb-5" style={{fontSize:"35px", fontWeight:"600"}}>LOGIN</h1>
+
+                        <Link className="float-left d-block text-black-50 font-weight-lighter" to={CONSTANTS.LANDINGPAGE}>go back to the landing page</Link>
+                        <br/>
+                        <h1 className="login_title text-dark font-weight-bold mb-5 mt-3" style={{fontSize:"35px", fontWeight:"600"}}>LOGIN</h1>
                     </div>
                     {/*composant qui envoie vers le formulaire de login et on lui passe la méthode axiosLogin et la valeur de loading*/}
                     <LoginForm getLogin={axiosLogin} load={loading}/>

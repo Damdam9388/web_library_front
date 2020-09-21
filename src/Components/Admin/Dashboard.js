@@ -16,27 +16,28 @@ const Dashboard = () => {
   return (
     <div className="wrap" style={{ height: "100vh" }}>
       <ConnectedUserNav username={username} />
-      <h2 className="text-uppercase text-center">Welcome back dear Admin !</h2>
-      <ul
-        style={{ listStyle: "none" }}
-        className="mt-5 col-md-4 offset-4 d-flex flex-column justify-content-center align-items-center"
-      >
-        <li className="mt-3">
-          <Button leftIcon={MdBuild} variantColor="blue" variant="outline">
-            <Link to={ADMIN_USERS}>Users list</Link>
-          </Button>
-        </li>
-        <li className="mt-3">
-          <Button leftIcon={MdBuild} variantColor="blue" variant="outline">
-            <Link to={ADMIN_PROGRAMS}>Programs list</Link>
-          </Button>
-        </li>
-        <li className="mt-3">
-          <Button leftIcon={MdBuild} variantColor="blue" variant="outline">
-            <Link to={ADMIN_RESOURCES}>Resources list</Link>
-          </Button>
-        </li>
-      </ul>
+
+      <div className="col-sm-12 d-flex flex-column justify-content-center align-items-center">
+        <h2 className="text-uppercase text-center">Welcome back dear Admin !</h2>
+        <ul style={{ listStyle: "none", paddingInlineStart:"0px", textAlign:"center"}}>
+          <li className="mt-3">
+            <Button leftIcon={MdBuild} variantColor="blue" variant="outline">
+              <Link to={ADMIN_USERS}>Users list</Link>
+            </Button>
+          </li>
+          <li className="mt-3">
+            <Button leftIcon={MdBuild} variantColor="blue" variant="outline">
+              <Link to={ADMIN_PROGRAMS}>Programs list</Link>
+            </Button>
+          </li>
+          <li className="mt-3">
+            <Button leftIcon={MdBuild} variantColor="blue" variant="outline">
+              <Link to={ADMIN_RESOURCES}>Resources list</Link>
+            </Button>
+          </li>
+        </ul>
+      </div>
+
     </div>
   );
 };

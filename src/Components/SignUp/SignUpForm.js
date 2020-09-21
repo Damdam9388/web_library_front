@@ -21,6 +21,18 @@ const SignUpForm = ({ getSignUp, isLoading }) => {
             label="Login"
             placeholder="Enter your login..."
             iconName="arrow-right"
+            borderTop="none"
+            borderLeft="none"
+            borderRight="none"
+            borderRadius="none"
+            borderBottomColor="black"
+            bg="transparent"
+            _focus={{
+              outline: "none",
+              bg: "transparent",
+              color: "black",
+              boxShadow: "none",
+            }}
           />
 
           <EmailField />
