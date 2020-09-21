@@ -39,7 +39,7 @@ const FirstLook = () => {
                             <img className="img-fluid" src={learning1} alt="learning" style={{height:"200px"}}/>
                             <div className="card-body">
                                 <h4 className="card-title text-center font-weight-bold">Many Languages</h4>
-                                <p className="card-text text-center">whatever your search, there is a programming language for you.</p>
+                                <p className="card-text text-center">whatever you're searching, there is a programming language for you.</p>
                             </div>
                             <div className="card-stats">
                                 <div className="stat">
@@ -69,7 +69,7 @@ const FirstLook = () => {
                             <img className="img-fluid" src={learning3} alt="learning" style={{height:"200px"}}/>
                             <div className="card-body">
                                 <h4 className="card-title text-center font-weight-bold">Your world</h4>
-                                <p className="card-text text-center">Where you want, when you want, white who you want</p>
+                                <p className="card-text text-center">Wherever you want, whenever you want, with whom you want</p>
                             </div>
                             <div className="card-stats">
                                 <div className="stat">
