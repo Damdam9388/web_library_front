@@ -12,7 +12,7 @@ const ConnectedUserPage = ()=>{
     return(
         <div className="wrap" style={{height:"100vh"}}>
             <ConnectedUserNav username={username} />
-            <img src={img1}></img>
+            <img src={img1} alt="img1"/>
             <h2 className="text-uppercase d-inline-block mt-lg-5">Welcome back, We're glad your here !</h2>
         </div>
         

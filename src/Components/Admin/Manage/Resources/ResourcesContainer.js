@@ -38,7 +38,7 @@ const ResourcesContainer = () => {
 
                     :
                     <div style={{height: "220vh"}}>
-                        <TitlePage title="Page de gestion des resources"/>
+                        <TitlePage title="Resources management page"/>
 
                         <table className="table">
                             <ColumnNames columnNames={columnNames}/>

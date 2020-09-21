@@ -21,7 +21,7 @@ export const userForgotPassword = (email) => {
 };
 
 export const userChangeForgotPassword = (token, password) => {
-     return axios.put(`${ENDPOINT_CHANGE_PASS}/${token}`, {password})
+     return axios.put(`${ENDPOINT_CHANGE_PASS}/${token}`, {plainPassword:password})
 };
 
 export const getConfirmAccount =(token) => {

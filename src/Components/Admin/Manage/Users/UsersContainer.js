@@ -37,7 +37,7 @@ const UsersContainer = () => {
 
                     :
                         <div style={{height:"100vh"}}>
-                            <TitlePage title="Page de gestion des users" />
+                            <TitlePage title="User management page" />
                             <table className="table">
                                 <ColumnNames columnNames={columnNames} />
                                 <Item items={users} attributeskey={userAttributesKey} endpoint={ADMIN_UPDATE} endpointDelete={ENDPOINT_ALL_USERS}/>

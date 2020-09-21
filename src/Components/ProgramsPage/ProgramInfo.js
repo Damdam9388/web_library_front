@@ -11,7 +11,6 @@ import {Link} from "react-router-dom";
 const ProgramInfo = ({match}) => {
     const [resources, setResources] = useState();
     const [frameworks, setFramework] = useState();
-    const [program, setProgram] = useState();
     const [loading, setLoading] = useState(true);
     const idProgram = match.params.id;
     const {username} = useContext(UserContext);
@@ -21,7 +20,6 @@ const ProgramInfo = ({match}) => {
             .then((res) => {
                 const resourcesList = res.data.ressources;
                 const frameworkList = res.data.frameworks;
-                setProgram(res.data.programName);
                 setResources(resourcesList);
                 setFramework(frameworkList);
             })
@@ -66,7 +64,7 @@ const ProgramInfo = ({match}) => {
                                     <div className="col-md-12">
                                         <Link
                                             className="btn btn-primary my-5 border-0 float-right"
-                                              style={{background:"linear-gradient(to right, #457fca, #5691c8)"}}
+                                            style={{background:"linear-gradient(to right, #457fca, #5691c8)"}}
                                             to={`${CONSTANTS.ADD_RESOURCE_PROGRAM}`}>
                                             Add resource
                                         </Link>
