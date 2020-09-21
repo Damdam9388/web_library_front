@@ -5,6 +5,9 @@ html, body {
   box-sizing: border-box;
 }
 
+.container-fluid{
+  overflow: hidden;
+}
 .App {
   text-align: center;
   height: 100%;

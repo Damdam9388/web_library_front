@@ -1,2 +1,58 @@
+.btn-outline{
+  border-color: currentcolor;
+}
+
+.btn-outline {
+  border-radius: var(--border-radius);
+  width: 10rem;
+  height: 6rem;
+  color:white;
+}
+
+.btn-outline:hover {
+  box-shadow: inset 0 0 0 20rem var(--darken-1);
+  background: white;
+  border-color: white;
+}
+
+.card {
+  border-radius: 18px;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.card >img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card-text {
+  font-weight: 300;
+  color:grey;
+}
+
+.card-stats {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: linear-gradient(to right, #457fca, #5691c8);
+}
+
+.card-stats .stat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding:10px;
+}
+
+.card:hover{
+  transform: scale(1.2);
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+}
+
+
+
+
+
 
  
