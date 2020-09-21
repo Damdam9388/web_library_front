@@ -6,6 +6,7 @@ import learning1 from "../../Images/learning1.jpg";
 import learning2 from "../../Images/success.jpeg";
 import learning3 from "../../Images/world.jpg";
 import * as CONSTANTS from "../../Constants/constants";
+import { Link } from "react-router-dom";
 
 const FirstLook = () => {
 
@@ -16,8 +17,8 @@ const FirstLook = () => {
                     <Fade left>
                     <h1 className="d-none d-lg-inline-flex">TODAY IS THE DAY TO LEARN SOMETHING NEW !</h1>
                         <div className="btn-group d-inline mt-5">
-                            <a className="nav-link  btn btn-outline btn-lg mb1 silver font-weight-bold d-inline mx-4" href={CONSTANTS.LOGIN}>LOGIN</a>
-                            <a className="nav-link  btn btn-outline btn-lg mb1 silver font-weight-bold d-inline mx-4" href={CONSTANTS.SIGNUP}>SIGN UP</a>
+                            <Link className="nav-link  btn btn-outline btn-lg mb1 silver font-weight-bold d-inline mx-4" to={CONSTANTS.LOGIN}>LOGIN</Link>
+                            <Link className="nav-link  btn btn-outline btn-lg mb1 silver font-weight-bold d-inline mx-4" to={CONSTANTS.SIGNUP}>SIGN UP</Link>
                         </div>
                     </Fade>
                 </div>
