@@ -29,7 +29,7 @@ const FirstLook = () => {
                     <div className="col-md-12 title-wave px-0" style={{height:"1rem"}}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fillOpacity="1" d="M0,288L80,261.3C160,235,320,181,480,160C640,139,800,149,960,128C1120,107,1280,53,1360,26.7L1440,0L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"/></svg>
                         <Fade left>
-                            <h2 style={{position:"absolute", top:"0", left:"0", padding: "5rem 7rem", fontSize:"3rem", color:"white"}}>Why you choose Webster</h2>
+                            <h2 style={{position:"absolute", top:"0", left:"0", padding: "5rem 7rem", fontSize:"3rem", color:"white"}}>Why Webster ?</h2>
                         </Fade>
                     </div>
 
