@@ -25,10 +25,10 @@ class Nav extends Component {
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
             <li className="nav-item mr-3">
-              <a className="nav-link text-white font-weight-bold" href={TEAM}>Team</a>
+              <Link className="nav-link text-white font-weight-bold" to={TEAM}>Team</Link>
             </li>
             <li className="nav-item mr-3">
-              <a className="nav-link text-white font-weight-bold" href={CONTACT}>Contact</a>
+              <Link className="nav-link text-white font-weight-bold" to={CONTACT}>Contact</Link>
             </li>
           </ul>
         </div>
