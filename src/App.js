@@ -20,6 +20,7 @@ import ConnectedUserPage from "./Components/Pages/ConnectedUserPage";
 import ConfirmAccount from "./Components/SignUp/ConfirmAccount";
 import ProgramInfo from "./Components/ProgramsPage/ProgramInfo";
 import ContactConfirmationPage from "./Components/Pages/ContactConfirmationPage";
+import ContactConfirmationForConUser from "./Components/Pages/ContactConfirmationForConUser";
 import FrameworkInfo from "./Components/FrameworkPage/FrameworkInfo";
 import AddResourceProgram from "./Components/AddResource/AddResourceProgram";
 import AddResourceFramework from "./Components/AddResource/AddResourceFramework";
@@ -99,6 +100,7 @@ const App = () => {
                             <AdminRoute path={CONSTANTS.ADD_PROGRAM_FORM} component={AddProgramForm}/>
 
                             <Route path={CONSTANTS.CONTACT_CONFIRMATION} component ={ContactConfirmationPage}/>
+                            <Route path={CONSTANTS.CONTACT_CONFIRMATION_USER} component ={ContactConfirmationForConUser}/>
                             <Route path={CONSTANTS.CHANGE_PASSWORD + "/:token"} component={ChangeForgotPassword} />
                             <Route path={CONSTANTS.CONFIRM_ACCOUNT + "/:token"} component={ConfirmAccount} />
                             <Route path={CONSTANTS.FORGOT_PASSWORD} component={ForgotPassword}/>

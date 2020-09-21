@@ -5,6 +5,7 @@ import {sendContactMessageInfo} from "../../Services/ContactServices";
 import Background1 from "../../Images/background2.jpg";
 import ConnectedUserNav from "../../Layout/Nav/ConnectedUserNav";
 import UserContext from "../Context/UserContext";
+import * as CONSTANTS from "../../Constants/constants";
 
 const Contact = (props) => {
     const [loading, setLoading] = useState(false);
@@ -23,7 +24,7 @@ const Contact = (props) => {
         sendContactMessageInfo(name, email, subject, message)
             .then(response => {
                 console.log(response);
-                history.push("/");
+                history.push(CONSTANTS.CONTACT_CONFIRMATION_USER);
             })
             .catch(erreur => {
                 console.log(erreur);
