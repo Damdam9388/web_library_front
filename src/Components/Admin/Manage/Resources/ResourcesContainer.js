@@ -7,6 +7,7 @@ import {ADMIN_UPDATE_RESOURCE} from "../../../../Constants/constants";
 import Item from "../Item";
 import WaveLoader from "../../../Utils/WaveLoader";
 import ConnectedUserNav from "../../../../Layout/Nav/ConnectedUserNav";
+import axiosInstance from "../../../../AxiosInstance";
 
 const ResourcesContainer = () => {
 
@@ -18,7 +19,7 @@ const ResourcesContainer = () => {
     useEffect(() => {
         setIsLoading(true);
         const token = localStorage.getItem('tokenUser');
-        axios.get(ENDPOINT_ADD_RESOURCE, {headers: {Authorization: "Bearer " + token}})
+        axiosInstance().get(ENDPOINT_ADD_RESOURCE, {headers: {Authorization: "Bearer " + token}})
             .then(response => {
                 console.log(response);
                 setResources(response.data['hydra:member']);

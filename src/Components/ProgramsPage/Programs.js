@@ -27,7 +27,7 @@ const Programs = () => {
         <>
             <ConnectedUserNav />
             <div style={{ backgroundImage:`url(${Background1})`, height: "100vh" }} >
-                <div className="card-deck">
+                <div className="card-deck d-flex flex-column justify-content-center align-items-center">
                         {loading ? (
                                 <WaveLoader />
                         ) : (

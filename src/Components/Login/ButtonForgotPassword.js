@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import * as CONSTANTS from "../../Constants/constants";
 
 const ButtonForgotPassword = () => (
-  <div className="row mb-5">
+  <div className="row mb-5 mt-3">
     <div className="col-md-12 d-flex flex-column justify-content-end align-items-md-end">
       <Button
         color="dark"
