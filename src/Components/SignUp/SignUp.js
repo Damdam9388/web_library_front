@@ -26,7 +26,7 @@ const SignUp = (props) => {
 
       })
       .catch((error) => {
-        setAlertMessage({message: "Error during creating your account", level: "alert alert-danger"});
+        setAlertMessage({message: "Error during creation of your account", level: "alert alert-danger"});
         console.log(error);
       })
       .finally(() => {
