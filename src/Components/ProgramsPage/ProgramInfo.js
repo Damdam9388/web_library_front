@@ -11,7 +11,6 @@ import {Link} from "react-router-dom";
 const ProgramInfo = ({match}) => {
     const [resources, setResources] = useState();
     const [frameworks, setFramework] = useState();
-    const [program, setProgram] = useState();
     const [loading, setLoading] = useState(true);
     const idProgram = match.params.id;
     const {username} = useContext(UserContext);
@@ -21,7 +20,6 @@ const ProgramInfo = ({match}) => {
             .then((res) => {
                 const resourcesList = res.data.ressources;
                 const frameworkList = res.data.frameworks;
-                setProgram(res.data.programName);
                 setResources(resourcesList);
                 setFramework(frameworkList);
             })
