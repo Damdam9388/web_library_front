@@ -11,10 +11,10 @@ const FirstLook = () => {
 
     return (
         <>
-            <div className="row p-0" style={{backgroundImage:`linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),url('${firstImage}')`, backgroundRepeat:"no-repeat", height:"95vh"}}>
-                <div className="col-sm-12 d-flex flex-column justify-content-center align-items-center text-white font-weight-bold">
+            <div className="row p-0" style={{backgroundImage:`linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),url('${firstImage}')`, backgroundRepeat:"no-repeat", minHeight:"92vh"}}>
+                <div className="col-md-12 d-flex flex-column justify-content-center align-items-center text-white font-weight-bold">
                     <Fade left>
-                    <h1>TODAY IS THE DAY TO LEARN SOMETHING NEW !</h1>
+                    <h1 className="d-none d-lg-inline-flex">TODAY IS THE DAY TO LEARN SOMETHING NEW !</h1>
                         <div className="btn-group d-inline mt-5">
                             <a className="nav-link  btn btn-outline btn-lg mb1 silver font-weight-bold d-inline mx-4" href={CONSTANTS.LOGIN}>LOGIN</a>
                             <a className="nav-link  btn btn-outline btn-lg mb1 silver font-weight-bold d-inline mx-4" href={CONSTANTS.SIGNUP}>SIGN UP</a>
@@ -24,7 +24,7 @@ const FirstLook = () => {
             </div>
 
             <section>
-                <div id="row_images" className="row mb-3" style={{minHeight:"50rem", backgroundColor:"#f5f5f5"}}>
+                <div id="row_images" className="row pb-3" style={{minHeight:"50rem", backgroundColor:"#f5f5f5"}}>
 
                     <div className="col-md-12 title-wave px-0" style={{height:"1rem"}}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fillOpacity="1" d="M0,288L80,261.3C160,235,320,181,480,160C640,139,800,149,960,128C1120,107,1280,53,1360,26.7L1440,0L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"/></svg>
@@ -82,7 +82,7 @@ const FirstLook = () => {
             </section>
 
 
-            <div className="row" style={{minHeight:"18rem", background:"linear-gradient(to right, #457fca, #5691c8)"}}>
+            <div className="row py-3" style={{minHeight:"18rem", background:"linear-gradient(to right, #457fca, #5691c8)"}}>
                 <div className="col-sm-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
                     <svg width="4em" height="4em" viewBox="0 0 16 16" className="bi bi-check-circle" fill="#FFFFFF"
                          xmlns="http://www.w3.org/2000/svg">
