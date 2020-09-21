@@ -1,7 +1,7 @@
 import React from "react";
 import Fade from 'react-reveal/Fade';
 import "../../Layout/Nav/Nav.scss";
-import firstImage from "../../Images/screen-post-LJUaTzKtFNc-unsplash.jpg";
+import firstImage from "../../Images/landing4.jpg";
 import learning1 from "../../Images/learning1.jpg";
 import learning2 from "../../Images/success.jpeg";
 import learning3 from "../../Images/world.jpg";
