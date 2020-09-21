@@ -39,7 +39,7 @@ const ProgramInfo = ({match}) => {
     return (
         <>
             <ConnectedUserNav username={username} />
-            <div style={{minHeight:"100vh"}} className="d-flex row-cols-1">
+            <div style={{minHeight:"100vh"}} className="row d-flex">
 
                     {loading ? (
                         <WaveLoader />

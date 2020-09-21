@@ -26,18 +26,22 @@ const Programs = () => {
 
         <>
             <ConnectedUserNav />
-            <div style={{ backgroundImage:`url(${Background1})`, height: "100vh" }} >
-                <div className="card-deck d-flex flex-column justify-content-center align-items-center">
+            <div className="row" style={{ backgroundImage:`url(${Background1})`, height: "100vh"}} >
+
+                <div className="col-sm-12 col-md-12">
+                    <h2 className="text-white ml-3">Programs</h2>
+                </div>
                         {loading ? (
                                 <WaveLoader />
                         ) : (
                             programs.map((program, index) => {
                                 return (
-                                        <Program key={index} program={program} />
+                                    <Program key={index} program={program} />
+
                                 );
                             })
                         )}
-                </div>
+
             </div>
         </>
     );
