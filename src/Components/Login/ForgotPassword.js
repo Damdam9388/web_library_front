@@ -18,12 +18,12 @@ const ForgotPassword = () => {
         console.log(response);
         if (response.data === "OK") {
           setAlertMessage({
-            message: "We sent you an email",
+            message: "We've sent you an email",
             level: "alert alert-success",
           });
         } else {
           setAlertMessage({
-            message: "Your email dosent match",
+            message: "Your email does not match",
             level: "alert alert-danger",
           });
         }
