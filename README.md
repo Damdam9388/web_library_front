@@ -1,3 +1,75 @@
+# WEBSTER 
+
+This application is a kind of **web library of tutorials** related to computer programming.
+
+## The team 
+
+- **Maxime RENAUD**  [Github](https://github.com/max1300)
+- **Damien TERRO** [Github](https://github.com/Damdam9388) - [LinkedIn](https://www.linkedin.com/in/damien-terro-945a08bb/)
+- **Safia MSELLEK ISMAILI** [Github](https://github.com/Safiamoon) - [LinkedIn](https://www.linkedin.com/in/safia-msellek-ismaili-21a743176/)
+
+## Technologies
+
+- **Symfony** as a backend Framework
+- **React.js** as a Frontend Framework
+- **HTML 5**
+- **CSS 3**
+- **Bootstrap** for styling frontend
+- **Chakra** UI design system
+- **phpMyAdmin** for the database
+
+## The project
+
+The project has been developed as part of the web developement training program at [Le Cnam - House Of Code] remotely, starting from April 27th 2020 to September 23rd 2020. 
+
+This application is intended primarily for students of the House Of Code program, but its usefulness can be extended to the majority of learners in the field of computer programming.
+
+## Features
+
+* Choice between Frameworks
+* Choice between programming Languages
+* The possiblity to add a resource for a framework or a programming language
+
+## Hosting
+
+*  VPS OVH
+
+## API used
+
+- API Plateform
+
+## Setup instructions
+
+Before continuing, make sure to:
+
+- having installed React
+- yarn
+- launch WAMP / MAMP / LAMP
+
+#### Clone this repo 
+
+``` git clone https://github.com/Damdam9388/web_library_front.git```
+
+
+#### install the dependencies: 
+
+```yarn install```
+
+#### Create a .env.local file 
+
+- REACT_APP_API_URL=https://localhost:8000/
+
+#### Launch the server
+
+```yarn start```
+
+#### Get the back part of the application
+
+[Back-End part](https://github.com/max1300/web_library)
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
