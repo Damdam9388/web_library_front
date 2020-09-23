@@ -31,7 +31,7 @@ const Contact = (props) => {
 
     return(
 
-            <div className="col-md-12 d-flex flex-column justify-content-center align-items-center" style={{height:"90vh", backgroundImage:`url(${Background1})`}}>
+            <div className="col-md-12 d-flex flex-column justify-content-center align-items-center" style={{height:"90vh"}}>
                 <div style={{width:"40rem", background: "linear-gradient(to right, #83a4d4, #b6fbff)"}} className="text-center py-3 rounded-top">
                     <h1 className="text-white">CONTACT US</h1>
                     <h4 className="text-white">We'd love to hear from you!</h4>

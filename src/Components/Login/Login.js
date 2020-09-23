@@ -57,7 +57,7 @@ const Login = () => {
     };
 
     return (
-    <div className="row" style={{height:"100vh", backgroundImage:`url(${backgroundImage})`}}>
+    <div className="row" style={{height:"100vh"}}>
         <div className="col-md-12 d-flex flex-column justify-content-center align-items-center">
                 <Box bg="#F7FAFC" opacity="0.9" width={["100%",1 / 2, 1 / 3]} p={4} mb={5} rounded="md" className="align-self-center font-weight-lighter">
                     <div className="col-md-12 text-center">

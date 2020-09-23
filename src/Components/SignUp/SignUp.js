@@ -43,7 +43,7 @@ const SignUp = (props) => {
   return (
     <>
       <div>
-        <div className="row contain" style={{ height: '100vh', backgroundImage:`url(${backgroundImage})`}}>
+        <div className="row contain" style={{ height: '100vh'}}>
           {showAlert ?
               <div className="col-md-12 text-center">
                 <div className={alertMessage.level} role="alert">
